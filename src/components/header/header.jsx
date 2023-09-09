@@ -3,8 +3,7 @@ import './header.css';
 import Logo from '../logo/logo';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
-class Header extends React.Component {
-    render() {
+const Header = () => {
         return (
             <header class="d-flex col">
                 <div class="container flex row">
@@ -28,7 +27,6 @@ class Header extends React.Component {
                 <div class="header-second"></div>
             </header>
         )
-    }
 }
 
 export default Header;
