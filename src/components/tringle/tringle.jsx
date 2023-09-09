@@ -3,7 +3,9 @@ import tringle from './img/tringle.png';
 
 const Tringle = () => {
     return (
-            <image src={tringle} alt="tri"/>
+        <div className="triangle1_img">
+            <img src={tringle} alt="tri"/>
+        </div>
     )
 }
 
