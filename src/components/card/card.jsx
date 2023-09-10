@@ -1,6 +1,6 @@
 import React from "react";
-import '../header/header.css';
 import ProgressBar from "../progressBar/progressBar";
+import '../../styles/main.css';
 
 const Card = (title) => {
     return(
