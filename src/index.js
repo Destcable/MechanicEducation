@@ -5,6 +5,8 @@ import MainPage from './pages/main/mainPage';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MainPage />
+    <MainPage
+      title='Машиностроение'
+    />
   </React.StrictMode>
 );
