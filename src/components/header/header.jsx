@@ -1,7 +1,6 @@
 import React from 'react';
-import './header.css';
 import Logo from '../logo/logo';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import './header.css';
 
 const Header = () => {
         return (
