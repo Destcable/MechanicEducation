@@ -3,7 +3,6 @@ import tringle from './img/tringle.png';
 
 const Tringle = ({ background }) => {
 
-
     return (
         <div className="flex triangle1"
             style={{

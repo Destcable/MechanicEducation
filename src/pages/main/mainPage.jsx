@@ -13,7 +13,9 @@ const MainPage = ({ title }) => {
             />
 
             <div className="main-block flex justify-center wrap">
-                <Card />
+                <Card 
+                    href="/test" 
+                />
             </div>
 
 

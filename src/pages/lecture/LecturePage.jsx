@@ -18,7 +18,7 @@ const LecturePage = ({ title }) => {
 
                 <div class="flex justify-center align-center">
                     <div class="content1 flex col max-content w100">
-                        <HomeButton />
+                        <HomeButton href="/" />
                         <div class="container5">
                             <div class="container_header">
                                 <div class="flex align-center space-between">
