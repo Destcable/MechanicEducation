@@ -1,4 +1,5 @@
 import React from "react";
+import prof_logo from './img/prof.png';
 import '../../styles/main.css';
 
 const Footer = () => {
@@ -19,7 +20,9 @@ const Footer = () => {
                 <div class="flex col mt-20">
                     <div class="column3 flex">
                         <div class="white_line_left footer_third-col"><h5 class="white">Цифровой образовательный контент</h5></div>
-                        <div class="img_logo_prof"><img src="img/prof.png" alt="prof_logo"/></div>
+                        <div class="img_logo_prof">
+                            <img src={prof_logo} alt="prof_logo"/>
+                        </div>
                     </div>
                 </div>
             </div>
