@@ -1,8 +1,15 @@
 import React from "react";
 import ProgressBar from "../progressBar/progressBar";
+import { useNavigate } from "react-router-dom";
 import '../../styles/main.css';
 
 const Card = ({href}) => {
+    const navigate = useNavigate();
+
+    const handleClickGoPage = () => { 
+        navigate(href);
+    };
+
     return(
         <div className="card flex col ">
             <ProgressBar />
@@ -17,7 +24,7 @@ const Card = ({href}) => {
                             <image src="img/papersheet.png" alt="papersheet"/>
                         </div>
                     </a>
-                    <a href={href} className=""><div className="flex btn btn_exe align-center">Задание
+                    <a href="#" onClick={handleClickGoPage} className=""><div className="flex btn btn_exe align-center">Задание
                         <image src="img/Polygon 1.png" alt="papersheet"/>
                     </div></a>
                 </div>
