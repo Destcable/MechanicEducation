@@ -13,8 +13,25 @@ const MainPage = ({ title }) => {
             />
 
             <div className="main-block flex justify-center wrap">
-                <Card 
-                    href="/test" 
+                <Card
+                    lineName="Анимационная видеолекция"
+                    title="Освоение нового материала"
+                    description="Оборудование по обработке заготовок"
+                    href="/lecture"
+                />
+
+                <Card
+                    lineName="Виртуальный тренажер"
+                    title="Применение изученного материала"
+                    description="Режущий инструмент"
+                    href="/traning"
+                />
+
+                <Card
+                    lineName="Интерактивная мини-игра"
+                    title={"Диагностика приобретенных знаний, умений, навыков"}
+                    description="Станочные приспособления"
+                    href="/lecture"
                 />
             </div>
 

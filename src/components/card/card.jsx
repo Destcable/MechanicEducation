@@ -3,7 +3,7 @@ import ProgressBar from "../progressBar/progressBar";
 import { useNavigate } from "react-router-dom";
 import '../../styles/main.css';
 
-const Card = ({href}) => {
+const Card = ({href, title, description, lineName}) => {
     const navigate = useNavigate();
 
     const handleClickGoPage = () => { 
@@ -12,12 +12,12 @@ const Card = ({href}) => {
 
     return(
         <div className="card flex col ">
-            <ProgressBar />
+            <ProgressBar lineName={lineName}/>
             <div className="train-block col">
                 <div className="shape-card shape-color_1 mb-30">
-                    <p className="card-text_main">Освоение нового материала</p>
+                    <p className="card-text_main">{title}</p>
                 </div>
-                <p className="center">Оборудование по обработке заготовок</p>
+                <p className="center">{description}</p>
                 <div className="flex w100 justify-center button_train ">
                     <a href="#ex3" rel="modal:open" className="">
                         <div className="flex btn btn_info align-center">Справка

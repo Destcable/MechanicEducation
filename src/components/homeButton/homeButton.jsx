@@ -10,9 +10,9 @@ const HomeButton = ({href}) => {
     };
 
     return ( 
-        <div class="flex align-center justify-center mt-30">
-            <img src={right_arrow} alt="arrow" class="mr-10" />
-            <a href="#" onClick={handleClickGoPage} class="text_home"> На главную</a>
+        <div className="flex align-center justify-center mt-30">
+            <img src={right_arrow} alt="arrow" className="mr-10" />
+            <a href="#" onClick={handleClickGoPage} className="text_home"> На главную</a>
         </div>
     )
 };
