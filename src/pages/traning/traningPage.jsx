@@ -55,7 +55,8 @@ const TraningPage = ({ title }) => {
                             </div>
                             <div className="container-exercise">
                                 <ExerciseTrainer 
-                                    title={trainings[countActiveTab].title} 
+                                    title={trainings[countActiveTab].title}
+                                    image={trainings[countActiveTab].image} 
                                 />
 
                                 <div className="arrows1">
