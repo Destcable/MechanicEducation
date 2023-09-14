@@ -6,7 +6,7 @@ import trainings from "./trainings.json";
 import ArrowLeft from "./img/ArrowLeft.png";
 import ArrowRight from "./img/ArrowRight.png";
 import ExerciseTrainer from "../../components/exerciseTrainer/exerciseTrainer";
-import SlideTrainer_1 from '../../trainer/trainers_1/slide_1';
+import SlideTrainer_1 from '../../trainers/trainer_1/slide_1';
 
 const TraningPage = ({ title }) => {
 
