@@ -1,0 +1,37 @@
+[
+    {
+        "title": "Ознакомьтесь с содержанием токарной операции по изготовлению заданной детали",
+        "image": "SketchForTurning.jpg",
+        "component": "trainer_1/slide_1"
+    },
+    { 
+        "title": "Изучите основные виды токарных станков",
+        "image": "TurningAndScrewCutting.jpg",
+        "component": "trainer_1/slide_2"
+    },
+    { 
+        "title":"Изучите основные виды токарных станков",
+        "image": "TurningRevolver.jpg",
+        "component": "trainer_1/slide_3"
+    },
+    { 
+        "title":"Изучите основные виды токарных станков",
+        "image": "LatheRotary.jpg",
+        "component": "trainer_1/slide_4"
+    },
+    { 
+        "title":"Изучите основные виды токарных станков",
+        "image": "TurningMilling.jpg",
+        "component": "trainer_1/slide_5"
+    },
+    { 
+        "title":"Изучите основные виды токарных станков",
+        "image": "AutomaticLongitudinalTurning.png",
+        "component": "trainer_1/slide_6"
+    },
+    { 
+        "title":"Изучите основные виды токарных станков",
+        "image": "CNCLathe.jpg",
+        "component": "trainer_1/slide_7"
+    }
+]

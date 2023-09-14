@@ -34,7 +34,7 @@ const ExerciseTrainer = ({ title, image, text }) => {
             <div className="flex container-filling align-center justify-center">
                 <div className="img-exercise">
                     {image &&
-                        <img src={imageSrc} alt="" className="img-exercise1" />
+                        <img src={imageSrc} alt="" className="img-exercise1" style={{maxHeight: "400px"}}/>
                     }
                 </div>
                 <div className="flex col">

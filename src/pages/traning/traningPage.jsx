@@ -2,29 +2,28 @@ import React, { useState } from "react";
 import Header from "../../components/header/header";
 import HomeButton from "../../components/homeButton/homeButton";
 import Tringle from "../../components/tringle/tringle";
-import trainings from "./trainings.json";
 import ArrowLeft from "./img/ArrowLeft.png";
 import ArrowRight from "./img/ArrowRight.png";
 import ExerciseTrainer from "../../components/exerciseTrainer/exerciseTrainer";
-import SlideTrainer_1 from '../../trainers/trainer_1/slide_1';
+import trainings from "../../trainings.json";
 
 const TraningPage = ({ title }) => {
 
     const [countActiveTab, setActiveTab] = useState(0);
-    
-    function setCountActiveTab(count) { 
-        if ( count < trainings.length && count >= 0 ) { 
+
+    function setCountActiveTab(count) {
+        if (count < trainings.length && count >= 0) {
             return setActiveTab(count);
         }
 
         return console.error('Данный таб отсутствует');
     }
 
-    function addCountTab() { 
+    function addCountTab() {
         return setCountActiveTab(countActiveTab + 1);
     }
 
-    function takeCountTab() { 
+    function takeCountTab() {
         return setCountActiveTab(countActiveTab - 1);
     }
 
@@ -52,12 +51,17 @@ const TraningPage = ({ title }) => {
                                 <div className="flex tab_exercise_container">
                                     <div className="active_tab"></div>
                                     <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
                                 </div>
                             </div>
                             <div className="container-exercise">
-                                <ExerciseTrainer 
+                                <ExerciseTrainer
                                     title={trainings[countActiveTab].title}
-                                    image={trainings[countActiveTab].image} 
+                                    image={trainings[countActiveTab].image}
                                     text={trainings[countActiveTab].component}
                                 >
                                 </ExerciseTrainer>
@@ -81,7 +85,7 @@ const TraningPage = ({ title }) => {
                     <div className="container2 hide">
                         <div className="container_header">
                             <div className="flex align-center justify-center">
-                                <p className="container_title text-center"></p> 
+                                <p className="container_title text-center"></p>
                                 <div className="counter_exercise" id="pages"></div>
                             </div>
                         </div>
@@ -95,7 +99,7 @@ const TraningPage = ({ title }) => {
                 </div>
 
             </div>
-            <Tringle 
+            <Tringle
                 background="CFDEEE"
             />
         </>
