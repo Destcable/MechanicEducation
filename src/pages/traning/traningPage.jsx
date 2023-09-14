@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Header from "../../components/header/header";
 import HomeButton from "../../components/homeButton/homeButton";
 import Tringle from "../../components/tringle/tringle";
-import ArrowLeft from "./img/ArrowLeft.png";
-import ArrowRight from "./img/ArrowRight.png";
 import ExerciseTrainer from "../../components/exerciseTrainer/exerciseTrainer";
+import ArrowRight from "../../components/arrowRight/arrowRight";
 import trainings from "../../trainings.json";
+import ArrowLeft from "../../components/arrowLeft/arrowLeft";
 
 const TraningPage = ({ title }) => {
 
@@ -67,12 +67,8 @@ const TraningPage = ({ title }) => {
                                 </ExerciseTrainer>
 
                                 <div className="arrows1">
-                                    <button className="prevbutton" onClick={takeCountTab}>
-                                        <img src={ArrowLeft} />
-                                    </button>
-                                    <button id="next-button" onClick={addCountTab}>
-                                        <img src={ArrowRight} />
-                                    </button>
+                                    <ArrowLeft onClick={takeCountTab}/>
+                                    <ArrowRight onClick={addCountTab}/>
                                 </div>
 
                             </div>
