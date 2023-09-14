@@ -1,9 +1,12 @@
 [
     {
         "title": "Ознакомьтесь с содержанием токарной операции по изготовлению заданной детали",
-        "image": "SketchForTurning.jpg"
+        "image": "SketchForTurning.jpg",
+        "component": "trainer_1/slide_1"
     },
     { 
-        "title": "Изучите основные виды токарных станков"
+        "title": "Изучите основные виды токарных станков",
+        "image": "turningAndScrewCutting.jpg",
+        "component": "trainer_1/slide_2"
     }
 ]

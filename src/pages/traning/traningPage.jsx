@@ -58,7 +58,7 @@ const TraningPage = ({ title }) => {
                                 <ExerciseTrainer 
                                     title={trainings[countActiveTab].title}
                                     image={trainings[countActiveTab].image} 
-                                    text={<SlideTrainer_1 />}
+                                    text={trainings[countActiveTab].component}
                                 >
                                 </ExerciseTrainer>
 

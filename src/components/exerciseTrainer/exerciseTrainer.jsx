@@ -1,18 +1,30 @@
 import React, { useEffect, useState } from 'react';
 
-const ExerciseTrainer = ({title, image, text}) => {
+const ExerciseTrainer = ({ title, image, text }) => {
     const [imageSrc, setImageSrc] = useState(null);
 
+    const [textSrc, setTextSrc] = useState(null);
+
     useEffect(() => {
-      import(`../../pages/traning/trainings/img/${image}`)
-        .then(imageModule => {
-          setImageSrc(imageModule.default);
-        })
-        .catch(error => {
-          console.error('Ошибка загрузки изображения:', error);
-        });
+        import(`../../pages/traning/trainings/img/${image}`)
+            .then(imageModule => {
+                setImageSrc(imageModule.default);
+            })
+            .catch(error => {
+                console.error('Ошибка загрузки изображения:', error);
+            });
     }, [image]);
-    
+
+    useEffect(() => {
+        import(`../../trainers/${text}`)
+            .then(textModule => {
+                setTextSrc(textModule.default);
+            })
+            .catch(error => {
+                console.error('Ошибка загрузки модуля:', error);
+            });
+    }, [text]);
+
     return (
         <>
             <div className="flex space-between">
@@ -27,7 +39,7 @@ const ExerciseTrainer = ({title, image, text}) => {
                 </div>
                 <div className="flex col">
                     <div className='text-exercise'>
-                        {text}
+                        {textSrc}
                     </div>
                 </div>
 
