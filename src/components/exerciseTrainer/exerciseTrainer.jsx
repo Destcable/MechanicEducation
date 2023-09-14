@@ -6,23 +6,21 @@ const ExerciseTrainer = ({ title, image, text }) => {
     const [textSrc, setTextSrc] = useState(null);
 
     useEffect(() => {
-        import(`../../pages/traning/trainings/img/${image}`)
-            .then(imageModule => {
-                setImageSrc(imageModule.default);
-            })
-            .catch(error => {
-                console.error('Ошибка загрузки изображения:', error);
-            });
+        if (image) {
+            import(`../../pages/traning/trainings/img/${image}`)
+                .then(imageModule => {
+                    setImageSrc(imageModule.default);
+                })
+        }
     }, [image]);
 
     useEffect(() => {
-        import(`../../trainers/${text}`)
-            .then(textModule => {
-                setTextSrc(textModule.default);
-            })
-            .catch(error => {
-                console.error('Ошибка загрузки модуля:', error);
-            });
+        if (text) {
+            import(`../../trainers/${text}`)
+                .then(textModule => {
+                    setTextSrc(textModule.default);
+                })
+        }
     }, [text]);
 
     return (
@@ -32,11 +30,13 @@ const ExerciseTrainer = ({ title, image, text }) => {
             </div>
 
             <div className="flex container-filling align-center justify-center">
-                <div className="img-exercise">
-                    {image &&
-                        <img src={imageSrc} alt="" className="img-exercise1" style={{maxHeight: "400px"}}/>
-                    }
-                </div>
+                {image &&
+                    <div className="img-exercise">
+                        {image &&
+                            <img src={imageSrc} alt="" className="img-exercise1" style={{ maxHeight: "400px" }} />
+                        }
+                    </div>
+                }
                 <div className="flex col">
                     <div className='text-exercise'>
                         {textSrc}
