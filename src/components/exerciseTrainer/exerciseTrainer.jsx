@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import SlideTrainer_1 from '../../trainer/trainers_1/slide_1';
 
 const ExerciseTrainer = ({title, image, text}) => {
     const [imageSrc, setImageSrc] = useState(null);
@@ -27,9 +26,9 @@ const ExerciseTrainer = ({title, image, text}) => {
                     }
                 </div>
                 <div className="flex col">
-                    <p className="text-exercise">
-                        <SlideTrainer_1 />
-                    </p>
+                    <div className='text-exercise'>
+                        {text}
+                    </div>
                 </div>
 
 

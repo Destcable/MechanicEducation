@@ -6,6 +6,7 @@ import trainings from "./trainings.json";
 import ArrowLeft from "./img/ArrowLeft.png";
 import ArrowRight from "./img/ArrowRight.png";
 import ExerciseTrainer from "../../components/exerciseTrainer/exerciseTrainer";
+import SlideTrainer_1 from '../../trainer/trainers_1/slide_1';
 
 const TraningPage = ({ title }) => {
 
@@ -57,7 +58,9 @@ const TraningPage = ({ title }) => {
                                 <ExerciseTrainer 
                                     title={trainings[countActiveTab].title}
                                     image={trainings[countActiveTab].image} 
-                                />
+                                    text={<SlideTrainer_1 />}
+                                >
+                                </ExerciseTrainer>
 
                                 <div className="arrows1">
                                     <button className="prevbutton" onClick={takeCountTab}>
