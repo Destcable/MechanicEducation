@@ -1,6 +1,6 @@
 import React from "react";
 
-const SlideTrainer_13 = () => {
+const SlideTrainer_14 = () => {
     return (
         <>
             <em>люнеты,</em> применяют в качестве дополнительных опор для повышения
@@ -9,4 +9,4 @@ const SlideTrainer_13 = () => {
     )
 };
 
-export default SlideTrainer_13;
+export default SlideTrainer_14;

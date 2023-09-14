@@ -1,6 +1,6 @@
 import React from "react";
 
-const SlideTrainer_13 = () => {
+const SlideTrainer_15 = () => {
     return (
         <>
             <p>Типы токарных приспособлений:</p>
@@ -16,4 +16,4 @@ const SlideTrainer_13 = () => {
     )
 };
 
-export default SlideTrainer_13;
+export default SlideTrainer_15;

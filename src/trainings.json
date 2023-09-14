@@ -77,6 +77,26 @@
     {
         "title": "Изучите типы основных режущих инструментов для токарных работ",
         "image": "PartingCutter.jpg",
-        "component": ""
+        "component": "trainer_1/slide_16"
+    },
+    {
+        "title": "Изучите типы основных режущих инструментов для токарных работ",
+        "image": "PassingCutter.jpg",
+        "component": "trainer_1/slide_17"
+    },
+    {
+        "title": "Изучите типы основных режущих инструментов для токарных работ",
+        "image": "ScoringCutter.jpg",
+        "component": "trainer_1/slide_18"
+    },
+    {
+        "title": "Изучите типы основных режущих инструментов для токарных работ",
+        "image": "GrooveCutter.jpg",
+        "component": "trainer_1/slide_19"
+    },
+    {
+        "title": "Изучите конструкции основных технологических приспособлений для токарных станков",
+        "image": "BoringCutter.jpg",
+        "component": "trainer_1/slide_20"
     }
 ]
