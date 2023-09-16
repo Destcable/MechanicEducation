@@ -1,6 +1,6 @@
 import React from "react";
 
-const SlideTrainer_19 = () => {
+const SlideTrainer_20 = () => {
     return (
         <>
             <em>расточные резцы,</em> применяют для обработки глухих и сквозных отверстий
@@ -8,4 +8,4 @@ const SlideTrainer_19 = () => {
     )
 };
 
-export default SlideTrainer_19;
+export default SlideTrainer_20;

@@ -95,8 +95,33 @@
         "component": "trainer_1/slide_19"
     },
     {
-        "title": "Изучите конструкции основных технологических приспособлений для токарных станков",
+        "title": "Изучите типы основных режущих инструментов для токарных работ",
         "image": "BoringCutter.jpg",
         "component": "trainer_1/slide_20"
+    },
+    {
+        "title":"Изучите типы основных режущих инструментов для токарных работ",
+        "image": "Drill.jpg",
+        "component": "trainer_1/slide_21"
+    },
+    {
+        "title": "Выберите типы режущих инструментов для токарной операции по изготовлению заданной детали",
+        "image": null,
+        "component": "trainer_1/slide_22"
+    },
+    {
+        "title": "Изучите основные типы измерительных инструментов для контроля размеров",
+        "image": "Calipers.jpg",
+        "component": "trainer_1/slide_23"
+    }, 
+    {
+        "title": "Изучите основные типы измерительных инструментов для контроля размеров",
+        "image": "DigitalMicrometer.jpg",
+        "component": "trainer_1/slide_24"
+    },
+    {
+        "title":"Изучите основные типы измерительных инструментов для контроля размеров",
+        "image": "CaliberBracket.jpg",
+        "component": "trainer_1/slide_25"
     }
 ]
