@@ -4,15 +4,14 @@ import HomeButton from "../../components/homeButton/homeButton";
 import Tringle from "../../components/tringle/tringle";
 import ExerciseTrainer from "../../components/exerciseTrainer/exerciseTrainer";
 import ArrowRight from "../../components/arrowRight/arrowRight";
-import trainings from "../../trainings.json";
 import ArrowLeft from "../../components/arrowLeft/arrowLeft";
 
-const TraningPage = ({ title }) => {
+const TraningPage = ({ title, traning }) => {
 
     const [countActiveTab, setActiveTab] = useState(0);
 
     function setCountActiveTab(count) {
-        if (count < trainings.length && count >= 0) {
+        if (count < traning.length && count >= 0) {
             return setActiveTab(count);
         }
 
@@ -46,7 +45,7 @@ const TraningPage = ({ title }) => {
                             <div className="container_header">
                                 <div className="flex align-center space-between">
                                     <p className="container_title">Виртуальный тренажер</p>
-                                    <p className="counter_exercise">{(countActiveTab + 1) + "/" + trainings.length}</p>
+                                    <p className="counter_exercise">{(countActiveTab + 1) + "/" + traning.length}</p>
                                 </div>
                                 <div className="flex tab_exercise_container">
                                     <div className="active_tab"></div>
@@ -84,9 +83,9 @@ const TraningPage = ({ title }) => {
                             </div>
                             <div className="container-exercise">
                                 <ExerciseTrainer
-                                    title={trainings[countActiveTab].title}
-                                    image={trainings[countActiveTab].image}
-                                    text={trainings[countActiveTab].component}
+                                    title={traning[countActiveTab].title}
+                                    image={traning[countActiveTab].image}
+                                    text={traning[countActiveTab].component}
                                 >
                                 </ExerciseTrainer>
 

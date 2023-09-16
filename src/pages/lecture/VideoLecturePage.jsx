@@ -6,7 +6,7 @@ import { Player } from "video-react";
 import 'video-react/dist/video-react.css';
 import '../../styles/main.css';
 
-const LecturePage = ({ title }) => {
+const VideoLecturePage = ({ title }) => {
     return (
         <>
             <Header
@@ -47,4 +47,4 @@ const LecturePage = ({ title }) => {
     )
 }
 
-export default LecturePage;
+export default VideoLecturePage;

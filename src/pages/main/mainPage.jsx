@@ -14,10 +14,10 @@ const MainPage = ({ title }) => {
 
             <div className="main-block flex justify-center wrap">
                 <Card
-                    lineName="Анимационная видеолекция"
+                    lineName="Динамическая инфографика"
                     title="Освоение нового материала"
                     description="Оборудование по обработке заготовок"
-                    href="/lecture"
+                    href="/infoLecture"
                 />
 
                 <Card
