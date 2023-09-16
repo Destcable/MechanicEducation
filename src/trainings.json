@@ -123,5 +123,35 @@
         "title":"Изучите основные типы измерительных инструментов для контроля размеров",
         "image": "CaliberBracket.jpg",
         "component": "trainer_1/slide_25"
+    },
+    { 
+        "title":"Изучите основные типы измерительных инструментов для контроля размеров",
+        "image": "Calipers.jpeg",
+        "component": "trainer_1/slide_26"
+    },
+    {
+        "title": "Изучите основные типы измерительных инструментов для контроля размеров",
+        "image": "VernierDepth.jpg",
+        "component": "trainer_1/slide_27"
+    },
+    {
+        "title": "Изучите основные типы измерительных инструментов для контроля размеров",
+        "image": "MicrometricDepth.jpg",
+        "component": "trainer_1/slide_28"
+    },
+    {
+        "title": "Изучите основные типы измерительных инструментов для контроля размеров",
+        "image": "MicrometricBore.jpg",
+        "component": "trainer_1/slide_29"
+    },
+    { 
+        "title": "Изучите основные типы измерительных инструментов для контроля размеров",
+        "image": "PlugGauge.jpeg",
+        "component": "trainer_1/slide_30"
+    },
+    { 
+        "title": "Выберите типы режущих инструментов для токарной операции по изготовлению заданной детали",
+        "image": null,
+        "component": "trainer_1/slide_31"
     }
 ]
