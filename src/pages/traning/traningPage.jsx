@@ -56,6 +56,30 @@ const TraningPage = ({ title }) => {
                                     <div className="tab"></div>
                                     <div className="tab"></div>
                                     <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
+                                    <div className="tab"></div>
                                 </div>
                             </div>
                             <div className="container-exercise">
