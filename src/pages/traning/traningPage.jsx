@@ -9,6 +9,7 @@ import ArrowLeft from "../../components/arrowLeft/arrowLeft";
 const TraningPage = ({ title, traning }) => {
 
     const [countActiveTab, setActiveTab] = useState(0);
+    const tabs = [];
 
     function setCountActiveTab(count) {
         if (count < traning.length && count >= 0) {
@@ -24,6 +25,10 @@ const TraningPage = ({ title, traning }) => {
 
     function takeCountTab() {
         return setCountActiveTab(countActiveTab - 1);
+    }
+
+    for (let index = 0; index < traning.length; index++) {
+        tabs.push(<div key={index} className="tab"></div>);
     }
 
     return (
@@ -48,37 +53,10 @@ const TraningPage = ({ title, traning }) => {
                                     <p className="counter_exercise">{(countActiveTab + 1) + "/" + traning.length}</p>
                                 </div>
                                 <div className="flex tab_exercise_container">
-                                    <div className="active_tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
-                                    <div className="tab"></div>
+                                    {tabs}
+                                    
+                                    {/* <div className="active_tab"></div> */}
+                                    
                                 </div>
                             </div>
                             <div className="container-exercise">
