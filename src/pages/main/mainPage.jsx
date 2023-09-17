@@ -17,7 +17,7 @@ const MainPage = ({ title }) => {
                     lineName="Динамическая инфографика"
                     title="Освоение нового материала"
                     description="Оборудование по обработке заготовок"
-                    href="/infoLecture"
+                    href="/infoLecture_4"
                 />
 
                 <Card
@@ -30,7 +30,7 @@ const MainPage = ({ title }) => {
                 <Card
                     lineName="Интерактивная мини-игра"
                     title={"Диагностика приобретенных знаний, умений, навыков"}
-                    description="Станочные приспособления"
+                    description="Станочные при способления"
                     href="/lecture"
                 />
             </div>

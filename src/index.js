@@ -6,7 +6,9 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import TraningPage from './pages/traning/traningPage';
 import trainings_1 from "./tranings_1.json";
 import trainings_2 from "./tranings_2.json";
-
+import trainings_3 from "./tranings_3.json";
+import trainings_4 from "./tranings_4.json";
+import trainings_5 from "./tranings_5.json";
 
 const router = createBrowserRouter([
   {
@@ -22,8 +24,20 @@ const router = createBrowserRouter([
     element: <TraningPage traning={trainings_1} title="Машиностроение" />
   },
   {
-    path: "/infoLecture",
+    path: "/infoLecture_1",
     element: <TraningPage traning={trainings_2} title="Машиностроение" />
+  },
+  {
+    path: "/infoLecture_2",
+    element: <TraningPage traning={trainings_3} title="Машиностроение" />
+  },
+  {
+    path: "/infoLecture_3",
+    element: <TraningPage traning={trainings_4} title="Машиностроение" />
+  },
+  {
+    path: "/infoLecture_4",
+    element: <TraningPage traning={trainings_5} title="Машиностроение" />
   }
 ]);
 
