@@ -49,7 +49,7 @@ const TraningPage = ({ title, traning }) => {
                         <div className="container1">
                             <div className="container_header">
                                 <div className="flex align-center space-between">
-                                    <p className="container_title">Виртуальный тренажер</p>
+                                    <p className="container_title">Динамическая инфографика</p>
                                     <p className="counter_exercise">{(countActiveTab + 1) + "/" + traning.length}</p>
                                 </div>
                                 <div className="flex tab_exercise_container">
