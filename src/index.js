@@ -9,6 +9,7 @@ import trainings_2 from "./tranings_2.json";
 import trainings_3 from "./tranings_3.json";
 import trainings_4 from "./tranings_4.json";
 import trainings_5 from "./tranings_5.json";
+import trainings_lecture from "./"
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/traning",
     element: <TraningPage traning={trainings_1} title="Машиностроение" />
+  },
+  {
+    path: "/trainingLecture",
+    element: <TraningPage traning={trainings_5} title="Машиностроение" />
   },
   {
     path: "/infoLecture_1",
@@ -38,7 +43,8 @@ const router = createBrowserRouter([
   {
     path: "/infoLecture_4",
     element: <TraningPage traning={trainings_5} title="Машиностроение" />
-  }
+  },
+
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
