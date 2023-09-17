@@ -9,7 +9,7 @@ import trainings_2 from "./tranings_2.json";
 import trainings_3 from "./tranings_3.json";
 import trainings_4 from "./tranings_4.json";
 import trainings_5 from "./tranings_5.json";
-import trainings_lecture from "./tranings_lecture.json"
+import LectureMainPage from './pages/lectureMain/LectureMainPage';
 
 const router = createBrowserRouter([
   {
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/trainingLecture",
-    element: <TraningPage traning={trainings_lecture} title="Машиностроение" />
+    element: <LectureMainPage title="Машиностроение" />
   },
   {
     path: "/infoLecture_1",
