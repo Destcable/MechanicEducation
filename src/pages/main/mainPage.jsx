@@ -17,7 +17,7 @@ const MainPage = ({ title }) => {
                     lineName="Динамическая инфографика"
                     title="Освоение нового материала"
                     description="Оборудование по обработке заготовок"
-                    href="/infoLecture_4"
+                    href="/trainingLecture"
                 />
 
                 <Card
