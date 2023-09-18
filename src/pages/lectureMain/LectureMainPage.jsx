@@ -38,7 +38,7 @@ const LectureMainPage = ({ title }) => {
                                         Назначение, виды и классификация металлорежущего оборудования
                                     </div>
                                     <div style={{ display: "flex", alignItems: "center" }} onClick={() => navigate('/infoLecture_2')}>
-                                        <img src={ViborStankov} width="300px" />
+                                        <img src={ViborStankov} width="270px" />
                                         Выбор металлорежущего оборудования для реализации технологического процесса
                                     </div>
                                     <div style={{ display: "flex", alignItems: "center" }} onClick={() => navigate('/infoLecture_3')}>

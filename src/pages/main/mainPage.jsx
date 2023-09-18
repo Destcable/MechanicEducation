@@ -31,7 +31,7 @@ const MainPage = ({ title }) => {
                     lineName="Интерактивная мини-игра"
                     title={"Диагностика приобретенных знаний, умений, навыков"}
                     description="Станочные при способления"
-                    href="/lecture"
+                    href="/quest_1"
                 />
             </div>
 

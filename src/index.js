@@ -9,6 +9,7 @@ import trainings_2 from "./tranings_2.json";
 import trainings_3 from "./tranings_3.json";
 import trainings_4 from "./tranings_4.json";
 import trainings_5 from "./tranings_5.json";
+import quest_1 from "./quest_1.json";
 import LectureMainPage from './pages/lectureMain/LectureMainPage';
 
 const router = createBrowserRouter([
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
     path: "/infoLecture_4",
     element: <TraningPage traning={trainings_5} title="Машиностроение" />
   },
+  {
+    path: "/quest_1",
+    element: <TraningPage traning={quest_1} title="Машиностроение" />
+  }
 
 ]);
 
