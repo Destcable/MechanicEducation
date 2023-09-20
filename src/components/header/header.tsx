@@ -31,7 +31,7 @@ const Header = (HeaderObj: HeaderProps) => {
             <div className="d-flex flex-column ml-90 w-100">
                 <div className="d-flex flex-wrap w-100 justify-content-between">
                     <div className="pt-2">
-                        <h2 className="white">{HeaderObj.title}</h2></div>
+                        <h2 className="text-white">{HeaderObj.title}</h2></div>
                     <div className="buttons flex align-center mt-10">
                         <a href="#ex1" className="btn-nav btn-contacts">Информация о контенте</a>
                         <a href="#ex2" className="btn-nav btn-words">Ключевые слова</a>
