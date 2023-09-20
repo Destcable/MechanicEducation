@@ -11,7 +11,8 @@ const Card = ({href, title, description, lineName}) => {
     };
 
     return(
-        <div className="card flex col ">
+        <>
+        <div className="card flex col">
             <ProgressBar lineName={lineName}/>
             <div className="train-block col">
                 <div className="shape-card shape-color_1 mb-30">
@@ -29,7 +30,9 @@ const Card = ({href, title, description, lineName}) => {
                     </div></a>
                 </div>
             </div>
-        </div>
+        </div> 
+        </>
+
     )
 }
 
