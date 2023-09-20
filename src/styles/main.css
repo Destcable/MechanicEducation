@@ -40,14 +40,6 @@ p{
     width: 100%;
     min-height: 54px;
 }
-.header-second{
-    width: 100%;
-    background-color: #43698F;
-    height: 54px;
-    position: absolute;
-    top: 54px;
-
-}
 .white{
     color: white;
     

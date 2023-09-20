@@ -29,6 +29,14 @@ const Header = (HeaderObj: HeaderProps) => {
         padding:"14px 32px 25px"
     }
 
+    const styleHeaderSecond: CSSProperties = { 
+        position: "absolute",
+        width: "100%",
+        top: "54px",
+        height: "54px",
+        backgroundColor: "#43698F",
+    }
+
     return (
         <header className="d-flex flex-column" style={styleHeader}>
         <div className="container d-flex flex-row">
@@ -40,17 +48,17 @@ const Header = (HeaderObj: HeaderProps) => {
                     <div className="pt-2">
                         <h2 className="text-white">{HeaderObj.title}</h2></div>
                     <div className="d-flex align-items-center mt-10">
-                        <a className="btn-contacts text-white" style={styleButton}>Информация о контенте</a>
-                        <a className="btn-words text-white" style={styleButton}>Ключевые слова</a>
+                        <a href='#' className="btn-contacts text-white" style={styleButton}>Информация о контенте</a>
+                        <a href='#' className="btn-words text-white" style={styleButton}>Ключевые слова</a>
                     </div>
                     
                 </div>
-                <div className="header-second_content">
+                <div>
                     <h3 className="subtitle_header">Выбор оборудования, инструмента и технологической оснастки</h3>
                  </div>
             </div>
         </div>
-            <div className="header-second"></div>      
+            <div style={styleHeaderSecond}></div>      
     </header>
     )
 }
