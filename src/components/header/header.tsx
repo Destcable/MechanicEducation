@@ -22,6 +22,13 @@ const Header = (HeaderObj: HeaderProps) => {
         marginTop: "20px"
     }
 
+    const styleButton: CSSProperties = { 
+        borderRadius: "15px",
+        fontWeight: "bold", 
+        fontSize: "14px", 
+        padding:"14px 32px 25px"
+    }
+
     return (
         <header className="d-flex flex-column" style={styleHeader}>
         <div className="container d-flex flex-row">
@@ -33,8 +40,8 @@ const Header = (HeaderObj: HeaderProps) => {
                     <div className="pt-2">
                         <h2 className="text-white">{HeaderObj.title}</h2></div>
                     <div className="buttons flex align-center mt-10">
-                        <a href="#ex1" className="btn-nav btn-contacts">Информация о контенте</a>
-                        <a href="#ex2" className="btn-nav btn-words">Ключевые слова</a>
+                        <a className="btn-contacts text-white" style={styleButton}>Информация о контенте</a>
+                        <a className="btn-words text-white" style={styleButton}>Ключевые слова</a>
                     </div>
                     
                 </div>
