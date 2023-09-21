@@ -4,6 +4,7 @@ import Card from '../../components/card/card';
 import Tringle from '../../components/tringle/tringle';
 import Footer from '../../components/footer/footer';
 import Modal from "../../components/modal/modal";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const MainPage = ({ title }) => {
@@ -13,7 +14,7 @@ const MainPage = ({ title }) => {
                 title={title}
             />
 
-            <div className="main-block flex justify-center wrap">
+            <div className="main-block d-flex justify-center wrap">
                 <Card
                     lineName="Динамическая инфографика"
                     title="Освоение нового материала"

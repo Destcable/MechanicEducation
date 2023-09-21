@@ -19,20 +19,20 @@ const LectureMainPage = ({ title }) => {
                 title={title}
             />
 
-            <div className="bg_color_block flex col ">
+            <div className="bg_color_block d-flex flex-column ">
 
 
-                <div className="flex justify-center align-center">
-                    <div className="content1 flex col max-content w100">
+                <div className="d-flex justify-center align-center">
+                    <div className="content1 d-flex flex-column max-content w100">
                         <HomeButton href="/" />
                         <div className="container5">
                             <div className="container_header">
-                                <div className="flex align-center space-between">
+                                <div className="d-flex align-center space-between">
                                     <p className="container_title"> Динамическая инфографика </p>
                                 </div>
                             </div>
                             <div className="container-exercise">
-                                <div className="flex justify-center align-center" style={{ flexWrap: "wrap"}}>
+                                <div className="d-flex justify-center align-center" style={{ flexWrap: "wrap"}}>
                                     <div style={{ display: "flex", alignItems: "center" }} onClick={() => navigate('/infoLecture_1')}>
                                         <img src={VidOborudovania} width="300px" />
                                         Назначение, виды и классификация металлорежущего оборудования

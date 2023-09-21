@@ -10,7 +10,7 @@ const HomeButton = ({href}) => {
     };
 
     return ( 
-        <div className="flex align-center justify-center mt-30">
+        <div className="d-flex align-center justify-center mt-30">
             <img src={right_arrow} alt="arrow" className="mr-10" />
             <a href="#" onClick={handleClickGoPage} className="text_home"> На главную</a>
         </div>

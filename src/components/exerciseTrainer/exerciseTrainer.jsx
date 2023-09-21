@@ -25,11 +25,11 @@ const ExerciseTrainer = ({ title, image, text }) => {
 
     return (
         <>
-            <div className="flex space-between">
+            <div className="d-flex space-between">
                 <p className="text-zadanie">{title}</p>
             </div>
 
-            <div className="flex container-filling align-center justify-center">
+            <div className="d-flex container-filling align-center justify-center">
                 {image &&
                     <div className="img-exercise">
                         {image &&
@@ -37,7 +37,7 @@ const ExerciseTrainer = ({ title, image, text }) => {
                         }
                     </div>
                 }
-                <div className="flex col">
+                <div className="d-flex col">
                     <div className='text-exercise'>
                         {textSrc}
                     </div>
