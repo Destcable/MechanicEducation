@@ -60,7 +60,6 @@ const Header = (HeaderObj: HeaderProps) => {
                             <a href='#' className="btn-contacts text-white" style={styleButton}>Информация о контенте</a>
                             <a href='#' className="btn-words text-white" style={styleButton}>Ключевые слова</a>
                         </div>
-
                     </div>
                     <div>
                         <h3 style={styleSubtitle}>Выбор оборудования, инструмента и технологической оснастки</h3>
