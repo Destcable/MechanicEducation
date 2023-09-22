@@ -146,10 +146,6 @@ footer{
     font-weight: normal;
 }
 
-.shape-card{
-height: 150px;
-width: 100%;
-}
 .shape-color_1{
  background-image: url("../components/card/img/card_2.png");
  background-repeat: no-repeat;
@@ -176,9 +172,6 @@ width: 100%;
 }
 .mb-10{
 margin-bottom: 10px;
-}
-.mb-30{
-    margin-bottom: 30px;
 }
 .ml-90{
     margin-left: 90px;

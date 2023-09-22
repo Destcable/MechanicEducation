@@ -25,6 +25,10 @@ const Card = (CardObj: CardProps) => {
         position: "relative",
     }
 
+    const styleShape: CSSProperties = {
+        height: "150px",
+    }
+
     const handleClickGoPage = () => {
         navigate(CardObj.href);
     };
@@ -34,7 +38,7 @@ const Card = (CardObj: CardProps) => {
             <div className="d-flex flex-column" style={styleCard}>
                 <ProgressBar lineName={CardObj.lineName} />
                 <div className="flex-column" style={styleBlock}>
-                    <div className="shape-card shape-color_1 mb-30">
+                    <div className="w-100 shape-color_1 mb-4" style={styleShape}>
                         <p className="card-text_main">{CardObj.title}</p>
                     </div>
                     <p className="center">{CardObj.description}</p>
