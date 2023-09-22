@@ -12,14 +12,11 @@ const Header = (HeaderObj: HeaderProps) => {
     const [modalActive, setModalActive] = useState(false);
 
     const styleHeader: CSSProperties = {
-        alignItems: "center",
-        width: "100%",
         height: "104px",
         backgroundColor: "#3B5571"
     }
 
     const styleLogo: CSSProperties = {
-        position: "absolute",
         zIndex: "3",
         marginTop: "20px"
     }
@@ -32,7 +29,6 @@ const Header = (HeaderObj: HeaderProps) => {
     }
 
     const styleHeaderSecond: CSSProperties = {
-        position: "absolute",
         width: "100%",
         top: "54px",
         height: "54px",
@@ -49,9 +45,9 @@ const Header = (HeaderObj: HeaderProps) => {
     }
 
     return (
-        <header className="d-flex flex-column" style={styleHeader}>
+        <header className="d-flex flex-column align-items-center w-100" style={styleHeader}>
             <div className="container d-flex flex-row">
-                <div style={styleLogo}>
+                <div className="position-absolute" style={styleLogo}>
                     <Logo />
                 </div>
                 <div className="d-flex flex-column ml-90 w-100">
@@ -79,7 +75,7 @@ const Header = (HeaderObj: HeaderProps) => {
                     </div>
                 </div>
             </div>
-            <div style={styleHeaderSecond}></div>
+            <div className="position-absolute" style={styleHeaderSecond}></div>
             <Modal active={modalActive} setActive={setModalActive} />
         </header>
     )
