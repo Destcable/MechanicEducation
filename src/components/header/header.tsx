@@ -57,8 +57,8 @@ const Header = (HeaderObj: HeaderProps) => {
                         <div className="pt-2">
                             <h2 className="text-white">{HeaderObj.title}</h2></div>
                         <div className="d-flex align-items-center mt-10">
-                            <a href='#' className="btn-contacts text-white" style={styleButton}>Информация о контенте</a>
-                            <a href='#' className="btn-words text-white" style={styleButton}>Ключевые слова</a>
+                            <a href='#' className="btn-contacts text-white text-decoration-none" style={styleButton}>Информация о контенте</a>
+                            <a href='#' className="btn-words text-white text-decoration-none" style={styleButton}>Ключевые слова</a>
                         </div>
                     </div>
                     <div>
