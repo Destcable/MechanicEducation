@@ -1,8 +1,9 @@
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, useState } from "react";
 import ProgressBar from "../progressBar/progressBar";
 import { useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../styles/main.css';
+import Modal from "../modal/modal";
 
 interface CardProps {
     href: string,
@@ -12,6 +13,7 @@ interface CardProps {
 }
 
 const Card = (CardObj: CardProps) => {
+    const [modalActive, setModalActive] = useState(true);
     const navigate = useNavigate();
 
     const styleCard: CSSProperties = {
@@ -54,6 +56,7 @@ const Card = (CardObj: CardProps) => {
                     </div>
                 </div>
             </div>
+            <Modal active={modalActive} setActive={setModalActive} />
         </>
 
     )
