@@ -23,7 +23,7 @@ const LectureMainPage = ({ title }) => {
 
 
                 <div className="d-flex justify-center align-center">
-                    <div className="content1 d-flex flex-column max-content w100">
+                    <div className="content1 d-flex flex-column max-content w-100">
                         <HomeButton href="/" />
                         <div className="container5">
                             <div className="container_header">

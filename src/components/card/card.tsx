@@ -42,7 +42,7 @@ const Card = (CardObj: CardProps) => {
                         <p className="card-text_main">{CardObj.title}</p>
                     </div>
                     <p className="center">{CardObj.description}</p>
-                    <div className="d-flex w100 justify-center button_train ">
+                    <div className="d-flex w-100 justify-center button_train ">
                         <a href="#">
                             <div className="d-flex btn btn_info align-center">Справка
                                 {/* <img src="img/papersheet.png" alt="papersheet"/> */}

@@ -164,9 +164,6 @@ footer{
     font-weight: bold;
     padding: 20px 0 0 15px;
 }
-.card{
-    margin-bottom: 35px;
-}
 .mb-5{
     margin-bottom: 5px !important;
 }
@@ -199,9 +196,6 @@ margin-bottom: 10px;
 }
 .space-between{
     justify-content: space-between;
-}
-.w100{
-    width: 100%;
 }
 .triangle_img{
     height: 114px;

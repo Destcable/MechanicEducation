@@ -41,7 +41,7 @@ const TraningPage = ({ title, traning }) => {
 
 
                 <div className="d-flex justify-center align-center">
-                    <div className="content1 flex flex-column max-content w100">
+                    <div className="content1 flex flex-column max-content w-100">
                         <HomeButton
                             href="/"
                         />
