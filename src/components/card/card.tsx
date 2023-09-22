@@ -1,9 +1,9 @@
 import React, { CSSProperties, useState } from "react";
-import ProgressBar from "../progressBar/progressBar";
 import { useNavigate } from "react-router-dom";
+import ProgressBar from "../progressBar/progressBar";
+import Modal from "../modal/modal";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../styles/main.css';
-import Modal from "../modal/modal";
 
 interface CardProps {
     href: string,

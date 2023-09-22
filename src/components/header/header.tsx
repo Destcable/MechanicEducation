@@ -1,13 +1,15 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, useState } from 'react';
 import Logo from '../logo/logo';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../styles/main.css';
+import Modal from '../modal/modal';
 
 interface HeaderProps {
     title: string;
 }
 
 const Header = (HeaderObj: HeaderProps) => {
+    const [modalActive, setModalActive] = useState(false);
 
     const styleHeader: CSSProperties = {
         alignItems: "center",
@@ -55,10 +57,21 @@ const Header = (HeaderObj: HeaderProps) => {
                 <div className="d-flex flex-column ml-90 w-100">
                     <div className="d-flex flex-wrap w-100 justify-content-between">
                         <div className="pt-2">
-                            <h2 className="text-white">{HeaderObj.title}</h2></div>
+                            <h2 className="text-white">{HeaderObj.title}</h2>
+                        </div>
                         <div className="d-flex align-items-center mt-10">
-                            <a href='#' className="btn-contacts text-white text-decoration-none" style={styleButton}>Информация о контенте</a>
-                            <a href='#' className="btn-words text-white text-decoration-none" style={styleButton}>Ключевые слова</a>
+                            <a href='#' 
+                                className="btn-contacts text-white text-decoration-none" 
+                                onClick={() => setModalActive(true)}
+                                style={styleButton}>
+                                Информация о контенте
+                            </a>
+                            <a href='#' 
+                                className="btn-words text-white text-decoration-none" 
+                                onClick={() => setModalActive(true)}
+                                style={styleButton}>
+                                    Ключевые слова
+                            </a>
                         </div>
                     </div>
                     <div>
@@ -67,6 +80,7 @@ const Header = (HeaderObj: HeaderProps) => {
                 </div>
             </div>
             <div style={styleHeaderSecond}></div>
+            <Modal active={modalActive} setActive={setModalActive} />
         </header>
     )
 }
