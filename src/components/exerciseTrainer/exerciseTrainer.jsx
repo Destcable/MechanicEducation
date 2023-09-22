@@ -37,7 +37,7 @@ const ExerciseTrainer = ({ title, image, text }) => {
                         }
                     </div>
                 }
-                <div className="d-flex col">
+                <div className="d-flex flex-column">
                     <div className='text-exercise'>
                         {textSrc}
                     </div>

@@ -37,11 +37,11 @@ const TraningPage = ({ title, traning }) => {
                 title={title}
             />
 
-            <div className="bg_color_block flex col ">
+            <div className="bg_color_block flex flex-column ">
 
 
-                <div className="flex justify-center align-center">
-                    <div className="content1 flex col max-content w100">
+                <div className="d-flex justify-center align-center">
+                    <div className="content1 flex flex-column max-content w100">
                         <HomeButton
                             href="/"
                         />
@@ -78,15 +78,15 @@ const TraningPage = ({ title, traning }) => {
                     </div>
 
                 </div>
-                <div className="flex justify-center align-center">
+                <div className="d-flex justify-center align-center">
                     <div className="container2 hide">
                         <div className="container_header">
-                            <div className="flex align-center justify-center">
+                            <div className="d-flex align-center justify-center">
                                 <p className="container_title text-center"></p>
                                 <div className="counter_exercise" id="pages"></div>
                             </div>
                         </div>
-                        <div className="flex center-results col mt-100 align-center justify-center">
+                        <div className="d-flex center-results flex-column mt-100 align-center justify-center">
 
                             <p className="text-center">Вы завершили прохождение виртуального тренажера</p>
                             {/* <p class="text-center"><b><a href="../index.html">Нажмите, чтобы вернуться на главную</b></p> */}
