@@ -13,7 +13,7 @@ interface CardProps {
 }
 
 const Card = (CardObj: CardProps) => {
-    const [modalActive, setModalActive] = useState(true);
+    const [modalActive, setModalActive] = useState(false);
     const navigate = useNavigate();
 
     const styleCard: CSSProperties = {

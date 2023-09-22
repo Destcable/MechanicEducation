@@ -19,18 +19,23 @@ const Modal = (ModalObj: ModalProps) => {
         top: 0,
         left: 0,
         zIndex: 5,
+        transform: "scale(0)",
+    };
+
+    const styleModalActive: CSSProperties = { 
+        transform: "scale(1)",
     };
 
     const styleModalContext: CSSProperties = {
         padding: "20px",
         backgroundColor: "white",
-    }
+    };
 
     return (
         <>
             <div
                 className="d-flex align-items-center justify-content-center position-fixed"
-                style={Object.assign(styleModal)}
+                style={Object.assign(ModalObj.active === true ? {...styleModal, ...styleModalActive} : styleModal)}
                 onClick={handleClose} >
 
                 <div style={styleModalContext} onClick={e => e.stopPropagation()}>
