@@ -8,7 +8,7 @@ interface CardProps {
     href: string,
     title?: string,
     description?: string,
-    lineName?: string
+    lineName: string
 }
 
 const Card = (CardObj: CardProps) => {

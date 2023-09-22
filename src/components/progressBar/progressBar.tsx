@@ -2,11 +2,15 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../styles/main.css';
 
-const ProgressBar = ({lineName}) => {
+interface ProgressBarProps { 
+    lineName: string,
+}
+
+const ProgressBar = (ProgressObj: ProgressBarProps) => {
     return (
         <div className="d-flex mb-10">
             <div className="line_1"></div>
-            <p className="card-text ml-20">{lineName}</p>
+            <p className="card-text ml-20">{ProgressObj.lineName}</p>
         </div>
     )
 }
