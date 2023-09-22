@@ -2,11 +2,15 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import right_arrow from './img/right_arrow.png';
 
-const HomeButton = ({href}) => {
+interface HomeButtonProps { 
+    href: string
+}
+
+const HomeButton = (HomeObj: HomeButtonProps) => {
     const navigate = useNavigate();
 
     const handleClickGoPage = () => { 
-        navigate(href);
+        navigate(HomeObj.href);
     };
 
     return ( 
