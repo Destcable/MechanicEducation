@@ -12,33 +12,31 @@ const Modal = (ModalObj: ModalProps) => {
 
     const handleClose = () => ModalObj.setActive(false);
 
-    const styleModal: CSSProperties = { 
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+    const styleModal: CSSProperties = {
         height: "100vh",
         width: "100vw",
         backgroundColor: "rgba(0, 0, 0, 0.2)",
-        position: "fixed",
         top: 0,
         left: 0,
         zIndex: 5,
     };
 
-    const styleModalContext: CSSProperties = { 
+    const styleModalContext: CSSProperties = {
         padding: "20px",
         backgroundColor: "white",
-        height: "200px",
-        width: "400px",
     }
 
     return (
         <>
-        <div style={styleModal}>
-            <div style={styleModalContext}>
+            <div
+                className="d-flex align-items-center justify-content-center position-fixed"
+                style={Object.assign(styleModal)}
+                onClick={handleClose} >
 
+                <div style={styleModalContext} onClick={e => e.stopPropagation()}>
+
+                </div>
             </div>
-        </div>
         </>
     )
 };
