@@ -46,12 +46,13 @@ const Card = (CardObj: CardProps) => {
                     <p className="center">{CardObj.description}</p>
                     <div className="d-flex w-100 justify-center button_train ">
                         <a href="#">
-                            <div className="d-flex btn btn_info align-center">Справка
-                                {/* <img src="img/papersheet.png" alt="papersheet"/> */}
+                            <div
+                                className="d-flex btn btn_info align-center"
+                                onClick={() => setModalActive(true)}>
+                                    Справка
                             </div>
                         </a>
                         <a href="#" onClick={handleClickGoPage}><div className="d-flex btn btn_exe align-center">Задание
-                            {/* <img src="img/Polygon 1.png" alt="papersheet"/> */}
                         </div></a>
                     </div>
                 </div>
