@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import type { TraningData } from "../../types/Traning";
 import Header from "../../components/header/header";
 import HomeButton from "../../components/homeButton/homeButton";
 import Tringle from "../../components/tringle/tringle";
@@ -8,7 +9,7 @@ import ArrowLeft from "../../components/arrowLeft/arrowLeft";
 
 interface TraningPageProps { 
     title: string,
-    traning: []
+    traning: [TraningData]
 }
 
 const TraningPage = (props: TraningPageProps) => {
