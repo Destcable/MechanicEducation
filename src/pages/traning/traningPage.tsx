@@ -6,13 +6,18 @@ import ExerciseTrainer from "../../components/exerciseTrainer/exerciseTrainer";
 import ArrowRight from "../../components/arrowRight/arrowRight";
 import ArrowLeft from "../../components/arrowLeft/arrowLeft";
 
-const TraningPage = ({ title, traning }) => {
+interface TraningPageProps { 
+    title: string,
+    traning: []
+}
+
+const TraningPage = (props: TraningPageProps) => {
 
     const [countActiveTab, setActiveTab] = useState(0);
     const tabs = [];
 
-    function setCountActiveTab(count) {
-        if (count < traning.length && count >= 0) {
+    function setCountActiveTab(count: number) {
+        if (count < props.traning.length && count >= 0) {
             return setActiveTab(count);
         }
 
@@ -27,14 +32,14 @@ const TraningPage = ({ title, traning }) => {
         return setCountActiveTab(countActiveTab - 1);
     }
 
-    for (let index = 0; index < traning.length; index++) {
+    for (let index = 0; index < props.traning.length; index++) {
         tabs.push(<div key={index} className="tab"></div>);
     }
 
     return (
         <>
             <Header
-                title={title}
+                title={props.title}
             />
 
             <div className="bg_color_block flex flex-column ">
@@ -50,7 +55,7 @@ const TraningPage = ({ title, traning }) => {
                             <div className="container_header">
                                 <div className="flex align-center space-between">
                                     <p className="container_title">Динамическая инфографика</p>
-                                    <p className="counter_exercise">{(countActiveTab + 1) + "/" + traning.length}</p>
+                                    <p className="counter_exercise">{(countActiveTab + 1) + 12}</p>
                                 </div>
                                 <div className="flex tab_exercise_container">
                                     {tabs}
@@ -61,9 +66,9 @@ const TraningPage = ({ title, traning }) => {
                             </div>
                             <div className="container-exercise">
                                 <ExerciseTrainer
-                                    title={traning[countActiveTab].title}
-                                    image={traning[countActiveTab].image}
-                                    text={traning[countActiveTab].component}
+                                    title={props.traning[countActiveTab].title}
+                                    image={props.traning[countActiveTab].image}
+                                    text={props.traning[countActiveTab].component}
                                 >
                                 </ExerciseTrainer>
 
