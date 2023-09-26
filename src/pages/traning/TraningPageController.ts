@@ -1,17 +1,19 @@
 import React from "react";
-const TraningPageController = (
+
+interface CountTabProps {
     countActiveTab: number, 
     setActiveTab: React.Dispatch<React.SetStateAction<number>>
-) => { 
-    console.log(countActiveTab);
-    console.log(setActiveTab);
-    return({
-        countActiveTab: countActiveTab
-    })
-};
-
-function addCountTab() {
-    return setCountActiveTab(countActiveTab + 1);
 }
 
-export default TraningPageController;
+
+
+function addCountTab(props: CountTabProps) {
+    return props.setActiveTab(props.countActiveTab + 1);
+}
+
+function takeCountTab(props: CountTabProps) {
+    return props.setActiveTab(props.countActiveTab - 1);
+}
+
+
+export default {addCountTab, takeCountTab};
