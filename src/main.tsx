@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import MainPage from './pages/main/mainPage';
-import VideoLecturePage from './pages/lecture/VideoLecturePage';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import TraningPage from './pages/traning/traningPage';
 import trainings_1 from "./tranings_1.json";
@@ -16,10 +15,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <MainPage title="Машиностроение" />,
-  },
-  {
-    path: "/videoLecture",
-    element: <VideoLecturePage title="Машиностроение" />,
   },
   {
     path: "/traning",

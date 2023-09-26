@@ -1,4 +1,3 @@
-import React from "react";
 import Header from '../../components/header/header';
 import Tringle from '../../components/tringle/tringle';
 import HomeButton from "../../components/homeButton/homeButton";
@@ -6,11 +5,15 @@ import { Player } from "video-react";
 import 'video-react/dist/video-react.css';
 import '../../styles/main.css';
 
-const VideoLecturePage = ({ title }) => {
+interface VideoLecturePageProps { 
+    title: string
+}
+
+const VideoLecturePage = (props: VideoLecturePageProps) => {
     return (
         <>
             <Header
-                title={title}
+                title={props.title}
             />
 
             <div className="bg_color_block d-flex flex-column ">
