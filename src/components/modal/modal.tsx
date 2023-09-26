@@ -28,6 +28,7 @@ const Modal = (ModalObj: ModalProps) => {
     };
 
     const styleModalContext: CSSProperties = {
+        maxWidth: "500px",
         padding: "20px",
         backgroundColor: "white",
     };
