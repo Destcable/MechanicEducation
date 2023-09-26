@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { TraningData } from "../../types/Traning";
+import TraningPageController from "./TraningPageController";
 import Header from "../../components/header/header";
 import HomeButton from "../../components/homeButton/homeButton";
 import Tringle from "../../components/tringle/tringle";
@@ -15,8 +16,9 @@ interface TraningPageProps {
 const TraningPage = (props: TraningPageProps) => {
 
     const [countActiveTab, setActiveTab] = useState(0);
+    const TraningController = TraningPageController(countActiveTab, setActiveTab)
     const tabs = [];
-    console.log(countActiveTab);
+
     function setCountActiveTab(count: number) {
         if (count < props.traning.length && count >= 0) {
             return setActiveTab(count);
@@ -58,7 +60,7 @@ const TraningPage = (props: TraningPageProps) => {
                                     <p className="container_title">Динамическая инфографика</p>
                                     <p className="counter_exercise">{`${countActiveTab + 1} / ` + props.traning.length}</p>
                                 </div>
-                                <div className="flex tab_exercise_container">
+                                <div className="d-flex tab_exercise_container">
                                     {tabs}
                                     
                                     {/* <div className="active_tab"></div> */}
