@@ -1,10 +1,14 @@
 import React from "react";
 import IconArrowRight from "./img/ArrowRight.png";
 
-const ArrowRight = ({onClick}) => {
+interface ArrowLeftProps { 
+    onClick: React.MouseEventHandler<HTMLButtonElement>
+}
+
+const ArrowRight = (props: ArrowLeftProps) => {
 
     return (
-        <button id="next-button" onClick={onClick}>
+        <button onClick={props.onClick}>
             <img src={IconArrowRight} />
         </button>
     )

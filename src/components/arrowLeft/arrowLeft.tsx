@@ -7,7 +7,7 @@ interface ArrowLeftProps {
 
 const ArrowLeft = (props: ArrowLeftProps) => {
     return (
-        <button className="prevbutton" onClick={props.onClick}>
+        <button onClick={props.onClick}>
             <img src={IconArrowLeft} />
         </button>
     )
