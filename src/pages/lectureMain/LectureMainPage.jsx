@@ -7,7 +7,6 @@ import ViborStankov from "../traning/trainings/img/training_lecture/02 Выбо�
 import VidiInstruments from "../traning/trainings/img/training_lecture/03 Виды инструментов.jpg";
 import RezInstrument from "../traning/trainings/img/training_lecture/04 Основы выбора режущего инструмента.jpg";
 import VidiPrisposobleniy from "../traning/trainings/img/training_lecture/05 Виды приспособлений.jpg";
-import '../../styles/main.css';
 import { useNavigate } from "react-router-dom";
 
 const LectureMainPage = ({ title }) => {
