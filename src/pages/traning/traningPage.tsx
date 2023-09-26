@@ -15,7 +15,7 @@ const TraningPage = (props: TraningPageProps) => {
 
     const [countActiveTab, setActiveTab] = useState(0);
     const tabs = [];
-
+    console.log(countActiveTab);
     function setCountActiveTab(count: number) {
         if (count < props.traning.length && count >= 0) {
             return setActiveTab(count);
@@ -53,9 +53,9 @@ const TraningPage = (props: TraningPageProps) => {
 
                         <div className="container1">
                             <div className="container_header">
-                                <div className="flex align-center space-between">
+                                <div className="d-flex align-items-center justify-content-between">
                                     <p className="container_title">Динамическая инфографика</p>
-                                    <p className="counter_exercise">{(countActiveTab + 1) + 12}</p>
+                                    <p className="counter_exercise">{`${countActiveTab + 1} / ` + props.traning.length}</p>
                                 </div>
                                 <div className="flex tab_exercise_container">
                                     {tabs}
