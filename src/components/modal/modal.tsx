@@ -1,11 +1,12 @@
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, Mixin } from "react";
 import ModalBootstrap from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 interface ModalProps {
     active: boolean,
-    setActive: React.Dispatch<React.SetStateAction<boolean>>
+    setActive: React.Dispatch<React.SetStateAction<boolean>>,
+    children?: any
 }
 
 const Modal = (ModalObj: ModalProps) => {
@@ -37,9 +38,8 @@ const Modal = (ModalObj: ModalProps) => {
                 className="d-flex align-items-center justify-content-center position-fixed"
                 style={Object.assign(ModalObj.active === true ? {...styleModal, ...styleModalActive} : styleModal)}
                 onClick={handleClose} >
-
                 <div style={styleModalContext} onClick={e => e.stopPropagation()}>
-
+                    {ModalObj.children}
                 </div>
             </div>
         </>

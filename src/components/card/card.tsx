@@ -2,6 +2,7 @@ import React, { CSSProperties, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProgressBar from "../progressBar/progressBar";
 import Modal from "../modal/modal";
+import ModalDataCard_Lecture from "./modalData";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../styles/main.css';
 
@@ -9,12 +10,14 @@ interface CardProps {
     href: string,
     title?: string,
     description?: string,
-    lineName: string
+    lineName: string,
+    modal?: any
 }
 
 const Card = (CardObj: CardProps) => {
     const [modalActive, setModalActive] = useState(false);
     const navigate = useNavigate();
+    console.log(ModalDataCard_Lecture.ModalDataCard_Lecture);
 
     const styleCard: CSSProperties = {
         marginBottom: "35px",
@@ -49,7 +52,7 @@ const Card = (CardObj: CardProps) => {
                             <div
                                 className="d-flex btn btn_info align-items-center"
                                 onClick={() => setModalActive(true)}>
-                                    Справка
+                                Справка
                             </div>
                         </a>
                         <a href="#" className="text-decoration-none" onClick={handleClickGoPage}>
@@ -60,7 +63,10 @@ const Card = (CardObj: CardProps) => {
                     </div>
                 </div>
             </div>
-            <Modal active={modalActive} setActive={setModalActive} />
+            <Modal active={modalActive} setActive={setModalActive}>
+                <div dangerouslySetInnerHTML={{ __html: ModalDataCard_Lecture.ModalDataCard_Lecture  }}>
+                {/* </div> */}
+            </Modal>
         </>
 
     )

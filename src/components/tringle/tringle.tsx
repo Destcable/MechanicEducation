@@ -1,12 +1,16 @@
 import React from "react";
 import tringle from './img/tringle.png';
 
-const Tringle = ({ background }) => {
+interface TringleProps { 
+    background? : string
+}
+
+const Tringle = (TringleObj: TringleProps) => {
 
     return (
         <div className="d-flex triangle1"
             style={{
-                backgroundColor: background ? '#' + background : '#ffffff',
+                backgroundColor: TringleObj.background ? '#' + TringleObj.background : '#ffffff',
             }}
         >
             <div className="triangle1_img">
