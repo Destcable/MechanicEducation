@@ -20,7 +20,7 @@ export const Routes = createBrowserRouter([
     },
     {
         path: "/trainingLecture",
-        element: <LectureMainPage title="Машиностроение" />
+        element: <LectureMainPage />
     },
     {
         path: "/infoLecture_1",
