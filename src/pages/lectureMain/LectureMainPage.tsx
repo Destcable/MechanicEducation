@@ -1,3 +1,4 @@
+import { Title } from "../../config";
 import { useNavigate } from "react-router-dom";
 import Header from '../../components/header/header';
 import Tringle from '../../components/tringle/tringle';
@@ -17,7 +18,7 @@ function LectureMainPage (props: LectureMainPageProps) {
     return (
         <>
             <Header
-                title={props.title}
+                title={Title}
             />
 
             <div className="bg_color_block d-flex flex-column ">
