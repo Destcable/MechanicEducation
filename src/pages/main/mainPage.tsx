@@ -1,18 +1,16 @@
+import { Title } from '../../config';
 import Header from '../../components/header/header';
 import Card from '../../components/card/card';
 import Tringle from '../../components/tringle/tringle';
 import Footer from '../../components/footer/footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-interface MainPageProps { 
-    title: string
-}
 
-const MainPage = (MainPageObj: MainPageProps) => {
+const MainPage = () => {
     return (
         <>
             <Header
-                title={MainPageObj.title}
+                title={Title}
             />
 
             <div className="main-block d-flex justify-center wrap">

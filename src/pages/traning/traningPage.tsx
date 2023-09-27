@@ -6,9 +6,9 @@ import Tringle from "../../components/tringle/tringle";
 import ExerciseTrainer from "../../components/exerciseTrainer/exerciseTrainer";
 import ArrowRight from "../../components/arrowRight/arrowRight";
 import ArrowLeft from "../../components/arrowLeft/arrowLeft";
+import { Title } from "../../config";
 
 interface TraningPageProps { 
-    title: string,
     traning: TraningData[]
 }
 
@@ -41,7 +41,7 @@ const TraningPage = (props: TraningPageProps) => {
     return (
         <>
             <Header
-                title={props.title}
+                title={Title}
             />
 
             <div className="bg_color_block flex flex-column ">
