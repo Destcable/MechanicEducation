@@ -26,7 +26,7 @@
     },
     { 
         "title":"Изучите основные виды токарных станков",
-        "image": "AutomaticLongitudinalTurning.png",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/AutomaticLongitudinalTurning.png?alt=media&token=1ac49a35-4be9-4f40-9dbb-cd77d4bcd504",
         "component": "trainer_1/slide_6"
     },
     { 
@@ -96,7 +96,7 @@
     },
     {
         "title": "Изучите типы основных режущих инструментов для токарных работ",
-        "image": "BoringCutter.jpg",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/BoringCutter.jpg?alt=media&token=084b68f6-6c46-4e27-9149-168f349d88b0",
         "component": "trainer_1/slide_20"
     },
     {

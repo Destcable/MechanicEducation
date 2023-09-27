@@ -6,15 +6,6 @@ const ExerciseTrainer = ({ title, image, text }) => {
     const [textSrc, setTextSrc] = useState(null);
 
     useEffect(() => {
-        if (image) {
-            import(`../../pages/traning/trainings/img/${image}`)
-                .then(imageModule => {
-                    setImageSrc(imageModule.default);
-                })
-        }
-    }, [image]);
-
-    useEffect(() => {
         if (text) {
             import(`../../trainers/${text}`)
                 .then(textModule => {
