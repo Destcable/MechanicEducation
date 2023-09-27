@@ -1,30 +1,34 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const ExerciseTrainer = ({ title, image, text }) => {
+interface ExerciseTrainerProps {
+    title: string,
+    image?: string,
+    text: unknown
+}
+
+const ExerciseTrainer = (props: ExerciseTrainerProps) => {
 
     const [textSrc, setTextSrc] = useState(null);
 
     useEffect(() => {
-        if (text) {
-            import(`../../trainers/${text}`)
+        if (props.text) {
+            import(`../../trainers/${props.text}`)
                 .then(textModule => {
                     setTextSrc(textModule.default);
                 })
         }
-    }, [text]);
+    }, [props.text]);
 
     return (
         <>
             <div className="d-flex space-between">
-                <p className="text-zadanie">{title}</p>
+                <p className="text-zadanie">{props.title}</p>
             </div>
 
             <div className="d-flex container-filling align-center justify-center">
-                {image &&
+                {props.image &&
                     <div className="img-exercise">
-                        {image &&
-                            <img src={image} alt="" className="img-exercise1" style={{ maxHeight: "400px" }} />
-                        }
+                        <img src={props.image} alt="" className="img-exercise1" style={{ maxHeight: "400px" }} />
                     </div>
                 }
                 <div className="d-flex flex-column">

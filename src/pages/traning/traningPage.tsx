@@ -71,8 +71,7 @@ const TraningPage = (props: TraningPageProps) => {
                                     title={props.traning[countActiveTab].title}
                                     image={props.traning[countActiveTab].image}
                                     text={props.traning[countActiveTab].component}
-                                >
-                                </ExerciseTrainer>
+                                />
 
                                 <div className="arrows1">
                                     <ArrowLeft onClick={takeCountTab}/>
