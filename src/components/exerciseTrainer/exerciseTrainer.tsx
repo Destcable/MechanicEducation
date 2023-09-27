@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 interface ExerciseTrainerProps {
     title: string,
-    image?: string,
+    image: string | null,
     text: unknown
 }
 
