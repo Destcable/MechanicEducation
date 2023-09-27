@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import right_arrow from './img/right_arrow.png';
 

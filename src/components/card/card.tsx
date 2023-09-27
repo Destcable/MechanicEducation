@@ -1,7 +1,6 @@
 import { CSSProperties, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ProgressBar from "../progressBar/progressBar";
-import Modal from "../modal/modal";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../styles/main.css';
 import { ModalLecture } from "./CardModals";
@@ -11,7 +10,6 @@ interface CardProps {
     title?: string,
     description?: string,
     lineName: string,
-    modal?: any
 }
 
 const Card = (CardObj: CardProps) => {

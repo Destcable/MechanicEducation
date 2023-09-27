@@ -3,7 +3,7 @@ import Modal from "../modal/modal";
 interface ModalProps {
     active: boolean,
     setActive: React.Dispatch<React.SetStateAction<boolean>>,
-    children?: any
+    children?: never[]
 }
 
 export const ModalLecture = (props: ModalProps) => {

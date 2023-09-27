@@ -1,12 +1,10 @@
-import React, { CSSProperties, Mixin } from "react";
-import ModalBootstrap from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
+import React, { CSSProperties, ReactNode } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 interface ModalProps {
     active: boolean,
     setActive: React.Dispatch<React.SetStateAction<boolean>>,
-    children?: any
+    children?: ReactNode;
 }
 
 const Modal = (ModalObj: ModalProps) => {
