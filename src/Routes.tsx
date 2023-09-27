@@ -12,7 +12,7 @@ import LectureMainPage from './pages/lectureMain/LectureMainPage';
 export const Routes = createBrowserRouter([
     {
         path: "/",
-        element: <MainPage title="Машиностроение" />,
+        element: <MainPage />,
     },
     {
         path: "/traning",
