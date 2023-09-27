@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 const ExerciseTrainer = ({ title, image, text }) => {
-    const [imageSrc, setImageSrc] = useState(null);
 
     const [textSrc, setTextSrc] = useState(null);
 
@@ -24,7 +23,7 @@ const ExerciseTrainer = ({ title, image, text }) => {
                 {image &&
                     <div className="img-exercise">
                         {image &&
-                            <img src={imageSrc} alt="" className="img-exercise1" style={{ maxHeight: "400px" }} />
+                            <img src={image} alt="" className="img-exercise1" style={{ maxHeight: "400px" }} />
                         }
                     </div>
                 }
