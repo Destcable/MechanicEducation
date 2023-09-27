@@ -1,4 +1,4 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import Header from '../../components/header/header';
 import Tringle from '../../components/tringle/tringle';
 import HomeButton from "../../components/homeButton/homeButton";
@@ -6,16 +6,18 @@ import VidOborudovania from "../traning/trainings/img/training_lecture/01 Вид
 import ViborStankov from "../traning/trainings/img/training_lecture/02 Выбор станков.jpg";
 import VidiInstruments from "../traning/trainings/img/training_lecture/03 Виды инструментов.jpg";
 import RezInstrument from "../traning/trainings/img/training_lecture/04 Основы выбора режущего инструмента.jpg";
-import VidiPrisposobleniy from "../traning/trainings/img/training_lecture/05 Виды приспособлений.jpg";
-import { useNavigate } from "react-router-dom";
 
-const LectureMainPage = ({ title }) => {
+interface LectureMainPageProps { 
+    title: string
+}
+
+function LectureMainPage (props: LectureMainPageProps) {
     const navigate = useNavigate();
 
     return (
         <>
             <Header
-                title={title}
+                title={props.title}
             />
 
             <div className="bg_color_block d-flex flex-column ">

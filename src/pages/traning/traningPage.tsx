@@ -9,7 +9,7 @@ import ArrowLeft from "../../components/arrowLeft/arrowLeft";
 
 interface TraningPageProps { 
     title: string,
-    traning: [TraningData]
+    traning: TraningData[]
 }
 
 const TraningPage = (props: TraningPageProps) => {
