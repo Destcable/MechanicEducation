@@ -1,6 +1,5 @@
 import { useState } from "react";
 import type { TraningData } from "../../types/Traning";
-import TraningController from "./TraningPageController";
 import Header from "../../components/header/header";
 import HomeButton from "../../components/homeButton/homeButton";
 import Tringle from "../../components/tringle/tringle";
@@ -26,9 +25,18 @@ const TraningPage = (props: TraningPageProps) => {
         return console.error('Данный таб отсутствует');
     }
 
+    function addCountTab() { 
+        return setCountActiveTab(countActiveTab + 1);
+    }
+
+    function takeCountTab() { 
+        return setCountActiveTab(countActiveTab - 1);
+    }
+
     for (let index = 0; index < props.traning.length; index++) {
         tabs.push(<div key={index} className="tab"></div>);
     }
+
 
     return (
         <>
@@ -67,12 +75,8 @@ const TraningPage = (props: TraningPageProps) => {
                                 </ExerciseTrainer>
 
                                 <div className="arrows1">
-                                    <ArrowLeft onClick={() => { 
-                                        TraningController.takeCountTab({countActiveTab, setActiveTab})
-                                    }}/>
-                                    <ArrowRight onClick={() => { 
-                                        TraningController.addCountTab({countActiveTab, setActiveTab})
-                                    }}/>
+                                    <ArrowLeft onClick={takeCountTab}/>
+                                    <ArrowRight onClick={addCountTab}/>
                                 </div>
 
                             </div>
