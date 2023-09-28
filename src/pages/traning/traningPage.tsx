@@ -1,18 +1,20 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import type { TraningData } from "../../types/Traning";
 import Header from "../../components/header/header";
 import HomeButton from "../../components/homeButton/homeButton";
 import Tringle from "../../components/tringle/tringle";
-import ExerciseTrainer from "../../components/exerciseTrainer/exerciseTrainer";
+// import ExerciseTrainer from "../../components/exerciseTrainer/exerciseTrainer";
 import ArrowRight from "../../components/arrowRight/arrowRight";
 import ArrowLeft from "../../components/arrowLeft/arrowLeft";
 import { Title } from "../../config";
 
-interface TraningPageProps { 
-    traning: TraningData[]
+interface TraningPageProps {
+    traning: TraningData[],
+    child?: ReactNode
 }
 
 const TraningPage = (props: TraningPageProps) => {
+
 
     const [countActiveTab, setActiveTab] = useState(0);
     const tabs = [];
@@ -25,11 +27,11 @@ const TraningPage = (props: TraningPageProps) => {
         return console.error('Данный таб отсутствует');
     }
 
-    function addCountTab() { 
+    function addCountTab() {
         return setCountActiveTab(countActiveTab + 1);
     }
 
-    function takeCountTab() { 
+    function takeCountTab() {
         return setCountActiveTab(countActiveTab - 1);
     }
 
@@ -61,21 +63,39 @@ const TraningPage = (props: TraningPageProps) => {
                                 </div>
                                 <div className="d-flex tab_exercise_container">
                                     {tabs}
-                                    
+
                                     {/* <div className="active_tab"></div> */}
-                                    
+
                                 </div>
                             </div>
                             <div className="container-exercise">
-                                <ExerciseTrainer
+                                <div className="d-flex container-filling align-center justify-center">
+
+                                    {props.traning[countActiveTab].image &&
+                                        <div className="img-exercise">
+                                            <img src={props.traning[countActiveTab].image} className="img-exercise1" style={{ maxHeight: "400px" }} />
+                                        </div>
+                                    }
+
+                                    {props.child &&
+                                        <div className="d-flex flex-column">
+                                            <div className='text-exercise'>
+                                                {props.child}
+                                            </div>
+                                        </div>
+                                    }
+
+
+                                </div>
+                                {/* <ExerciseTrainer
                                     title={props.traning[countActiveTab].title}
                                     image={props.traning[countActiveTab].image}
                                     text={props.traning[countActiveTab].component}
-                                />
+                                /> */}
 
                                 <div className="arrows1">
-                                    <ArrowLeft onClick={takeCountTab}/>
-                                    <ArrowRight onClick={addCountTab}/>
+                                    <ArrowLeft onClick={takeCountTab} />
+                                    <ArrowRight onClick={addCountTab} />
                                 </div>
 
                             </div>

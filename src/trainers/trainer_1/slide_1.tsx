@@ -1,6 +1,3 @@
-import React from "react";
-import OrderList from "../../components/orderList/orderList";
-
 const SlideTrainer_1 = () => {
     return (
         <>
