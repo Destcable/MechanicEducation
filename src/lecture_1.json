@@ -17,11 +17,11 @@
     {
         "title": "Виды (группы) металлорежущих станков:",
         "image": null,
-        "component": "trainer_2/slide_4"
+        "component": "templates/lectures/lecture_1/slide_4.html"
     }, 
     { 
         "title": "Классификация металлорежущих станков",
         "image": null,
-        "component": "trainer_2/slide_5"
+        "component": "templates/lectures/lecture_1/slide_5.html"
     }
 ]
