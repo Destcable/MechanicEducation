@@ -22,7 +22,7 @@ const Card = (CardObj: CardProps) => {
 
     const styleBlock: CSSProperties = {
         width: "300px",
-        height: "400px",
+        height: "350px",
         border: "1px solid #B5C5D8",
         position: "relative",
     }
