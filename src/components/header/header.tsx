@@ -2,7 +2,6 @@ import { CSSProperties, useState } from 'react';
 import Logo from '../logo/logo';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../styles/main.css';
-import Modal from '../modal/modal';
 import { ModalGetFromContent, ModalGetKeyWords } from '../../content/modals/ModalsData';
 
 interface HeaderProps {
