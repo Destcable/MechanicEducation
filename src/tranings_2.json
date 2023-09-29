@@ -2,17 +2,17 @@
     {
         "title": "Назначение, виды и классификация металлорежущего оборудования",
         "image": null,
-        "component": "trainer_2/slide_1"
+        "component": "templates/lectures/lecture_1/slide_1.html"
     }, 
     {
         "title": "Виды (группы) металлорежущих станков:",
         "image": null,
-        "component": "trainer_2/slide_2"
+        "component": "templates/lectures/lecture_1/slide_2.html"
     },
     {
         "title": "Виды (группы) металлорежущих станков:",
         "image": null,
-        "component": "trainer_2/slide_3"
+        "component": "templates/lectures/lecture_1/slide_3.html"
     },
     {
         "title": "Виды (группы) металлорежущих станков:",
