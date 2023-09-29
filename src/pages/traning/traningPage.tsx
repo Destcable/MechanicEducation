@@ -101,14 +101,6 @@ const TraningPage = (props: TraningPageProps) => {
                     </div>
 
                 </div>
-                <div className="d-flex justify-center align-center">
-                    <div className="container2 hide">
-                        <div className="d-flex center-results flex-column mt-100 align-center justify-center">
-                        </div>
-                    </div>
-
-                </div>
-
             </div>
             <Tringle
                 background="CFDEEE"
