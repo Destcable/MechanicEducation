@@ -7,6 +7,7 @@ import Tringle from "../../components/tringle/tringle";
 import ArrowRight from "../../components/arrowRight/arrowRight";
 import ArrowLeft from "../../components/arrowLeft/arrowLeft";
 import { Title } from "../../config";
+import PugLoader from "../../components/TemplateLoader/TemplateLoader";
 
 interface TraningPageProps {
     traning: TraningData[],
@@ -77,13 +78,14 @@ const TraningPage = (props: TraningPageProps) => {
                                         </div>
                                     }
 
-                                    {props.child &&
+                                    <PugLoader />
+                                    {/* {props.child &&
                                         <div className="d-flex flex-column">
                                             <div className='text-exercise'>
                                                 {props.child}
                                             </div>
                                         </div>
-                                    }
+                                    } */}
 
 
                                 </div>
