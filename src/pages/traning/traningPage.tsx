@@ -16,9 +16,10 @@ interface TraningPageProps {
 
 const TraningPage = (props: TraningPageProps) => {
 
-
     const [countActiveTab, setActiveTab] = useState(0);
     const tabs = [];
+
+    const ImageUrl = props.traning[countActiveTab].image ? props.traning[countActiveTab].image : undefined;
 
     function setCountActiveTab(count: number) {
         if (count < props.traning.length && count >= 0) {
@@ -76,9 +77,9 @@ const TraningPage = (props: TraningPageProps) => {
 
                                 <div className="d-flex container-filling align-center justify-center">
 
-                                    {props.traning[countActiveTab].image &&
+                                    {ImageUrl &&
                                         <div className="img-exercise">
-                                            <img src={props.traning[countActiveTab].image} className="img-exercise1" style={{ maxHeight: "400px" }} />
+                                            <img src={ImageUrl} className="img-exercise1" style={{ maxHeight: "400px" }} />
                                         </div>
                                     }
                                     {props.traning[countActiveTab].component &&
