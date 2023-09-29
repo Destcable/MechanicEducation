@@ -43,7 +43,7 @@ function LectureMainPage () {
                                         <img src={VidiInstruments} width="300px" />
                                         Режущий инструмент: типы, виды исполнения и материалы режущей части инструмента
                                     </div>
-                                    <div style={{ display: "flex", alignItems: "center" }} onClick={() => navigate('/infoLecture_4')}>
+                                    <div style={{ display: "flex", alignItems: "center" }} onClick={() => navigate('/lecture_4')}>
                                         <img src={RezInstrument} width="300px" />
                                         Основы выбора инструмента и материалов режущей части
                                     </div>
