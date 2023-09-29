@@ -26,7 +26,7 @@ const MainPage = () => {
                     title="Применение изученного материала"
                     description="Режущий инструмент"
                     // href="/traning"
-                    href='/traning'
+                    href='/traning_1'
                 />
 
                 <Card
