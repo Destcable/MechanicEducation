@@ -31,11 +31,11 @@ function LectureMainPage () {
                             </div>
                             <div className="container-exercise">
                                 <div className="d-flex justify-center align-center" style={{ flexWrap: "wrap"}}>
-                                    <div style={{ display: "flex", alignItems: "center" }} onClick={() => navigate('/infoLecture_1')}>
+                                    <div style={{ display: "flex", alignItems: "center" }} onClick={() => navigate('/lecture_1')}>
                                         <img src={VidOborudovania} width="300px" />
                                         Назначение, виды и классификация металлорежущего оборудования
                                     </div>
-                                    <div style={{ display: "flex", alignItems: "center" }} onClick={() => navigate('/infoLecture_2')}>
+                                    <div style={{ display: "flex", alignItems: "center" }} onClick={() => navigate('/lecture_2')}>
                                         <img src={ViborStankov} width="270px" />
                                         Выбор металлорежущего оборудования для реализации технологического процесса
                                     </div>

@@ -15,11 +15,11 @@ export const Routes = createBrowserRouter([
         element: <MainPage />,
     },
     {
-        path: "/infoLecture_1",
+        path: "/lecture_1",
         element: <TraningPage traning={lecture_1} />
     },
     {
-        path: "/infoLecture_2",
+        path: "/lecture_2",
         element: <TraningPage traning={lecture_2} />
     },
     {
