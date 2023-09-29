@@ -7,6 +7,7 @@ import Tringle from "../../components/tringle/tringle";
 import ArrowRight from "../../components/arrowRight/arrowRight";
 import ArrowLeft from "../../components/arrowLeft/arrowLeft";
 import { Title } from "../../config";
+import TemplateLoader from "../../components/TemplateLoader/TemplateLoader";
 
 interface TraningPageProps {
     traning: TraningData[],
@@ -15,9 +16,10 @@ interface TraningPageProps {
 
 const TraningPage = (props: TraningPageProps) => {
 
-
     const [countActiveTab, setActiveTab] = useState(0);
     const tabs = [];
+
+    const ImageUrl = props.traning[countActiveTab].image ? props.traning[countActiveTab].image : undefined;
 
     function setCountActiveTab(count: number) {
         if (count < props.traning.length && count >= 0) {
@@ -69,29 +71,24 @@ const TraningPage = (props: TraningPageProps) => {
                                 </div>
                             </div>
                             <div className="container-exercise">
+                                <div className="d-flex space-between">
+                                    <p className="text-zadanie">{props.traning[countActiveTab].title}</p>
+                                </div>
+
                                 <div className="d-flex container-filling align-center justify-center">
 
-                                    {props.traning[countActiveTab].image &&
+                                    {ImageUrl &&
                                         <div className="img-exercise">
-                                            <img src={props.traning[countActiveTab].image} className="img-exercise1" style={{ maxHeight: "400px" }} />
+                                            <img src={ImageUrl} className="img-exercise1" style={{ maxHeight: "400px" }} />
                                         </div>
                                     }
-
-                                    {props.child &&
-                                        <div className="d-flex flex-column">
-                                            <div className='text-exercise'>
-                                                {props.child}
-                                            </div>
-                                        </div>
+                                    {props.traning[countActiveTab].component &&
+                                        <TemplateLoader
+                                            template={props.traning[countActiveTab].component}
+                                        />
                                     }
-
 
                                 </div>
-                                {/* <ExerciseTrainer
-                                    title={props.traning[countActiveTab].title}
-                                    image={props.traning[countActiveTab].image}
-                                    text={props.traning[countActiveTab].component}
-                                /> */}
 
                                 <div className="arrows1">
                                     <ArrowLeft onClick={takeCountTab} />

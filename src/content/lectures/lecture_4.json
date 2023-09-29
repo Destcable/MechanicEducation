@@ -2,11 +2,11 @@
     {
         "title": "Основы выбора инструмента и материалов режущей части",
         "image": null,
-        "component": "trainer_5/slide_1"
+        "component": "templates/lectures/lecture_4/slide_1.html"
     },
     {
         "title": "Основы выбора инструмента и материалов режущей части",
         "image": null,
-        "component": "trainer_5/slide_2"
+        "component": "templates/lectures/lecture_4/slide_2.html"
     }
 ]

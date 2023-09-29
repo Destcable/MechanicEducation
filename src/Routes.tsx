@@ -1,14 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainPage from "./pages/main/mainPage";
 import TraningPage from './pages/traning/traningPage';
-import trainings_1 from "./tranings_1.json";
-import trainings_2 from "./tranings_2.json";
-import trainings_3 from "./tranings_3.json";
-import trainings_4 from "./tranings_4.json";
-import trainings_5 from "./tranings_5.json";
+import trainings_1 from "./content/tranings/traning_1.json";
+import lecture_1 from "./content/lectures/lecture_1.json";
+import lecture_2 from "./content/lectures/lecture_2.json";
+import lecture_3 from "./content/lectures/lecture_3.json";
+import lecture_4 from "./content/lectures/lecture_4.json";
 import quest_1 from "./quest_1.json";
 import LectureMainPage from './pages/lectureMain/LectureMainPage';
-import SlideTrainer_1 from "./trainers/trainer_1/slide_1";
 
 export const Routes = createBrowserRouter([
     {
@@ -16,7 +15,23 @@ export const Routes = createBrowserRouter([
         element: <MainPage />,
     },
     {
-        path: "/traning",
+        path: "/lecture_1",
+        element: <TraningPage traning={lecture_1} />
+    },
+    {
+        path: "/lecture_2",
+        element: <TraningPage traning={lecture_2} />
+    },
+    {
+        path: "/lecture_3",
+        element: <TraningPage traning={lecture_3} />
+    },
+    {
+        path: "/lecture_4",
+        element: <TraningPage traning={lecture_4} />
+    },
+    {
+        path: "/traning_1",
         element: <TraningPage traning={trainings_1} />
     },
     {
@@ -24,27 +39,7 @@ export const Routes = createBrowserRouter([
         element: <LectureMainPage />
     },
     {
-        path: "/infoLecture_1",
-        element: <TraningPage traning={trainings_2} />
-    },
-    {
-        path: "/infoLecture_2",
-        element: <TraningPage traning={trainings_3} />
-    },
-    {
-        path: "/infoLecture_3",
-        element: <TraningPage traning={trainings_4} />
-    },
-    {
-        path: "/infoLecture_4",
-        element: <TraningPage traning={trainings_5} />
-    },
-    {
         path: "/quest_1",
         element: <TraningPage traning={quest_1} />
     },
-    {
-        path: "/infoLecture_1_1",
-        element: <TraningPage child={<SlideTrainer_1 />}  traning={trainings_1} />
-    }
 ]);
