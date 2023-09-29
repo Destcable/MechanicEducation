@@ -3,13 +3,15 @@ import Logo from '../logo/logo';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../styles/main.css';
 import Modal from '../modal/modal';
+import { ModalGetFromContent, ModalGetKeyWords } from '../../content/modals/ModalsData';
 
 interface HeaderProps {
     title: string;
 }
 
 const Header = (HeaderObj: HeaderProps) => {
-    const [modalActive, setModalActive] = useState(false);
+    const [modalActiveContent, setModalActiveContent] = useState(false);
+    const [modalActiveKeyWords, setModalActiveKeyWords] = useState(false);
 
     const styleHeader: CSSProperties = {
         height: "104px",
@@ -58,13 +60,13 @@ const Header = (HeaderObj: HeaderProps) => {
                         <div className="d-flex align-items-center mt-10">
                             <a href='#' 
                                 className="btn-contacts text-white text-decoration-none" 
-                                onClick={() => setModalActive(true)}
+                                onClick={() => setModalActiveContent(true)}
                                 style={styleButton}>
                                 Информация о контенте
                             </a>
                             <a href='#' 
                                 className="btn-words text-white text-decoration-none" 
-                                onClick={() => setModalActive(true)}
+                                onClick={() => setModalActiveKeyWords(true)}
                                 style={styleButton}>
                                     Ключевые слова
                             </a>
@@ -76,7 +78,8 @@ const Header = (HeaderObj: HeaderProps) => {
                 </div>
             </div>
             <div className="position-absolute" style={styleHeaderSecond}></div>
-            <Modal active={modalActive} setActive={setModalActive} />
+            <ModalGetFromContent active={modalActiveContent} setActive={setModalActiveContent} />
+            <ModalGetKeyWords active={modalActiveKeyWords} setActive={setModalActiveKeyWords} />
         </header>
     )
 }
