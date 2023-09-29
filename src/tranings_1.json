@@ -112,46 +112,46 @@
     {
         "title": "Изучите основные типы измерительных инструментов для контроля размеров",
         "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/%D0%A8%D1%82%D0%B0%D0%BD%D0%B3%D0%B5%D0%BD%D1%86%D0%B8%D1%80%D0%BA%D1%83%D0%BB%D1%8C.jpg?alt=media&token=12982d17-2bb4-4f35-b46c-26ff020a857c&_gl=1*14cgav*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MTA4Ny40NS4wLjA.",
-        "component": "trainer_1/slide_23"
+        "component": "templates/trainers/trainer_1/slide_23.html"
     }, 
     {
         "title": "Изучите основные типы измерительных инструментов для контроля размеров",
         "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/DigitalMicrometer.jpg?alt=media&token=6b8ca7b6-aa1b-4ce8-a751-14b319373a48&_gl=1*1q548l2*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDkzNC40MS4wLjA.",
-        "component": "trainer_1/slide_24"
+        "component": "templates/trainers/trainer_1/slide_24.html"
     },
     {
         "title":"Изучите основные типы измерительных инструментов для контроля размеров",
         "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/CaliberBracket.jpg?alt=media&token=8df31f40-e97f-4d93-9eac-83c1cb628b00&_gl=1*1oofsrr*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDk0NS4zMC4wLjA.",
-        "component": "trainer_1/slide_25"
+        "component": "templates/trainers/trainer_1/slide_25.html"
     },
     { 
         "title":"Изучите основные типы измерительных инструментов для контроля размеров",
         "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/Calipers.jpeg?alt=media&token=dbc3e44c-99d4-4591-8fcc-a02384d1ffd3&_gl=1*1mz03ri*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MTE1My42MC4wLjA.",
-        "component": "trainer_1/slide_26"
+        "component": "templates/trainers/trainer_1/slide_26.html"
     },
     {
         "title": "Изучите основные типы измерительных инструментов для контроля размеров",
         "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/VernierDepth.jpg?alt=media&token=dd7b47fc-f94d-46bf-a3e5-902d6f7eecc6&_gl=1*nb5w2b*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MTIxMi4xLjAuMA..",
-        "component": "trainer_1/slide_27"
+        "component": "templates/trainers/trainer_1/slide_27.html"
     },
     {
         "title": "Изучите основные типы измерительных инструментов для контроля размеров",
         "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/MicrometricDepth.jpg?alt=media&token=acb07530-d208-4fec-b29c-3637dadd7d65&_gl=1*bti9g6*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MTIzMS40My4wLjA.",
-        "component": "trainer_1/slide_28"
+        "component": "templates/trainers/trainer_1/slide_28.html"
     },
     {
         "title": "Изучите основные типы измерительных инструментов для контроля размеров",
         "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/MicrometricBore.jpg?alt=media&token=abfccc14-dd96-4c18-b7c7-0354825ce571&_gl=1*1snqrwj*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MTI0My4zMS4wLjA.",
-        "component": "trainer_1/slide_29"
+        "component": "templates/trainers/trainer_1/slide_29.html"
     },
     { 
         "title": "Изучите основные типы измерительных инструментов для контроля размеров",
         "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/PlugGauge.jpeg?alt=media&token=0facc945-d694-45e9-8949-02379510b8cb&_gl=1*pgm6c1*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MTI4My42MC4wLjA.",
-        "component": "trainer_1/slide_30"
+        "component": "templates/trainers/trainer_1/slide_30.html"
     },
     { 
         "title": "Выберите типы режущих инструментов для токарной операции по изготовлению заданной детали",
         "image": null,
-        "component": "trainer_1/slide_31"
+        "component": "templates/trainers/trainer_1/slide_31.html"
     }
 ]
