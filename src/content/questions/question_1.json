@@ -12,12 +12,12 @@
     {
         "title": "Укажите факторы, влияющие на выбор металлорежущего оборудования для реализации технологического процесса. Выберите все правильные ответы.",
         "image": null,
-        "component": "quest_1/slide_3"
+        "component": "/templates/questions/question_1/slide_3.html"
     },
     {
         "title": "Вставьте пропущенные слова, выбрав их из предложенного списка.",
         "image": null,
-        "component": "quest_1/slide_4"
+        "component": "/templates/questions/question_1/slide_4.html"
     },
     {
         "title": "Установите соответствие между изображениями и видами режущего инструмента.",
