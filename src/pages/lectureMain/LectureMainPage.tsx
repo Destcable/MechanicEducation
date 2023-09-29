@@ -39,7 +39,7 @@ function LectureMainPage () {
                                         <img src={ViborStankov} width="270px" />
                                         Выбор металлорежущего оборудования для реализации технологического процесса
                                     </div>
-                                    <div style={{ display: "flex", alignItems: "center" }} onClick={() => navigate('/infoLecture_3')}>
+                                    <div style={{ display: "flex", alignItems: "center" }} onClick={() => navigate('/lecture_3')}>
                                         <img src={VidiInstruments} width="300px" />
                                         Режущий инструмент: типы, виды исполнения и материалы режущей части инструмента
                                     </div>
