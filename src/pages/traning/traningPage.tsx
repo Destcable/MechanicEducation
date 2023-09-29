@@ -81,10 +81,11 @@ const TraningPage = (props: TraningPageProps) => {
                                             <img src={props.traning[countActiveTab].image} className="img-exercise1" style={{ maxHeight: "400px" }} />
                                         </div>
                                     }
-
-                                    <TemplateLoader
-                                        template={props.traning[countActiveTab].component}
-                                    />
+                                    {props.traning[countActiveTab].component &&
+                                        <TemplateLoader
+                                            template={props.traning[countActiveTab].component}
+                                        />
+                                    }
 
                                 </div>
 
