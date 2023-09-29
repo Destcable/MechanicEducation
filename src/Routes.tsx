@@ -8,7 +8,6 @@ import trainings_4 from "./tranings_4.json";
 import trainings_5 from "./tranings_5.json";
 import quest_1 from "./quest_1.json";
 import LectureMainPage from './pages/lectureMain/LectureMainPage';
-import SlideTrainer_1 from "./trainers/trainer_1/slide_1";
 
 export const Routes = createBrowserRouter([
     {
@@ -43,8 +42,4 @@ export const Routes = createBrowserRouter([
         path: "/quest_1",
         element: <TraningPage traning={quest_1} />
     },
-    {
-        path: "/infoLecture_1_1",
-        element: <TraningPage child={<SlideTrainer_1 />}  traning={trainings_1} />
-    }
 ]);

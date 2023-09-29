@@ -26,7 +26,6 @@ function TemplateLoader(props: TemplateLoaderProps) {
 
     return (
         <div>
-            <h2>Загруженный Pug-файл</h2>
             <div dangerouslySetInnerHTML={{ __html: HTMLContent }} />
         </div>
     )

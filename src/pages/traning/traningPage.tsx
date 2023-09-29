@@ -70,6 +70,10 @@ const TraningPage = (props: TraningPageProps) => {
                                 </div>
                             </div>
                             <div className="container-exercise">
+                                <div className="d-flex space-between">
+                                    <p className="text-zadanie">{props.traning[countActiveTab].title}</p>
+                                </div>
+
                                 <div className="d-flex container-filling align-center justify-center">
 
                                     {props.traning[countActiveTab].image &&
@@ -78,22 +82,11 @@ const TraningPage = (props: TraningPageProps) => {
                                         </div>
                                     }
 
-                                    <TemplateLoader />
-                                    {/* {props.child &&
-                                        <div className="d-flex flex-column">
-                                            <div className='text-exercise'>
-                                                {props.child}
-                                            </div>
-                                        </div>
-                                    } */}
-
+                                    <TemplateLoader
+                                        template={props.traning[countActiveTab].component}
+                                    />
 
                                 </div>
-                                {/* <ExerciseTrainer
-                                    title={props.traning[countActiveTab].title}
-                                    image={props.traning[countActiveTab].image}
-                                    text={props.traning[countActiveTab].component}
-                                /> */}
 
                                 <div className="arrows1">
                                     <ArrowLeft onClick={takeCountTab} />

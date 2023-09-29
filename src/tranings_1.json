@@ -2,32 +2,32 @@
     {
         "title": "Ознакомьтесь с содержанием токарной операции по изготовлению заданной детали",
         "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/SketchForTurning.jpg?alt=media&token=37245e2f-9411-4b91-82b3-8ca6c5cee785&_gl=1*4egtfr*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDM5Mi4xMS4wLjA.",
-        "component": "trainer_1/slide_1"
+        "component": "templates/trainers/trainer_1/slide_1.html"
     },
     { 
         "title": "Изучите основные виды токарных станков",
         "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/TurningAndScrewCutting.jpg?alt=media&token=06cdf91c-48d5-40c7-a580-38a971dd5c7e&_gl=1*1w77p9k*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDQ1NS42MC4wLjA.",
-        "component": "trainer_1/slide_2"
+        "component": "templates/trainers/trainer_1/slide_2.html"
     },
     { 
         "title":"Изучите основные виды токарных станков",
         "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/TurningRevolver.jpg?alt=media&token=b634ba95-1abb-466e-809b-21df919d5730&_gl=1*bmk8xx*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDUxOS42MC4wLjA.",
-        "component": "trainer_1/slide_3"
+        "component": "templates/trainers/trainer_1/slide_3.html"
     },
     { 
         "title":"Изучите основные виды токарных станков",
         "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/LatheRotary.jpg?alt=media&token=433a0082-cfeb-4b09-804a-19ca2d8f9a2b&_gl=1*1cdzz4d*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDUzOC40MS4wLjA.",
-        "component": "trainer_1/slide_4"
+        "component": "templates/trainers/trainer_1/slide_4.html"
     },
     { 
         "title":"Изучите основные виды токарных станков",
         "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/TurningMilling.jpg?alt=media&token=bd806cb8-31bc-4bba-b25e-98e74f1fe891&_gl=1*9k2v4x*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDU1My4yNi4wLjA.",
-        "component": "trainer_1/slide_5"
+        "component": "templates/trainers/trainer_1/slide_5.html"
     },
     { 
         "title":"Изучите основные виды токарных станков",
         "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/AutomaticLongitudinalTurning.png?alt=media&token=1ac49a35-4be9-4f40-9dbb-cd77d4bcd504",
-        "component": "trainer_1/slide_6"
+        "component": "templates/trainers/trainer_1/slide_6.html"
     },
     { 
         "title":"Изучите основные виды токарных станков",
