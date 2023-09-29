@@ -22,22 +22,22 @@
     {
         "title": "Установите соответствие между изображениями и видами режущего инструмента.",
         "image": null,
-        "component": "quest_1/slide_5"
+        "component": "/templates/questions/question_1/slide_5.html"
     },
     {
         "title": "Укажите типы фрез. Выберите все правильные ответы.",
         "image": null,
-        "component": "quest_1/slide_6"
+        "component": "/templates/questions/question_1/slide_6.html"
     },
     {
         "title": "Укажите критерий, влияющий на выбор материала для изготовления режущей части инструмента.Выберите единственно правильный ответ.",
         "image": null,
-        "component": "quest_1/slide_7"
+        "component": "/templates/questions/question_1/slide_7.html"
     },
     {
         "title": "Вставьте пропущенные слова, выбрав их из предложенного списка.",
         "image": null,
-        "component": "quest_1/slide_8"
+        "component": "/templates/questions/question_1/slide_8.html"
     },
     {
         "title": "Установите соответствие между изображениями и видами технологических приспособлений",
