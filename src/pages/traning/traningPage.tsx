@@ -48,11 +48,11 @@ const TraningPage = (props: TraningPageProps) => {
                 title={Title}
             />
 
-            <div className="bg_color_block flex flex-column ">
+            <div className="bg_color_block d-flex flex-column ">
 
 
                 <div className="d-flex justify-center align-center">
-                    <div className="content1 flex flex-column max-content w-100">
+                    <div className="content1 d-flex flex-column max-content w-100">
                         <HomeButton
                             href="/"
                         />
@@ -63,7 +63,7 @@ const TraningPage = (props: TraningPageProps) => {
                                     <p className="container_title">Динамическая инфографика</p>
                                     <p className="counter_exercise">{`${countActiveTab + 1} / ` + props.traning.length}</p>
                                 </div>
-                                <div className="d-flex tab_exercise_container">
+                                <div className="d-flex tab-exercise-container">
                                     {tabs}
 
                                     {/* <div className="active_tab"></div> */}
@@ -103,16 +103,7 @@ const TraningPage = (props: TraningPageProps) => {
                 </div>
                 <div className="d-flex justify-center align-center">
                     <div className="container2 hide">
-                        <div className="container_header">
-                            <div className="d-flex align-center justify-center">
-                                <p className="container_title text-center"></p>
-                                <div className="counter_exercise" id="pages"></div>
-                            </div>
-                        </div>
                         <div className="d-flex center-results flex-column mt-100 align-center justify-center">
-
-                            <p className="text-center">Вы завершили прохождение виртуального тренажера</p>
-                            {/* <p class="text-center"><b><a href="../index.html">Нажмите, чтобы вернуться на главную</b></p> */}
                         </div>
                     </div>
 
