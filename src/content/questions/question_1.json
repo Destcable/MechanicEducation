@@ -42,6 +42,6 @@
     {
         "title": "Установите соответствие между изображениями и видами технологических приспособлений",
         "image": null,
-        "component": "quest_1/slide_9"
+        "component": "/templates/questions/question_1/slide_9.html"
     }
 ]
