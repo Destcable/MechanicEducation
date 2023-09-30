@@ -1,10 +1,14 @@
+import { CSSProperties } from "react";
 import { useNavigate } from "react-router-dom";
 import right_arrow from './img/right_arrow.png';
-import { CSSProperties } from "react";
 
 interface HomeButtonProps { 
     href: string
 }
+
+const colorTextHome: CSSProperties = { 
+    color: "#43698F",
+};
 
 const HomeButton = (HomeObj: HomeButtonProps) => {
     const navigate = useNavigate();
@@ -12,10 +16,6 @@ const HomeButton = (HomeObj: HomeButtonProps) => {
     const handleClickGoPage = () => { 
         navigate(HomeObj.href);
     };
-
-    const colorTextHome: CSSProperties = { 
-        color: "#43698F",
-    }
 
     return ( 
         <div className="d-flex align-center justify-content-center mt-4">
