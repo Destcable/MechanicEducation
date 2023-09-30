@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
 
-* {}
-
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
@@ -30,16 +28,9 @@ h5 {
     font-weight: 700;
 }
 
-p {
-    margin: 0px;
-    display: block;
-
-}
-
 footer {
     background-color: #4B6E94;
     min-height: 156px;
-
 }
 
 .main-block {
