@@ -43,7 +43,7 @@ const Card = (CardObj: CardProps) => {
                     <div className="w-100 shape-color_1 mb-4" style={styleShape}>
                         <p className="card-text_main">{CardObj.title}</p>
                     </div>
-                    <p className="center">{CardObj.description}</p>
+                    <p className="text-center">{CardObj.description}</p>
                     <div className="d-flex w-100 justify-content-center button_train ">
                         <a href="#" className="text-decoration-none">
                             <div
