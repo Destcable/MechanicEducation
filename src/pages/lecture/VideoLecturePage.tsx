@@ -28,8 +28,7 @@ const VideoLecturePage = (props: VideoLecturePageProps) => {
                             </div>
                             <div className="container-exercise">
                                 <div className="d-flex justify-content-center align-center">
-                                    {/* <Player>
-                                        <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" />
+                                    {/* <Player> 
                                     </Player> */}
                                 </div>
                             </div>                
