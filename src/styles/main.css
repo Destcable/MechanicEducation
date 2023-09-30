@@ -238,14 +238,6 @@ footer {
     -o-border-radius: 15px 15px 0 0;
 }
 
-.text_home {
-    max-width: 1280px;
-    width: 100%;
-    /* min-width: 400px; */
-    color: #43698F;
-    font-weight: bold;
-}
-
 .max-content {
     width: max-content;
 }
