@@ -52,10 +52,6 @@ footer {
 .btn_info {
     border: 1px solid #000000;
     border-radius: 30px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
     font-size: 14px;
     margin-right: 24px;
 }
