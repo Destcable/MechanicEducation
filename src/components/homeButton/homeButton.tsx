@@ -13,8 +13,8 @@ const HomeButton = (HomeObj: HomeButtonProps) => {
     };
 
     return ( 
-        <div className="d-flex align-center justify-content-center mt-30">
-            <img src={right_arrow} alt="arrow" className="mr-10" />
+        <div className="d-flex align-center justify-content-center mt-4">
+            <img src={right_arrow} className="me-2" />
             <a href="#" onClick={handleClickGoPage} className="text_home text-decoration-none"> На главную</a>
         </div>
     )
