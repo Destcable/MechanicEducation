@@ -22,12 +22,12 @@ function LectureMainPage() {
             <div className="bg_color_block d-flex flex-column ">
 
 
-                <div className="d-flex justify-center align-center">
+                <div className="d-flex justify-content-center align-center">
                     <div className="content1 d-flex flex-column max-content w-100">
                         <HomeButton href="/" />
                         <div className="container5">
                             <div className="container_header">
-                                <div className="d-flex align-center space-between">
+                                <div className="d-flex align-center justify-content-between">
                                     <p className="container_title"> Динамическая инфографика </p>
                                 </div>
                             </div>

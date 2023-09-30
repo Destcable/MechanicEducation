@@ -13,7 +13,7 @@ const MainPage = () => {
                 title={Title}
             />
 
-            <div className="main-block d-flex justify-center wrap">
+            <div className="main-block d-flex justify-content-center flex-wrap">
                 <Card
                     lineName="Динамическая инфографика"
                     title="Освоение нового материала"

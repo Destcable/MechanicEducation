@@ -19,17 +19,17 @@ const VideoLecturePage = (props: VideoLecturePageProps) => {
             <div className="bg_color_block d-flex flex-column ">
 
 
-                <div className="d-flex justify-center align-center">
+                <div className="d-flex justify-content-center align-center">
                     <div className="content1 d-flex flex-column max-content w-100">
                         <HomeButton href="/" />
                         <div className="container5">
                             <div className="container_header">
-                                <div className="d-flex align-center space-between">
+                                <div className="d-flex align-center justify-content-between">
                                     <p className="container_title"> Анимационная видеолекция </p>
                                 </div>
                             </div>
                             <div className="container-exercise">
-                                <div className="d-flex justify-center align-center">
+                                <div className="d-flex justify-content-center align-center">
                                     {/* <Player>
                                         <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" />
                                     </Player> */}
