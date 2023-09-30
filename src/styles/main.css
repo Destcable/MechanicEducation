@@ -35,9 +35,6 @@ p{
     width: 100%;
     min-height: 54px;
 }
-.row{
-    flex-direction: row;
-}
 footer{
     background-color: #4B6E94;
     min-height: 156px;
