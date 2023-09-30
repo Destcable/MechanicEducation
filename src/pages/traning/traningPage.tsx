@@ -51,7 +51,7 @@ const TraningPage = (props: TraningPageProps) => {
             <div className="bg_color_block d-flex flex-column ">
 
 
-                <div className="d-flex justify-center align-center">
+                <div className="d-flex justify-content-center align-center">
                     <div className="content1 d-flex flex-column max-content w-100">
                         <HomeButton
                             href="/"
@@ -71,11 +71,11 @@ const TraningPage = (props: TraningPageProps) => {
                                 </div>
                             </div>
                             <div className="container-exercise">
-                                <div className="d-flex space-between">
+                                <div className="d-flex justify-content-between">
                                     <p className="text-zadanie">{props.traning[countActiveTab].title}</p>
                                 </div>
 
-                                <div className="d-flex container-filling align-center justify-center">
+                                <div className="d-flex container-filling align-center justify-content-center">
 
                                     {ImageUrl &&
                                         <div className="img-exercise">

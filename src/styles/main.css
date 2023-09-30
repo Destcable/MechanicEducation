@@ -35,18 +35,8 @@ p{
     width: 100%;
     min-height: 54px;
 }
-.white{
-    color: white;
-    
-}
 .row{
     flex-direction: row;
-}
-.justify-center{
-    justify-content: center;
-}
-.justify-end{
-    justify-content: end;
 }
 footer{
     background-color: #4B6E94;
@@ -185,12 +175,6 @@ margin-bottom: 10px;
 }
 .ml-20{
     margin-left: 20px;
-}
-.wrap{
-    flex-wrap: wrap;
-}
-.space-between{
-    justify-content: space-between;
 }
 .triangle_img{
     height: 114px;
@@ -363,9 +347,6 @@ padding-left: 28px;
     bottom: 20px;
     right: 50px;
 }
-.list-dashed{
-    list-style-type: none;
-}
 ul.list-dashed > li {
     
   }
@@ -468,11 +449,6 @@ video{
 
 .blocker{
     z-index: 5 !important;
-}
-@media (max-width: 900px) {
-    .container-filling{
-        flex-wrap: wrap;
-    }
 }
 @media (max-width:1223px){
     .footer1{
