@@ -1,8 +1,6 @@
 import Header from '../../components/header/header';
 import Tringle from '../../components/tringle/tringle';
 import HomeButton from "../../components/homeButton/homeButton";
-// import { Player } from "video-react";
-import 'video-react/dist/video-react.css';
 import '../../styles/main.css';
 
 interface VideoLecturePageProps { 
