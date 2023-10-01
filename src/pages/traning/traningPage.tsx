@@ -25,6 +25,8 @@ const TraningPage = (props: TraningPageProps) => {
     const [countActiveTab, setActiveTab] = useState(0);
     const tabs = [];
 
+    const HTMLContent = TemplateLoader(props.traning[countActiveTab].component);
+
     const ImageUrl = props.traning[countActiveTab].image ? props.traning[countActiveTab].image : undefined;
 
     function setCountActiveTab(count: number) {
@@ -89,9 +91,9 @@ const TraningPage = (props: TraningPageProps) => {
                                         </div>
                                     }
                                     {props.traning[countActiveTab].component &&
-                                        <TemplateLoader
-                                            template={props.traning[countActiveTab].component}
-                                        />
+                                        <div> 
+                                            <div dangerouslySetInnerHTML={ { __html: HTMLContent } } />
+                                        </div>
                                     }
 
                                 </div>
