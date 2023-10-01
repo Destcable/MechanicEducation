@@ -1,6 +1,6 @@
 import { CSSProperties, useState } from 'react';
 import Logo from '../logo/logo';
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ModalGetFromContent, ModalGetKeyWords } from '../../content/modals/ModalsData';
@@ -54,7 +54,8 @@ const Header = (HeaderObj: HeaderProps) => {
                 <div className="d-flex flex-column w-100" style={ml90}>
                     <div className="d-flex flex-wrap w-100 justify-content-between">
                         <div className="pt-2">
-                            <h2 className="text-white">{HeaderObj.title}</h2>
+                            {HeaderObj.loading ? <Skeleton width={312} height={38} containerClassName="avatar-skeleton"  /> 
+                                                : <h2 className="text-white">{HeaderObj.title}</h2>}
                         </div>
                         <div className="d-flex align-items-center mt-10">
                             <a href='#'
@@ -74,7 +75,8 @@ const Header = (HeaderObj: HeaderProps) => {
                     <div>
                         <h3 className='position-absolute fw-bold'
                             style={styleSubtitle}>
-                            Выбор оборудования, инструмента и технологической оснастки
+                                {HeaderObj.loading ? <Skeleton width={709} height={24} containerClassName="avatar-skeleton" />
+                                                    : "Выбор оборудования, инструмента и технологической оснастки"}
                         </h3>
                     </div>
                 </div>
