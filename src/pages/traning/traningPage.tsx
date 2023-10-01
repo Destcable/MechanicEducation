@@ -8,7 +8,6 @@ import ArrowRight from "../../components/arrowRight/arrowRight";
 import ArrowLeft from "../../components/arrowLeft/arrowLeft";
 import { Title } from "../../config";
 import TemplateLoader from "../../components/TemplateLoader/TemplateLoader";
-import selectCount from "../../components/JQuery/selectCount";
 import checkSelectsNotEmpty from "../../components/JQuery/checkSelectsNotEmpty";
 
 interface TraningPageProps {
