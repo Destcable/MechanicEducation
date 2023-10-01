@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { CSSProperties, ReactNode, useState } from "react";
 import type { TraningData } from "../../types/Traning";
 import Header from "../../components/header/header";
 import HomeButton from "../../components/homeButton/homeButton";
@@ -12,6 +12,12 @@ import TemplateLoader from "../../components/TemplateLoader/TemplateLoader";
 interface TraningPageProps {
     traning: TraningData[],
     child?: ReactNode
+}
+
+const arrows: CSSProperties = { 
+    bottom: "20px",
+    right: "50px",
+    
 }
 
 const TraningPage = (props: TraningPageProps) => {
@@ -90,7 +96,7 @@ const TraningPage = (props: TraningPageProps) => {
 
                                 </div>
 
-                                <div className="arrows1">
+                                <div className="d-flex w-100 justify-content-end position-absolute" style={arrows}>
                                     <ArrowLeft onClick={takeCountTab} />
                                     <ArrowRight onClick={addCountTab} />
                                 </div>

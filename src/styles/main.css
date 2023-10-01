@@ -314,21 +314,6 @@ footer {
     max-width: 630px;
 }
 
-.arrows {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
-
-.arrows1 {
-    display: flex;
-    width: 100%;
-    justify-content: end;
-    position: absolute;
-    bottom: 20px;
-    right: 50px;
-}
-
 button {
     border: none;
     background-color: rgba(255, 255, 255, 0);
