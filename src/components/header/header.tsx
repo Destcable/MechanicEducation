@@ -22,9 +22,7 @@ const Header = (HeaderObj: HeaderProps) => {
         marginTop: "20px"
     }
 
-    const styleButton: CSSProperties = {
-        borderRadius: "15px",
-        fontWeight: "bold",
+    const styleButton: CSSProperties = { 
         fontSize: "14px",
         padding: "14px 32px 25px"
     }
@@ -58,13 +56,13 @@ const Header = (HeaderObj: HeaderProps) => {
                         </div>
                         <div className="d-flex align-items-center mt-10">
                             <a href='#' 
-                                className="btn-contacts text-white text-decoration-none" 
+                                className="btn-contacts rounded-3 fw-bold text-white text-decoration-none" 
                                 onClick={() => setModalActiveContent(true)}
                                 style={styleButton}>
                                 Информация о контенте
                             </a>
                             <a href='#' 
-                                className="btn-words text-white text-decoration-none" 
+                                className="btn-words rounded-3 fw-bold text-white text-decoration-none" 
                                 onClick={() => setModalActiveKeyWords(true)}
                                 style={styleButton}>
                                     Ключевые слова
