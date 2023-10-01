@@ -4,16 +4,22 @@ import Card from '../../components/card/card';
 import Tringle from '../../components/tringle/tringle';
 import Footer from '../../components/footer/footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { CSSProperties } from 'react';
 
+const mainBlock: CSSProperties = { 
+    marginTop: "150px",
+    columnGap: "90px"
+}
 
 const MainPage = () => {
     return (
         <>
             <Header
                 title={Title}
+                loading={false}
             />
 
-            <div className="main-block d-flex justify-content-center flex-wrap">
+            <div className="d-flex justify-content-center flex-wrap" style={mainBlock}>
                 <Card
                     lineName="Динамическая инфографика"
                     title="Освоение нового материала"
