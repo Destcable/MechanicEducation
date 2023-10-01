@@ -1,13 +1,15 @@
 import { CSSProperties, ReactNode, useState } from "react";
+import $ from 'jquery';
 import type { TraningData } from "../../types/Traning";
 import Header from "../../components/header/header";
 import HomeButton from "../../components/homeButton/homeButton";
 import Tringle from "../../components/tringle/tringle";
-// import ExerciseTrainer from "../../components/exerciseTrainer/exerciseTrainer";
 import ArrowRight from "../../components/arrowRight/arrowRight";
 import ArrowLeft from "../../components/arrowLeft/arrowLeft";
 import { Title } from "../../config";
 import TemplateLoader from "../../components/TemplateLoader/TemplateLoader";
+import selectCount from "../../components/JQuery/selectCount";
+import checkSelectsNotEmpty from "../../components/JQuery/checkSelectsNotEmpty";
 
 interface TraningPageProps {
     traning: TraningData[],
@@ -23,6 +25,7 @@ const arrows: CSSProperties = {
 const TraningPage = (props: TraningPageProps) => {
 
     const [countActiveTab, setActiveTab] = useState(0);
+    const [isEnabledButton, setEnabledButton] = useState(false);
     const tabs = [];
 
     const HTMLContent = TemplateLoader(props.traning[countActiveTab].component);
@@ -48,6 +51,12 @@ const TraningPage = (props: TraningPageProps) => {
     for (let index = 0; index < props.traning.length; index++) {
         tabs.push(<div key={index} className="tab"></div>);
     }
+
+    $("select").on("change", function() { 
+        setEnabledButton(
+            checkSelectsNotEmpty()
+        );
+    })
 
 
     return (
@@ -100,7 +109,7 @@ const TraningPage = (props: TraningPageProps) => {
 
                                 <div className="d-flex w-100 justify-content-end position-absolute" style={arrows}>
                                     <ArrowLeft onClick={takeCountTab} />
-                                    <ArrowRight onClick={addCountTab} />
+                                    { isEnabledButton ? <ArrowRight onClick={addCountTab} /> : false }
                                 </div>
 
                             </div>
