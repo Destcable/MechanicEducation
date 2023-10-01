@@ -16,7 +16,7 @@ const MainPage = () => {
         <>
             <Header
                 title={Title}
-                loading={true}
+                loading={false}
             />
 
             <div className="d-flex justify-content-center flex-wrap" style={mainBlock}>

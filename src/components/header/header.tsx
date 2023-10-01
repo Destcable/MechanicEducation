@@ -54,7 +54,7 @@ const Header = (HeaderObj: HeaderProps) => {
                 <div className="d-flex flex-column w-100" style={ml90}>
                     <div className="d-flex flex-wrap w-100 justify-content-between">
                         <div className="pt-2">
-                            {HeaderObj.loading ? <Skeleton width={312} height={38} containerClassName="avatar-skeleton"  /> 
+                            {HeaderObj.loading ? <Skeleton width={312} height={38}  /> 
                                                 : <h2 className="text-white">{HeaderObj.title}</h2>}
                         </div>
                         <div className="d-flex align-items-center mt-10">
