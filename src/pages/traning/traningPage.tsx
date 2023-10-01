@@ -108,7 +108,8 @@ const TraningPage = (props: TraningPageProps) => {
 
                                 <div className="d-flex w-100 justify-content-end position-absolute" style={arrows}>
                                     <ArrowLeft onClick={takeCountTab} />
-                                    { isEnabledButton ? <ArrowRight onClick={addCountTab} /> : false }
+                                    {/* { isEnabledButton ? <ArrowRight onClick={addCountTab} /> : false } */}
+                                    <ArrowRight onClick={addCountTab} />
                                 </div>
 
                             </div>
