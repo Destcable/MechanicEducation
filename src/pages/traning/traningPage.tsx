@@ -67,7 +67,7 @@ const TraningPage = (props: TraningPageProps) => {
                             <div className="container_header">
                                 <div className="d-flex align-items-center justify-content-between">
                                     <p className="container_title">Динамическая инфографика</p>
-                                    <p className="counter_exercise">{`${countActiveTab + 1} / ` + props.traning.length}</p>
+                                    <p className="text-white pe-3">{`${countActiveTab + 1} / ` + props.traning.length}</p>
                                 </div>
                                 <div className="d-flex tab-exercise-container">
                                     {tabs}
