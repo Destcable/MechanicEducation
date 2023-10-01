@@ -4,7 +4,7 @@ import '../../styles/main.css';
 const Footer = () => {
     return (
         <footer className="d-flex justify-content-center">
-            <div className=" footer1 container d-flex flex-wrap">
+            <div className="footer1 d-flex flex-wrap">
                 <div className="footer_columns d-flex mt-20 mb-10 flex-wrap">
                     <div className="d-flex flex-column">
                         <h4 className="text-white">ФГОС СПО 15.02.16</h4>

@@ -30,7 +30,6 @@ h5 {
 
 footer {
     background-color: #4B6E94;
-    min-height: 156px;
 }
 
 .main-block {
@@ -52,10 +51,6 @@ footer {
 .btn_info {
     border: 1px solid #000000;
     border-radius: 30px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
     font-size: 14px;
     margin-right: 24px;
 }
@@ -145,14 +140,6 @@ footer {
     margin-top: 20px;
 }
 
-.mt-30 {
-    margin-top: 30px;
-}
-
-.mr-10 {
-    margin-right: 10px;
-}
-
 .ml-20 {
     margin-left: 20px;
 }
@@ -211,10 +198,6 @@ footer {
     min-height: 670px;
     height: fit-content;
     border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
     margin-top: 20px;
 
     position: relative;
@@ -228,10 +211,6 @@ footer {
     min-height: 300px;
     height: fit-content;
     border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
     margin-top: 20px;
 }
 
@@ -244,14 +223,6 @@ footer {
     -moz-border-radius: 15px 15px 0 0;
     -ms-border-radius: 15px 15px 0 0;
     -o-border-radius: 15px 15px 0 0;
-}
-
-.text_home {
-    max-width: 1280px;
-    width: 100%;
-    /* min-width: 400px; */
-    color: #43698F;
-    font-weight: bold;
 }
 
 .max-content {
@@ -288,11 +259,6 @@ footer {
     max-width: 150px;
     min-width: none;
     border-radius: 15px 15px 0 0;
-}
-
-.counter_exercise {
-    color: #fff;
-    padding: 20px;
 }
 
 .tab-exercise-container {
@@ -334,60 +300,7 @@ footer {
     max-width: 630px;
 }
 
-.arrows {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
-
-.arrows1 {
-    display: flex;
-    width: 100%;
-    justify-content: end;
-    position: absolute;
-    bottom: 20px;
-    right: 50px;
-}
-
 button {
     border: none;
     background-color: rgba(255, 255, 255, 0);
-}
-
-@media (min-width:1223px) {
-    .footer1 {
-        justify-content: space-between;
-    }
-}
-
-@media (max-width:845px) {
-    .header-second {
-        height: 70px;
-    }
-
-    .subtitle_header {
-        margin-top: 20px;
-        font-size: 16px;
-    }
-
-    header h2 {
-        margin: 0;
-        font-size: 25px;
-        font-weight: 700;
-    }
-
-    .buttons {
-        display: none;
-    }
-
-    .triangle {
-        display: none;
-    }
-}
-
-@media (max-width:545px) {
-    .triangle {
-        display: none;
-    }
-
 }

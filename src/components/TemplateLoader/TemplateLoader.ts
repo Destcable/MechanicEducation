@@ -4,17 +4,12 @@ import axios from "axios";
 import { initializeApp } from "firebase/app";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
-interface TemplateLoaderProps {
-    template: string
-}
-
-
-function TemplateLoader(props: TemplateLoaderProps) {
+function TemplateLoader(template: string) {
     const [HTMLContent, setHTMLContent] = useState('');
 
     const app = initializeApp(FirebaseConfig);
     const storage = getStorage(app, FirebaseURL);
-    const gsReference = ref(storage, props.template);
+    const gsReference = ref(storage, template);
 
     getDownloadURL(gsReference)
         .then((response) => {
@@ -24,11 +19,7 @@ function TemplateLoader(props: TemplateLoaderProps) {
                 });
         })
 
-    return (
-        <div>
-            <div dangerouslySetInnerHTML={{ __html: HTMLContent }} />
-        </div>
-    )
+    return HTMLContent;
 }
 
 export default TemplateLoader;

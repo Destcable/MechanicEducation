@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { CSSProperties, ReactNode, useState } from "react";
 import type { TraningData } from "../../types/Traning";
 import Header from "../../components/header/header";
 import HomeButton from "../../components/homeButton/homeButton";
@@ -14,10 +14,18 @@ interface TraningPageProps {
     child?: ReactNode
 }
 
+const arrows: CSSProperties = { 
+    bottom: "20px",
+    right: "50px",
+    
+}
+
 const TraningPage = (props: TraningPageProps) => {
 
     const [countActiveTab, setActiveTab] = useState(0);
     const tabs = [];
+
+    const HTMLContent = TemplateLoader(props.traning[countActiveTab].component);
 
     const ImageUrl = props.traning[countActiveTab].image ? props.traning[countActiveTab].image : undefined;
 
@@ -61,7 +69,7 @@ const TraningPage = (props: TraningPageProps) => {
                             <div className="container_header">
                                 <div className="d-flex align-items-center justify-content-between">
                                     <p className="container_title">Динамическая инфографика</p>
-                                    <p className="counter_exercise">{`${countActiveTab + 1} / ` + props.traning.length}</p>
+                                    <p className="text-white pe-3">{`${countActiveTab + 1} / ` + props.traning.length}</p>
                                 </div>
                                 <div className="d-flex tab-exercise-container">
                                     {tabs}
@@ -83,14 +91,14 @@ const TraningPage = (props: TraningPageProps) => {
                                         </div>
                                     }
                                     {props.traning[countActiveTab].component &&
-                                        <TemplateLoader
-                                            template={props.traning[countActiveTab].component}
-                                        />
+                                        <div> 
+                                            <div dangerouslySetInnerHTML={ { __html: HTMLContent } } />
+                                        </div>
                                     }
 
                                 </div>
 
-                                <div className="arrows1">
+                                <div className="d-flex w-100 justify-content-end position-absolute" style={arrows}>
                                     <ArrowLeft onClick={takeCountTab} />
                                     <ArrowRight onClick={addCountTab} />
                                 </div>
