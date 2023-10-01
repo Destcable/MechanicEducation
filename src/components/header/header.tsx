@@ -37,13 +37,17 @@ const Header = (HeaderObj: HeaderProps) => {
         zIndex: 3,
     }
 
+    const ml90: CSSProperties = { 
+        marginLeft: "90px"
+    }
+
     return (
         <header className="d-flex flex-column align-items-center w-100" style={styleHeader}>
             <div className="container d-flex flex-row">
                 <div className="position-absolute mt-4" style={styleLogo}>
                     <Logo />
                 </div>
-                <div className="d-flex flex-column ml-90 w-100">
+                <div className="d-flex flex-column w-100" style={ml90}>
                     <div className="d-flex flex-wrap w-100 justify-content-between">
                         <div className="pt-2">
                             <h2 className="text-white">{HeaderObj.title}</h2>
