@@ -1,4 +1,5 @@
 import { CSSProperties, ReactNode, useEffect, useState } from "react";
+import $ from 'jquery';
 import type { TraningData } from "../../types/Traning";
 import Header from "../../components/header/header";
 import HomeButton from "../../components/homeButton/homeButton";
@@ -70,6 +71,20 @@ const TraningPage = (props: TraningPageProps) => {
         tabs.push(<div key={index} className="tab"></div>);
     }
 
+    $('input[name="options"]').on("click", function () {
+        if ($(this).is(':checked')) {
+            const parentElement = $(this).parent();
+            const currentElement = $(this);
+            if (props.traning[countActiveTab].answers) { 
+                if (props.traning[countActiveTab].answers?.includes(currentElement.val())) { 
+                    parentElement.css('background-color', '#9ee7d5');   
+                }else { 
+                    parentElement.css('background-color', '#e7ad9e');
+                }
+            }
+        }
+    });
+
 
     return (
         <>
@@ -120,7 +135,7 @@ const TraningPage = (props: TraningPageProps) => {
                                 </div>
 
                                 <div className="d-flex w-100 justify-content-end " style={arrows}>
-                                    { countActiveTab === 0 ? false : <ArrowLeft onClick={takeCountTab} /> }
+                                    {countActiveTab === 0 ? false : <ArrowLeft onClick={takeCountTab} />}
                                     {isEnabledButton ? <ArrowRight onClick={addCountTab} /> : false}
                                 </div>
 
