@@ -1,5 +1,4 @@
-import { CSSProperties, ReactNode, useState } from "react";
-import $ from 'jquery';
+import { CSSProperties, ReactNode, useEffect, useState } from "react";
 import type { TraningData } from "../../types/Traning";
 import Header from "../../components/header/header";
 import HomeButton from "../../components/homeButton/homeButton";
@@ -15,16 +14,35 @@ interface TraningPageProps {
     child?: ReactNode
 }
 
-const arrows: CSSProperties = { 
+const arrows: CSSProperties = {
     bottom: "20px",
     right: "50px",
-    
+
 }
 
 const TraningPage = (props: TraningPageProps) => {
 
     const [countActiveTab, setActiveTab] = useState(0);
     const [isEnabledButton, setEnabledButton] = useState(false);
+
+    useEffect(() => {
+        function handleSelectChange() {
+            setEnabledButton(checkSelectsNotEmpty());
+        }
+
+        if (
+            props.traning[countActiveTab].type === "select" ||
+            props.traning[countActiveTab].type === "checkbox"
+        ) {
+            document.addEventListener("change", handleSelectChange);
+        } else { setEnabledButton(true) }
+
+        return () => {
+            document.removeEventListener("change", handleSelectChange);
+        };
+
+    }, [countActiveTab, props.traning]);
+
     const tabs = [];
 
     const HTMLContent = TemplateLoader(props.traning[countActiveTab].component);
@@ -40,6 +58,7 @@ const TraningPage = (props: TraningPageProps) => {
     }
 
     function addCountTab() {
+        setEnabledButton(false);
         return setCountActiveTab(countActiveTab + 1);
     }
 
@@ -50,12 +69,6 @@ const TraningPage = (props: TraningPageProps) => {
     for (let index = 0; index < props.traning.length; index++) {
         tabs.push(<div key={index} className="tab"></div>);
     }
-
-    $("select").on("change", function() { 
-        setEnabledButton(
-            checkSelectsNotEmpty()
-        );
-    })
 
 
     return (
@@ -99,17 +112,16 @@ const TraningPage = (props: TraningPageProps) => {
                                         </div>
                                     }
                                     {props.traning[countActiveTab].component &&
-                                        <div> 
-                                            <div dangerouslySetInnerHTML={ { __html: HTMLContent } } />
+                                        <div>
+                                            <div dangerouslySetInnerHTML={{ __html: HTMLContent }} />
                                         </div>
                                     }
 
                                 </div>
 
-                                <div className="d-flex w-100 justify-content-end position-absolute" style={arrows}>
+                                <div className="d-flex w-100 justify-content-end " style={arrows}>
                                     <ArrowLeft onClick={takeCountTab} />
-                                    {/* { isEnabledButton ? <ArrowRight onClick={addCountTab} /> : false } */}
-                                    <ArrowRight onClick={addCountTab} />
+                                    {isEnabledButton ? <ArrowRight onClick={addCountTab} /> : false}
                                 </div>
 
                             </div>
