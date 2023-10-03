@@ -25,18 +25,18 @@ const TraningPage = (props: TraningPageProps) => {
 
     const [countActiveTab, setActiveTab] = useState(0);
     const [isEnabledButton, setEnabledButton] = useState(false);
-
+    const [isAnswerButton, setAnswerButton] = useState(false);
     useEffect(() => {
+
         function handleSelectChange() {
             setEnabledButton(checkSelectsNotEmpty());
         }
 
-        if (
-            props.traning[countActiveTab].type === "select" ||
-            props.traning[countActiveTab].type === "checkbox"
-        ) {
+        if (props.traning[countActiveTab].type === "select") {
             document.addEventListener("change", handleSelectChange);
-        } else { setEnabledButton(true) }
+        } else if (props.traning[countActiveTab].type != "checkbox") {
+            setEnabledButton(true);
+        }
 
         return () => {
             document.removeEventListener("change", handleSelectChange);
@@ -72,13 +72,14 @@ const TraningPage = (props: TraningPageProps) => {
     }
 
     $('input[name="options"]').on("click", function () {
+        $('#arrows').append(`<button class="btn btn_exe">Ответить</button>`);
         if ($(this).is(':checked')) {
             const parentElement = $(this).parent();
             const currentElement = $(this);
-            if (props.traning[countActiveTab].answers) { 
-                if (props.traning[countActiveTab].answers?.includes(currentElement.val())) { 
-                    parentElement.css('background-color', '#9ee7d5');   
-                }else { 
+            if (props.traning[countActiveTab].answers) {
+                if (props.traning[countActiveTab].answers?.includes(currentElement.val())) {
+                    parentElement.css('background-color', '#9ee7d5');
+                } else {
                     parentElement.css('background-color', '#e7ad9e');
                 }
             }
@@ -134,7 +135,7 @@ const TraningPage = (props: TraningPageProps) => {
 
                                 </div>
 
-                                <div className="d-flex w-100 justify-content-end " style={arrows}>
+                                <div id="arrows" className="d-flex w-100 justify-content-end " style={arrows}>
                                     {countActiveTab === 0 ? false : <ArrowLeft onClick={takeCountTab} />}
                                     {isEnabledButton ? <ArrowRight onClick={addCountTab} /> : false}
                                 </div>

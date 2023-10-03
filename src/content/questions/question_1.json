@@ -7,6 +7,7 @@
         "answers": [ "A", "B", "C"]
     },
     {
+        "type": "checkbox",
         "title": "Укажите типы фрезерных станков. Выберите все правильные ответы.",
         "image": null,
         "component": "/templates/questions/question_1/slide_2.html",
