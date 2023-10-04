@@ -25,7 +25,6 @@ const TraningPage = (props: TraningPageProps) => {
 
     const [countActiveTab, setActiveTab] = useState(0);
     const [isEnabledButton, setEnabledButton] = useState(false);
-    const [isAnswerButton, setAnswerButton] = useState(false);
     useEffect(() => {
 
         function handleSelectChange() {
