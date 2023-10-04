@@ -6,12 +6,12 @@ import Footer from '../../components/footer/footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { CSSProperties } from 'react';
 
-const mainBlock: CSSProperties = { 
-    marginTop: "150px",
-    columnGap: "90px"
-}
-
 const MainPage = () => {
+    const mainBlock: CSSProperties = { 
+        marginTop: "150px",
+        columnGap: "90px"
+    }
+
     return (
         <>
             <Header
