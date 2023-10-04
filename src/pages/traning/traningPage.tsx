@@ -114,9 +114,7 @@ const TraningPage = (props: TraningPageProps) => {
                                 </div>
                                 <div className="d-flex tab-exercise-container">
                                     {tabs}
-
                                     {/* <div className="active_tab"></div> */}
-
                                 </div>
                             </div>
                             <div className="container-exercise">
