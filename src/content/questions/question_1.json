@@ -7,9 +7,11 @@
         "answers": [ "A", "B", "C"]
     },
     {
+        "type": "checkbox",
         "title": "Укажите типы фрезерных станков. Выберите все правильные ответы.",
         "image": null,
-        "component": "/templates/questions/question_1/slide_2.html"
+        "component": "/templates/questions/question_1/slide_2.html",
+        "answers": [ "B", "C" ]
     },
     {
         "title": "Укажите факторы, влияющие на выбор металлорежущего оборудования для реализации технологического процесса. Выберите все правильные ответы.",

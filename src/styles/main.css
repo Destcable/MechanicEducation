@@ -6,6 +6,7 @@ body {
     position: relative;
 }
 
+
 h2 {
     margin: 0;
     font-size: 32px;
@@ -65,6 +66,10 @@ footer {
 
 .btn-contacts {
     background-color: #6287AA;
+}
+
+.test {
+    background-color: brown;
 }
 
 .btn-words {

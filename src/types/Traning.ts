@@ -1,7 +1,7 @@
 export type TraningData = {
-    type?: "checkbox" | "select" | null | undefined
+    type?: unknown
     title: string,
     image?: string | null | undefined,
     component: string,
-    answers?: [string | number] 
+    answers?: unknown[] 
 }

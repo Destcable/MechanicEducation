@@ -1,10 +1,7 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider} from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import { Routes } from './Routes';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+ReactDOM.createRoot(document.getElementById("root")!).render(
     <RouterProvider router={Routes} />
-  </React.StrictMode>,
 );

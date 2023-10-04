@@ -1,4 +1,5 @@
 import { CSSProperties, ReactNode, useEffect, useState } from "react";
+import $ from 'jquery';
 import type { TraningData } from "../../types/Traning";
 import Header from "../../components/header/header";
 import HomeButton from "../../components/homeButton/homeButton";
@@ -24,18 +25,18 @@ const TraningPage = (props: TraningPageProps) => {
 
     const [countActiveTab, setActiveTab] = useState(0);
     const [isEnabledButton, setEnabledButton] = useState(false);
-
     useEffect(() => {
+
+
         function handleSelectChange() {
             setEnabledButton(checkSelectsNotEmpty());
         }
 
-        if (
-            props.traning[countActiveTab].type === "select" ||
-            props.traning[countActiveTab].type === "checkbox"
-        ) {
+        if (props.traning[countActiveTab].type === "select") {
             document.addEventListener("change", handleSelectChange);
-        } else { setEnabledButton(true) }
+        } else if (props.traning[countActiveTab].type != "checkbox") {
+            setEnabledButton(true);
+        }
 
         return () => {
             document.removeEventListener("change", handleSelectChange);
@@ -69,6 +70,25 @@ const TraningPage = (props: TraningPageProps) => {
     for (let index = 0; index < props.traning.length; index++) {
         tabs.push(<div key={index} className="tab"></div>);
     }
+
+    $('input[name="options"]').on("click", function () {
+        $('#arrows').append(`
+            <div class="d-flex w-100 justify-content-center">
+                <button class="btn btn_exe">Ответить</button>
+            </div>`);
+            
+        if ($(this).is(':checked')) {
+            const parentElement = $(this).parent();
+            const currentElement = $(this);
+            if (props.traning[countActiveTab].answers) {
+                if (props.traning[countActiveTab].answers?.includes(currentElement.val())) {
+                    parentElement.css('background-color', '#9ee7d5');
+                } else {
+                    parentElement.css('background-color', '#e7ad9e');
+                }
+            }
+        }
+    });
 
 
     return (
@@ -119,9 +139,9 @@ const TraningPage = (props: TraningPageProps) => {
 
                                 </div>
 
-                                <div className="d-flex w-100 justify-content-end " style={arrows}>
-                                    <ArrowLeft onClick={takeCountTab} />
-                                    {isEnabledButton ? <ArrowRight onClick={addCountTab} /> : false}
+                                <div id="arrows" className="d-flex w-100 justify-content-end " style={arrows}>
+                                    {isEnabledButton && countActiveTab > 0 && <ArrowLeft onClick={takeCountTab} />}
+                                    {isEnabledButton && <ArrowRight onClick={addCountTab} />}
                                 </div>
 
                             </div>
