@@ -27,6 +27,7 @@ const TraningPage = (props: TraningPageProps) => {
     const [isEnabledButton, setEnabledButton] = useState(false);
     useEffect(() => {
 
+
         function handleSelectChange() {
             setEnabledButton(checkSelectsNotEmpty());
         }
@@ -71,7 +72,11 @@ const TraningPage = (props: TraningPageProps) => {
     }
 
     $('input[name="options"]').on("click", function () {
-        $('#arrows').append(`<button class="btn btn_exe">Ответить</button>`);
+        $('#arrows').append(`
+            <div class="d-flex w-100 justify-content-center">
+                <button class="btn btn_exe">Ответить</button>
+            </div>`);
+            
         if ($(this).is(':checked')) {
             const parentElement = $(this).parent();
             const currentElement = $(this);
@@ -135,8 +140,8 @@ const TraningPage = (props: TraningPageProps) => {
                                 </div>
 
                                 <div id="arrows" className="d-flex w-100 justify-content-end " style={arrows}>
-                                    {countActiveTab === 0 ? false : <ArrowLeft onClick={takeCountTab} />}
-                                    {isEnabledButton ? <ArrowRight onClick={addCountTab} /> : false}
+                                    {isEnabledButton && countActiveTab > 0 && <ArrowLeft onClick={takeCountTab} />}
+                                    {isEnabledButton && <ArrowRight onClick={addCountTab} />}
                                 </div>
 
                             </div>
