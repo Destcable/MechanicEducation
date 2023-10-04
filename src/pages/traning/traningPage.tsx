@@ -72,10 +72,11 @@ const TraningPage = (props: TraningPageProps) => {
     }
 
     $('input[name="options"]').on("click", function () {
-        $('#arrows').append(`
-            <div class="d-flex w-100 justify-content-center">
-                <button class="btn btn_exe">Ответить</button>
-            </div>`);
+        // const selectedElements = $('input[name="options"]:checked');       
+        // $('#arrows').append(`
+        //     <div class="d-flex w-100 justify-content-center">
+        //         <button class="btn btn_exe">Ответить</button>
+        //     </div>`);
             
         if ($(this).is(':checked')) {
             const parentElement = $(this).parent();
