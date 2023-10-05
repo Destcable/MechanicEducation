@@ -25,6 +25,7 @@ const TraningPage = (props: TraningPageProps) => {
 
     const [countActiveTab, setActiveTab] = useState(0);
     const [isEnabledButton, setEnabledButton] = useState(false);
+    const [isAnswerButton, setAnswerButton] = useState(false);
     useEffect(() => {
 
 
@@ -71,16 +72,27 @@ const TraningPage = (props: TraningPageProps) => {
         tabs.push(<div key={index} className="tab"></div>);
     }
 
+    $('input[name="options"]').on("change", function() { 
+        const selectedElements = $('input[name="options"]:checked');
+        const parentElement = $(this).parent();
+        if (selectedElements.length > 0) { 
+            $('#arrows').append(`
+                <div id="send-answers__button" class="d-flex w-100 justify-content-center">
+                    <button class="btn btn_exe">Ответить</button>
+                </div>`);
+        }
+        if ($(this).is(':checked')) {
+            parentElement.css('background-color', '#5f7b9a');
+        } else { 
+            parentElement.css('background-color', '#A2BEDD');
+        }
+    })
+
     $('input[name="options"]').on("click", function () {
-        // const selectedElements = $('input[name="options"]:checked');       
-        // $('#arrows').append(`
-        //     <div class="d-flex w-100 justify-content-center">
-        //         <button class="btn btn_exe">Ответить</button>
-        //     </div>`);
+        const parentElement = $(this).parent();
+        const currentElement = $(this);  
             
         if ($(this).is(':checked')) {
-            const parentElement = $(this).parent();
-            const currentElement = $(this);
             if (props.traning[countActiveTab].answers) {
                 if (props.traning[countActiveTab].answers?.includes(currentElement.val())) {
                     parentElement.css('background-color', '#9ee7d5');
@@ -88,7 +100,7 @@ const TraningPage = (props: TraningPageProps) => {
                     parentElement.css('background-color', '#e7ad9e');
                 }
             }
-        }
+        } else { parentElement.css('background-color', '#gfgf');}
     });
 
 
