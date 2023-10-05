@@ -9,6 +9,7 @@ import ArrowLeft from "../../components/arrowLeft/arrowLeft";
 import { Title } from "../../config";
 import TemplateLoader from "../../components/TemplateLoader/TemplateLoader";
 import checkSelectsNotEmpty from "../../components/JQuery/checkSelectsNotEmpty";
+import { ANSWER_BUTTON_COLOR } from "../../UI.config";
 
 interface TraningPageProps {
     traning: TraningData[],
@@ -25,9 +26,8 @@ const TraningPage = (props: TraningPageProps) => {
 
     const [countActiveTab, setActiveTab] = useState(0);
     const [isEnabledButton, setEnabledButton] = useState(false);
+
     useEffect(() => {
-
-
         function handleSelectChange() {
             setEnabledButton(checkSelectsNotEmpty());
         }
@@ -71,25 +71,42 @@ const TraningPage = (props: TraningPageProps) => {
         tabs.push(<div key={index} className="tab"></div>);
     }
 
-    $('input[name="options"]').on("click", function () {
-        $('#arrows').append(`
-            <div class="d-flex w-100 justify-content-center">
-                <button class="btn btn_exe">Ответить</button>
-            </div>`);
-            
-        if ($(this).is(':checked')) {
-            const parentElement = $(this).parent();
-            const currentElement = $(this);
-            if (props.traning[countActiveTab].answers) {
-                if (props.traning[countActiveTab].answers?.includes(currentElement.val())) {
-                    parentElement.css('background-color', '#9ee7d5');
-                } else {
-                    parentElement.css('background-color', '#e7ad9e');
-                }
+    $('input[name="options"]').on("change", function() { 
+        const selectedElements = $('input[name="options"]:checked');
+        const parentElement = $(this).parent();
+        if (selectedElements.length > 0) {
+            if ($('#send-answers__button').length === 0) {
+                $('#arrows').append(`
+                <div id="send-answers__button" class="d-flex w-100 justify-content-center">
+                    <button class="btn btn_exe">Ответить</button>
+                </div>`);
+
+                $('#send-answers__button').on("click", function() {
+                    $('#send-answers__button').remove();
+                    setEnabledButton(true);
+                    const checkbox = $("label.btn input[type='checkbox']");
+                    checkbox.prop("disabled", true);
+                    checkbox.parent().addClass("disabled");
+                    $("input[type='checkbox']:checked").each(function() { 
+                        const currentElement = $(this);
+                        if(props.traning[countActiveTab].answers?.includes(currentElement.val())) {
+                            currentElement.parent().css('background-color', ANSWER_BUTTON_COLOR.success);
+                        } else { 
+                            currentElement.parent().css('background-color', ANSWER_BUTTON_COLOR.error);
+                        }
+                    })
+                })
             }
         }
-    });
-
+        if (selectedElements.length === 0) { 
+            $('#send-answers__button').remove();
+        }
+        if ($(this).is(':checked')) {
+            parentElement.css('background-color', ANSWER_BUTTON_COLOR.selected);
+        } else { 
+            parentElement.css('background-color', ANSWER_BUTTON_COLOR.default);
+        }
+    })
 
     return (
         <>
@@ -114,9 +131,7 @@ const TraningPage = (props: TraningPageProps) => {
                                 </div>
                                 <div className="d-flex tab-exercise-container">
                                     {tabs}
-
                                     {/* <div className="active_tab"></div> */}
-
                                 </div>
                             </div>
                             <div className="container-exercise">
