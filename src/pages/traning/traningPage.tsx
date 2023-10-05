@@ -73,7 +73,8 @@ const TraningPage = (props: TraningPageProps) => {
 
     $('input[name="options"]').on("change", function() { 
         const selectedElements = $('input[name="options"]:checked');
-        const parentElement = $(this).parent();
+        const currentElement = $(this);
+
         if (selectedElements.length > 0) {
             if ($('#send-answers__button').length === 0) {
                 $('#arrows').append(`
@@ -81,7 +82,7 @@ const TraningPage = (props: TraningPageProps) => {
                     <button class="btn btn_exe">Ответить</button>
                 </div>`);
 
-                $('#send-answers__button').on("click", function() {
+                $('#send-answers__button').off("click").on("click", function() {
                     $('#send-answers__button').remove();
                     setEnabledButton(true);
                     const checkbox = $("label.btn input[type='checkbox']");
@@ -98,13 +99,16 @@ const TraningPage = (props: TraningPageProps) => {
                 })
             }
         }
+
         if (selectedElements.length === 0) { 
             $('#send-answers__button').remove();
         }
+
         if ($(this).is(':checked')) {
-            parentElement.css('background-color', ANSWER_BUTTON_COLOR.selected);
+            
+            currentElement.parent().css('background-color', ANSWER_BUTTON_COLOR.selected);
         } else { 
-            parentElement.css('background-color', ANSWER_BUTTON_COLOR.default);
+            currentElement.parent().css('background-color', '');
         }
     })
 
