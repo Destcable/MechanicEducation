@@ -10,6 +10,8 @@ import { Title } from "../../config";
 import TemplateLoader from "../../components/TemplateLoader/TemplateLoader";
 import checkSelectsNotEmpty from "../../components/JQuery/checkSelectsNotEmpty";
 import { ANSWER_BUTTON_COLOR } from "../../UI.config";
+import { saveAnswer } from "../../Controllers/answers/saveAnswer";
+import getSelects from "../../components/JQuery/getSelects";
 
 interface TraningPageProps {
     traning: TraningData[],
@@ -26,6 +28,8 @@ const TraningPage = (props: TraningPageProps) => {
 
     const [countActiveTab, setActiveTab] = useState(0);
     const [isEnabledButton, setEnabledButton] = useState(false);
+
+    const traningType = props.traning[countActiveTab].type;
 
     useEffect(() => {
         function handleSelectChange() {
@@ -60,6 +64,11 @@ const TraningPage = (props: TraningPageProps) => {
 
     function addCountTab() {
         setEnabledButton(false);
+        if (traningType === "select") { 
+            saveAnswer(
+                getSelects()
+            );
+        }
         return setCountActiveTab(countActiveTab + 1);
     }
 
@@ -111,7 +120,7 @@ const TraningPage = (props: TraningPageProps) => {
         } else { 
             currentElement.parent().css('background-color', '');
         }
-    })
+    });
 
     return (
         <>
