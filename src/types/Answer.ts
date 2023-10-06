@@ -1,0 +1,1 @@
+export type AnswerValue = (string | number | string[] | undefined) [];
