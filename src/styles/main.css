@@ -103,17 +103,17 @@ footer {
 }
 
 .shape-color_1 {
-    background-image: url("../components/card/img/card_2.png");
+    background-image: url("../components/ui/card/img/card_2.png");
     background-repeat: no-repeat;
 }
 
 .shape-color_2 {
-    background-image: url("../components/card/img/card_1.png");
+    background-image: url("../components/ui/card/img/ard_1.png");
     background-repeat: no-repeat;
 }
 
 .shape-color_3 {
-    background-image: url("../components/card/img/card_3.png");
+    background-image: url("../components/ui/card/img/card_3.png");
     background-repeat: no-repeat;
 }
 

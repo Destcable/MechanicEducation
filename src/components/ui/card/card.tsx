@@ -1,8 +1,8 @@
 import { CSSProperties, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ProgressBar from "../progressBar/progressBar";
+import ProgressBar from "../../progressBar/progressBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../styles/main.css';
+import '../../../styles/main.css';
 import { ModalLecture } from "./CardModals";
 
 interface CardProps {

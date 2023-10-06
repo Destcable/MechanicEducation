@@ -1,6 +1,6 @@
 import { Title } from '../../config';
 import Header from '../../components/header/header';
-import Card from '../../components/card/card';
+import Card from '../../components/ui/card/card';
 import Tringle from '../../components/tringle/tringle';
 import Footer from '../../components/footer/footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
