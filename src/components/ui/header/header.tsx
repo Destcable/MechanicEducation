@@ -7,7 +7,6 @@ import { ModalGetFromContent, ModalGetKeyWords } from '../../../content/modals/M
 import { Title } from '../../../config';
 
 interface HeaderProps {
-    title: string;
     loading?: boolean
 }
 

@@ -3,16 +3,10 @@ import Tringle from '../../components/ui/tringle/tringle';
 import HomeButton from "../../components/ui/homeButton/homeButton";
 import '../../styles/main.css';
 
-interface VideoLecturePageProps { 
-    title: string
-}
-
-const VideoLecturePage = (props: VideoLecturePageProps) => {
+const VideoLecturePage = () => {
     return (
         <>
-            <Header
-                title={props.title}
-            />
+            <Header />
 
             <div className="bg_color_block d-flex flex-column ">
 

@@ -1,4 +1,3 @@
-import { Title } from '../../config';
 import Header from '../../components/ui/Header/Header';
 import Card from '../../components/ui/card/card';
 import Tringle from '../../components/ui/tringle/tringle';
@@ -15,7 +14,6 @@ const MainPage = () => {
     return (
         <>
             <Header
-                title={Title}
                 loading={false}
             />
 

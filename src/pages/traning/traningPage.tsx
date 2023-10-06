@@ -6,7 +6,6 @@ import HomeButton from "../../components/ui/homeButton/homeButton";
 import Tringle from "../../components/ui/tringle/tringle";
 import ArrowRight from "../../components/ui/arrowRight/arrowRight";
 import ArrowLeft from "../../components/ui/arrowLeft/arrowLeft";
-import { Title } from "../../config";
 import TemplateLoader from "../../components/TemplateLoader/TemplateLoader";
 import checkSelectsNotEmpty from "../../components/JQuery/checkSelectsNotEmpty";
 import { ANSWER_BUTTON_COLOR } from "../../UI.config";
@@ -134,9 +133,7 @@ const TraningPage = (props: TraningPageProps) => {
 
     return (
         <>
-            <Header
-                title={Title}
-            />
+            <Header />
 
             <div className="bg_color_block d-flex flex-column ">
 
