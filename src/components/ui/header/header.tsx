@@ -4,6 +4,7 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ModalGetFromContent, ModalGetKeyWords } from '../../../content/modals/ModalsData';
+import { Title } from '../../../config';
 
 interface HeaderProps {
     title: string;
@@ -55,7 +56,7 @@ const Header = (HeaderObj: HeaderProps) => {
                     <div className="d-flex flex-wrap w-100 justify-content-between">
                         <div className="pt-2">
                             {HeaderObj.loading ? <Skeleton width={312} height={38}  /> 
-                                                : <h2 className="text-white">{HeaderObj.title}</h2>}
+                                                : <h2 className="text-white">{Title}</h2>}
                         </div>
                         <div className="d-flex align-items-center mt-10">
                             <a href='#'

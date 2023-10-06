@@ -1,6 +1,6 @@
 import { Title } from "../../config";
 import { useNavigate } from "react-router-dom";
-import Header from '../../components/ui/header/header';
+import Header from '../../components/ui/Header/Header';
 import Tringle from '../../components/ui/tringle/tringle';
 import HomeButton from "../../components/ui/homeButton/homeButton";
 import { Container, Row, Col, Card } from 'react-bootstrap';

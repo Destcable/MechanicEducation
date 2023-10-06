@@ -1,5 +1,5 @@
 import { Title } from '../../config';
-import Header from '../../components/ui/header/header';
+import Header from '../../components/ui/Header/Header';
 import Card from '../../components/ui/card/card';
 import Tringle from '../../components/ui/tringle/tringle';
 import Footer from '../../components/ui/footer/footer';

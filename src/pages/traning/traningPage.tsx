@@ -1,7 +1,7 @@
 import { CSSProperties, ReactNode, useEffect, useState } from "react";
 import $ from 'jquery';
 import type { TraningData } from "../../types/Traning";
-import Header from "../../components/ui/header/header";
+import Header from "../../components/ui/Header/Header";
 import HomeButton from "../../components/ui/homeButton/homeButton";
 import Tringle from "../../components/ui/tringle/tringle";
 import ArrowRight from "../../components/ui/arrowRight/arrowRight";
