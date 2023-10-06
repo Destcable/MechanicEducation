@@ -78,6 +78,7 @@ const TraningPage = (props: TraningPageProps) => {
         if (selectedElements.length > 0) {
             if ($('#send-answers__button').length === 0) {
                 $('#arrows').append(`
+
                 <div id="send-answers__button" class="d-flex w-100 justify-content-center">
                     <button class="btn btn_exe">Ответить</button>
                 </div>`);
@@ -160,7 +161,7 @@ const TraningPage = (props: TraningPageProps) => {
 
                                 <div id="arrows" className="d-flex w-100 justify-content-end " style={arrows}>
                                     {isEnabledButton && countActiveTab > 0 && <ArrowLeft onClick={takeCountTab} />}
-                                    {isEnabledButton && <ArrowRight onClick={addCountTab} />}
+                                    {isEnabledButton && <ArrowRight id="" onClick={addCountTab} />}
                                 </div>
 
                             </div>

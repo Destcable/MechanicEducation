@@ -1,14 +1,15 @@
 import React from "react";
 import IconArrowRight from "./img/ArrowRight.png";
 
-interface ArrowLeftProps { 
+interface ArrowLeftProps {
+    id? : string
     onClick: React.MouseEventHandler<HTMLButtonElement>
 }
 
 const ArrowRight = (props: ArrowLeftProps) => {
 
     return (
-        <button onClick={props.onClick}>
+        <button id={props.id} onClick={props.onClick}>
             <img src={IconArrowRight} />
         </button>
     )
