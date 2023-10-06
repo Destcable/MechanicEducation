@@ -10,8 +10,9 @@ import { Title } from "../../config";
 import TemplateLoader from "../../components/TemplateLoader/TemplateLoader";
 import checkSelectsNotEmpty from "../../components/JQuery/checkSelectsNotEmpty";
 import { ANSWER_BUTTON_COLOR } from "../../UI.config";
-import { saveAnswer } from "../../Controllers/answers/saveAnswer";
+import { getAnswers, saveAnswer } from "../../Controllers/answers/saveAnswer";
 import getSelects from "../../components/JQuery/getSelects";
+import getCheckboxes from "../../components/JQuery/getCheckboxes";
 
 interface TraningPageProps {
     traning: TraningData[],
@@ -64,11 +65,20 @@ const TraningPage = (props: TraningPageProps) => {
 
     function addCountTab() {
         setEnabledButton(false);
+        
         if (traningType === "select") { 
             saveAnswer(
                 getSelects()
             );
         }
+
+        if (traningType === "checkbox") { 
+            saveAnswer(
+                getCheckboxes()
+            );
+        }
+
+        console.log(getAnswers());
         return setCountActiveTab(countActiveTab + 1);
     }
 
