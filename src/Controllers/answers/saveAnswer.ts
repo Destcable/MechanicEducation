@@ -1,8 +1,6 @@
-import { AnswerValue } from "../../types/Answer";
+const storage: unknown[] = [];
 
-const storage: AnswerValue = [];
-
-export function saveAnswer(values: []) { 
+export function saveAnswer(values: unknown) { 
     storage.push(values)
 }
 
