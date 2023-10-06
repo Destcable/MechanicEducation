@@ -3,7 +3,7 @@ import Logo from '../logo/logo';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { ModalGetFromContent, ModalGetKeyWords } from '../../content/modals/ModalsData';
+import { ModalGetFromContent, ModalGetKeyWords } from '../../../content/modals/ModalsData';
 
 interface HeaderProps {
     title: string;

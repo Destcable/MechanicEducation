@@ -1,6 +1,6 @@
-import Header from '../../components/header/header';
+import Header from '../../components/ui/header/header';
 import Tringle from '../../components/ui/tringle/tringle';
-import HomeButton from "../../components/homeButton/homeButton";
+import HomeButton from "../../components/ui/homeButton/homeButton";
 import '../../styles/main.css';
 
 interface VideoLecturePageProps { 

@@ -1,4 +1,4 @@
-import Modal from "../../modal/modal";
+import Modal from "../modal/modal";
 
 interface ModalProps {
     active: boolean,

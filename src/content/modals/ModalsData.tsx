@@ -1,4 +1,4 @@
-import Modal from "../../components/modal/modal";
+import Modal from "../../components/ui/modal/modal";
 interface ModalProps {
     active: boolean,
     setActive: React.Dispatch<React.SetStateAction<boolean>>,

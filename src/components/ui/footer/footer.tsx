@@ -1,5 +1,4 @@
 import prof_logo from './img/prof.png';
-import '../../styles/main.css';
 
 const Footer = () => {
     return (
