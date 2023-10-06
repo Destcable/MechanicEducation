@@ -3,7 +3,7 @@ import $ from 'jquery';
 import type { TraningData } from "../../types/Traning";
 import Header from "../../components/header/header";
 import HomeButton from "../../components/homeButton/homeButton";
-import Tringle from "../../components/tringle/tringle";
+import Tringle from "../../components/ui/tringle/tringle";
 import ArrowRight from "../../components/ui/arrowRight/arrowRight";
 import ArrowLeft from "../../components/ui/arrowLeft/arrowLeft";
 import { Title } from "../../config";

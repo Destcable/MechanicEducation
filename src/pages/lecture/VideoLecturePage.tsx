@@ -1,5 +1,5 @@
 import Header from '../../components/header/header';
-import Tringle from '../../components/tringle/tringle';
+import Tringle from '../../components/ui/tringle/tringle';
 import HomeButton from "../../components/homeButton/homeButton";
 import '../../styles/main.css';
 

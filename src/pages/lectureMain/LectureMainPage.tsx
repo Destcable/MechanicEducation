@@ -1,7 +1,7 @@
 import { Title } from "../../config";
 import { useNavigate } from "react-router-dom";
 import Header from '../../components/header/header';
-import Tringle from '../../components/tringle/tringle';
+import Tringle from '../../components/ui/tringle/tringle';
 import HomeButton from "../../components/homeButton/homeButton";
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import { CSSProperties } from "react";
