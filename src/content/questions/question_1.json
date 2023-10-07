@@ -47,6 +47,7 @@
         "component": "/templates/questions/question_1/slide_7.html"
     },
     {
+        "type": "text",
         "title": "Вставьте пропущенные слова, выбрав их из предложенного списка.",
         "image": null,
         "component": "/templates/questions/question_1/slide_8.html"

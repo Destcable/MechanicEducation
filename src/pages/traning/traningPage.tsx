@@ -14,6 +14,7 @@ import getSelects from "../../components/JQuery/getSelects";
 import getCheckboxes from "../../components/JQuery/getCheckboxes";
 import getInputTexts from "../../components/JQuery/getInputTexts";
 import { highlightAnswersCheckbox, highlightAnswersRadio } from "../../components/AnswersLogic/highlightAnswers";
+import getRadio from "../../components/JQuery/getRadio";
 
 interface TraningPageProps {
     traning: TraningData[],
@@ -82,6 +83,12 @@ const TraningPage = (props: TraningPageProps) => {
         if (traningType === "text") { 
             saveAnswer( 
                 getInputTexts()
+            );
+        }
+
+        if (traningType === "radio") { 
+            saveAnswer(
+                getRadio()
             );
         }
 
