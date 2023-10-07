@@ -9,7 +9,6 @@ import ArrowLeft from "../../components/ui/arrowLeft/arrowLeft";
 import TemplateLoader from "../../components/TemplateLoader/TemplateLoader";
 import checkSelectsNotEmpty from "../../components/JQuery/checkSelectsNotEmpty";
 import { ANSWER_BUTTON_COLOR } from "../../UI.config";
-import { getAnswers, saveAnswer } from "../../Controllers/answers/saveAnswer";
 import getSelects from "../../components/JQuery/getSelects";
 import getCheckboxes from "../../components/JQuery/getCheckboxes";
 import getInputTexts from "../../components/JQuery/getInputTexts";
@@ -21,6 +20,10 @@ interface TraningPageProps {
     child?: ReactNode
 }
 
+interface UserAnswers {
+    [key: string]: unknown; // Здесь `key` может быть строкой, а значение - любым типом данных
+}
+
 const arrows: CSSProperties = {
     bottom: "20px",
     right: "50px",
@@ -28,7 +31,7 @@ const arrows: CSSProperties = {
 }
 
 const TraningPage = (props: TraningPageProps) => {
-
+    const [userAnswers, setUserAnswers] = useState<UserAnswers>({});
     const [countActiveTab, setActiveTab] = useState(0);
     const [isEnabledButton, setEnabledButton] = useState(false);
 
@@ -67,32 +70,36 @@ const TraningPage = (props: TraningPageProps) => {
 
     function addCountTab() {
         setEnabledButton(false);
-        
-        if (traningType === "select") { 
-            saveAnswer(
-                getSelects()
-            );
+
+        if (traningType === "select") {
+            setUserAnswers(prevUserAnswers => ({
+                ...prevUserAnswers,
+                [countActiveTab]: getSelects(),
+            }))
         }
 
-        if (traningType === "checkbox") { 
-            saveAnswer(
-                getCheckboxes()
-            );
+        if (traningType === "checkbox") {
+            setUserAnswers(prevUserAnswers => ({
+                ...prevUserAnswers,
+                [countActiveTab]: getCheckboxes(),
+            }))
         }
 
-        if (traningType === "text") { 
-            saveAnswer( 
-                getInputTexts()
-            );
+        if (traningType === "text") {
+            setUserAnswers(prevUserAnswers => ({
+                ...prevUserAnswers,
+                [countActiveTab]: getInputTexts(),
+            }))
         }
 
-        if (traningType === "radio") { 
-            saveAnswer(
-                getRadio()
-            );
+        if (traningType === "radio") {
+            setUserAnswers(prevUserAnswers => ({
+                ...prevUserAnswers,
+                [countActiveTab]: getRadio,
+            }))
         }
 
-        console.log(getAnswers());
+        console.log(userAnswers);
         return setCountActiveTab(countActiveTab + 1);
     }
 
@@ -104,7 +111,7 @@ const TraningPage = (props: TraningPageProps) => {
         tabs.push(<div key={index} className="tab"></div>);
     }
 
-    $('input[name="options"]').on("change", function() { 
+    $('input[name="options"]').on("change", function () {
         const selectedElements = $('input[name="options"]:checked');
         const currentElement = $(this);
 
@@ -116,36 +123,36 @@ const TraningPage = (props: TraningPageProps) => {
                     <button class="btn btn_exe">Ответить</button>
                 </div>`);
 
-                $('#send-answers__button').off("click").on("click", function() {
+                $('#send-answers__button').off("click").on("click", function () {
                     $('#send-answers__button').remove();
                     setEnabledButton(true);
-                    if (traningType === "checkbox") { 
-                        highlightAnswersCheckbox(props.traning[countActiveTab].answers);   
+                    if (traningType === "checkbox") {
+                        highlightAnswersCheckbox(props.traning[countActiveTab].answers);
                     }
-                    if (traningType === "radio") { 
+                    if (traningType === "radio") {
                         highlightAnswersRadio(props.traning[countActiveTab].answers);
                     }
                 })
             }
         }
 
-        if (selectedElements.length === 0) { 
+        if (selectedElements.length === 0) {
             $('#send-answers__button').remove();
         }
-        if (traningType === "checkbox") { 
+        if (traningType === "checkbox") {
             if ($(this).is(':checked')) {
                 currentElement.parent().css('background-color', ANSWER_BUTTON_COLOR.selected);
-            } else { 
+            } else {
                 currentElement.parent().css('background-color', '');
             }
         }
     });
 
-    if (traningType === "radio") { 
-        $('input[type="radio"]').on("change", function() {
+    if (traningType === "radio") {
+        $('input[type="radio"]').on("change", function () {
 
             $('input[type="radio"]').parent().css('background-color', '');
-        
+
             if ($(this).is(':checked')) {
                 $(this).parent().css('background-color', ANSWER_BUTTON_COLOR.selected);
             }
