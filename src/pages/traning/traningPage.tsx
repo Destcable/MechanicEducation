@@ -12,6 +12,7 @@ import { ANSWER_BUTTON_COLOR } from "../../UI.config";
 import { getAnswers, saveAnswer } from "../../Controllers/answers/saveAnswer";
 import getSelects from "../../components/JQuery/getSelects";
 import getCheckboxes from "../../components/JQuery/getCheckboxes";
+import getInputTexts from "../../components/JQuery/getInputTexts";
 
 interface TraningPageProps {
     traning: TraningData[],
@@ -77,6 +78,12 @@ const TraningPage = (props: TraningPageProps) => {
             );
         }
 
+        if (traningType === "text") { 
+            saveAnswer( 
+                getInputTexts()
+            );
+        }
+
         console.log(getAnswers());
         return setCountActiveTab(countActiveTab + 1);
     }
@@ -122,14 +129,25 @@ const TraningPage = (props: TraningPageProps) => {
         if (selectedElements.length === 0) { 
             $('#send-answers__button').remove();
         }
-
-        if ($(this).is(':checked')) {
-            
-            currentElement.parent().css('background-color', ANSWER_BUTTON_COLOR.selected);
-        } else { 
-            currentElement.parent().css('background-color', '');
+        if (traningType === "checkbox") { 
+            if ($(this).is(':checked')) {
+                currentElement.parent().css('background-color', ANSWER_BUTTON_COLOR.selected);
+            } else { 
+                currentElement.parent().css('background-color', '');
+            }
         }
     });
+
+    if (traningType === "radio") { 
+        $('input[type="radio"]').on("change", function() {
+
+            $('input[type="radio"]').parent().css('background-color', '');
+        
+            if ($(this).is(':checked')) {
+                $(this).parent().css('background-color', ANSWER_BUTTON_COLOR.selected);
+            }
+        });
+    }
 
     return (
         <>
