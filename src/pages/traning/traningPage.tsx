@@ -13,6 +13,7 @@ import { getAnswers, saveAnswer } from "../../Controllers/answers/saveAnswer";
 import getSelects from "../../components/JQuery/getSelects";
 import getCheckboxes from "../../components/JQuery/getCheckboxes";
 import getInputTexts from "../../components/JQuery/getInputTexts";
+import { highlightAnswersCheckbox, highlightAnswersRadio } from "../../components/AnswersLogic/highlightAnswers";
 
 interface TraningPageProps {
     traning: TraningData[],
@@ -39,7 +40,7 @@ const TraningPage = (props: TraningPageProps) => {
 
         if (props.traning[countActiveTab].type === "select") {
             document.addEventListener("change", handleSelectChange);
-        } else if (props.traning[countActiveTab].type != "checkbox") {
+        } else if (props.traning[countActiveTab].type != "checkbox" && props.traning[countActiveTab].type != "radio") {
             setEnabledButton(true);
         }
 
@@ -111,17 +112,12 @@ const TraningPage = (props: TraningPageProps) => {
                 $('#send-answers__button').off("click").on("click", function() {
                     $('#send-answers__button').remove();
                     setEnabledButton(true);
-                    const checkbox = $("label.btn input[type='checkbox']");
-                    checkbox.prop("disabled", true);
-                    checkbox.parent().addClass("disabled");
-                    $("input[type='checkbox']:checked").each(function() { 
-                        const currentElement = $(this);
-                        if(props.traning[countActiveTab].answers?.includes(currentElement.val())) {
-                            currentElement.parent().css('background-color', ANSWER_BUTTON_COLOR.success);
-                        } else { 
-                            currentElement.parent().css('background-color', ANSWER_BUTTON_COLOR.error);
-                        }
-                    })
+                    if (traningType === "checkbox") { 
+                        highlightAnswersCheckbox(props.traning[countActiveTab].answers);   
+                    }
+                    if (traningType === "radio") { 
+                        highlightAnswersRadio(props.traning[countActiveTab].answers);
+                    }
                 })
             }
         }
