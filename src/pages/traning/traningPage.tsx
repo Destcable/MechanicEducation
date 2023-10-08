@@ -17,8 +17,8 @@ import getRadio from "../../components/JQuery/getRadio";
 import setSelects from "../../components/JQuery/setSelects";
 import setCheckboxes from "../../components/JQuery/setCheckboxes";
 import { getUserAnswers, saveUserAnswers } from "../../Controllers/answers/saveAnswer";
-import AnswerButton from "../../components/ui/AnswerButton/AnswerButton";
-import createAnswerButton from "../../components/JQuery/createAnswerButton";
+import createAnswerButton from "../../components/JQuery/AnswerButton/createAnswerButton";
+import { removeAnswerButton } from "../../components/JQuery/AnswerButton/removeAnswerButton";
 
 interface TraningPageProps {
     traning: TraningData[],
@@ -40,7 +40,7 @@ const TraningPage = (props: TraningPageProps) => {
         if (checkSelectsNotEmpty()) { 
             createAnswerButton();
             $('#send-answers__button').off("click").on("click", function () {
-                $('#send-answers__button').parent().remove();
+                removeAnswerButton();
                 setEnabledButton(true);
                 if (traningType === "checkbox") {
                     highlightAnswersCheckbox(props.traning[countActiveTab].answers);
@@ -135,12 +135,12 @@ const TraningPage = (props: TraningPageProps) => {
 
         if (selectedElements.length > 0) {
             if ($('#send-answers__button').length === 0) {
-                $('#arrows').append(AnswerButton());
+                createAnswerButton();
             }
         }
 
         if (selectedElements.length === 0) {
-            $('#send-answers__button').remove();
+            removeAnswerButton();
         }
         
         if (traningType === "checkbox") {
