@@ -96,7 +96,7 @@ const TraningPage = (props: TraningPageProps) => {
         if (traningType === "radio") {
             setUserAnswers(prevUserAnswers => ({
                 ...prevUserAnswers,
-                [countActiveTab + 1]: getRadio,
+                [countActiveTab + 1]: getRadio(),
             }))
         }
 
