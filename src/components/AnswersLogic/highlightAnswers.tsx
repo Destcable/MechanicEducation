@@ -1,10 +1,10 @@
 import $ from 'jquery';
 import { ANSWER_BUTTON_COLOR } from "../../UI.config";
+import BlockedElement from '../JQuery/blockElements';
 
 export function highlightAnswersCheckbox(answers: unknown[] | undefined) {
     const checkbox = $("label.btn input[type='checkbox']");
-    checkbox.prop("disabled", true);
-    checkbox.parent().addClass("disabled");
+    BlockedElement(checkbox);
     $("input[type='checkbox']:checked").each(function () {
         const currentElement = $(this);
         if (answers?.includes(currentElement.val())) {
@@ -17,8 +17,7 @@ export function highlightAnswersCheckbox(answers: unknown[] | undefined) {
 
 export function highlightAnswersRadio(answers: unknown[] | undefined) { 
     const radio = $("label.btn input[type='radio']");
-    radio.prop("disabled", true);
-    radio.parent().addClass("disabled");
+    BlockedElement(radio);
     $("input[type='radio']:checked").each(function () {
         const currentElement = $(this);
         if (answers?.includes(currentElement.val())) {

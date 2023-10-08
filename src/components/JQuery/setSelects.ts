@@ -1,6 +1,7 @@
 import $ from 'jquery';
+import BlockedElement from './blockElements';
 
-function setSelects(values: unknown[]) { 
+function setSelects(values: string[] | number[]) { 
     const selects = $("select");
 
     selects.each(function(index) {
@@ -9,7 +10,8 @@ function setSelects(values: unknown[]) {
         } else {
             $(this).val(""); 
         }
-        $(this).prop("disabled", true);
+        
+        BlockedElement($(this));
     });
 }
 

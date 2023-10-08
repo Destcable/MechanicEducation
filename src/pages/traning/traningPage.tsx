@@ -15,6 +15,7 @@ import getInputTexts from "../../components/JQuery/getInputTexts";
 import { highlightAnswersCheckbox, highlightAnswersRadio } from "../../components/AnswersLogic/highlightAnswers";
 import getRadio from "../../components/JQuery/getRadio";
 import setSelects from "../../components/JQuery/setSelects";
+import setCheckboxes from "../../components/JQuery/setCheckboxes";
 
 interface TraningPageProps {
     traning: TraningData[],
@@ -162,6 +163,12 @@ const TraningPage = (props: TraningPageProps) => {
     if (traningType === "select") {
         if (userAnswers[countActiveTab + 1]) { 
             setSelects(userAnswers[countActiveTab + 1]);
+        }
+    }
+
+    if (traningType === "checkbox") { 
+        if (userAnswers[countActiveTab + 1]) { 
+            setCheckboxes(userAnswers[countActiveTab + 1]);
         }
     }
 
