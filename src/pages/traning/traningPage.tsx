@@ -120,7 +120,6 @@ const TraningPage = (props: TraningPageProps) => {
         if (selectedElements.length > 0) {
             if ($('#send-answers__button').length === 0) {
                 $('#arrows').append(`
-
                 <div id="send-answers__button" class="d-flex w-100 justify-content-center">
                     <button class="btn btn_exe">Ответить</button>
                 </div>`);
