@@ -17,6 +17,8 @@ import getRadio from "../../components/JQuery/getRadio";
 import setSelects from "../../components/JQuery/setSelects";
 import setCheckboxes from "../../components/JQuery/setCheckboxes";
 import { getUserAnswers, saveUserAnswers } from "../../Controllers/answers/saveAnswer";
+import AnswerButton from "../../components/ui/AnswerButton/AnswerButton";
+import createAnswerButton from "../../components/JQuery/createAnswerButton";
 
 interface TraningPageProps {
     traning: TraningData[],
@@ -34,10 +36,23 @@ const TraningPage = (props: TraningPageProps) => {
 
     const traningType = props.traning[countActiveTab].type;
 
-    useEffect(() => {
-        function handleSelectChange() {
-            setEnabledButton(checkSelectsNotEmpty());
+    function handleSelectChange() {
+        if (checkSelectsNotEmpty()) { 
+            createAnswerButton();
+            $('#send-answers__button').off("click").on("click", function () {
+                $('#send-answers__button').parent().remove();
+                setEnabledButton(true);
+                if (traningType === "checkbox") {
+                    highlightAnswersCheckbox(props.traning[countActiveTab].answers);
+                }
+                if (traningType === "radio") {
+                    highlightAnswersRadio(props.traning[countActiveTab].answers);
+                }
+            })
         }
+    }
+    
+    useEffect(() => {
 
         if (props.traning[countActiveTab].type === "select") {
             document.addEventListener("change", handleSelectChange);
@@ -66,7 +81,11 @@ const TraningPage = (props: TraningPageProps) => {
     }
 
     function addCountTab() {
-        setEnabledButton(false);
+        if (getUserAnswers()[countActiveTab + 1]) { 
+            setEnabledButton(true);
+        } else {
+            setEnabledButton(false);
+        }
 
         console.log(getUserAnswers());
 
@@ -97,33 +116,33 @@ const TraningPage = (props: TraningPageProps) => {
         tabs.push(<div key={index} className="tab"></div>);
     }
 
+
+
     $('input[name="options"]').on("change", function () {
         const selectedElements = $('input[name="options"]:checked');
         const currentElement = $(this);
 
+        $('#send-answers__button').off("click").on("click", function () {
+            $('#send-answers__button').remove();
+            setEnabledButton(true);
+            if (traningType === "checkbox") {
+                highlightAnswersCheckbox(props.traning[countActiveTab].answers);
+            }
+            if (traningType === "radio") {
+                highlightAnswersRadio(props.traning[countActiveTab].answers);
+            }
+        })
+
         if (selectedElements.length > 0) {
             if ($('#send-answers__button').length === 0) {
-                $('#arrows').append(`
-                <div id="send-answers__button" class="d-flex w-100 justify-content-center">
-                    <button class="btn btn_exe">Ответить</button>
-                </div>`);
-
-                $('#send-answers__button').off("click").on("click", function () {
-                    $('#send-answers__button').remove();
-                    setEnabledButton(true);
-                    if (traningType === "checkbox") {
-                        highlightAnswersCheckbox(props.traning[countActiveTab].answers);
-                    }
-                    if (traningType === "radio") {
-                        highlightAnswersRadio(props.traning[countActiveTab].answers);
-                    }
-                })
+                $('#arrows').append(AnswerButton());
             }
         }
 
         if (selectedElements.length === 0) {
             $('#send-answers__button').remove();
         }
+        
         if (traningType === "checkbox") {
             if ($(this).is(':checked')) {
                 currentElement.parent().css('background-color', ANSWER_BUTTON_COLOR.selected);
