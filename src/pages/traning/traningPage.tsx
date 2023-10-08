@@ -16,24 +16,19 @@ import { highlightAnswersCheckbox, highlightAnswersRadio } from "../../component
 import getRadio from "../../components/JQuery/getRadio";
 import setSelects from "../../components/JQuery/setSelects";
 import setCheckboxes from "../../components/JQuery/setCheckboxes";
+import { getUserAnswers, saveUserAnswers } from "../../Controllers/answers/saveAnswer";
 
 interface TraningPageProps {
     traning: TraningData[],
     child?: ReactNode
 }
 
-interface UserAnswers {
-    [key: string]: unknown; // Здесь `key` может быть строкой, а значение - любым типом данных
-}
-
 const arrows: CSSProperties = {
     bottom: "20px",
     right: "50px",
-
 }
 
 const TraningPage = (props: TraningPageProps) => {
-    const [userAnswers, setUserAnswers] = useState<UserAnswers>({});
     const [countActiveTab, setActiveTab] = useState(0);
     const [isEnabledButton, setEnabledButton] = useState(false);
 
@@ -73,35 +68,24 @@ const TraningPage = (props: TraningPageProps) => {
     function addCountTab() {
         setEnabledButton(false);
 
+        console.log(getUserAnswers());
+
         if (traningType === "select") {
-            setUserAnswers(prevUserAnswers => ({
-                ...prevUserAnswers,
-                [countActiveTab + 1]: getSelects(),
-            }))
+            saveUserAnswers(countActiveTab + 1, getSelects());
         }
 
         if (traningType === "checkbox") {
-            setUserAnswers(prevUserAnswers => ({
-                ...prevUserAnswers,
-                [countActiveTab + 1]: getCheckboxes(),
-            }))
+            saveUserAnswers(countActiveTab + 1, getCheckboxes());
         }
 
         if (traningType === "text") {
-            setUserAnswers(prevUserAnswers => ({
-                ...prevUserAnswers,
-                [countActiveTab + 1]: getInputTexts(),
-            }))
+            saveUserAnswers(countActiveTab + 1, getInputTexts());
         }
 
         if (traningType === "radio") {
-            setUserAnswers(prevUserAnswers => ({
-                ...prevUserAnswers,
-                [countActiveTab + 1]: getRadio(),
-            }))
+            saveUserAnswers(countActiveTab + 1, getRadio());
         }
 
-        console.log(userAnswers);
         return setCountActiveTab(countActiveTab + 1);
     }
 
@@ -160,14 +144,14 @@ const TraningPage = (props: TraningPageProps) => {
         });
     }
     if (traningType === "select") {
-        if (userAnswers[countActiveTab + 1]) { 
-            setSelects(userAnswers[countActiveTab + 1]);
+        if (getUserAnswers()[countActiveTab + 1]) { 
+            setSelects(getUserAnswers()[countActiveTab + 1]);
         }
     }
 
     if (traningType === "checkbox") { 
-        if (userAnswers[countActiveTab + 1]) { 
-            setCheckboxes(userAnswers[countActiveTab + 1]);
+        if (getUserAnswers()[countActiveTab + 1]) { 
+            setCheckboxes(getUserAnswers()[countActiveTab + 1]);
         }
     }
 

@@ -12,7 +12,6 @@ function setCheckboxes(values: unknown[]) {
             $(this).prop('checked', true);
             $(this).parent().css('background-color', ANSWER_BUTTON_COLOR.success);
         } 
-        
         BlockedElement($(this));
     });
 }

@@ -1,9 +1,12 @@
-const storage: unknown[] = [];
+interface UserAnswer { 
+    [key: string]: unknown
+}
+const storage: UserAnswer = {};
 
-export function saveAnswer(values: unknown) { 
-    storage.push(values)
+export function saveUserAnswers(key: number, values: unknown) { 
+    storage[key] = values;
 }
 
-export function getAnswers() { 
+export function getUserAnswers() { 
     return(storage);
 }
