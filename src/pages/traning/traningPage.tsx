@@ -14,6 +14,7 @@ import getCheckboxes from "../../components/JQuery/getCheckboxes";
 import getInputTexts from "../../components/JQuery/getInputTexts";
 import { highlightAnswersCheckbox, highlightAnswersRadio } from "../../components/AnswersLogic/highlightAnswers";
 import getRadio from "../../components/JQuery/getRadio";
+import setSelects from "../../components/JQuery/setSelects";
 
 interface TraningPageProps {
     traning: TraningData[],
@@ -74,28 +75,28 @@ const TraningPage = (props: TraningPageProps) => {
         if (traningType === "select") {
             setUserAnswers(prevUserAnswers => ({
                 ...prevUserAnswers,
-                [countActiveTab]: getSelects(),
+                [countActiveTab + 1]: getSelects(),
             }))
         }
 
         if (traningType === "checkbox") {
             setUserAnswers(prevUserAnswers => ({
                 ...prevUserAnswers,
-                [countActiveTab]: getCheckboxes(),
+                [countActiveTab + 1]: getCheckboxes(),
             }))
         }
 
         if (traningType === "text") {
             setUserAnswers(prevUserAnswers => ({
                 ...prevUserAnswers,
-                [countActiveTab]: getInputTexts(),
+                [countActiveTab + 1]: getInputTexts(),
             }))
         }
 
         if (traningType === "radio") {
             setUserAnswers(prevUserAnswers => ({
                 ...prevUserAnswers,
-                [countActiveTab]: getRadio,
+                [countActiveTab + 1]: getRadio,
             }))
         }
 
@@ -157,6 +158,11 @@ const TraningPage = (props: TraningPageProps) => {
                 $(this).parent().css('background-color', ANSWER_BUTTON_COLOR.selected);
             }
         });
+    }
+    if (traningType === "select") {
+        if (userAnswers[countActiveTab + 1]) { 
+            setSelects(userAnswers[countActiveTab + 1]);
+        }
     }
 
     return (
