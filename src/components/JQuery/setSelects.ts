@@ -1,16 +1,11 @@
 import $ from 'jquery';
 import BlockedElement from './blockElements';
+import { UserAnswer } from '../../types/Answer';
 
-function setSelects(values: string[] | number[]) { 
+function setSelects(values: UserAnswer| unknown ) { 
     const selects = $("select");
-
     selects.each(function(index) {
-        if (index < values.length) {
-            $(this).val(values[index]);
-        } else {
-            $(this).val(""); 
-        }
-        
+        $(this).val( Array.isArray(values) ? values[index] : false);    
         BlockedElement($(this));
     });
 }

@@ -9,16 +9,16 @@ import ArrowLeft from "../../components/ui/arrowLeft/arrowLeft";
 import TemplateLoader from "../../components/TemplateLoader/TemplateLoader";
 import checkSelectsNotEmpty from "../../components/JQuery/checkSelectsNotEmpty";
 import { ANSWER_BUTTON_COLOR } from "../../UI.config";
-import getSelects from "../../components/JQuery/getSelects";
-import getCheckboxes from "../../components/JQuery/getCheckboxes";
-import getInputTexts from "../../components/JQuery/getInputTexts";
 import { highlightAnswersCheckbox, highlightAnswersRadio } from "../../components/AnswersLogic/highlightAnswers";
-import getRadio from "../../components/JQuery/getRadio";
 import setSelects from "../../components/JQuery/setSelects";
 import setCheckboxes from "../../components/JQuery/setCheckboxes";
 import { getUserAnswers, saveUserAnswers } from "../../Controllers/answers/saveAnswer";
 import createAnswerButton from "../../components/JQuery/AnswerButton/createAnswerButton";
 import { removeAnswerButton } from "../../components/JQuery/AnswerButton/removeAnswerButton";
+import getSelects from "../../components/JQuery/getSelects";
+import getCheckboxes from "../../components/JQuery/getCheckboxes";
+import getInputTexts from "../../components/JQuery/getInputTexts";
+import getRadio from "../../components/JQuery/getRadio";
 
 interface TraningPageProps {
     traning: TraningData[],
@@ -37,34 +37,41 @@ const TraningPage = (props: TraningPageProps) => {
     const traningType = props.traning[countActiveTab].type;
 
     function handleSelectChange() {
-        if (checkSelectsNotEmpty()) { 
+        if (checkSelectsNotEmpty()) {
             createAnswerButton();
-            $('#send-answers__button').off("click").on("click", function () {
-                removeAnswerButton();
-                setEnabledButton(true);
-                if (traningType === "checkbox") {
-                    highlightAnswersCheckbox(props.traning[countActiveTab].answers);
-                }
-                if (traningType === "radio") {
-                    highlightAnswersRadio(props.traning[countActiveTab].answers);
-                }
-            })
+            answerButtonClick();
         }
     }
-    
+
+    function addCountTab() {
+        setEnabledButton(false);
+        if (getUserAnswers()[countActiveTab + 2]) {
+            setEnabledButton(true);
+        }
+        setCountActiveTab(countActiveTab + 1);
+    }
+
+    function takeCountTab() {
+        setEnabledButton(false);
+        if (getUserAnswers()[countActiveTab]) {
+            setEnabledButton(true);
+        }
+        
+        setCountActiveTab(countActiveTab - 1);
+    }
+
     useEffect(() => {
 
-        if (props.traning[countActiveTab].type === "select") {
+        if (traningType === "select") {
             document.addEventListener("change", handleSelectChange);
-        } else if (props.traning[countActiveTab].type != "checkbox" && props.traning[countActiveTab].type != "radio") {
+        } else if (traningType != "checkbox" && traningType != "radio") {
             setEnabledButton(true);
         }
 
         return () => {
             document.removeEventListener("change", handleSelectChange);
         };
-
-    }, [countActiveTab, props.traning]);
+    })
 
     const tabs = [];
 
@@ -80,69 +87,25 @@ const TraningPage = (props: TraningPageProps) => {
         return console.error('Данный таб отсутствует');
     }
 
-    function addCountTab() {
-        if (getUserAnswers()[countActiveTab + 1]) { 
-            setEnabledButton(true);
-        } else {
-            setEnabledButton(false);
-        }
-
-        console.log(getUserAnswers());
-
-        if (traningType === "select") {
-            saveUserAnswers(countActiveTab + 1, getSelects());
-        }
-
-        if (traningType === "checkbox") {
-            saveUserAnswers(countActiveTab + 1, getCheckboxes());
-        }
-
-        if (traningType === "text") {
-            saveUserAnswers(countActiveTab + 1, getInputTexts());
-        }
-
-        if (traningType === "radio") {
-            saveUserAnswers(countActiveTab + 1, getRadio());
-        }
-
-        return setCountActiveTab(countActiveTab + 1);
-    }
-
-    function takeCountTab() {
-        return setCountActiveTab(countActiveTab - 1);
-    }
-
     for (let index = 0; index < props.traning.length; index++) {
         tabs.push(<div key={index} className="tab"></div>);
     }
-
-
 
     $('input[name="options"]').on("change", function () {
         const selectedElements = $('input[name="options"]:checked');
         const currentElement = $(this);
 
-        $('#send-answers__button').off("click").on("click", function () {
-            $('#send-answers__button').remove();
-            setEnabledButton(true);
-            if (traningType === "checkbox") {
-                highlightAnswersCheckbox(props.traning[countActiveTab].answers);
-            }
-            if (traningType === "radio") {
-                highlightAnswersRadio(props.traning[countActiveTab].answers);
-            }
-        })
-
         if (selectedElements.length > 0) {
             if ($('#send-answers__button').length === 0) {
                 createAnswerButton();
+                answerButtonClick();
             }
         }
 
         if (selectedElements.length === 0) {
             removeAnswerButton();
         }
-        
+
         if (traningType === "checkbox") {
             if ($(this).is(':checked')) {
                 currentElement.parent().css('background-color', ANSWER_BUTTON_COLOR.selected);
@@ -162,16 +125,38 @@ const TraningPage = (props: TraningPageProps) => {
             }
         });
     }
-    if (traningType === "select") {
-        if (getUserAnswers()[countActiveTab + 1]) { 
-            setSelects(getUserAnswers()[countActiveTab + 1]);
-        }
+
+    if (traningType === 'select' && getUserAnswers()[countActiveTab + 1]) { 
+        setSelects(getUserAnswers()[countActiveTab + 1]);
     }
 
-    if (traningType === "checkbox") { 
-        if (getUserAnswers()[countActiveTab + 1]) { 
-            setCheckboxes(getUserAnswers()[countActiveTab + 1]);
-        }
+    if (traningType === 'checkbox' && getUserAnswers()[countActiveTab + 1]) {
+        setCheckboxes(getUserAnswers()[countActiveTab + 1]);
+    }
+
+    function answerButtonClick() {
+        $('#send-answers__button').off('click').on('click', function () {
+            removeAnswerButton();
+            setEnabledButton(true);
+            if (traningType === "select") {
+                saveUserAnswers(countActiveTab + 1, getSelects());
+            }
+
+            if (traningType === "checkbox") {
+                saveUserAnswers(countActiveTab + 1, getCheckboxes());
+                highlightAnswersCheckbox(props.traning[countActiveTab].answers);
+            }
+
+            if (traningType === "text") {
+                saveUserAnswers(countActiveTab + 1, getInputTexts());
+            }
+
+            if (traningType === "radio") {
+                saveUserAnswers(countActiveTab + 1, getRadio());
+                highlightAnswersRadio(props.traning[countActiveTab].answers);
+            }
+
+        });
     }
 
     return (

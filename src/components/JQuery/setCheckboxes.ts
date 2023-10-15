@@ -1,14 +1,15 @@
 import $ from 'jquery';
 import { ANSWER_BUTTON_COLOR } from '../../UI.config';
 import BlockedElement from './blockElements';
+import { UserAnswer } from '../../types/Answer';
 
-function setCheckboxes(values: unknown[]) { 
+function setCheckboxes(values: UserAnswer | unknown) { 
     const checkbox = $("input[name='options']");
 
     checkbox.each(function() {
         const checkboxValue = $(this).val();
-
-        if (values.includes(checkboxValue)) {
+        
+        if (Array.isArray(values) && values.includes(checkboxValue)) {
             $(this).prop('checked', true);
             $(this).parent().css('background-color', ANSWER_BUTTON_COLOR.success);
         } 
