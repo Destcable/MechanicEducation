@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode, useEffect, useState } from "react";
+import { CSSProperties, ReactNode, useState } from "react";
 import $ from 'jquery';
 import type { TraningData } from "../../types/Traning";
 import Header from "../../components/ui/Header/Header";
