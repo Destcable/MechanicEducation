@@ -45,14 +45,17 @@ const TraningPage = (props: TraningPageProps) => {
 
     function addCountTab() {
         setEnabledButton(false);
+        
         if (getUserAnswers()[countActiveTab + 2]) {
             setEnabledButton(true);
         }
+
         setCountActiveTab(countActiveTab + 1);
     }
 
     function takeCountTab() {
         setEnabledButton(false);
+        
         if (getUserAnswers()[countActiveTab]) {
             setEnabledButton(true);
         }
@@ -60,18 +63,12 @@ const TraningPage = (props: TraningPageProps) => {
         setCountActiveTab(countActiveTab - 1);
     }
 
-    useEffect(() => {
-
-        if (traningType === "select") {
-            document.addEventListener("change", handleSelectChange);
-        } else if (traningType != "checkbox" && traningType != "radio") {
-            setEnabledButton(true);
-        }
-
-        return () => {
-            document.removeEventListener("change", handleSelectChange);
-        };
-    })
+    
+    if (traningType === "select") {
+        $('select').off('change').on('change', () => handleSelectChange() );
+    } else if (traningType != "checkbox" && traningType != "radio") {
+        setEnabledButton(true);
+    }
 
     const tabs = [];
 
