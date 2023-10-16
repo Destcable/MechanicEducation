@@ -4,7 +4,7 @@
         "title": "Установите соответствие между изображениями и видами металлорежущих станков",
         "image": null,
         "component": "/templates/questions/question_1/slide_1.html",
-        "answers": [ "A", "B", "C"]
+        "answers": [ "1", "1", "1"]
     },
     {
         "type": "checkbox",

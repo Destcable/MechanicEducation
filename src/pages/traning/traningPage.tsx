@@ -33,6 +33,7 @@ const arrows: CSSProperties = {
 const TraningPage = (props: TraningPageProps) => {
     const [countActiveTab, setActiveTab] = useState(0);
     const [isEnabledButton, setEnabledButton] = useState(false);
+    const currentAnswers = getUserAnswers()[countActiveTab + 1];
 
     const traningType = props.traning[countActiveTab].type;
 
@@ -63,13 +64,6 @@ const TraningPage = (props: TraningPageProps) => {
         setCountActiveTab(countActiveTab - 1);
     }
 
-    
-    if (traningType === "select") {
-        $('select').off('change').on('change', () => handleSelectChange() );
-    } else if (traningType != "checkbox" && traningType != "radio") {
-        setEnabledButton(true);
-    }
-
     const tabs = [];
 
     const HTMLContent = TemplateLoader(props.traning[countActiveTab].component);
@@ -90,7 +84,6 @@ const TraningPage = (props: TraningPageProps) => {
 
     $('input[name="options"]').on("change", function () {
         const selectedElements = $('input[name="options"]:checked');
-        const currentElement = $(this);
 
         if (selectedElements.length > 0) {
             if ($('#send-answers__button').length === 0) {
@@ -105,9 +98,9 @@ const TraningPage = (props: TraningPageProps) => {
 
         if (traningType === "checkbox") {
             if ($(this).is(':checked')) {
-                currentElement.parent().css('background-color', ANSWER_BUTTON_COLOR.selected);
+                $(this).parent().css('background-color', ANSWER_BUTTON_COLOR.selected);
             } else {
-                currentElement.parent().css('background-color', '');
+                $(this).parent().css('background-color', '');
             }
         }
     });
@@ -123,12 +116,12 @@ const TraningPage = (props: TraningPageProps) => {
         });
     }
 
-    if (traningType === 'select' && getUserAnswers()[countActiveTab + 1]) { 
-        setSelects(getUserAnswers()[countActiveTab + 1]);
+    if (traningType === 'select') {
+        currentAnswers ? setSelects(props.traning[countActiveTab].answers, currentAnswers) : $('select').off('change').on('change', () => handleSelectChange());
     }
 
-    if (traningType === 'checkbox' && getUserAnswers()[countActiveTab + 1]) {
-        setCheckboxes(getUserAnswers()[countActiveTab + 1]);
+    if (traningType === 'checkbox' && currentAnswers) {
+        setCheckboxes(currentAnswers);
     }
 
     function answerButtonClick() {
