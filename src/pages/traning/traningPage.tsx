@@ -121,7 +121,7 @@ const TraningPage = (props: TraningPageProps) => {
     }
 
     if (traningType === 'checkbox' && currentAnswers) {
-        setCheckboxes(currentAnswers);
+        setCheckboxes(props.traning[countActiveTab].answers, currentAnswers);
     }
 
     function answerButtonClick() {
