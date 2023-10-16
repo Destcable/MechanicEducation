@@ -37,7 +37,9 @@ const TraningPage = (props: TraningPageProps) => {
 
     function handleSelectChange() {
         if (checkSelectsNotEmpty()) {
-            createAnswerButton();
+            if ($('#send-answers__button').length === 0) { 
+                createAnswerButton();
+            }
             answerButtonClick();
         }
     }
@@ -110,6 +112,31 @@ const TraningPage = (props: TraningPageProps) => {
 
             if ($(this).is(':checked')) {
                 $(this).parent().css('background-color', ANSWER_BUTTON_COLOR.selected);
+            }
+        });
+    }
+
+    if (traningType === "text") { 
+        const textInputs = $('input[type="text"]');
+
+        textInputs.on('input', function() {
+            let allFilled = true;
+
+            textInputs.each(function() {
+                const inputValue = $(this).val();
+                if (typeof inputValue === 'string' && inputValue.trim() === '') {
+                    allFilled = false;
+                    return false; 
+                }
+            });
+    
+            if (allFilled) {
+                if ($('#send-answers__button').length === 0) {
+                    createAnswerButton();
+                    answerButtonClick();
+                }
+            } else {
+                removeAnswerButton();
             }
         });
     }
