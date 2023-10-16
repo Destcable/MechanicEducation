@@ -9,9 +9,7 @@ import ArrowLeft from "../../components/ui/arrowLeft/arrowLeft";
 import TemplateLoader from "../../components/TemplateLoader/TemplateLoader";
 import checkSelectsNotEmpty from "../../components/JQuery/checkSelectsNotEmpty";
 import { ANSWER_BUTTON_COLOR } from "../../UI.config";
-import { highlightAnswersCheckbox, highlightAnswersRadio } from "../../components/AnswersLogic/highlightAnswers";
-import setSelects from "../../components/JQuery/setSelects";
-import setCheckboxes from "../../components/JQuery/setCheckboxes";
+import { highlightAnswersCheckbox, highlightAnswersRadio, highlightAnswersSelects } from "../../components/AnswersLogic/highlightAnswers";
 import { getUserAnswers, saveUserAnswers } from "../../Controllers/answers/saveAnswer";
 import createAnswerButton from "../../components/JQuery/AnswerButton/createAnswerButton";
 import { removeAnswerButton } from "../../components/JQuery/AnswerButton/removeAnswerButton";
@@ -117,24 +115,25 @@ const TraningPage = (props: TraningPageProps) => {
     }
 
     if (traningType === 'select') {
-        currentAnswers ? setSelects(props.traning[countActiveTab].answers, currentAnswers) : $('select').off('change').on('change', () => handleSelectChange());
+        currentAnswers ? highlightAnswersSelects(props.traning[countActiveTab].answers, currentAnswers) : $('select').off('change').on('change', () => handleSelectChange());
     }
 
     if (traningType === 'checkbox' && currentAnswers) {
-        setCheckboxes(props.traning[countActiveTab].answers, currentAnswers);
+        highlightAnswersCheckbox(props.traning[countActiveTab].answers, currentAnswers);
     }
 
     function answerButtonClick() {
         $('#send-answers__button').off('click').on('click', function () {
             removeAnswerButton();
             setEnabledButton(true);
+            
             if (traningType === "select") {
                 saveUserAnswers(countActiveTab + 1, getSelects());
             }
 
             if (traningType === "checkbox") {
                 saveUserAnswers(countActiveTab + 1, getCheckboxes());
-                highlightAnswersCheckbox(props.traning[countActiveTab].answers);
+                highlightAnswersCheckbox(props.traning[countActiveTab].answers, currentAnswers);
             }
 
             if (traningType === "text") {
