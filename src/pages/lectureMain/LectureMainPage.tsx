@@ -1,6 +1,5 @@
-import { Title } from "../../config";
 import { useNavigate } from "react-router-dom";
-import Header from '../../components/ui/header/Header';
+import Header from '../../components/ui/Header/Header';
 import Tringle from '../../components/ui/tringle/tringle';
 import HomeButton from "../../components/ui/homeButton/homeButton";
 import { Container, Row, Col, Card } from 'react-bootstrap';
@@ -15,9 +14,7 @@ function LectureMainPage() {
 
     return (
         <>
-            <Header
-                title={Title}
-            />
+            <Header/>
 
             <div className="bg_color_block d-flex flex-column ">
 
