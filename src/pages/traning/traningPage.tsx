@@ -80,7 +80,7 @@ const TraningPage = (props: TraningPageProps) => {
         tabs.push(<div key={index} className="tab"></div>);
     }
 
-    $('input[name="options"]').on("change", function () {
+    $('input[name="options"]').off('change').on('change', function () {
         const selectedElements = $('input[name="options"]:checked');
 
         if (selectedElements.length > 0) {
