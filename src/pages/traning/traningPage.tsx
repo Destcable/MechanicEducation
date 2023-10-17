@@ -52,6 +52,31 @@ const TraningPage = (props: TraningPageProps) => {
     }
   }
 
+  function handleTextChange() {
+    const textInputs = $('input[type="text"]');
+
+    textInputs.on("input", function () {
+      let allFilled = true;
+
+      textInputs.each(function () {
+        const inputValue = $(this).val();
+        if (typeof inputValue === "string" && inputValue.trim() === "") {
+          allFilled = false;
+          return false;
+        }
+      });
+
+      if (allFilled) {
+        if ($("#send-answers__button").length === 0) {
+          createAnswerButton();
+          answerButtonClick();
+        }
+      } else {
+        removeAnswerButton();
+      }
+    });
+  }
+
   function addCountTab() {
     setEnabledButton(false);
 
@@ -129,31 +154,6 @@ const TraningPage = (props: TraningPageProps) => {
     });
   }
 
-  if (traningType === "text") {
-    const textInputs = $('input[type="text"]');
-
-    textInputs.on("input", function () {
-      let allFilled = true;
-
-      textInputs.each(function () {
-        const inputValue = $(this).val();
-        if (typeof inputValue === "string" && inputValue.trim() === "") {
-          allFilled = false;
-          return false;
-        }
-      });
-
-      if (allFilled) {
-        if ($("#send-answers__button").length === 0) {
-          createAnswerButton();
-          answerButtonClick();
-        }
-      } else {
-        removeAnswerButton();
-      }
-    });
-  }
-
   if (traningType === "select") {
     currentAnswers
       ? highlightAnswersSelects(
@@ -172,11 +172,13 @@ const TraningPage = (props: TraningPageProps) => {
     );
   }
 
-  if (traningType === "text" && currentAnswers) { 
-    highlightAnswersText(
-      props.traning[countActiveTab].answers,
-      getUserAnswers()[countActiveTab + 1],
-    );
+  if (traningType === "text") {
+    currentAnswers
+      ? highlightAnswersText(
+          props.traning[countActiveTab].answers,
+          getUserAnswers()[countActiveTab + 1],
+        )
+      : handleTextChange();
   }
 
   function answerButtonClick() {
