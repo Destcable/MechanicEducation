@@ -61,7 +61,7 @@ export function highlightAnswersText(
 ) {
   const textInputs = $('input[type="text"]');
   textInputs.each((index) => {
-    $(this).css("background-color", ANSWER_BUTTON_COLOR.success);
+    $(this).parent().css("background-color", ANSWER_BUTTON_COLOR.success);
     // const userAnswer = Array.isArray(userAnswers) ? userAnswers[index] : false;
     // const isCorrect = Array.isArray(correctAnswers)
     //   ? correctAnswers[index] === userAnswer
