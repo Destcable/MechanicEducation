@@ -61,10 +61,18 @@ export function highlightAnswersText(
 ) {
   const textInputs = $('input[type="text"]');
   textInputs.each((index) => {
-    const userAnswer = Array.isArray(userAnswers) ? userAnswers[index] : false;
-    const isCorrect = Array.isArray(correctAnswers)
-      ? correctAnswers[index] === userAnswer
-      : false;
+    $(this).css("background-color", ANSWER_BUTTON_COLOR.success);
+    // const userAnswer = Array.isArray(userAnswers) ? userAnswers[index] : false;
+    // const isCorrect = Array.isArray(correctAnswers)
+    //   ? correctAnswers[index] === userAnswer
+    //   : false;
+    // if (isCorrect) {
+    //   $(this).css("background-color", ANSWER_BUTTON_COLOR.success);
+    // } else {
+    //   $(this).css("background-color", ANSWER_BUTTON_COLOR.error);
+    // }
+
+    BlockedElement($(this));
   });
 }
 
