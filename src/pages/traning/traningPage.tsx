@@ -193,13 +193,10 @@ const TraningPage = (props: TraningPageProps) => {
 
         if (traningType === "text") {
           saveUserAnswers(countActiveTab + 1, getInputTexts());
-          $("input[type='text']").each(function () {
-            console.log($(this));
-          });
-          // highlightAnswersText(
-          // props.traning[countActiveTab].answers,
-          // currentAnswers,
-          // );
+          highlightAnswersText(
+            props.traning[countActiveTab].answers,
+            currentAnswers,
+          );
         }
 
         if (traningType === "radio") {
