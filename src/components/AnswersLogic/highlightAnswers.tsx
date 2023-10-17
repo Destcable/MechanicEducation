@@ -69,7 +69,7 @@ export function highlightAnswersText(
 
     if (isCorrect) { 
         $(this).css("background-color", ANSWER_BUTTON_COLOR.success);
-    }else { 
+    } else { 
         $(this).css('background-color', ANSWER_BUTTON_COLOR.error);
     }
     
@@ -77,19 +77,23 @@ export function highlightAnswersText(
   });
 }
 
-export function highlightAnswersRadio(answers: unknown[] | undefined) {
+export function highlightAnswersRadio(
+  correctAnswers: UserAnswer | unknown,
+  userAnswers: UserAnswer | unknown
+) {
   const radio = $("label.btn input[type='radio']");
-  BlockedElement(radio);
-  $("input[type='radio']:checked").each(function () {
-    const currentElement = $(this);
-    if (answers?.includes(currentElement.val())) {
-      currentElement
-        .parent()
-        .css("background-color", ANSWER_BUTTON_COLOR.success);
+  radio.each(function (index) {
+    const userAnswer = Array.isArray(userAnswers) ? userAnswers[index] : false;
+    const isCorrect = Array.isArray(correctAnswers)
+      ? correctAnswers[index] === userAnswer
+      : false;
+    
+    if (isCorrect) {
+      $(this).parent().css('background-color', ANSWER_BUTTON_COLOR.success);
     } else {
-      currentElement
-        .parent()
-        .css("background-color", ANSWER_BUTTON_COLOR.error);
+      $(this).parent().css('background-color', ANSWER_BUTTON_COLOR.error);
     }
+
+    BlockedElement($(this));
   });
 }

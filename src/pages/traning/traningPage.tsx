@@ -210,7 +210,10 @@ const TraningPage = (props: TraningPageProps) => {
 
         if (traningType === "radio") {
           saveUserAnswers(countActiveTab + 1, getRadio());
-          highlightAnswersRadio(props.traning[countActiveTab].answers);
+          highlightAnswersRadio(
+            props.traning[countActiveTab].answers, 
+            getUserAnswers()[countActiveTab + 1],
+          );
         }
       });
   }
