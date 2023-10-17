@@ -77,6 +77,16 @@ const TraningPage = (props: TraningPageProps) => {
     });
   }
 
+  function handleRadioChange() {
+    $('input[type="radio"]').on("change", function () {
+      $('input[type="radio"]').parent().css("background-color", "");
+
+      if ($(this).is(":checked")) {
+        $(this).parent().css("background-color", ANSWER_BUTTON_COLOR.selected);
+      }
+    });
+  }
+
   function addCountTab() {
     setEnabledButton(false);
 
@@ -144,14 +154,13 @@ const TraningPage = (props: TraningPageProps) => {
       }
     });
 
-  if (traningType === "radio") {
-    $('input[type="radio"]').on("change", function () {
-      $('input[type="radio"]').parent().css("background-color", "");
-
-      if ($(this).is(":checked")) {
-        $(this).parent().css("background-color", ANSWER_BUTTON_COLOR.selected);
-      }
-    });
+  if (traningType === "radio") { 
+    currentAnswers
+      ? highlightAnswersRadio(
+          props.traning[countActiveTab].answers, 
+          getUserAnswers()[countActiveTab + 1],
+        )
+      : handleRadioChange();
   }
 
   if (traningType === "select") {

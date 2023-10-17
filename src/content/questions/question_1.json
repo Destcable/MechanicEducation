@@ -45,7 +45,8 @@
         "type": "radio",
         "title": "Укажите критерий, влияющий на выбор материала для изготовления режущей части инструмента.Выберите единственно правильный ответ.",
         "image": null,
-        "component": "/templates/questions/question_1/slide_7.html"
+        "component": "/templates/questions/question_1/slide_7.html",
+        "answers": ["D"]
     },
     {
         "type": "text",

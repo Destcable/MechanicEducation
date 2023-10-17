@@ -61,18 +61,18 @@ export function highlightAnswersText(
 ) {
   $("input[type='text']").each(function (index) {
     const userAnswer = Array.isArray(userAnswers) ? userAnswers[index] : false;
-    const isCorrect = Array.isArray(correctAnswers) 
-      ? correctAnswers[index] === userAnswer 
+    const isCorrect = Array.isArray(correctAnswers)
+      ? correctAnswers[index] === userAnswer
       : false;
 
     $(this).val(userAnswer);
 
-    if (isCorrect) { 
-        $(this).css("background-color", ANSWER_BUTTON_COLOR.success);
-    } else { 
-        $(this).css('background-color', ANSWER_BUTTON_COLOR.error);
+    if (isCorrect) {
+      $(this).css("background-color", ANSWER_BUTTON_COLOR.success);
+    } else {
+      $(this).css('background-color', ANSWER_BUTTON_COLOR.error);
     }
-    
+
     BlockedElement($(this));
   });
 }
@@ -83,15 +83,19 @@ export function highlightAnswersRadio(
 ) {
   const radio = $("label.btn input[type='radio']");
   radio.each(function (index) {
+    const currentValue = $(this).val();
     const userAnswer = Array.isArray(userAnswers) ? userAnswers[index] : false;
-    const isCorrect = Array.isArray(correctAnswers)
-      ? correctAnswers[index] === userAnswer
-      : false;
-    
-    if (isCorrect) {
-      $(this).parent().css('background-color', ANSWER_BUTTON_COLOR.success);
-    } else {
-      $(this).parent().css('background-color', ANSWER_BUTTON_COLOR.error);
+    console.log(currentValue === userAnswer);
+    if (Array.isArray(userAnswers) && userAnswers.includes(currentValue)) {
+      const isCorrect = Array.isArray(correctAnswers)
+        ? correctAnswers[index] === userAnswer
+        : false;
+
+      if (isCorrect) {
+        $(this).parent().css('background-color', ANSWER_BUTTON_COLOR.success);
+      } else {
+        $(this).parent().css('background-color', ANSWER_BUTTON_COLOR.error);
+      }
     }
 
     BlockedElement($(this));
