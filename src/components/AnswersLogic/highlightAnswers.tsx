@@ -59,22 +59,22 @@ export function highlightAnswersText(
   correctAnswers: UserAnswer | unknown,
   userAnswers: UserAnswer | unknown,
 ) {
-  $("input[type='text']").each(function () {
-    $(this).css("background-color", ANSWER_BUTTON_COLOR.success);
+  $("input[type='text']").each(function (index) {
+    const userAnswer = Array.isArray(userAnswers) ? userAnswers[index] : false;
+    const isCorrect = Array.isArray(correctAnswers) 
+      ? correctAnswers[index] === userAnswer 
+      : false;
+
+    $(this).val(userAnswer);
+
+    if (isCorrect) { 
+        $(this).css("background-color", ANSWER_BUTTON_COLOR.success);
+    }else { 
+        $(this).css('background-color', ANSWER_BUTTON_COLOR.error);
+    }
+    
     BlockedElement($(this));
   });
-  // const textInputs = $('input[type="text"]');
-  // textInputs.each((index) => {
-  // $(this).parent().css("background-color", ANSWER_BUTTON_COLOR.success);
-  // const userAnswer = Array.isArray(userAnswers) ? userAnswers[index] : false;
-  // const isCorrect = Array.isArray(correctAnswers)
-  //   ? correctAnswers[index] === userAnswer
-  //   : false;
-  // if (isCorrect) {
-  //   $(this).css("background-color", ANSWER_BUTTON_COLOR.success);
-  // } else {
-  //   $(this).css("background-color", ANSWER_BUTTON_COLOR.error);
-  // }
 }
 
 export function highlightAnswersRadio(answers: unknown[] | undefined) {

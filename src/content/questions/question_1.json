@@ -24,7 +24,8 @@
         "type": "text",
         "title": "Вставьте пропущенные слова, выбрав их из предложенного списка.",
         "image": null,
-        "component": "/templates/questions/question_1/slide_4.html"
+        "component": "/templates/questions/question_1/slide_4.html",
+        "answers": ["wa", "wb", "wc"]
     },
     {
         "type": "select",

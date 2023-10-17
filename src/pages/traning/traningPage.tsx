@@ -172,6 +172,13 @@ const TraningPage = (props: TraningPageProps) => {
     );
   }
 
+  if (traningType === "text" && currentAnswers) { 
+    highlightAnswersText(
+      props.traning[countActiveTab].answers,
+      getUserAnswers()[countActiveTab + 1],
+    );
+  }
+
   function answerButtonClick() {
     $("#send-answers__button")
       .off("click")
@@ -195,7 +202,7 @@ const TraningPage = (props: TraningPageProps) => {
           saveUserAnswers(countActiveTab + 1, getInputTexts());
           highlightAnswersText(
             props.traning[countActiveTab].answers,
-            currentAnswers,
+            getUserAnswers()[countActiveTab + 1],
           );
         }
 
