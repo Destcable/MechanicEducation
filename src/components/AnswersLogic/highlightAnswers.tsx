@@ -82,13 +82,12 @@ export function highlightAnswersRadio(
   userAnswers: UserAnswer | unknown
 ) {
   const radio = $("label.btn input[type='radio']");
-  radio.each(function (index) {
+  radio.each(function () {
     const currentValue = $(this).val();
-    const userAnswer = Array.isArray(userAnswers) ? userAnswers[index] : false;
-    console.log(currentValue === userAnswer);
+
     if (Array.isArray(userAnswers) && userAnswers.includes(currentValue)) {
       const isCorrect = Array.isArray(correctAnswers)
-        ? correctAnswers[index] === userAnswer
+        ? correctAnswers[0] === currentValue
         : false;
 
       if (isCorrect) {
