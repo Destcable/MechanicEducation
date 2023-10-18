@@ -41,8 +41,10 @@ const TraningPage = (props: TraningPageProps) => {
   const [isEnabledButton, setEnabledButton] = useState(false);
   const currentAnswers = getUserAnswers()[countActiveTab + 1];
 
-  const traningType = props.traning[countActiveTab].type;
+  const traningType = props.traning[countActiveTab]?.type;
 
+  const HTMLContent = props.traning[countActiveTab]?.component ? TemplateLoader(props.traning[countActiveTab]?.component) : undefined;
+  
   function handleSelectChange() {
     if (checkSelectsNotEmpty()) {
       if ($("#send-answers__button").length === 0) {
@@ -109,15 +111,19 @@ const TraningPage = (props: TraningPageProps) => {
 
   const tabs = [];
 
-  const HTMLContent = TemplateLoader(props.traning[countActiveTab].component);
-
-  const ImageUrl = props.traning[countActiveTab].image
+  const ImageUrl = props.traning[countActiveTab]?.image
     ? props.traning[countActiveTab].image
     : undefined;
 
   function setCountActiveTab(count: number) {
+    console.log('length: ' + props.traning.length + ', count:' + count);
     if (count < props.traning.length && count >= 0) {
       return setActiveTab(count);
+    }else if (props.traning.length === count) {
+      console.log('length: ' + props.traning.length + ', count:' + count);
+      setEnabledButton(false);
+      setActiveTab(count);
+      return true;
     }
 
     return console.error("Данный таб отсутствует");
@@ -252,7 +258,7 @@ const TraningPage = (props: TraningPageProps) => {
               <div className="container-exercise">
                 <div className="d-flex justify-content-between">
                   <p className="text-zadanie">
-                    {props.traning[countActiveTab].title}
+                    {props.traning[countActiveTab]?.title}
                   </p>
                 </div>
 
@@ -266,9 +272,11 @@ const TraningPage = (props: TraningPageProps) => {
                       />
                     </div>
                   )}
-                  {props.traning[countActiveTab].component && (
+                  {props.traning[countActiveTab]?.component && (
                     <div>
-                      <div dangerouslySetInnerHTML={{ __html: HTMLContent }} />
+                      {HTMLContent && (
+                        <div dangerouslySetInnerHTML={{ __html: HTMLContent }} />
+                      )}
                     </div>
                   )}
                 </div>
