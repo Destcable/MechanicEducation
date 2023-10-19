@@ -4,7 +4,7 @@ import HomeButton from "../components/ui/homeButton/homeButton";
 import Tringle from "../components/ui/tringle/tringle";
 import question_1 from "../content/questions/question_1.json";
 
-export default function ResultPage(traningAnswer, userAnswer) {
+export default function ResultPage() {
         
     function countCorrectAnswers(jsonData, userAnswers) {
         let correctCount = 0;
