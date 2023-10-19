@@ -52,12 +52,14 @@
         "type": "text",
         "title": "Вставьте пропущенные слова, выбрав их из предложенного списка.",
         "image": null,
-        "component": "/templates/questions/question_1/slide_8.html"
+        "component": "/templates/questions/question_1/slide_8.html",
+        "answers": ["wa", "wb", "wc"]
     },
     {
         "type": "select",
         "title": "Установите соответствие между изображениями и видами технологических приспособлений",
         "image": null,
-        "component": "/templates/questions/question_1/slide_9.html"
+        "component": "/templates/questions/question_1/slide_9.html",
+        "answers": ["1", "2", "3", "4", "5"]
     }
 ]

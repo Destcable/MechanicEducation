@@ -25,6 +25,7 @@ import getSelects from "../../components/JQuery/getSelects";
 import getCheckboxes from "../../components/JQuery/getCheckboxes";
 import getInputTexts from "../../components/JQuery/getInputTexts";
 import getRadio from "../../components/JQuery/getRadio";
+import { useNavigate } from "react-router-dom";
 
 interface TraningPageProps {
   traning: TraningData[];
@@ -42,6 +43,7 @@ const TraningPage = (props: TraningPageProps) => {
   const currentAnswers = getUserAnswers()[countActiveTab + 1];
 
   const traningType = props.traning[countActiveTab]?.type;
+  const navigate = useNavigate();
 
   const HTMLContent = props.traning[countActiveTab]?.component ? TemplateLoader(props.traning[countActiveTab]?.component) : undefined;
   
@@ -123,6 +125,7 @@ const TraningPage = (props: TraningPageProps) => {
       console.log('length: ' + props.traning.length + ', count:' + count);
       setEnabledButton(false);
       setActiveTab(count);
+      navigate('/result', {state: {traningAnswer: props.traning, userAnswer: getUserAnswers()}});
       return true;
     }
 
