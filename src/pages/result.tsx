@@ -9,14 +9,11 @@ export default function ResultPage() {
     function countCorrectAnswers(jsonData, userAnswers) {
         let correctCount = 0;
         let incorrectCount = 0;
-        console.log(getUserAnswers());
 
         for (let i = 0; i < jsonData.length; i++) {
             const question = jsonData[i];
             const userAnswer = userAnswers[i + 1];
             if (question.type === "select" || question.type === "checkbox" || question.type === "radio") {
-                console.log(question.answers);  
-                console.log(userAnswer);
                 const isCorrect = JSON.stringify(question.answers) === JSON.stringify(userAnswer);
                 if (isCorrect) {
                     correctCount++;
