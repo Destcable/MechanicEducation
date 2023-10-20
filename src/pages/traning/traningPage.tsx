@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode, useState } from "react";
+import { CSSProperties, ReactNode, useEffect, useState } from "react";
 import $ from "jquery";
 import type { TraningData } from "../../types/Traning";
 import Header from "../../components/ui/Header/Header";
@@ -46,6 +46,14 @@ const TraningPage = (props: TraningPageProps) => {
   const navigate = useNavigate();
 
   const HTMLContent = props.traning[countActiveTab]?.component ? TemplateLoader(props.traning[countActiveTab]?.component) : undefined;
+
+  useEffect(() => {
+    
+    if (!traningType) {
+      setEnabledButton(true);
+    }
+    // eslint-disable-next-line
+  }, []);
   
   function handleSelectChange() {
     if (checkSelectsNotEmpty()) {
@@ -92,7 +100,9 @@ const TraningPage = (props: TraningPageProps) => {
   }
 
   function addCountTab() {
-    setEnabledButton(false);
+    if (traningType) {
+      setEnabledButton(false);
+    }
 
     if (getUserAnswers()[countActiveTab + 2]) {
       setEnabledButton(true);
@@ -102,7 +112,10 @@ const TraningPage = (props: TraningPageProps) => {
   }
 
   function takeCountTab() {
-    setEnabledButton(false);
+    if (traningType) {
+      setEnabledButton(false);
+    }
+    
 
     if (getUserAnswers()[countActiveTab]) {
       setEnabledButton(true);
@@ -198,7 +211,7 @@ const TraningPage = (props: TraningPageProps) => {
         )
       : handleTextChange();
   }
-
+  
   function answerButtonClick() {
     $("#send-answers__button")
       .off("click")
