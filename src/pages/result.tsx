@@ -3,10 +3,17 @@ import Header from "../components/ui/Header/Header";
 import HomeButton from "../components/ui/homeButton/homeButton";
 import Tringle from "../components/ui/tringle/tringle";
 import question_1 from "../content/questions/question_1.json";
+import { UserAnswer } from "../types/Answer";
+
+interface Question {
+    type: string;
+    title: string;
+    answers: string[];
+  }
 
 export default function ResultPage() {
         
-    function countCorrectAnswers(jsonData, userAnswers) {
+    function countCorrectAnswers(jsonData: Question[], userAnswers: UserAnswer) {
         let correctCount = 0;
         let incorrectCount = 0;
 
