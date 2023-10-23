@@ -4,14 +4,17 @@ import HomeButton from "../components/ui/homeButton/homeButton";
 import Tringle from "../components/ui/tringle/tringle";
 import question_1 from "../content/questions/question_1.json";
 import { UserAnswer } from "../types/Answer";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Pie } from 'react-chartjs-2';
 
 interface Question {
     type: string;
     title: string;
     answers: string[];
-  }
+}
 
 export default function ResultPage() {
+    ChartJS.register(ArcElement, Tooltip, Legend);
         
     function countCorrectAnswers(jsonData: Question[], userAnswers: UserAnswer) {
         let correctCount = 0;
@@ -45,6 +48,25 @@ export default function ResultPage() {
 
     const test = countCorrectAnswers(question_1, getUserAnswers());
 
+    const data = {
+        labels: ['Не верные ответы', 'Верные ответы'],
+        datasets: [
+          {
+            label: 'Количество ответов: ',
+            data: [test.incorrect, test.correct],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(75, 192, 192, 1)',
+            ],
+            borderWidth: 1,
+          },
+        ],
+    };
+
     return (
         <>
             <Header />
@@ -72,13 +94,20 @@ export default function ResultPage() {
                                     <br />
                                     Количество не верных ответов: {test.incorrect}
                                 </div>
+                                <div className="d-flex justify-content-center w-100" style={{ width: '200px', height: '200px' }}>
+                                    <Pie 
+                                        data={data} 
+                                        width={100}
+                                        height={20}
+                                    />
+                                </div>
 
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <Tringle background="CFDEEE" />
+            <Tringle background="CFDEEE"  />
         </>
 
     )
