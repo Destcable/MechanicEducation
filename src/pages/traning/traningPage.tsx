@@ -51,7 +51,7 @@ const TraningPage = (props: TraningPageProps) => {
       setEnabledButton(true);
     }
   }, [traningType]);
-  
+
   function handleSelectChange() {
     if (checkSelectsNotEmpty()) {
       if ($("#send-answers__button").length === 0) {
