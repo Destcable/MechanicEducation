@@ -1,50 +1,16 @@
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Pie } from 'react-chartjs-2';
 import { getUserAnswers } from "../Controllers/answers/saveAnswer";
 import Header from "../components/ui/Header/Header";
 import HomeButton from "../components/ui/homeButton/homeButton";
 import Tringle from "../components/ui/tringle/tringle";
 import question_1 from "../content/questions/question_1.json";
-import { UserAnswer } from "../types/Answer";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
+import countCorrectAnswers from "../utils/countCorrectAnswers";
 
-interface Question {
-    type: string;
-    title: string;
-    answers: string[];
-}
 
 export default function ResultPage() {
     ChartJS.register(ArcElement, Tooltip, Legend);
         
-    function countCorrectAnswers(jsonData: Question[], userAnswers: UserAnswer) {
-        let correctCount = 0;
-        let incorrectCount = 0;
-
-        for (let i = 0; i < jsonData.length; i++) {
-            const question = jsonData[i];
-            const userAnswer = userAnswers[i + 1];
-            if (question.type === "select" || question.type === "checkbox" || question.type === "radio") {
-                const isCorrect = JSON.stringify(question.answers) === JSON.stringify(userAnswer);
-                if (isCorrect) {
-                    correctCount++;
-                } else {
-                    incorrectCount++;
-                }
-            } else if (question.type === "text") {
-                const isCorrect = JSON.stringify(question.answers) === JSON.stringify(userAnswer);
-                if (isCorrect) {
-                    correctCount++;
-                } else {
-                    incorrectCount++;
-                }
-            }
-        }
-
-        return {
-            correct: correctCount,
-            incorrect: incorrectCount,
-        };
-    }
 
     const test = countCorrectAnswers(question_1, getUserAnswers());
 
