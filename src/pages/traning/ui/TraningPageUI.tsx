@@ -34,7 +34,7 @@ export default function TraningPageUI(props: TraningPageUIProps) {
                             <div className="container-exercise w-100">
 
 
-                                    <p className="text-zadanie w-100">
+                                    <p className="text-zadanie w-100 fs-6">
                                         {props.title}
                                         {props.children}
                                     </p>

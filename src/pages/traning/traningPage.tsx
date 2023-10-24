@@ -2,8 +2,6 @@ import { CSSProperties, ReactNode, useEffect, useState } from "react";
 import $ from "jquery";
 import { useNavigate } from "react-router-dom";
 import type { TraningData } from "../../types/Traning";
-import Header from "../../components/ui/Header/Header";
-import HomeButton from "../../components/ui/homeButton/homeButton";
 import Tringle from "../../components/ui/tringle/tringle";
 import ArrowRight from "../../components/ui/arrowRight/arrowRight";
 import ArrowLeft from "../../components/ui/arrowLeft/arrowLeft";
