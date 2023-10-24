@@ -218,7 +218,7 @@ const TraningPage = (props: TraningPageProps) => {
         highlightAnswers(traningType, props.traning[countActiveTab].answers, currentAnswers);
       });
     }
-  };
+  }
 
   return (
     <>

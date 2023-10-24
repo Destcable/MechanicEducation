@@ -1,12 +1,13 @@
+import { ReactNode } from "react"
 import Header from "../../../components/ui/Header/Header"
 import HomeButton from "../../../components/ui/homeButton/homeButton"
 
 interface TraningPageUIProps {
     title: string,
-    tabs: any[],
+    tabs: ReactNode[],
     countTab: number,
     lengthTabs: number,
-    children: unknown,
+    children: ReactNode,
 }
 
 export default function TraningPageUI(props: TraningPageUIProps) {
