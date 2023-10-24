@@ -22,6 +22,7 @@ import highlightAnswersSelects from "../../components/highlightAnswers/select/hi
 import highlightAnswersCheckbox from "../../components/highlightAnswers/checkbox/highlightAnswersCheckbox";
 import highlightAnswersText from "../../components/highlightAnswers/text/highlightAnswersText";
 import { highlightAnswers } from "../../components/highlightAnswers/highlightAnswers";
+import TraningPageUI from "./ui/TraningPageUI";
 
 
 interface TraningPageProps {
@@ -112,7 +113,7 @@ const TraningPage = (props: TraningPageProps) => {
     if (traningType) {
       setEnabledButton(false);
     }
-    
+
 
     if (getUserAnswers()[countActiveTab]) {
       setEnabledButton(true);
@@ -131,11 +132,11 @@ const TraningPage = (props: TraningPageProps) => {
     console.log('length: ' + props.traning.length + ', count:' + count);
     if (count < props.traning.length && count >= 0) {
       return setActiveTab(count);
-    }else if (props.traning.length === count) {
+    } else if (props.traning.length === count) {
       console.log('length: ' + props.traning.length + ', count:' + count);
       setEnabledButton(false);
       setActiveTab(count);
-      navigate('/result', {state: {traningAnswer: props.traning, userAnswer: getUserAnswers()}});
+      navigate('/result', { state: { traningAnswer: props.traning, userAnswer: getUserAnswers() } });
       return true;
     }
 
@@ -173,24 +174,24 @@ const TraningPage = (props: TraningPageProps) => {
       }
     });
 
-  if (traningType === "radio") { 
+  if (traningType === "radio") {
     currentAnswers
       ? highlightAnswersRadio(
-          props.traning[countActiveTab].answers, 
-          getUserAnswers()[countActiveTab + 1],
-        )
+        props.traning[countActiveTab].answers,
+        getUserAnswers()[countActiveTab + 1],
+      )
       : handleRadioChange();
   }
 
   if (traningType === "select") {
     currentAnswers
       ? highlightAnswersSelects(
-          props.traning[countActiveTab].answers,
-          currentAnswers,
-        )
+        props.traning[countActiveTab].answers,
+        currentAnswers,
+      )
       : $("select")
-          .off("change")
-          .on("change", () => handleSelectChange());
+        .off("change")
+        .on("change", () => handleSelectChange());
   }
 
   if (traningType === "checkbox" && currentAnswers) {
@@ -203,12 +204,12 @@ const TraningPage = (props: TraningPageProps) => {
   if (traningType === "text") {
     currentAnswers
       ? highlightAnswersText(
-          props.traning[countActiveTab].answers,
-          getUserAnswers()[countActiveTab + 1],
-        )
+        props.traning[countActiveTab].answers,
+        getUserAnswers()[countActiveTab + 1],
+      )
       : handleTextChange();
   }
-  
+
   function answerButtonClick() {
     const sendAnswersButton = document.getElementById('send-answers__button');
     if (sendAnswersButton) {
@@ -223,69 +224,44 @@ const TraningPage = (props: TraningPageProps) => {
 
   return (
     <>
-      <Header />
-
-      <div className="bg_color_block d-flex flex-column ">
-        <div className="d-flex justify-content-center align-center">
-          <div className="content1 d-flex flex-column max-content w-100">
-            <HomeButton href="/" />
-
-            <div className="container1">
-              <div className="container_header">
-                <div className="d-flex align-items-center justify-content-between">
-                  <p className="container_title">Динамическая инфографика</p>
-                  <p className="text-white pe-3">
-                    {`${countActiveTab + 1} / ` + props.traning.length}
-                  </p>
-                </div>
-                <div className="d-flex tab-exercise-container">
-                  {tabs}
-                  {/* <div className="active_tab"></div> */}
-                </div>
-              </div>
-              <div className="container-exercise">
-                <div className="d-flex justify-content-between">
-                  <p className="text-zadanie">
-                    {props.traning[countActiveTab]?.title}
-                  </p>
-                </div>
-
-                <div className="d-flex container-filling align-center justify-content-center">
-                  {ImageUrl && (
-                    <div className="img-exercise">
-                      <img
-                        src={ImageUrl}
-                        className="img-exercise1"
-                        style={{ maxHeight: "400px" }}
-                      />
-                    </div>
-                  )}
-                  {props.traning[countActiveTab]?.component && (
-                    <div>
-                      {HTMLContent && (
-                        <div dangerouslySetInnerHTML={{ __html: HTMLContent }} />
-                      )}
-                    </div>
-                  )}
-                </div>
-
-                <div
-                  id="arrows"
-                  className="d-flex w-100 justify-content-end "
-                  style={arrows}
-                >
-                  {isEnabledButton && countActiveTab > 0 && (
-                    <ArrowLeft onClick={takeCountTab} />
-                  )}
-                  {isEnabledButton && (
-                    <ArrowRight id="" onClick={addCountTab} />
-                  )}
-                </div>
-              </div>
+      <TraningPageUI
+        title={props.traning[countActiveTab]?.title}
+        tabs={tabs}
+        countTab={countActiveTab}
+        lengthTabs={props.traning.length}
+      >
+        <div className="d-flex container-filling align-center justify-content-center fw-light w-100">
+          {ImageUrl && (
+            <div className="img-exercise">
+              <img
+                src={ImageUrl}
+                className="img-exercise1"
+                style={{ maxHeight: "400px" }}
+              />
             </div>
-          </div>
+          )}
+          {props.traning[countActiveTab]?.component && (
+            <div>
+              {HTMLContent && (
+                <div dangerouslySetInnerHTML={{ __html: HTMLContent }} />
+              )}
+            </div>
+          )}
         </div>
-      </div>
+
+        <div
+          id="arrows"
+          className="d-flex w-100 justify-content-end "
+          style={arrows}
+        >
+          {isEnabledButton && countActiveTab > 0 && (
+            <ArrowLeft onClick={takeCountTab} />
+          )}
+          {isEnabledButton && (
+            <ArrowRight id="" onClick={addCountTab} />
+          )}
+        </div>
+      </TraningPageUI>
       <Tringle background="CFDEEE" />
     </>
   );
