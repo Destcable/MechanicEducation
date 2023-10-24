@@ -11,7 +11,7 @@ interface TraningPageUIProps {
 }
 
 export default function TraningPageUI(props: TraningPageUIProps) {
-
+    
     return (
         <>
             <Header />
