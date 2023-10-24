@@ -1,5 +1,6 @@
 import { CSSProperties, ReactNode, useEffect, useState } from "react";
 import $ from "jquery";
+import { useNavigate } from "react-router-dom";
 import type { TraningData } from "../../types/Traning";
 import Header from "../../components/ui/Header/Header";
 import HomeButton from "../../components/ui/homeButton/homeButton";
@@ -10,22 +11,18 @@ import TemplateLoader from "../../components/TemplateLoader/TemplateLoader";
 import checkSelectsNotEmpty from "../../components/JQuery/checkSelectsNotEmpty";
 import { ANSWER_BUTTON_COLOR } from "../../UI.config";
 import {
-  highlightAnswersCheckbox,
-  highlightAnswersRadio,
-  highlightAnswersSelects,
-  highlightAnswersText,
-} from "../../components/AnswersLogic/highlightAnswers";
-import {
   getUserAnswers,
   saveUserAnswers,
 } from "../../Controllers/answers/saveAnswer";
 import createAnswerButton from "../../components/JQuery/AnswerButton/createAnswerButton";
 import { removeAnswerButton } from "../../components/JQuery/AnswerButton/removeAnswerButton";
-import getSelects from "../../components/JQuery/getSelects";
-import getCheckboxes from "../../components/JQuery/getCheckboxes";
-import getInputTexts from "../../components/JQuery/getInputTexts";
-import getRadio from "../../components/JQuery/getRadio";
-import { useNavigate } from "react-router-dom";
+import getAnswersByType from "../../utils/getAnswersByType";
+import highlightAnswersRadio from "../../components/highlightAnswers/radio/highlightAnswersRadio";
+import highlightAnswersSelects from "../../components/highlightAnswers/select/highlightAnswersSelects";
+import highlightAnswersCheckbox from "../../components/highlightAnswers/checkbox/highlightAnswersCheckbox";
+import highlightAnswersText from "../../components/highlightAnswers/text/highlightAnswersText";
+import { highlightAnswers } from "../../components/highlightAnswers/highlightAnswers";
+
 
 interface TraningPageProps {
   traning: TraningData[];
@@ -213,39 +210,11 @@ const TraningPage = (props: TraningPageProps) => {
   }
   
   function answerButtonClick() {
-    $("#send-answers__button")
-      .off("click")
-      .on("click", function () {
+    $("#send-answers__button").off("click").on("click", function () {
         removeAnswerButton();
         setEnabledButton(true);
-
-        if (traningType === "select") {
-          saveUserAnswers(countActiveTab + 1, getSelects());
-        }
-
-        if (traningType === "checkbox") {
-          saveUserAnswers(countActiveTab + 1, getCheckboxes());
-          highlightAnswersCheckbox(
-            props.traning[countActiveTab].answers,
-            currentAnswers,
-          );
-        }
-
-        if (traningType === "text") {
-          saveUserAnswers(countActiveTab + 1, getInputTexts());
-          highlightAnswersText(
-            props.traning[countActiveTab].answers,
-            getUserAnswers()[countActiveTab + 1],
-          );
-        }
-
-        if (traningType === "radio") {
-          saveUserAnswers(countActiveTab + 1, getRadio());
-          highlightAnswersRadio(
-            props.traning[countActiveTab].answers, 
-            getUserAnswers()[countActiveTab + 1],
-          );
-        }
+        saveUserAnswers(countActiveTab + 1, getAnswersByType(traningType));
+        highlightAnswers(traningType, props.traning[countActiveTab].answers, currentAnswers);
       });
   }
 
