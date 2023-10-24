@@ -42,15 +42,15 @@ const TraningPage = (props: TraningPageProps) => {
   const traningType = props.traning[countActiveTab]?.type;
   const navigate = useNavigate();
 
-  const HTMLContent = props.traning[countActiveTab]?.component ? TemplateLoader(props.traning[countActiveTab]?.component) : undefined;
+  const HTMLContent = props.traning[countActiveTab]?.component
+    ? TemplateLoader(props.traning[countActiveTab]?.component)
+    : undefined;
 
   useEffect(() => {
-    
     if (!traningType) {
       setEnabledButton(true);
     }
-    // eslint-disable-next-line
-  }, []);
+  }, [traningType]);
   
   function handleSelectChange() {
     if (checkSelectsNotEmpty()) {
@@ -210,13 +210,16 @@ const TraningPage = (props: TraningPageProps) => {
   }
   
   function answerButtonClick() {
-    $("#send-answers__button").off("click").on("click", function () {
+    const sendAnswersButton = document.getElementById('send-answers__button');
+    if (sendAnswersButton) {
+      sendAnswersButton.addEventListener('click', () => {
         removeAnswerButton();
         setEnabledButton(true);
         saveUserAnswers(countActiveTab + 1, getAnswersByType(traningType));
         highlightAnswers(traningType, props.traning[countActiveTab].answers, currentAnswers);
       });
-  }
+    }
+  };
 
   return (
     <>
