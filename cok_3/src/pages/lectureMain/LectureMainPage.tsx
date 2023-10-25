@@ -33,12 +33,12 @@ function LectureMainPage() {
                                     <Col md={6} lg={3}>
                                         <Card onClick={() => navigate('/lecture_1')}>
                                             <Card.Img
-                                                src="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images%2F01%20%D0%92%D0%B8%D0%B4%D1%8B%20%D0%BE%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F.jpg?alt=media&token=9d9fc362-b324-42c6-b920-05cde91787e0"
+                                                src="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_3%2Fimg_1.jpg?alt=media&token=abd6c2fe-c9cd-468b-8ada-fcbbda33ef71&_gl=1*8dgqte*_ga*MTYyMzcyOTgyOS4xNjk3NjE3NDYx*_ga_CW55HF8NVT*MTY5ODIzMDExMy4zLjEuMTY5ODIzMTU4Mi42MC4wLjA."
                                                 alt="Lecture 1"
                                                 className="card-img-top"
                                             />
                                             <Card.Body>
-                                                <Card.Title>Назначение, виды и классификация металлорежущего оборудования</Card.Title>
+                                                <Card.Title>Основные компоненты системы САПР</Card.Title>
                                             </Card.Body>
                                         </Card>
                                     </Col>
@@ -46,12 +46,12 @@ function LectureMainPage() {
                                     <Col md={6} lg={3}>
                                         <Card onClick={() => navigate('/lecture_2')}>
                                             <Card.Img
-                                                src="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images%2F02%20%D0%92%D1%8B%D0%B1%D0%BE%D1%80%20%D1%81%D1%82%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2.jpg?alt=media&token=6fd77aa0-0432-4547-a3a6-89f015a586f7"
+                                                src="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_3%2Fimg_2.jpg?alt=media&token=4c25aeac-dc91-400b-a6cb-12ec2e3d58bd&_gl=1*g6nzjz*_ga*MTYyMzcyOTgyOS4xNjk3NjE3NDYx*_ga_CW55HF8NVT*MTY5ODIzMDExMy4zLjEuMTY5ODIzMTY4OC41Ny4wLjA."
                                                 alt="Lecture 2"
                                                 className="card-img-top"
                                             />
                                             <Card.Body>
-                                                <Card.Title>Выбор металлорежущего оборудования для реализации технологического процесса</Card.Title>
+                                                <Card.Title>Чертежно-графический редактор программы</Card.Title>
                                             </Card.Body>
                                         </Card>
                                     </Col>
