@@ -14,40 +14,13 @@ import ResultPage from "./pages/result";
 
 export const Routes = createBrowserRouter([
     { path: "/", element: <MainPage /> },
-    {
-        path: "/trainingLecture",
-        element: <LectureMainPage />
-    },
-    {
-        path: "/lecture_1",
-        element: <TraningPage traning={lecture_1} />
-    },
-    {
-        path: "/lecture_2",
-        element: <TraningPage traning={lecture_2} />
-    },
-    {
-        path: "/lecture_3",
-        element: <TraningPage traning={lecture_3} />
-    },
-    {
-        path: "/lecture_4",
-        element: <TraningPage traning={lecture_4} />
-    },
-    {
-        path: "/lecture_5",
-        element: <TraningPage traning={lecture_5} /> 
-    },
-    {
-        path: "/traning_1",
-        element: <TraningPage traning={trainings_1} />
-    },
-    {
-        path: "/question_1",
-        element: <TraningPage traning={question_1} />
-    },
-    {
-        path: "/result",
-        element: <ResultPage />
-    }
+    { path: "/trainingLecture", element: <LectureMainPage /> },
+    { path: "/lecture_1", element: <TraningPage traning={lecture_1} /> },
+    { path: "/lecture_2", element: <TraningPage traning={lecture_2} /> },
+    { path: "/lecture_3", element: <TraningPage traning={lecture_3} /> },
+    { path: "/lecture_4", element: <TraningPage traning={lecture_4} /> },
+    { path: "/lecture_5", element: <TraningPage traning={lecture_5} /> },
+    { path: "/traning_1", element: <TraningPage traning={trainings_1} /> },
+    { path: "/question_1", element: <TraningPage traning={question_1} /> },
+    { path: "/result", element: <ResultPage /> }
 ]);
