@@ -45,12 +45,6 @@ const TraningPage = (props: TraningPageProps) => {
     ? TemplateLoader(props.traning[countActiveTab]?.component)
     : undefined;
 
-  useEffect(() => {
-    if (!traningType) {
-      setEnabledButton(true);
-    }
-  }, [traningType]);
-
   function handleSelectChange() {
     if (checkSelectsNotEmpty()) {
       if ($("#send-answers__button").length === 0) {
@@ -95,6 +89,19 @@ const TraningPage = (props: TraningPageProps) => {
     });
   }
 
+  function setCountActiveTab(count: number) {
+    if (count < props.traning.length && count >= 0) {
+      return setActiveTab(count);
+    } else if (props.traning.length === count) {
+      setEnabledButton(false);
+      setActiveTab(count);
+      navigate('/result', { state: { traningAnswer: props.traning, userAnswer: getUserAnswers() } });
+      return true;
+    }
+
+    return console.error("Данный таб отсутствует");
+  }
+
   function addCountTab() {
     if (traningType) {
       setEnabledButton(false);
@@ -120,26 +127,20 @@ const TraningPage = (props: TraningPageProps) => {
     setCountActiveTab(countActiveTab - 1);
   }
 
+  useEffect(() => {
+    if (!traningType) {
+      setEnabledButton(true);
+    }
+    if (traningType && !currentAnswers) {
+      setEnabledButton(false);
+    }
+  }, [traningType]);
+
   const tabs = [];
 
   const ImageUrl = props.traning[countActiveTab]?.image
     ? props.traning[countActiveTab].image
     : undefined;
-
-  function setCountActiveTab(count: number) {
-    console.log('length: ' + props.traning.length + ', count:' + count);
-    if (count < props.traning.length && count >= 0) {
-      return setActiveTab(count);
-    } else if (props.traning.length === count) {
-      console.log('length: ' + props.traning.length + ', count:' + count);
-      setEnabledButton(false);
-      setActiveTab(count);
-      navigate('/result', { state: { traningAnswer: props.traning, userAnswer: getUserAnswers() } });
-      return true;
-    }
-
-    return console.error("Данный таб отсутствует");
-  }
 
   for (let index = 0; index < props.traning.length; index++) {
     tabs.push(<div key={index} className="tab"></div>);
@@ -193,10 +194,10 @@ const TraningPage = (props: TraningPageProps) => {
   }
 
   if (traningType === "checkbox" && currentAnswers) {
-    highlightAnswersCheckbox(
-      props.traning[countActiveTab].answers,
-      currentAnswers,
-    );
+      highlightAnswersCheckbox(
+          props.traning[countActiveTab].answers,
+          currentAnswers,
+      )
   }
 
   if (traningType === "text") {
