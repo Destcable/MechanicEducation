@@ -59,13 +59,13 @@ function LectureMainPage() {
                                     <Col md={6} lg={3}>
                                         <Card onClick={() => navigate('/lecture_3')}>
                                             <Card.Img 
-                                                src="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images%2F03%20%D0%92%D0%B8%D0%B4%D1%8B%20%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2.jpg?alt=media&token=f95e0c7d-bb26-466e-a184-56bb36ec73d3"
+                                                src="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_3%2Fimg_3.jpg?alt=media&token=dce041f4-dd8d-48df-8f1e-0d5c1b44df58&_gl=1*189679v*_ga*MTYyMzcyOTgyOS4xNjk3NjE3NDYx*_ga_CW55HF8NVT*MTY5ODIzMDExMy4zLjEuMTY5ODIzMTg3NC41NC4wLjA."
                                                 alt="Lecture 3"
                                                 className="card-img-top"
                                                 style={StaticWidthImage}
                                             />
                                             <Card.Body>
-                                                <Card.Title>Режущий инструмент: типы, виды исполнения и материалы режущей части инструмента</Card.Title>
+                                                <Card.Title>Работа с библиотеками: прикладные библиотеки и библиотеки 2D</Card.Title>
                                             </Card.Body>
                                         </Card>
                                     </Col>
@@ -73,12 +73,25 @@ function LectureMainPage() {
                                     <Col md={6} lg={3}>
                                         <Card onClick={() => navigate('/lecture_4')}>
                                             <Card.Img
-                                                src="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images%2F04%20%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D1%8B%20%D0%B2%D1%8B%D0%B1%D0%BE%D1%80%D0%B0%20%D1%80%D0%B5%D0%B6%D1%83%D1%89%D0%B5%D0%B3%D0%BE%20%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0.jpg?alt=media&token=31dbe43a-8a9a-4778-962b-5e1d7ff7b2db"
+                                                src="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_3%2Fimg_4.jpg?alt=media&token=378761ef-3b03-43ce-9200-a3973059f6c4&_gl=1*10hqoad*_ga*MTYyMzcyOTgyOS4xNjk3NjE3NDYx*_ga_CW55HF8NVT*MTY5ODIzMDExMy4zLjEuMTY5ODIzMTk1OS41OS4wLjA."
                                                 alt="Lecture 4"
                                                 className="card-img-top"
                                             />
                                             <Card.Body>
-                                                <Card.Title>Основы выбора инструмента и материалов режущей части</Card.Title>
+                                                <Card.Title>Создание параметрического фрагмента библиотеки</Card.Title>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+
+                                    <Col md={6} lg={3}>
+                                        <Card onClick={() => navigate('/lecture_4')}>
+                                            <Card.Img
+                                                src="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_3%2Fimg_5.jpg?alt=media&token=a8ee4d03-840b-49a2-b81e-f623288c9f26&_gl=1*osco8w*_ga*MTYyMzcyOTgyOS4xNjk3NjE3NDYx*_ga_CW55HF8NVT*MTY5ODIzMDExMy4zLjEuMTY5ODIzMjAwOC4xMC4wLjA."
+                                                alt="Lecture 4"
+                                                className="card-img-top"
+                                            />
+                                            <Card.Body>
+                                                <Card.Title>Создание спецификации, связь документов со спецификацией</Card.Title>
                                             </Card.Body>
                                         </Card>
                                     </Col>
