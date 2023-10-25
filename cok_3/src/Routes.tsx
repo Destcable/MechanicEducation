@@ -6,16 +6,14 @@ import lecture_1 from "./content/lectures/lecture_1.json";
 import lecture_2 from "./content/lectures/lecture_2.json";
 import lecture_3 from "./content/lectures/lecture_3.json";
 import lecture_4 from "./content/lectures/lecture_4.json";
+import lecture_5 from "./content/lectures/lecture_5.json";
 import question_1 from "./content/questions/question_1.json";
 import LectureMainPage from './pages/lectureMain/LectureMainPage';
 import ResultPage from "./pages/result";
 
 
 export const Routes = createBrowserRouter([
-    {
-        path: "/",
-        element: <MainPage />,
-    },
+    { path: "/", element: <MainPage /> },
     {
         path: "/trainingLecture",
         element: <LectureMainPage />
@@ -35,6 +33,10 @@ export const Routes = createBrowserRouter([
     {
         path: "/lecture_4",
         element: <TraningPage traning={lecture_4} />
+    },
+    {
+        path: "/lecture_5",
+        element: <TraningPage traning={lecture_5} /> 
     },
     {
         path: "/traning_1",

@@ -84,7 +84,7 @@ function LectureMainPage() {
                                     </Col>
 
                                     <Col md={6} lg={3}>
-                                        <Card onClick={() => navigate('/lecture_4')}>
+                                        <Card onClick={() => navigate('/lecture_5')}>
                                             <Card.Img
                                                 src="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_3%2Fimg_5.jpg?alt=media&token=a8ee4d03-840b-49a2-b81e-f623288c9f26&_gl=1*osco8w*_ga*MTYyMzcyOTgyOS4xNjk3NjE3NDYx*_ga_CW55HF8NVT*MTY5ODIzMDExMy4zLjEuMTY5ODIzMjAwOC4xMC4wLjA."
                                                 alt="Lecture 4"
