@@ -1,7 +1,12 @@
 [
     {
-        "title": "Выбор металлорежущего оборудования для реализации технологического процесса",
+        "title": "Чертежно-графический редактор программы",
         "image": null,
-        "component": "templates/lectures/lecture_2/slide_1.html"
+        "component": "templates_3/lectures/lecture_2/slide_1.html"
+    },
+    {
+        "title": "Чертежно-графический редактор программы",
+        "image": null,
+        "component": "templates_3/lectures/lecture_2/slide_2.html"
     }
 ]
