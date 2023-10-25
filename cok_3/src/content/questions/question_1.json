@@ -1,0 +1,65 @@
+[
+    {
+        "type": "select",
+        "title": "Установите соответствие между изображениями и видами металлорежущих станков",
+        "image": null,
+        "component": "/templates/questions/question_1/slide_1.html",
+        "answers": [ "1", "1", "1"]
+    },
+    {
+        "type": "checkbox",
+        "title": "Укажите типы фрезерных станков. Выберите все правильные ответы.",
+        "image": null,
+        "component": "/templates/questions/question_1/slide_2.html",
+        "answers": [ "B", "C" ]
+    },
+    {
+        "type": "checkbox",
+        "title": "Укажите факторы, влияющие на выбор металлорежущего оборудования для реализации технологического процесса. Выберите все правильные ответы.",
+        "image": null,
+        "component": "/templates/questions/question_1/slide_3.html",
+        "answers": [ "B", "C" ]
+    },
+    {
+        "type": "text",
+        "title": "Вставьте пропущенные слова, выбрав их из предложенного списка.",
+        "image": null,
+        "component": "/templates/questions/question_1/slide_4.html",
+        "answers": ["wa", "wb", "wc"]
+    },
+    {
+        "type": "select",
+        "title": "Установите соответствие между изображениями и видами режущего инструмента.",
+        "image": null,
+        "component": "/templates/questions/question_1/slide_5.html",
+        "answers": [ "B", "C" ]
+    },
+    {
+        "type": "checkbox",
+        "title": "Укажите типы фрез. Выберите все правильные ответы.",
+        "image": null,
+        "component": "/templates/questions/question_1/slide_6.html",
+        "answers": [ "B", "C" ]
+    },
+    {
+        "type": "radio",
+        "title": "Укажите критерий, влияющий на выбор материала для изготовления режущей части инструмента.Выберите единственно правильный ответ.",
+        "image": null,
+        "component": "/templates/questions/question_1/slide_7.html",
+        "answers": ["D"]
+    },
+    {
+        "type": "text",
+        "title": "Вставьте пропущенные слова, выбрав их из предложенного списка.",
+        "image": null,
+        "component": "/templates/questions/question_1/slide_8.html",
+        "answers": ["wa", "wb", "wc"]
+    },
+    {
+        "type": "select",
+        "title": "Установите соответствие между изображениями и видами технологических приспособлений",
+        "image": null,
+        "component": "/templates/questions/question_1/slide_9.html",
+        "answers": ["1", "2", "3", "4", "5"]
+    }
+]

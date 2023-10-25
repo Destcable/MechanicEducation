@@ -1,0 +1,157 @@
+[
+    {
+        "title": "Ознакомьтесь с содержанием токарной операции по изготовлению заданной детали",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/SketchForTurning.jpg?alt=media&token=37245e2f-9411-4b91-82b3-8ca6c5cee785&_gl=1*4egtfr*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDM5Mi4xMS4wLjA.",
+        "component": "templates/trainers/trainer_1/slide_1.html"
+    },
+    { 
+        "title": "Изучите основные виды токарных станков",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/TurningAndScrewCutting.jpg?alt=media&token=06cdf91c-48d5-40c7-a580-38a971dd5c7e&_gl=1*1w77p9k*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDQ1NS42MC4wLjA.",
+        "component": "templates/trainers/trainer_1/slide_2.html"
+    },
+    { 
+        "title":"Изучите основные виды токарных станков",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/TurningRevolver.jpg?alt=media&token=b634ba95-1abb-466e-809b-21df919d5730&_gl=1*bmk8xx*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDUxOS42MC4wLjA.",
+        "component": "templates/trainers/trainer_1/slide_3.html"
+    },
+    { 
+        "title":"Изучите основные виды токарных станков",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/LatheRotary.jpg?alt=media&token=433a0082-cfeb-4b09-804a-19ca2d8f9a2b&_gl=1*1cdzz4d*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDUzOC40MS4wLjA.",
+        "component": "templates/trainers/trainer_1/slide_4.html"
+    },
+    { 
+        "title":"Изучите основные виды токарных станков",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/TurningMilling.jpg?alt=media&token=bd806cb8-31bc-4bba-b25e-98e74f1fe891&_gl=1*9k2v4x*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDU1My4yNi4wLjA.",
+        "component": "templates/trainers/trainer_1/slide_5.html"
+    },
+    { 
+        "title":"Изучите основные виды токарных станков",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/AutomaticLongitudinalTurning.png?alt=media&token=1ac49a35-4be9-4f40-9dbb-cd77d4bcd504",
+        "component": "templates/trainers/trainer_1/slide_6.html"
+    },
+    { 
+        "title":"Изучите основные виды токарных станков",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/CNCLathe.jpg?alt=media&token=8bc24920-e127-435f-a039-904dca109b72&_gl=1*10q9m64*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDU4Mi42MC4wLjA.",
+        "component": "templates/trainers/trainer_1/slide_7.html"
+    },
+    {
+        "title": "Выберите тип станка для токарной операции по изготовлению заданной детали в условиях серийного производства",
+        "image": null,
+        "component": "templates/trainers/trainer_1/slide_8.html"
+    },
+    {
+        "title": "Изучите конструкции основных технологических приспособлений для токарных станков",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/%D0%A6%D0%B5%D0%BD%D1%82%D1%80%D0%B0.jpg?alt=media&token=2a068b7d-29b4-4e71-bf0e-1f565bae971a&_gl=1*4nj4in*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDcyNi41MS4wLjA.",
+        "component": "templates/trainers/trainer_1/slide_9.html"
+    },
+    {
+        "title": "Изучите конструкции основных технологических приспособлений для токарных станков",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/DriveChuck.jpg?alt=media&token=b6e064fc-6ed6-4205-ab88-853c1a61109d&_gl=1*dkqihk*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDc1NS4yMi4wLjA.",
+        "component": "templates/trainers/trainer_1/slide_10.html"
+    },
+    {
+        "title":"Изучите конструкции основных технологических приспособлений для токарных станков",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/ThreeJawChuck.jpg?alt=media&token=221879aa-5ef9-4659-8d5b-49f88363701d&_gl=1*12txfck*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDc2OS44LjAuMA..",
+        "component": "templates/trainers/trainer_1/slide_11.html"
+    },
+    {
+        "title": "Изучите конструкции основных технологических приспособлений для токарных станков",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/ColletChuck.jpg?alt=media&token=43d83110-1d19-474e-932c-cc304e569cb7&_gl=1*1lq6m57*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDc4Ni42MC4wLjA.",
+        "component": "templates/trainers/trainer_1/slide_12.html"
+    },
+    {
+        "title": "Изучите конструкции основных технологических приспособлений для токарных станков",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/ExpandingMandrel.jpg?alt=media&token=742013e5-f60e-4bf1-a2bb-2a50a0b08358&_gl=1*couxc9*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDgwMS40NS4wLjA.",
+        "component": "templates/trainers/trainer_1/slide_13.html"
+    },
+    {
+        "title": "Изучите конструкции основных технологических приспособлений для токарных станков",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/Lunette.jpg?alt=media&token=adcd013c-6f90-4a5e-a0ac-e4d1ce8e5d5d&_gl=1*i5nq3p*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDgxMS4zNS4wLjA.",
+        "component": "templates/trainers/trainer_1/slide_14.html"
+    },
+    {
+        "title": "Выберите тип технологического приспособления для токарной операции по изготовлению заданной детали",
+        "image": null,
+        "component": "templates/trainers/trainer_1/slide_15.html"
+    },
+    {
+        "title": "Изучите типы основных режущих инструментов для токарных работ",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/PartingCutter.jpg?alt=media&token=93556e19-0923-4829-a758-71b3cee3ecdf&_gl=1*1ynd2sh*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDgyNC4yMi4wLjA.",
+        "component": "templates/trainers/trainer_1/slide_16.html"
+    },
+    {
+        "title": "Изучите типы основных режущих инструментов для токарных работ",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/PassingCutter.jpg?alt=media&token=8141505c-2f11-446e-a519-83bdc3ea8fb6&_gl=1*13p9pqn*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDgzOS43LjAuMA..",
+        "component": "templates/trainers/trainer_1/slide_17.html"
+    },
+    {
+        "title": "Изучите типы основных режущих инструментов для токарных работ",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/ScoringCutter.jpg?alt=media&token=ef035c11-106d-491a-b86c-ce9da2187185&_gl=1*zru6hw*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDg1NS42MC4wLjA.",
+        "component": "templates/trainers/trainer_1/slide_18.html"
+    },
+    {
+        "title": "Изучите типы основных режущих инструментов для токарных работ",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/GrooveCutter.jpg?alt=media&token=a8877cfa-cb9f-44b3-81a1-5c02525289e8&_gl=1*1mas54y*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDg3My40Mi4wLjA.",
+        "component": "templates/trainers/trainer_1/slide_19.html"
+    },
+    {
+        "title": "Изучите типы основных режущих инструментов для токарных работ",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/BoringCutter.jpg?alt=media&token=084b68f6-6c46-4e27-9149-168f349d88b0",
+        "component": "templates/trainers/trainer_1/slide_20.html"
+    },
+    {
+        "title":"Изучите типы основных режущих инструментов для токарных работ",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/Drill.jpg?alt=media&token=a0bc08dc-0c7f-4698-95b0-cbd9e051a753&_gl=1*1jifrrh*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDkxNC4xLjAuMA..",
+        "component": "templates/trainers/trainer_1/slide_21.html"
+    },
+    {
+        "title": "Выберите типы режущих инструментов для токарной операции по изготовлению заданной детали",
+        "image": null,
+        "component": "templates/trainers/trainer_1/slide_22.html"
+    },
+    {
+        "title": "Изучите основные типы измерительных инструментов для контроля размеров",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/%D0%A8%D1%82%D0%B0%D0%BD%D0%B3%D0%B5%D0%BD%D1%86%D0%B8%D1%80%D0%BA%D1%83%D0%BB%D1%8C.jpg?alt=media&token=12982d17-2bb4-4f35-b46c-26ff020a857c&_gl=1*14cgav*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MTA4Ny40NS4wLjA.",
+        "component": "templates/trainers/trainer_1/slide_23.html"
+    }, 
+    {
+        "title": "Изучите основные типы измерительных инструментов для контроля размеров",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/DigitalMicrometer.jpg?alt=media&token=6b8ca7b6-aa1b-4ce8-a751-14b319373a48&_gl=1*1q548l2*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDkzNC40MS4wLjA.",
+        "component": "templates/trainers/trainer_1/slide_24.html"
+    },
+    {
+        "title":"Изучите основные типы измерительных инструментов для контроля размеров",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/CaliberBracket.jpg?alt=media&token=8df31f40-e97f-4d93-9eac-83c1cb628b00&_gl=1*1oofsrr*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MDk0NS4zMC4wLjA.",
+        "component": "templates/trainers/trainer_1/slide_25.html"
+    },
+    { 
+        "title":"Изучите основные типы измерительных инструментов для контроля размеров",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/Calipers.jpeg?alt=media&token=dbc3e44c-99d4-4591-8fcc-a02384d1ffd3&_gl=1*1mz03ri*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MTE1My42MC4wLjA.",
+        "component": "templates/trainers/trainer_1/slide_26.html"
+    },
+    {
+        "title": "Изучите основные типы измерительных инструментов для контроля размеров",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/VernierDepth.jpg?alt=media&token=dd7b47fc-f94d-46bf-a3e5-902d6f7eecc6&_gl=1*nb5w2b*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MTIxMi4xLjAuMA..",
+        "component": "templates/trainers/trainer_1/slide_27.html"
+    },
+    {
+        "title": "Изучите основные типы измерительных инструментов для контроля размеров",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/MicrometricDepth.jpg?alt=media&token=acb07530-d208-4fec-b29c-3637dadd7d65&_gl=1*bti9g6*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MTIzMS40My4wLjA.",
+        "component": "templates/trainers/trainer_1/slide_28.html"
+    },
+    {
+        "title": "Изучите основные типы измерительных инструментов для контроля размеров",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/MicrometricBore.jpg?alt=media&token=abfccc14-dd96-4c18-b7c7-0354825ce571&_gl=1*1snqrwj*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MTI0My4zMS4wLjA.",
+        "component": "templates/trainers/trainer_1/slide_29.html"
+    },
+    { 
+        "title": "Изучите основные типы измерительных инструментов для контроля размеров",
+        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/PlugGauge.jpeg?alt=media&token=0facc945-d694-45e9-8949-02379510b8cb&_gl=1*pgm6c1*_ga*MTkzMTEyODI0NS4xNjk1ODIyNDgx*_ga_CW55HF8NVT*MTY5NTg1MDM0My4zLjEuMTY5NTg1MTI4My42MC4wLjA.",
+        "component": "templates/trainers/trainer_1/slide_30.html"
+    },
+    { 
+        "title": "Выберите типы режущих инструментов для токарной операции по изготовлению заданной детали",
+        "image": null,
+        "component": "templates/trainers/trainer_1/slide_31.html"
+    }
+]
