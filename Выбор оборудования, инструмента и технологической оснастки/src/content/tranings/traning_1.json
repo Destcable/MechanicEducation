@@ -1,0 +1,60 @@
+[
+    {
+        "title": "Ознакомьтесь с планировкой участка механического цеха ис условными обозначениями на ней",
+        "image": null,
+        "component": "templates_3/trainers/trainer_1/slide_1.html"
+    },
+    {
+        "title": "Изучите площади, предусматриваемые на планировке участка механического цеха для размещения",
+        "image": null,
+        "component": "templates_3/trainers/trainer_1/slide_2.html"
+    },
+    {
+        "type": "checkbox",
+        "title": "Установите виды площадей для размещения на заданной планировке",
+        "image": null,
+        "component": "templates_3/trainers/trainer_1/slide_3.html",
+        "answers": ["1", "2", "4", "5"]
+    },
+    {
+        "title": "Изучите строительные элементы на планировке и их обозначение",
+        "image": null,
+        "component": "templates_3/trainers/trainer_1/slide_4.html"
+    },
+    {
+        "title": "Изучите строительные элементы на планировке и их обозначение",
+        "image": null,
+        "component": "templates_3/trainers/trainer_1/slide_5.html"
+    },
+    {
+        "type": "radio",
+        "title": "Установите ширину пролета для заданной планировки",
+        "image": null,
+        "component": "templates_3/trainers/trainer_1/slide_6.html",
+        "answers": ["2"]
+    },
+    {
+        "title": "Изучите используемые условные обозначения технологического оборудования, которые применяются на планировках механических цехов",
+        "image": null,
+        "component": "templates_3/trainers/trainer_1/slide_7.html"
+    },
+    {
+        "type": "select",
+        "title": "Выберите условное обозначениетехнологического оборудования на заданной планировке",
+        "image": null,
+        "component" :"templates_3/trainers/trainer_1/slide_8.html",
+        "answers": ["2"]
+    },
+    {
+        "title": "Изучите используемые условные обозначенияпромышленных подводок, которые применяются на планировках механических цехов",
+        "image": null,
+        "component": "templates_3/trainers/trainer_1/slide_9.html"
+    },
+    {
+        "type": "checkbox",
+        "title": "Укажите используемые условные обозначения промышленных подводок на заданной планировке",
+        "image": null,
+        "component": "templates_3/trainers/trainer_1/slide_10.html",
+        "answers": ["1", "2", "4"]
+    }
+]
