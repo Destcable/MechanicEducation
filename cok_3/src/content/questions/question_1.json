@@ -1,65 +1,72 @@
 [
     {
-        "type": "select",
-        "title": "Установите соответствие между изображениями и видами металлорежущих станков",
-        "image": null,
-        "component": "/templates/questions/question_1/slide_1.html",
-        "answers": [ "1", "1", "1"]
-    },
-    {
         "type": "checkbox",
-        "title": "Укажите типы фрезерных станков. Выберите все правильные ответы.",
+        "title": "Укажите преимущества использования САПРдля составления планировки. Выберите все правильные ответы.",
         "image": null,
-        "component": "/templates/questions/question_1/slide_2.html",
-        "answers": [ "B", "C" ]
-    },
-    {
-        "type": "checkbox",
-        "title": "Укажите факторы, влияющие на выбор металлорежущего оборудования для реализации технологического процесса. Выберите все правильные ответы.",
-        "image": null,
-        "component": "/templates/questions/question_1/slide_3.html",
-        "answers": [ "B", "C" ]
+        "component": "/templates_3/questions/question_1/slide_1.html",
+        "answers": [ "A", "C", "D", "E", "G"]
     },
     {
         "type": "text",
         "title": "Вставьте пропущенные слова, выбрав их из предложенного списка.",
         "image": null,
-        "component": "/templates/questions/question_1/slide_4.html",
-        "answers": ["wa", "wb", "wc"]
-    },
-    {
-        "type": "select",
-        "title": "Установите соответствие между изображениями и видами режущего инструмента.",
-        "image": null,
-        "component": "/templates/questions/question_1/slide_5.html",
-        "answers": [ "B", "C" ]
+        "component": "/templates_3/questions/question_1/slide_2.html",
+        "answers": [ "КОМПАС", "T-FLEX CAD" ]
     },
     {
         "type": "checkbox",
-        "title": "Укажите типы фрез. Выберите все правильные ответы.",
+        "title": "Укажите компоненты которые входят в состав САПР. Выберите все правильные ответы.",
         "image": null,
-        "component": "/templates/questions/question_1/slide_6.html",
-        "answers": [ "B", "C" ]
+        "component": "/templates_3/questions/question_1/slide_3.html",
+        "answers": [ "A", "B", "D", "E" ]
+    },
+    {
+        "type": "checkbox",
+        "title": "Укажите основные функциональные возможности библиотеки планировок цехов. Выберите все правильные ответы.",
+        "image": null,
+        "component": "/templates_3/questions/question_1/slide_4.html",
+        "answers": ["A", "C", "D", "E"]
+    },
+    {
+        "type": "select",
+        "title": "Установите соответствие между системами САПРи их отличительными особенностями.",
+        "image": null,
+        "component": "/templates_3/questions/question_1/slide_5.html",
+        "answers": [ "2", "3" ]
+    },
+    {
+        "type": "text",
+        "title": "Вставьте пропущенное слово, выбрав его из предложенного списка.",
+        "image": null,
+        "component": "/templates_3/questions/question_1/slide_6.html",
+        "answers": [ "Библиотека" ]
+    },
+    {
+        "type": "select",
+        "title": "Укажите критерий, влияющий на выбор материала для изготовления режущей части инструмента.Выберите единственно правильный ответ.",
+        "image": null,
+        "component": "/templates_3/questions/question_1/slide_7.html",
+        "answers": ["1", "2", "3", "4"]
+    },
+    {
+        "type": "checkbox",
+        "title": "Укажите наиболее типичные примеры библиотек в САПР. Выберите все правильные ответы.",
+        "image": null,
+        "component": "/templates_3/questions/question_1/slide_8.html",
+        "answers": ["A", "B", "D", "E"]
     },
     {
         "type": "radio",
-        "title": "Укажите критерий, влияющий на выбор материала для изготовления режущей части инструмента.Выберите единственно правильный ответ.",
+        "title": "Укажите вид связи, который существуют внутри документов на планировку, создаваемых в САПР. Выберите единственно правильный ответ.",
         "image": null,
-        "component": "/templates/questions/question_1/slide_7.html",
+        "component": "/templates_3/questions/question_1/slide_9.html",
         "answers": ["D"]
     },
     {
         "type": "text",
         "title": "Вставьте пропущенные слова, выбрав их из предложенного списка.",
         "image": null,
-        "component": "/templates/questions/question_1/slide_8.html",
-        "answers": ["wa", "wb", "wc"]
-    },
-    {
-        "type": "select",
-        "title": "Установите соответствие между изображениями и видами технологических приспособлений",
-        "image": null,
-        "component": "/templates/questions/question_1/slide_9.html",
-        "answers": ["1", "2", "3", "4", "5"]
+        "component": "/templates_3/questions/question_1/slide_10.html",
+        "answers": ["полуавтоматическом", "автоматическом"]
     }
 ]
