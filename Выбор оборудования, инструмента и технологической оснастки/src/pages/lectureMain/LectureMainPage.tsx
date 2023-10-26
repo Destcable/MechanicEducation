@@ -29,40 +29,40 @@ function LectureMainPage() {
 
                                     <Col md={6} lg={3}>
                                         <CardElement
-                                            title="Основные компоненты системы САПР"
-                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_3%2Fimg_1.jpg?alt=media&token=abd6c2fe-c9cd-468b-8ada-fcbbda33ef71&_gl=1*8dgqte*_ga*MTYyMzcyOTgyOS4xNjk3NjE3NDYx*_ga_CW55HF8NVT*MTY5ODIzMDExMy4zLjEuMTY5ODIzMTU4Mi42MC4wLjA."
+                                            title="Инженерно-техническая подготовка производства"
+                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_4%2Fimg_1.jpg?alt=media&token=ef56e59c-febb-478e-baad-11c1b64927d8&_gl=1*14m2x4l*_ga*Nzk5MTc1NjYzLjE2OTU5MjI4MDE.*_ga_CW55HF8NVT*MTY5ODM1MDUxMy4yLjEuMTY5ODM1MDc1Mi41My4wLjA."
                                             onClick={() => navigate('/lecture_1')}
                                         />
                                     </Col>
 
                                     <Col md={6} lg={3}>
                                         <CardElement
-                                            title="Чертежно-графический редактор программы"
-                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_3%2Fimg_2.jpg?alt=media&token=4c25aeac-dc91-400b-a6cb-12ec2e3d58bd&_gl=1*g6nzjz*_ga*MTYyMzcyOTgyOS4xNjk3NjE3NDYx*_ga_CW55HF8NVT*MTY5ODIzMDExMy4zLjEuMTY5ODIzMTY4OC41Ny4wLjA."
+                                            title="Виды технической документации, используемые при монтажных работах"
+                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_4%2Fimg_2.png?alt=media&token=0c6afcd9-b4b5-44ed-a366-50831c68298b&_gl=1*h83cx2*_ga*Nzk5MTc1NjYzLjE2OTU5MjI4MDE.*_ga_CW55HF8NVT*MTY5ODM1MDUxMy4yLjEuMTY5ODM1MDc4NC4yMS4wLjA."
                                             onClick={() => navigate('/lecture_2')}
                                         />
                                     </Col>
 
                                     <Col md={6} lg={3}>
                                         <CardElement
-                                            title="Работа с библиотеками: прикладные библиотеки и библиотеки 2D"
-                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_3%2Fimg_3.jpg?alt=media&token=dce041f4-dd8d-48df-8f1e-0d5c1b44df58&_gl=1*189679v*_ga*MTYyMzcyOTgyOS4xNjk3NjE3NDYx*_ga_CW55HF8NVT*MTY5ODIzMDExMy4zLjEuMTY5ODIzMTg3NC41NC4wLjA."
+                                            title="Функциональные схемы автоматизации"
+                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_4%2Fimg_3.png?alt=media&token=27f2146c-53f2-4916-aba4-f27c8e63ec78&_gl=1*xizt3z*_ga*Nzk5MTc1NjYzLjE2OTU5MjI4MDE.*_ga_CW55HF8NVT*MTY5ODM1MDUxMy4yLjEuMTY5ODM1MDgwNi42MC4wLjA."
                                             onClick={() => navigate('/lecture_3')}
                                         />
                                     </Col>
 
                                     <Col md={6} lg={3}>
                                         <CardElement
-                                            title="Создание параметрического фрагмента библиотеки"
-                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_3%2Fimg_4.jpg?alt=media&token=378761ef-3b03-43ce-9200-a3973059f6c4&_gl=1*10hqoad*_ga*MTYyMzcyOTgyOS4xNjk3NjE3NDYx*_ga_CW55HF8NVT*MTY5ODIzMDExMy4zLjEuMTY5ODIzMTk1OS41OS4wLjA."
+                                            title="Требования, предъявляемые к техническому, программному и информационному обеспечению при проектировании автоматизированной системы"
+                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_4%2Fimg_4.png?alt=media&token=b427fa2a-0276-4f20-9b93-2702927593d4&_gl=1*hgou97*_ga*Nzk5MTc1NjYzLjE2OTU5MjI4MDE.*_ga_CW55HF8NVT*MTY5ODM1MDUxMy4yLjEuMTY5ODM1MDgyOC4zOC4wLjA."
                                             onClick={() => navigate('/lecture_4')}
                                         />
                                     </Col>
 
                                     <Col md={6} lg={3}>
                                         <CardElement
-                                            title="Создание спецификации, связь документов со спецификацией"
-                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_3%2Fimg_5.jpg?alt=media&token=a8ee4d03-840b-49a2-b81e-f623288c9f26&_gl=1*osco8w*_ga*MTYyMzcyOTgyOS4xNjk3NjE3NDYx*_ga_CW55HF8NVT*MTY5ODIzMDExMy4zLjEuMTY5ODIzMjAwOC4xMC4wLjA."
+                                            title="Безопасность труда и противопожарные мероприятия при монтаже и наладке систем автоматизации"
+                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_4%2Fimg_5.png?alt=media&token=c637e917-bc60-4380-bf70-68bde7bc9747&_gl=1*bop6ge*_ga*Nzk5MTc1NjYzLjE2OTU5MjI4MDE.*_ga_CW55HF8NVT*MTY5ODM1MDUxMy4yLjEuMTY5ODM1MDg0OC4xOC4wLjA."
                                             onClick={() => navigate('/lecture_5')}
                                         />
                                     </Col>
