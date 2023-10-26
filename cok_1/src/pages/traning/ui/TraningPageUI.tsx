@@ -32,7 +32,7 @@ export default function TraningPageUI(props: TraningPageUIProps) {
                                     {/* <div className="active_tab"></div> */}
                                 </div>
                             </div>
-                            <div className="container-exercise w-100">
+                            <div className="container-exercise">
 
 
                                     <p className="text-zadanie w-100 fs-6">

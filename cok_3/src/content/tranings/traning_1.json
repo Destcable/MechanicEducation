@@ -32,5 +32,29 @@
         "image": null,
         "component": "templates_3/trainers/trainer_1/slide_6.html",
         "answers": ["2"]
+    },
+    {
+        "title": "Изучите используемые условные обозначения технологического оборудования, которые применяются на планировках механических цехов",
+        "image": null,
+        "component": "templates_3/trainers/trainer_1/slide_7.html"
+    },
+    {
+        "type": "select",
+        "title": "Выберите условное обозначениетехнологического оборудования на заданной планировке",
+        "image": null,
+        "component" :"templates_3/trainers/trainer_1/slide_8.html",
+        "answers": ["2"]
+    },
+    {
+        "title": "Изучите используемые условные обозначенияпромышленных подводок, которые применяются на планировках механических цехов",
+        "image": null,
+        "component": "templates_3/trainers/trainer_1/slide_9.html"
+    },
+    {
+        "type": "checkbox",
+        "title": "Укажите используемые условные обозначения промышленных подводок на заданной планировке",
+        "image": null,
+        "component": "templates_3/trainers/trainer_1/slide_10.html",
+        "answers": ["1", "2", "4"]
     }
 ]
