@@ -1,5 +1,5 @@
 import Header from '../../components/ui/Header/Header';
-import Card from '../../components/ui/card/card';
+import Card from '../../components/ui/Card/card';
 import Tringle from '../../components/ui/tringle/tringle';
 import Footer from '../../components/ui/footer/footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
