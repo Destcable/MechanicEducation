@@ -1,72 +1,65 @@
 [
     {
         "type": "checkbox",
-        "title": "Укажите преимущества использования САПРдля составления планировки. Выберите все правильные ответы.",
+        "title": "Что включает в себя инженерно-техническая подготовка производства?Выберите все правильные ответы.",
         "image": null,
-        "component": "/templates_3/questions/question_1/slide_1.html",
-        "answers": [ "A", "C", "D", "E", "G"]
-    },
-    {
-        "type": "text",
-        "title": "Вставьте пропущенные слова, выбрав их из предложенного списка.",
-        "image": null,
-        "component": "/templates_3/questions/question_1/slide_2.html",
-        "answers": [ "КОМПАС", "T-FLEX CAD" ]
+        "component": "/templates_4/questions/question_1/slide_1.html",
+        "answers": [ "A", "E"]
     },
     {
         "type": "checkbox",
-        "title": "Укажите компоненты которые входят в состав САПР. Выберите все правильные ответы.",
+        "title": "На какие виды делится техническая подготовка в зависимости от планирования сроков выполнения?.",
         "image": null,
-        "component": "/templates_3/questions/question_1/slide_3.html",
-        "answers": [ "A", "B", "D", "E" ]
+        "component": "/templates_4/questions/question_1/slide_2.html",
+        "answers": [ "C", "E" ]
     },
     {
         "type": "checkbox",
-        "title": "Укажите основные функциональные возможности библиотеки планировок цехов. Выберите все правильные ответы.",
+        "title": "Какие обязательные разделы содержит техническое задание на создание (развитие или модернизацию) автоматизированной системы?Выберите все правильные ответы.",
         "image": null,
-        "component": "/templates_3/questions/question_1/slide_4.html",
-        "answers": ["A", "C", "D", "E"]
+        "component": "/templates_4/questions/question_1/slide_3.html",
+        "answers": ["A", "C", "F"]
+    },
+    {
+        "type": "checkbox",
+        "title": "Что можно определить прочитав функциональную схему автоматизации? Выберите все правильные ответы.",
+        "image": null,
+        "component":"/templates_4/questions/question_1/slide_4.html",
+        "answers": ["A", "B", "C", "D", "E", "F"]
     },
     {
         "type": "select",
-        "title": "Установите соответствие между системами САПРи их отличительными особенностями.",
+        "title": "Приведите в соответствие наименование и обозначение ГОСТов",
         "image": null,
-        "component": "/templates_3/questions/question_1/slide_5.html",
-        "answers": [ "2", "3" ]
-    },
-    {
-        "type": "text",
-        "title": "Вставьте пропущенное слово, выбрав его из предложенного списка.",
-        "image": null,
-        "component": "/templates_3/questions/question_1/slide_6.html",
-        "answers": [ "Библиотека" ]
+        "component":"/templates_4/questions/question_1/slide_5.html",
+        "answers": ["2", "1", "4", "6", "3", "5"]
     },
     {
         "type": "select",
-        "title": "Укажите критерий, влияющий на выбор материала для изготовления режущей части инструмента.Выберите единственно правильный ответ.",
+        "title": "Какое изображение прибора  соответствует условному обозначению «Переключатель электрических цепей измерения» ? Выберите единственно правильный ответ",
         "image": null,
-        "component": "/templates_3/questions/question_1/slide_7.html",
-        "answers": ["1", "2", "3", "4"]
+        "component":"/templates_4/questions/question_1/slide_6.html",
+        "answers": ["C"]
     },
     {
         "type": "checkbox",
-        "title": "Укажите наиболее типичные примеры библиотек в САПР. Выберите все правильные ответы.",
+        "title": "",
         "image": null,
-        "component": "/templates_3/questions/question_1/slide_8.html",
-        "answers": ["A", "B", "D", "E"]
+        "component":"/templates_4/questions/question_1/slide_.html",
+        "answers": []
     },
     {
-        "type": "radio",
-        "title": "Укажите вид связи, который существуют внутри документов на планировку, создаваемых в САПР. Выберите единственно правильный ответ.",
+        "type": "checkbox",
+        "title": "",
         "image": null,
-        "component": "/templates_3/questions/question_1/slide_9.html",
-        "answers": ["D"]
+        "component":"/templates_4/questions/question_1/slide_.html",
+        "answers": []
     },
     {
-        "type": "text",
-        "title": "Вставьте пропущенные слова, выбрав их из предложенного списка.",
+        "type": "checkbox",
+        "title": "",
         "image": null,
-        "component": "/templates_3/questions/question_1/slide_10.html",
-        "answers": ["полуавтоматическом", "автоматическом"]
+        "component":"/templates_4/questions/question_1/slide_.html",
+        "answers": []
     }
 ]
