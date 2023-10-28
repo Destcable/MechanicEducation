@@ -2,67 +2,73 @@
     {
         "title": "Изучите инженерно-техническая подготовку производства",
         "image": null,
-        "component": "templates_4/trainers/trainer_1/slide_1.html"
+        "component": "templates_5/trainers/slide_1.html"
     },
     {
-        "type": "checkbox",
-        "title": "Что включает в себя инженерно-техническая подготовку производств",
+        "type": "radio",
+        "title": "Определите какой прибор мехатронной системы представлен на изображении.",
         "image": null,
-        "component": "templates_4/trainers/trainer_1/slide_2.html",
-        "answers": ["1", "2", "3"]
+        "component": "templates_5/trainers/slide_2.html",
+        "answers": ["1"]
     },
     {
-        "title": "Ознакомьтесь с видами технической документации, используемой  при монтажных работах систем автоматизации",
+        "title": "Изучите основные  сведения по монтажным схемам.",
         "image": null,
-        "component": "templates_4/trainers/trainer_1/slide_3.html"
+        "component": "templates_5/trainers/slide_3.html"
     },
-
     {
         "type": "select",
-        "title": "Какой вид технической документации, используется  при монтажных работах систем автоматизации",
+        "title": "Какой  аппарат, предназначенный для включения или отключения тока, изображён на схеме.",
         "image": null,
-        "component": "templates_4/trainers/trainer_1/slide_4.html",
-        "answers": ["7"]
+        "component": "templates_5/trainers/slide_4.html",
+        "answers": ["C"]
     },
-
     {
-        "title": "Условные обозначения приборов и средств автоматизации согласно ГОСТ 21.404–85",
+        "title": "Изучите конструкции и типы щитов и пультов.",
         "image": null,
-        "component": "templates_4/trainers/trainer_1/slide_5.html"
+        "component": "templates_5/trainers/slide_5.html"
     },
-
+    {
+        "type": "radio",
+        "title": "Какой вид конструкции  для  размещения  приборов и устройств для управления процессами  изображен?",
+        "image": null,
+        "component": "templates_5/trainers/slide_6.html",
+        "answers": ["D"]
+    },
+    {
+        "title": "Изучите виды соединений электрической проводки.",
+        "image": null,
+        "component": "templates_5/trainers/slide_7.html"     
+    },
     {
         "type": "select",
-        "title": "Выберите условное обозначение приборов   на функциональных схемах",
+        "title": "Установите соответствия между видами соединений и их наименованиями",
         "image": null,
-        "component": "templates_4/trainers/trainer_1/slide_6.html",
+        "component": "templates_5/trainers/slide_8.html",
         "answers": ["2", "3", "1"]
     },
-
     {
-        "title": "Изучите требования, предъявляемые к техническому, программному и информационному обеспечению при проектировании автоматизированной системы",
+        "title": "Изучите «прозвонку» кабелей и проводов",
         "image": null,
-        "component": "templates_4/trainers/trainer_1/slide_7.html"
-    },
-    
-    {
-        "type": "radio",
-        "title": "Выберите ГОСТ в соответствии с которым определяются требования к созданию автоматизированной системы ",
-        "image": null,
-        "component" :"templates_4/trainers/trainer_1/slide_8.html",
-        "answers": ["3"]
-    },
-
-    {
-        "title": "Изучите правила ПТЭ и ПТБ при монтаже, наладке и техническом обслуживании систем и средств автоматизации",
-        "image": null,
-        "component": "templates_4/trainers/trainer_1/slide_9.html"
+        "component": "templates_5/trainers/slide_9.html"
     },
     {
         "type": "radio",
-        "title": "Кому разрешается производить выполнение работ по монтажу, эксплуатации, наладке приборов контроля и средств автоматизации.",
+        "title": "Определите, какой из приборов для проверки цепи на разрыв изображен на рисунке",
         "image": null,
-        "component": "templates_4/trainers/trainer_1/slide_10.html",
-        "answers": ["F"]
+        "component": "templates_5/trainers/slide_10.html",
+        "answers": ["1"]
+    },
+    {
+        "title": "Изучите общие сведения о выполнении электрических принципиальных схем",
+        "image": null,
+        "component": "templates_5/trainers/slide_11.html"
+    },
+    {
+        "type": "radio",
+        "title": "Что должно соответствовать ГОСТу 2.710-81?",
+        "image": null,
+        "component": "templates_5/trainers/slide_12.html",
+        "answers": ["B"]
     }
 ]
