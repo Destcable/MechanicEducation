@@ -1,12 +1,7 @@
 [
     {
-        "title": "Функциональные схемы автоматизации",
+        "title": "Щиты и пульты. Конструкции и особенности монтажа щитов, пультов, панелей управления.",
         "image": null,
-        "component": "templates_4/lectures/lecture_3/slide_1.html"
-    },
-    {
-        "title": "Функциональные схемы автоматизации",
-        "image": null,
-        "component": "templates_4/lectures/lecture_3/slide_2.html"
+        "component": "templates_5/lectures/slide_3.html"
     }
 ]

@@ -29,41 +29,49 @@ function LectureMainPage() {
 
                                     <Col md={6} lg={3}>
                                         <CardElement
-                                            title="Инженерно-техническая подготовка производства"
-                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_4%2Fimg_1.jpg?alt=media&token=ef56e59c-febb-478e-baad-11c1b64927d8&_gl=1*14m2x4l*_ga*Nzk5MTc1NjYzLjE2OTU5MjI4MDE.*_ga_CW55HF8NVT*MTY5ODM1MDUxMy4yLjEuMTY5ODM1MDc1Mi41My4wLjA."
+                                            title="Мехатроника. Монтаж мехатронных систем"
+                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_5%2Fimg_main_1.png?alt=media&token=7736ac07-87be-42da-8bc7-4cd0b4260a8e&_gl=1*z09779*_ga*Nzk5MTc1NjYzLjE2OTU5MjI4MDE.*_ga_CW55HF8NVT*MTY5ODUwNjA1Ni43LjEuMTY5ODUwNjc4NS40NC4wLjA."
                                             onClick={() => navigate('/lecture_1')}
                                         />
                                     </Col>
 
                                     <Col md={6} lg={3}>
                                         <CardElement
-                                            title="Виды технической документации, используемые при монтажных работах"
-                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_4%2Fimg_2.png?alt=media&token=0c6afcd9-b4b5-44ed-a366-50831c68298b&_gl=1*h83cx2*_ga*Nzk5MTc1NjYzLjE2OTU5MjI4MDE.*_ga_CW55HF8NVT*MTY5ODM1MDUxMy4yLjEuMTY5ODM1MDc4NC4yMS4wLjA."
+                                            title="Монтажные схемы"
+                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_5%2Fimg_main_2.png?alt=media&token=cd763496-27c5-4275-b465-3cab6449d34a&_gl=1*1dy02zl*_ga*Nzk5MTc1NjYzLjE2OTU5MjI4MDE.*_ga_CW55HF8NVT*MTY5ODUwNjA1Ni43LjEuMTY5ODUwNjk1My4zOC4wLjA."
                                             onClick={() => navigate('/lecture_2')}
                                         />
                                     </Col>
 
                                     <Col md={6} lg={3}>
                                         <CardElement
-                                            title="Функциональные схемы автоматизации"
-                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_4%2Fimg_3.png?alt=media&token=27f2146c-53f2-4916-aba4-f27c8e63ec78&_gl=1*xizt3z*_ga*Nzk5MTc1NjYzLjE2OTU5MjI4MDE.*_ga_CW55HF8NVT*MTY5ODM1MDUxMy4yLjEuMTY5ODM1MDgwNi42MC4wLjA."
+                                            title="Щиты и пульты. Конструкции и особенности монтажа щитов, пультов, панелей управления."
+                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_5%2Fimg_main_3.png?alt=media&token=645df1a9-b844-4a1b-927e-43e04657f773&_gl=1*12oxkqs*_ga*Nzk5MTc1NjYzLjE2OTU5MjI4MDE.*_ga_CW55HF8NVT*MTY5ODUwNjA1Ni43LjEuMTY5ODUwNjk2Ny4yNC4wLjA."
                                             onClick={() => navigate('/lecture_3')}
                                         />
                                     </Col>
 
                                     <Col md={6} lg={3}>
                                         <CardElement
-                                            title="Требования, предъявляемые к техническому, программному и информационному обеспечению при проектировании автоматизированной системы"
-                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_4%2Fimg_4.png?alt=media&token=b427fa2a-0276-4f20-9b93-2702927593d4&_gl=1*hgou97*_ga*Nzk5MTc1NjYzLjE2OTU5MjI4MDE.*_ga_CW55HF8NVT*MTY5ODM1MDUxMy4yLjEuMTY5ODM1MDgyOC4zOC4wLjA."
+                                            title="Проводка электрическая, трубная. Прокладка, соединение, крепление."
+                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_5%2Fimg_main_4.png?alt=media&token=34dc1095-fa01-46cf-adb8-b5dce26279e4&_gl=1*i7ge4i*_ga*Nzk5MTc1NjYzLjE2OTU5MjI4MDE.*_ga_CW55HF8NVT*MTY5ODUwNjA1Ni43LjEuMTY5ODUwNjk3Ny4xNC4wLjA."
                                             onClick={() => navigate('/lecture_4')}
                                         />
                                     </Col>
 
                                     <Col md={6} lg={3}>
                                         <CardElement
-                                            title="Безопасность труда и противопожарные мероприятия при монтаже и наладке систем автоматизации"
-                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_4%2Fimg_5.png?alt=media&token=c637e917-bc60-4380-bf70-68bde7bc9747&_gl=1*bop6ge*_ga*Nzk5MTc1NjYzLjE2OTU5MjI4MDE.*_ga_CW55HF8NVT*MTY5ODM1MDUxMy4yLjEuMTY5ODM1MDg0OC4xOC4wLjA."
+                                            title="Прозвонка жил кабелей и проводов."
+                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_5%2Fimg_main_5.png?alt=media&token=59f1055e-8168-4a4b-9942-0c901d7a64ba&_gl=1*5pmft3*_ga*Nzk5MTc1NjYzLjE2OTU5MjI4MDE.*_ga_CW55HF8NVT*MTY5ODUwNjA1Ni43LjEuMTY5ODUwNjk4OC4zLjAuMA.."
                                             onClick={() => navigate('/lecture_5')}
+                                        />
+                                    </Col>
+
+                                    <Col md={6} lg={3}>
+                                        <CardElement
+                                            title="Принципиальная электрическая схема"
+                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_5%2Fimg_main_6.png?alt=media&token=0a149983-c854-4594-9a92-b216da2f05b6&_gl=1*1ckfug4*_ga*Nzk5MTc1NjYzLjE2OTU5MjI4MDE.*_ga_CW55HF8NVT*MTY5ODUwNjA1Ni43LjEuMTY5ODUwNzAzOS4xMi4wLjA."
+                                            onClick={() => navigate('/lecture_6')}
                                         />
                                     </Col>
 

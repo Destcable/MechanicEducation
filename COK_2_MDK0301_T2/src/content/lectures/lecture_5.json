@@ -1,12 +1,7 @@
 [
     {
-        "title": "Безопасность труда и противопожарные мероприятия при монтаже и наладке систем автоматизации",
+        "title": "Прозвонка жил кабелей и проводов.",
         "image": null,
-        "component": "templates_4/lectures/lecture_5/slide_1.html"
-    },
-    {
-        "title": "Безопасность труда и противопожарные мероприятия при монтаже и наладке систем автоматизации",
-        "image": null,
-        "component": "templates_4/lectures/lecture_5/slide_2.html"
+        "component": "templates_5/lectures/slide_5.html"
     }
 ]
