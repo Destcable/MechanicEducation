@@ -1,0 +1,68 @@
+[
+    {
+        "title": "Изучите инженерно-техническая подготовку производства",
+        "image": null,
+        "component": "templates_4/trainers/trainer_1/slide_1.html"
+    },
+    {
+        "type": "checkbox",
+        "title": "Что включает в себя инженерно-техническая подготовку производств",
+        "image": null,
+        "component": "templates_4/trainers/trainer_1/slide_2.html",
+        "answers": ["1", "2", "3"]
+    },
+    {
+        "title": "Ознакомьтесь с видами технической документации, используемой  при монтажных работах систем автоматизации",
+        "image": null,
+        "component": "templates_4/trainers/trainer_1/slide_3.html"
+    },
+
+    {
+        "type": "select",
+        "title": "Какой вид технической документации, используется  при монтажных работах систем автоматизации",
+        "image": null,
+        "component": "templates_4/trainers/trainer_1/slide_4.html",
+        "answers": ["7"]
+    },
+
+    {
+        "title": "Условные обозначения приборов и средств автоматизации согласно ГОСТ 21.404–85",
+        "image": null,
+        "component": "templates_4/trainers/trainer_1/slide_5.html"
+    },
+
+    {
+        "type": "select",
+        "title": "Выберите условное обозначение приборов   на функциональных схемах",
+        "image": null,
+        "component": "templates_4/trainers/trainer_1/slide_6.html",
+        "answers": ["2", "3", "1"]
+    },
+
+    {
+        "title": "Изучите требования, предъявляемые к техническому, программному и информационному обеспечению при проектировании автоматизированной системы",
+        "image": null,
+        "component": "templates_4/trainers/trainer_1/slide_7.html"
+    },
+    
+    {
+        "type": "radio",
+        "title": "Выберите ГОСТ в соответствии с которым определяются требования к созданию автоматизированной системы ",
+        "image": null,
+        "component" :"templates_4/trainers/trainer_1/slide_8.html",
+        "answers": ["3"]
+    },
+
+    {
+        "title": "Изучите правила ПТЭ и ПТБ при монтаже, наладке и техническом обслуживании систем и средств автоматизации",
+        "image": null,
+        "component": "templates_4/trainers/trainer_1/slide_9.html"
+    },
+    {
+        "type": "radio",
+        "title": "Кому разрешается производить выполнение работ по монтажу, эксплуатации, наладке приборов контроля и средств автоматизации.",
+        "image": null,
+        "component": "templates_4/trainers/trainer_1/slide_10.html",
+        "answers": ["F"]
+    }
+]
