@@ -14,7 +14,13 @@ import ResultPage from "./pages/result";
 
 
 export const Routes = createBrowserRouter([
-    { path: "/", element: <MainPage /> },
+    {
+        path: "/", element:
+            <MainPage
+                href_1="/trainingLecture"
+                href_2="/traning_1"
+                href_3="/question_1" />
+    },
     { path: "/trainingLecture", element: <LectureMainPage /> },
     { path: "/lecture_1", element: <TraningPage traning={lecture_1} /> },
     { path: "/lecture_2", element: <TraningPage traning={lecture_2} /> },
@@ -24,5 +30,5 @@ export const Routes = createBrowserRouter([
     { path: "/lecture_6", element: <TraningPage traning={lecture_6} /> },
     { path: "/traning_1", element: <TraningPage traning={trainings_1} /> },
     { path: "/question_1", element: <TraningPage traning={question_1} /> },
-    { path: "/result", element: <ResultPage /> }
+    { path: "/result", element: <ResultPage /> },
 ]);
