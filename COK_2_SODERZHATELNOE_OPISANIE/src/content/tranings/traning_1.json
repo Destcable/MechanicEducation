@@ -1,74 +1,22 @@
 [
     {
-        "title": "Изучите инженерно-техническая подготовку производства",
+        "title": "Проверить настройки дефектоскопа для контроля поковки толщиной 20 мм",
         "image": null,
-        "component": "templates_5/trainers/slide_1.html"
+        "component": "templates_6/trainers/slide_1.html"
     },
     {
-        "type": "radio",
-        "title": "Определите какой прибор мехатронной системы представлен на изображении.",
-        "image": "https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_5%2Ftranings%2Fimg_2.jpg?alt=media&token=2832eef5-27a3-4f58-bed1-69c400264dec&_gl=1*1od5yp0*_ga*Nzk5MTc1NjYzLjE2OTU5MjI4MDE.*_ga_CW55HF8NVT*MTY5ODU3NTUzOC4xNC4xLjE2OTg1NzU1NTMuNDUuMC4w",
-        "component": "templates_5/trainers/slide_2.html",
-        "answers": ["1"]
+        "title": "Настроить время в протекторе прямогоРС-преобразователя",
+        "image": null,
+        "component": "templates_6/trainers/slide_2.html"
     },
     {
-        "title": "Изучите основные  сведения по монтажным схемам.",
+        "title": "Настроить амплитуду эхо-сигнала на испытательном образце№1 для УЗК",
         "image": null,
-        "component": "templates_5/trainers/slide_3.html"
+        "component": "templates_6/trainers/slide_3.html"
     },
     {
-        "type": "select",
-        "title": "Какой  аппарат, предназначенный для включения или отключения тока, изображён на схеме.",
+        "title": "Провести контроль поковки толщиной 20 ммэхо-методом (группа качества 1)",
         "image": null,
-        "component": "templates_5/trainers/slide_4.html",
-        "answers": ["C"]
-    },
-    {
-        "title": "Изучите конструкции и типы щитов и пультов.",
-        "image": null,
-        "component": "templates_5/trainers/slide_5.html"
-    },
-    {
-        "type": "radio",
-        "title": "Какой вид конструкции  для  размещения  приборов и устройств для управления процессами  изображен?",
-        "image": null,
-        "component": "templates_5/trainers/slide_6.html",
-        "answers": ["D"]
-    },
-    {
-        "title": "Изучите виды соединений электрической проводки.",
-        "image": null,
-        "component": "templates_5/trainers/slide_7.html"     
-    },
-    {
-        "type": "select",
-        "title": "Установите соответствия между видами соединений и их наименованиями",
-        "image": null,
-        "component": "templates_5/trainers/slide_8.html",
-        "answers": ["2", "3", "1"]
-    },
-    {
-        "title": "Изучите «прозвонку» кабелей и проводов",
-        "image": null,
-        "component": "templates_5/trainers/slide_9.html"
-    },
-    {
-        "type": "radio",
-        "title": "Определите, какой из приборов для проверки цепи на разрыв изображен на рисунке",
-        "image": null,
-        "component": "templates_5/trainers/slide_10.html",
-        "answers": ["1"]
-    },
-    {
-        "title": "Изучите общие сведения о выполнении электрических принципиальных схем",
-        "image": null,
-        "component": "templates_5/trainers/slide_11.html"
-    },
-    {
-        "type": "radio",
-        "title": "Что должно соответствовать ГОСТу 2.710-81?",
-        "image": null,
-        "component": "templates_5/trainers/slide_12.html",
-        "answers": ["B"]
+        "component": "templates_6/trainers/slide_4.html"
     }
 ]
