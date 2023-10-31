@@ -51,14 +51,6 @@ function LectureMainPage() {
                                         />
                                     </Col>
 
-                                    <Col md={6} lg={3}>
-                                        <CardElement
-                                            title="Проводка электрическая, трубная. Прокладка, соединение, крепление."
-                                            image=""
-                                            onClick={() => navigate('/lecture_4')}
-                                        />
-                                    </Col>
-
                                 </Row>
                             </Container>
                         </div>

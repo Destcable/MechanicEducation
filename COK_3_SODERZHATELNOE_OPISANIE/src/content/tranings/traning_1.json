@@ -1,22 +1,27 @@
 [
     {
-        "title": "Проверить настройки дефектоскопа для контроля поковки толщиной 20 мм",
+        "title": "Подготовка поверхностиобразца 10×120×120 мм",
         "image": null,
-        "component": "templates_6/trainers/slide_1.html"
+        "component": "temp_COK3_CODERZHATEL_OPISANIE/trainers/slide_1.html"
     },
     {
-        "title": "Настроить время в протекторе прямогоРС-преобразователя",
+        "title": "Подключение РС-преобразователя и включение прибора А1210",
         "image": null,
-        "component": "templates_6/trainers/slide_2.html"
+        "component": "temp_COK3_CODERZHATEL_OPISANIE/trainers/slide_2.html"
     },
     {
-        "title": "Настроить амплитуду эхо-сигнала на испытательном образце№1 для УЗК",
+        "title": "Настройка и адаптация прибора к параметрам используемого ПЭП",
         "image": null,
-        "component": "templates_6/trainers/slide_3.html"
+        "component": "temp_COK3_CODERZHATEL_OPISANIE/trainers/slide_3.html"
     },
     {
-        "title": "Провести контроль поковки толщиной 20 ммэхо-методом (группа качества 1)",
+        "title": "Выбрать режим, нанести контактную жидкость по всей площади контрольного образца и перейти к измерению",
         "image": null,
-        "component": "templates_6/trainers/slide_4.html"
+        "component": "temp_COK3_CODERZHATEL_OPISANIE/trainers/slide_4.html"
+    },
+    {
+        "title": "Зарисовать чертеж образца и провести контроль толщины по всей площади образца 10×120×120 мм",
+        "image": null,
+        "component": "temp_COK3_CODERZHATEL_OPISANIE/trainers/slide_5.html"
     }
 ]
