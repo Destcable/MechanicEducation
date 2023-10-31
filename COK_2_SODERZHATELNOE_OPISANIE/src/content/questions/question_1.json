@@ -63,7 +63,7 @@
         "answers": ["A"]
     },
     {
-        "type": "radio",
+        "type": "checkbox",
         "title": "Стрела преобразователя - это…",
         "image": null,
         "component": "/templates_6/questions/slide_11.html",
