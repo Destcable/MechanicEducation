@@ -1,0 +1,128 @@
+[
+    {
+        "type": "select", 
+        "title": "Соотнесите правильно выбранное изображение с пояснением.",
+        "image": null,
+        "component": "/templates_5/questions/slide_1.html",
+        "answers": [ "1", "2", "4", "3"]
+    },
+    {
+        "type": "checkbox",
+        "title": "Где применяют мехатронные системы?",
+        "image": null,
+        "component": "/templates_5/questions/slide_2.html",
+        "answers": [ "A", "B", "C", "D" ]
+    },
+    {
+        "type": "checkbox",
+        "title": "Что включает в себя монтаж мехатронных систем? Выберите все правильные ответы",
+        "image": null,
+        "component": "/templates_5/questions/slide_3.html",
+        "answers": ["A", "B", "C", "E", "F"]
+    },
+    {
+        "type": "radio",
+        "title": "Дан пример монтажной схемы теплого водяного пола в квартире. Какое устройство указано на схеме под цифрой 5. Выберите единственно правильный ответ.",
+        "image": null,
+        "component": "/templates_5/questions/slide_4.html",
+        "answers": ["B"]
+    },
+    {
+        "type": "radio",
+        "title": "Чем является VD4 и VD5 на данной схеме? Выберите единственный правильный ответ",
+        "image": null,
+        "component": "/templates_5/questions/slide_5.html",
+        "answers": ["B"]
+    },
+    {
+        "type": "select",
+        "title": "Приведите в соответствие наименование и изображение монтажных инструментов",
+        "image": null,
+        "component": "/templates_5/questions/slide_6.html",
+        "answers": ["4", "5", "1", "3", "6", "2"]
+    },
+    {
+        "type": "radio",
+        "title": "Что изображено на картинке?Выберите единственно правильный ответ",
+        "image": null,
+        "component": "/templates_5/questions/slide_7.html",
+        "answers": ["C"]
+    },
+    {
+        "type": "checkbox",
+        "title": "В каком температурном диапозоне могут  эксплуатироваться щиты и пульты?Выберите все правильные ответы",
+        "image": null,
+        "component": "/templates_5/questions/slide_8.html",
+        "answers": ["B", "C"]
+    },
+    {
+        "type": "radio",
+        "title": "Как по назначению классифицируются щиты и пульты? Выберите единственно правильный ответ",
+        "image": null,
+        "component": "/templates_5/questions/slide_9.html",
+        "answers": ["D"]
+    },
+    {
+        "type": "select",
+        "title": "Установите соответствие для  соединений проводов между рисунками и вариантами ответа",
+        "image": null,
+        "component": "/templates_5/questions/slide_10.html",
+        "answers": ["4", "3", "1", "3", "5"]
+    },
+    {
+        "type": "radio",
+        "title": "Какой метод вы бы порекомендовали для соединения проводов в условиях ограниченного пространства? Выберите все правильные ответы",
+        "image": null,
+        "component": "/templates_5/questions/slide_11.html",
+        "answers": ["D"]
+    },
+    {
+        "type": "radio",
+        "title": "Какой метод, по Вашему мнению, требует наименьшего количества времени на соединение проводов? Выберите единственный вариант ответа.",
+        "image": null,
+        "component": "/templates_5/questions/slide_12.html",
+        "answers": ["D"]
+    },
+    {
+        "type": "checkbox",
+        "title": "Что такое «прозвонка»?Выберите все правильные ответы",
+        "image": null,
+        "component": "/templates_5/questions/slide_13.html",
+        "answers": ["A", "C"]
+    },
+    {
+        "type": "select",
+        "title": "Приведите в соответствие наименование и обозначение приборов для определения целостности цепи",
+        "image": null,
+        "component": "/templates_5/questions/slide_14.html",
+        "answers": ["2", "4", "1", "3"]
+    },
+    { 
+        "type": "checkbox",
+        "title": "Для чего делают проверку цепи на разрыв?Выберите все правильные ответы",
+        "image": null,
+        "component": "/templates_5/questions/slide_15.html",
+        "answers": ["A", "B", "C"]
+    },
+    {
+        "type": "checkbox",
+        "title": "Какими способами показывают элементы и устройства на принципиальных схемах?Выберите все правильные ответы",
+        "image": null,
+        "component": "/templates_5/questions/slide_16.html",
+        "answers": ["C", "D"]
+    },
+    {
+        "type": "select",
+        "title": "Какое изображение соответствует  «тиристору с управлением по катоду»? Выберите единственно правильный ответ.",
+        "image": null,
+        "component": "/templates_5/questions/slide_17.html",
+        "answers": ["A"]
+    },
+    {
+        "type": "radio", 
+        "title": "Какие условия необходимо соблюдать при оформлении принципиальной схемы на нескольких листах? Выберите единственно правильный ответ.",
+        "image": null,
+        "component": "/templates_5/questions/slide_18.html",
+        "answers": ["C"]
+    }
+]
