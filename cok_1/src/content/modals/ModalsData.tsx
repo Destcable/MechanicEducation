@@ -63,6 +63,7 @@ export function ModalLecture(props: ModalProps) {
         <Modal
             active={props.active}
             setActive={props.setActive}
+            maxWidth="900px"
         >
             <div dangerouslySetInnerHTML={{ __html: props.children ? props.children : '' }} />
         </Modal>

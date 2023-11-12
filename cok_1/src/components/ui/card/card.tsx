@@ -1,9 +1,8 @@
-import { CSSProperties, useState } from "react";
+import { CSSProperties } from "react";
 import { useNavigate } from "react-router-dom";
 import ProgressBar from "../progressBar/progressBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../../styles/main.css';
-import { ModalLecture } from "./CardModals";
 
 interface CardProps {
     href: string,
@@ -14,7 +13,6 @@ interface CardProps {
 }
 
 const Card = (CardObj: CardProps) => {
-    const [modalActive, setModalActive] = useState(false);
     const navigate = useNavigate();
 
     const styleCard: CSSProperties = {
@@ -61,10 +59,6 @@ const Card = (CardObj: CardProps) => {
                     </div>
                 </div>
             </div>
-            <ModalLecture
-                active={modalActive}
-                setActive={setModalActive}
-            />
         </>
 
     )

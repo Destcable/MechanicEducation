@@ -4,7 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 interface ModalProps {
     active: boolean,
     setActive: React.Dispatch<React.SetStateAction<boolean>>,
-    children?: ReactNode;
+    children?: ReactNode,
+    maxWidth?: string
 }
 
 const Modal = (ModalObj: ModalProps) => {
@@ -26,7 +27,7 @@ const Modal = (ModalObj: ModalProps) => {
     };
 
     const styleModalContext: CSSProperties = {
-        maxWidth: "500px",
+        maxWidth: ModalObj.maxWidth ? ModalObj.maxWidth : "500px",
         padding: "20px",
         backgroundColor: "white",
         overflow: "auto",  // Add overflow property

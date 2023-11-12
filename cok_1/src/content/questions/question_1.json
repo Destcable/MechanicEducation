@@ -24,11 +24,11 @@
         "point": 200
     },
     {
-        "type": "text",
+        "type": "select",
         "title": "Вставьте пропущенные слова, выбрав их из предложенного списка.",
         "image": null,
         "component": "/templates/questions/question_1/slide_4.html",
-        "answers": ["wa", "wb", "wc"],
+        "answers": ["1", "1", "1"],
         "point": 200
     },
     {
@@ -56,11 +56,11 @@
         "point": 200
     },
     {
-        "type": "text",
+        "type": "select",
         "title": "Вставьте пропущенные слова, выбрав их из предложенного списка.",
         "image": null,
         "component": "/templates/questions/question_1/slide_8.html",
-        "answers": ["wa", "wb", "wc"],
+        "answers": ["1", "1", "1"],
         "point": 200
     },
     {
