@@ -6,7 +6,6 @@ body {
     position: relative;
 }
 
-
 h2 {
     margin: 0;
     font-size: 32px;
@@ -31,6 +30,10 @@ h5 {
 
 footer {
     background-color: #4B6E94;
+}
+
+.w-15 { 
+    width: 20% !important;
 }
 
 .line_1 {
@@ -180,7 +183,7 @@ footer {
 
 .bg_color_block {
     background-color: rgba(160, 190, 221, 50%);
-    padding-bottom: 114px;
+    /* padding-bottom: 114px; */
 
 }
 

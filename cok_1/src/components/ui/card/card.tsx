@@ -8,8 +8,9 @@ import { ModalLecture } from "./CardModals";
 interface CardProps {
     href: string,
     title?: string,
-    description?: string,
     lineName: string,
+    onClickHelp?: () => void,
+    description?: string,
 }
 
 const Card = (CardObj: CardProps) => {
@@ -48,7 +49,7 @@ const Card = (CardObj: CardProps) => {
                         <a href="#" className="text-decoration-none">
                             <div
                                 className="d-flex btn btn_info align-items-center"
-                                onClick={() => setModalActive(true)}>
+                                onClick={CardObj.onClickHelp ? CardObj.onClickHelp : undefined}>
                                 Справка
                             </div>
                         </a>

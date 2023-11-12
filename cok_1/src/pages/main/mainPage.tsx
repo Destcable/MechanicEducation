@@ -3,13 +3,18 @@ import Card from '../../components/ui/card/card';
 import Tringle from '../../components/ui/tringle/tringle';
 import Footer from '../../components/ui/footer/footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { CSSProperties } from 'react';
+import { CSSProperties, useState } from 'react';
+import { ModalInfoQuestion, ModalInfoTraning, ModalInfoLecture } from '../../content/modals/ModalsData';
 
 const MainPage = () => {
+    const [modalActive1, setModalActive1] = useState(false);
+    const [modalActive2, setModalActive2] = useState(false);
+    const [modalActive3, setModalActive3] = useState(false);
     const mainBlock: CSSProperties = { 
         marginTop: "150px",
         columnGap: "90px"
-    }
+    };
+
 
     return (
         <>
@@ -23,14 +28,15 @@ const MainPage = () => {
                     title="Освоение нового материала"
                     description="Оборудование по обработке заготовок"
                     href="/trainingLecture"
+                    onClickHelp={() => setModalActive1(true)}
                 />
 
                 <Card
                     lineName="Виртуальный тренажер"
                     title="Применение изученного материала"
                     description="Режущий инструмент"
-                    // href="/traning"
                     href='/traning_1'
+                    onClickHelp={() => setModalActive2(true)}
                 />
 
                 <Card
@@ -38,6 +44,7 @@ const MainPage = () => {
                     title={"Диагностика приобретенных знаний, умений, навыков"}
                     description="Станочные при способления"
                     href="/question_1"
+                    onClickHelp={() => setModalActive3(true)}
                 />
             </div>
 
@@ -45,6 +52,10 @@ const MainPage = () => {
             <Tringle />
 
             <Footer />
+
+            <ModalInfoLecture active={modalActive1} setActive={setModalActive1} />
+            <ModalInfoTraning active={modalActive2} setActive={setModalActive2} />
+            <ModalInfoQuestion active={modalActive3} setActive={setModalActive3} />
         </>
 
     )

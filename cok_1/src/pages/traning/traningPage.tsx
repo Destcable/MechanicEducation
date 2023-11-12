@@ -21,10 +21,9 @@ import highlightAnswersCheckbox from "../../components/highlightAnswers/checkbox
 import highlightAnswersText from "../../components/highlightAnswers/text/highlightAnswersText";
 import { highlightAnswers } from "../../components/highlightAnswers/highlightAnswers";
 import TraningPageUI from "./ui/TraningPageUI";
-import formatTime from "../../utils/formatTime";
-
 
 interface TraningPageProps {
+  title: string;
   traning: TraningData[];
   child?: ReactNode;
 }
@@ -37,7 +36,7 @@ const arrows: CSSProperties = {
 const TraningPage = (props: TraningPageProps) => {
   const [countActiveTab, setActiveTab] = useState(0);
   const [isEnabledButton, setEnabledButton] = useState(false);
-  const [time, setTime] = useState(600);
+  // const [time, setTime] = useState(600);
 
   const tabs = [];
 
@@ -55,9 +54,9 @@ const TraningPage = (props: TraningPageProps) => {
       setEnabledButton(true);
     };
 
-    setInterval(() => {
-      setTime((prevTime) => (prevTime > 0 ? prevTime - 1 : 0));
-    }, 1000);
+    // setInterval(() => {
+    //   setTime((prevTime) => (prevTime > 0 ? prevTime - 1 : 0));
+    // }, 1000);
   }, [traningType]);
 
   function handleSelectChange() {
@@ -230,12 +229,13 @@ const TraningPage = (props: TraningPageProps) => {
   return (
     <>
       <TraningPageUI
+        nameWindow={props.title}
         title={props.traning[countActiveTab]?.title}
         tabs={tabs}
         countTab={countActiveTab}
         lengthTabs={props.traning.length}
       >
-        <span className="d-flex justify-content-end fw-normal">{formatTime(time)}</span>
+        {/* <span className="d-flex justify-content-end fw-normal">{formatTime(time)}</span> */}
         <div className="d-flex container-filling align-center justify-content-center fw-light w-100">
           {ImageUrl && (
             <div className="img-exercise">

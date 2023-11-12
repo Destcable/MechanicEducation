@@ -3,6 +3,7 @@ import Header from "../../../components/ui/Header/Header"
 import HomeButton from "../../../components/ui/homeButton/homeButton"
 
 interface TraningPageUIProps {
+    nameWindow: string,
     title: string,
     tabs: ReactNode[],
     countTab: number,
@@ -22,7 +23,7 @@ export default function TraningPageUI(props: TraningPageUIProps) {
                         <div className="container1">
                             <div className="container_header">
                                 <div className="d-flex align-items-center justify-content-between">
-                                    <p className="container_title">Динамическая инфографика</p>
+                                    <p className="container_title">{props.nameWindow}</p>
                                     <p className="text-white pe-3">
                                         {`${props.countTab + 1} / ` + props.lengthTabs}
                                     </p>
