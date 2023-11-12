@@ -10,7 +10,6 @@ import countCorrectAnswers from "../utils/countCorrectAnswers";
 
 export default function ResultPage() {
     ChartJS.register(ArcElement, Tooltip, Legend);
-        
 
     const test = countCorrectAnswers(question_1, getUserAnswers());
 
@@ -56,7 +55,7 @@ export default function ResultPage() {
                                 </div>
 
                                 <div className="d-flex container-filling align-center justify-content-center">
-                                    Количество правильных ответов: {test.correct}
+                                    Количество баллов: {test.correct}
                                     <br />
                                     Количество не верных ответов: {test.incorrect}
                                 </div>

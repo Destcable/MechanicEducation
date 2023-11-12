@@ -1,8 +1,9 @@
 import Modal from "../../components/ui/modal/modal";
+
 interface ModalProps {
     active: boolean,
     setActive: React.Dispatch<React.SetStateAction<boolean>>,
-    children?: never[]
+    children?: string
 }
 
 export function ModalGetFromContent(props: ModalProps) {
@@ -54,4 +55,16 @@ export function ModalGetKeyWords(props: ModalProps) {
                 над другим лезвий в направлении, перпендикулярном к направлению скорости главного движения.</p>
         </Modal>
     )
-}
+};
+
+
+export function ModalLecture(props: ModalProps) {
+    return (
+        <Modal
+            active={props.active}
+            setActive={props.setActive}
+        >
+            <div dangerouslySetInnerHTML={{ __html:  props.children ? props.children : '' }} />
+        </Modal>
+    )
+};

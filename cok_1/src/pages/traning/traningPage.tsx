@@ -21,6 +21,7 @@ import highlightAnswersCheckbox from "../../components/highlightAnswers/checkbox
 import highlightAnswersText from "../../components/highlightAnswers/text/highlightAnswersText";
 import { highlightAnswers } from "../../components/highlightAnswers/highlightAnswers";
 import TraningPageUI from "./ui/TraningPageUI";
+import formatTime from "../../utils/formatTime";
 
 
 interface TraningPageProps {
@@ -36,6 +37,10 @@ const arrows: CSSProperties = {
 const TraningPage = (props: TraningPageProps) => {
   const [countActiveTab, setActiveTab] = useState(0);
   const [isEnabledButton, setEnabledButton] = useState(false);
+  const [time, setTime] = useState(600);
+
+  const tabs = [];
+
   const currentAnswers = getUserAnswers()[countActiveTab + 1];
 
   const traningType = props.traning[countActiveTab]?.type;
@@ -48,7 +53,11 @@ const TraningPage = (props: TraningPageProps) => {
   useEffect(() => {
     if (!traningType) {
       setEnabledButton(true);
-    }
+    };
+
+    setInterval(() => {
+      setTime((prevTime) => (prevTime > 0 ? prevTime - 1 : 0));
+    }, 1000);
   }, [traningType]);
 
   function handleSelectChange() {
@@ -119,8 +128,6 @@ const TraningPage = (props: TraningPageProps) => {
 
     setCountActiveTab(countActiveTab - 1);
   }
-
-  const tabs = [];
 
   const ImageUrl = props.traning[countActiveTab]?.image
     ? props.traning[countActiveTab].image
@@ -228,6 +235,7 @@ const TraningPage = (props: TraningPageProps) => {
         countTab={countActiveTab}
         lengthTabs={props.traning.length}
       >
+        <span className="d-flex justify-content-end fw-normal">{formatTime(time)}</span>
         <div className="d-flex container-filling align-center justify-content-center fw-light w-100">
           {ImageUrl && (
             <div className="img-exercise">
@@ -240,9 +248,9 @@ const TraningPage = (props: TraningPageProps) => {
           )}
           {props.traning[countActiveTab]?.component && (
             <div>
-              {HTMLContent && (
+              {HTMLContent && 
                 <div dangerouslySetInnerHTML={{ __html: HTMLContent }} />
-              )}
+              }
             </div>
           )}
         </div>

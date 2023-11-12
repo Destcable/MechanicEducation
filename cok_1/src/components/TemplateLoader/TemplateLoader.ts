@@ -6,7 +6,7 @@ import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
 function TemplateLoader(template: string) {
     const [HTMLContent, setHTMLContent] = useState('');
-
+    
     const app = initializeApp(FirebaseConfig);
     const storage = getStorage(app, FirebaseURL);
     const gsReference = ref(storage, template);

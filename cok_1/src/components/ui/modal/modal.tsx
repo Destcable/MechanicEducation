@@ -29,6 +29,8 @@ const Modal = (ModalObj: ModalProps) => {
         maxWidth: "500px",
         padding: "20px",
         backgroundColor: "white",
+        overflow: "auto",  // Add overflow property
+        maxHeight: "70vh", // Set a maximum height to enable scrolling
     };
 
     return (
