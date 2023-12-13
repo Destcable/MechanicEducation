@@ -29,7 +29,6 @@ const MainPage = () => {
                     lineName="Виртуальный тренажер"
                     title="Применение изученного материала"
                     description="Режущий инструмент"
-                    // href="/traning"
                     href='/traning_1'
                 />
 

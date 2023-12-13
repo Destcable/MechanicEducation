@@ -4,10 +4,11 @@ import Tringle from '../../components/ui/tringle/tringle';
 import HomeButton from "../../components/ui/homeButton/homeButton";
 import { Container, Row, Col } from 'react-bootstrap';
 import CardElement from "../../components/ui/Card/CardElement";
+import lectureMain from "../../content/lectures/lecture_main.json";
 
 function LectureMainPage() {
     const navigate = useNavigate();
-
+    console.log(123);
     return (
         <>
             <Header />
@@ -26,22 +27,15 @@ function LectureMainPage() {
                             </div>
                             <Container>
                                 <Row className="g-3">
-
-                                    <Col md={6} lg={3}>
-                                        <CardElement
-                                            title="Инженерно-техническая подготовка производства"
-                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_4%2Fimg_1.jpg?alt=media&token=ef56e59c-febb-478e-baad-11c1b64927d8&_gl=1*14m2x4l*_ga*Nzk5MTc1NjYzLjE2OTU5MjI4MDE.*_ga_CW55HF8NVT*MTY5ODM1MDUxMy4yLjEuMTY5ODM1MDc1Mi41My4wLjA."
-                                            onClick={() => navigate('/lecture_1')}
-                                        />
-                                    </Col>
-
-                                    <Col md={6} lg={3}>
-                                        <CardElement
-                                            title="Виды технической документации, используемые при монтажных работах"
-                                            image="https://firebasestorage.googleapis.com/v0/b/mechaniceducation-bebac.appspot.com/o/images_4%2Fimg_2.png?alt=media&token=0c6afcd9-b4b5-44ed-a366-50831c68298b&_gl=1*h83cx2*_ga*Nzk5MTc1NjYzLjE2OTU5MjI4MDE.*_ga_CW55HF8NVT*MTY5ODM1MDUxMy4yLjEuMTY5ODM1MDc4NC4yMS4wLjA."
-                                            onClick={() => navigate('/lecture_2')}
-                                        />
-                                    </Col>
+                                    {lectureMain.map((item) => (
+                                        <Col md={6} lg={3}>
+                                            <CardElement
+                                                title={item.title}
+                                                image={item.image}
+                                                onClick={() => navigate(item.href)}
+                                            />
+                                        </Col>
+                                    ))}
 
                                     <Col md={6} lg={3}>
                                         <CardElement
