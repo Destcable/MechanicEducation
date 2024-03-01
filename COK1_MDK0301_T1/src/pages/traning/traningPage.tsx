@@ -6,21 +6,20 @@ import Tringle from "../../components/ui/tringle/tringle";
 import ArrowRight from "../../components/ui/arrowRight/arrowRight";
 import ArrowLeft from "../../components/ui/arrowLeft/arrowLeft";
 import TemplateLoader from "../../components/TemplateLoader/TemplateLoader";
-import checkSelectsNotEmpty from "../../components/JQuery/checkSelectsNotEmpty";
 import { ANSWER_BUTTON_COLOR } from "../../UI.config";
 import {
   getUserAnswers,
-  saveUserAnswers,
 } from "../../Controllers/answers/saveAnswer";
 import createAnswerButton from "../../components/JQuery/AnswerButton/createAnswerButton";
 import { removeAnswerButton } from "../../components/JQuery/AnswerButton/removeAnswerButton";
-import getAnswersByType from "../../utils/getAnswersByType";
 import highlightAnswersRadio from "../../components/highlightAnswers/radio/highlightAnswersRadio";
 import highlightAnswersSelects from "../../components/highlightAnswers/select/highlightAnswersSelects";
 import highlightAnswersCheckbox from "../../components/highlightAnswers/checkbox/highlightAnswersCheckbox";
 import highlightAnswersText from "../../components/highlightAnswers/text/highlightAnswersText";
-import { highlightAnswers } from "../../components/highlightAnswers/highlightAnswers";
 import TraningPageUI from "./ui/TraningPageUI";
+import handleSelectChange from "./functions/handleSelectChange";
+import answerButtonClick from "./functions/answerButtonClick";
+import takeCountTab from "./functions/takeCountTab";
 
 
 interface TraningPageProps {
@@ -45,15 +44,6 @@ const TraningPage = (props: TraningPageProps) => {
     ? TemplateLoader(props.traning[countActiveTab]?.component)
     : undefined;
 
-  function handleSelectChange() {
-    if (checkSelectsNotEmpty()) {
-      if ($("#send-answers__button").length === 0) {
-        createAnswerButton();
-      }
-      answerButtonClick();
-    }
-  }
-
   function handleTextChange() {
     const textInputs = $('input[type="text"]');
 
@@ -71,7 +61,13 @@ const TraningPage = (props: TraningPageProps) => {
       if (allFilled) {
         if ($("#send-answers__button").length === 0) {
           createAnswerButton();
-          answerButtonClick();
+          answerButtonClick(
+            setEnabledButton,
+            countActiveTab,
+            traningType,
+            currentAnswers,
+            props
+          );
         }
       } else {
         removeAnswerButton();
@@ -114,19 +110,6 @@ const TraningPage = (props: TraningPageProps) => {
     setCountActiveTab(countActiveTab + 1);
   }
 
-  function takeCountTab() {
-    if (traningType) {
-      setEnabledButton(false);
-    }
-
-
-    if (getUserAnswers()[countActiveTab]) {
-      setEnabledButton(true);
-    }
-
-    setCountActiveTab(countActiveTab - 1);
-  }
-
   useEffect(() => {
     if (!traningType) {
       setEnabledButton(true);
@@ -135,6 +118,21 @@ const TraningPage = (props: TraningPageProps) => {
       setEnabledButton(false);
     }
   }, [traningType]);
+  
+  const handleSelectChangeCallback = () => handleSelectChange(
+    setEnabledButton,
+    countActiveTab,
+    traningType,
+    currentAnswers,
+    props
+  );
+
+  const handleSelectChangeTakeCountTab = () => takeCountTab(
+    setEnabledButton,
+    setCountActiveTab,
+    traningType,
+    countActiveTab
+  );
 
   const tabs = [];
 
@@ -154,7 +152,13 @@ const TraningPage = (props: TraningPageProps) => {
       if (selectedElements.length > 0) {
         if ($("#send-answers__button").length === 0) {
           createAnswerButton();
-          answerButtonClick();
+          answerButtonClick(
+            setEnabledButton,
+            countActiveTab,
+            traningType,
+            currentAnswers,
+            props
+          );
         }
       }
 
@@ -182,22 +186,21 @@ const TraningPage = (props: TraningPageProps) => {
       : handleRadioChange();
   }
 
-  if (traningType === "select") {
-    currentAnswers
-      ? highlightAnswersSelects(
-        props.traning[countActiveTab].answers,
-        currentAnswers,
-      )
-      : $("select")
-        .off("change")
-        .on("change", () => handleSelectChange());
-  }
 
   if (traningType === "checkbox" && currentAnswers) {
-      highlightAnswersCheckbox(
-          props.traning[countActiveTab].answers,
-          currentAnswers,
+    highlightAnswersCheckbox(
+      props.traning[countActiveTab].answers,
+      currentAnswers,
+    )
+  }
+
+  if (traningType === "select") {
+    currentAnswers  
+      ? highlightAnswersSelects(
+        props.traning[countActiveTab].answers,
+        currentAnswers
       )
+      : document.querySelectorAll('select').forEach(select => select.addEventListener("change", handleSelectChangeCallback));
   }
 
   if (traningType === "text") {
@@ -207,18 +210,6 @@ const TraningPage = (props: TraningPageProps) => {
         getUserAnswers()[countActiveTab + 1],
       )
       : handleTextChange();
-  }
-
-  function answerButtonClick() {
-    const sendAnswersButton = document.getElementById('send-answers__button');
-    if (sendAnswersButton) {
-      sendAnswersButton.addEventListener('click', () => {
-        removeAnswerButton();
-        setEnabledButton(true);
-        saveUserAnswers(countActiveTab + 1, getAnswersByType(traningType));
-        highlightAnswers(traningType, props.traning[countActiveTab].answers, currentAnswers);
-      });
-    }
   }
 
   return (
@@ -254,7 +245,7 @@ const TraningPage = (props: TraningPageProps) => {
           style={arrows}
         >
           {isEnabledButton && countActiveTab > 0 && (
-            <ArrowLeft onClick={takeCountTab} />
+            <ArrowLeft onClick={handleSelectChangeTakeCountTab} />
           )}
           {isEnabledButton && (
             <ArrowRight id="" onClick={addCountTab} />
