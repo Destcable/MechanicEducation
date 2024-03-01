@@ -1,11 +1,13 @@
 import React from "react";
 import { getUserAnswers } from "../../../Controllers/answers/saveAnswer";
+import setCountActiveTab from "./setCountActiveTab";
 
 const takeCountTab = (
+    setActiveTab: React.Dispatch<React.SetStateAction<number>>,
     setEnabledButton: React.Dispatch<React.SetStateAction<boolean>>,
-    setCountActiveTab: (count: number) => true | void,
     traningType: unknown,
-    countActiveTab: number
+    countActiveTab: number,
+    props: any
 ) => {
     if (traningType) {
         setEnabledButton(false);
@@ -15,7 +17,12 @@ const takeCountTab = (
         setEnabledButton(true);
     }
 
-    setCountActiveTab(countActiveTab - 1);
+    setCountActiveTab(
+        setActiveTab,
+        setEnabledButton,
+        countActiveTab - 1,
+        props
+    );
 };
 
 export default takeCountTab;

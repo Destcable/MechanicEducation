@@ -1,6 +1,5 @@
 import { CSSProperties, ReactNode, useEffect, useState } from "react";
 import $ from "jquery";
-import { useNavigate } from "react-router-dom";
 import type { TraningData } from "../../types/Traning";
 import Tringle from "../../components/ui/tringle/tringle";
 import ArrowRight from "../../components/ui/arrowRight/arrowRight";
@@ -20,6 +19,7 @@ import TraningPageUI from "./ui/TraningPageUI";
 import handleSelectChange from "./functions/handleSelectChange";
 import answerButtonClick from "./functions/answerButtonClick";
 import takeCountTab from "./functions/takeCountTab";
+import setCountActiveTab from "./functions/setCountActiveTab";
 
 
 interface TraningPageProps {
@@ -38,7 +38,6 @@ const TraningPage = (props: TraningPageProps) => {
   const currentAnswers = getUserAnswers()[countActiveTab + 1];
 
   const traningType = props.traning[countActiveTab]?.type;
-  const navigate = useNavigate();
 
   const HTMLContent = props.traning[countActiveTab]?.component
     ? TemplateLoader(props.traning[countActiveTab]?.component)
@@ -85,19 +84,6 @@ const TraningPage = (props: TraningPageProps) => {
     });
   }
 
-  function setCountActiveTab(count: number) {
-    if (count < props.traning.length && count >= 0) {
-      return setActiveTab(count);
-    } else if (props.traning.length === count) {
-      setEnabledButton(false);
-      setActiveTab(count);
-      navigate('/result', { state: { traningAnswer: props.traning, userAnswer: getUserAnswers() } });
-      return true;
-    }
-
-    return console.error("Данный таб отсутствует");
-  }
-
   function addCountTab() {
     if (traningType) {
       setEnabledButton(false);
@@ -107,7 +93,12 @@ const TraningPage = (props: TraningPageProps) => {
       setEnabledButton(true);
     }
 
-    setCountActiveTab(countActiveTab + 1);
+    setCountActiveTab(
+      setActiveTab,
+      setEnabledButton,
+      countActiveTab + 1,
+      props
+    );
   }
 
   useEffect(() => {
@@ -127,11 +118,12 @@ const TraningPage = (props: TraningPageProps) => {
     props
   );
 
-  const handleSelectChangeTakeCountTab = () => takeCountTab(
+  const takeCountTabCallback = () => takeCountTab(
+    setActiveTab,
     setEnabledButton,
-    setCountActiveTab,
     traningType,
-    countActiveTab
+    countActiveTab,
+    props
   );
 
   const tabs = [];
@@ -245,7 +237,7 @@ const TraningPage = (props: TraningPageProps) => {
           style={arrows}
         >
           {isEnabledButton && countActiveTab > 0 && (
-            <ArrowLeft onClick={handleSelectChangeTakeCountTab} />
+            <ArrowLeft onClick={takeCountTabCallback} />
           )}
           {isEnabledButton && (
             <ArrowRight id="" onClick={addCountTab} />
