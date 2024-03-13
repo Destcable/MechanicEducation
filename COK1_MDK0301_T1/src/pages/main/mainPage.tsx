@@ -11,6 +11,27 @@ const MainPage = () => {
         columnGap: "90px"
     }
 
+    const dataCardsTranings = [
+        {
+            lineName: "Динамическая инфографика",
+            title: "Освоение нового материала",
+            description: "Оборудование по обработке заготовок",
+            href: "/trainingLecture"
+        },
+        { 
+            lineName: "Виртуальный тренажер",
+            title: "Применение изученного материала",
+            description: "Режущий инструмент",
+            href: '/traning_1'
+        },
+        {
+            lineName: "Интерактивная мини-игра",
+            title: "Диагностика приобретенных знаний, умений, навыков",
+            description: "Станочные при способления",
+            href: "/question_1"
+        }
+    ];
+
     return (
         <>
             <Header
@@ -18,26 +39,14 @@ const MainPage = () => {
             />
 
             <div className="d-flex justify-content-center flex-wrap" style={mainBlock}>
-                <Card
-                    lineName="Динамическая инфографика"
-                    title="Освоение нового материала"
-                    description="Оборудование по обработке заготовок"
-                    href="/trainingLecture"
-                />
-
-                <Card
-                    lineName="Виртуальный тренажер"
-                    title="Применение изученного материала"
-                    description="Режущий инструмент"
-                    href='/traning_1'
-                />
-
-                <Card
-                    lineName="Интерактивная мини-игра"
-                    title={"Диагностика приобретенных знаний, умений, навыков"}
-                    description="Станочные при способления"
-                    href="/question_1"
-                />
+                {dataCardsTranings.map(data => (
+                    <Card 
+                        lineName={data.lineName}
+                        title={data.title}
+                        description={data.description}
+                        href={data.href}
+                    />
+                ))}
             </div>
 
 
