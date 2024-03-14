@@ -19,7 +19,6 @@ const MainPage = (props: IMainPageProps) => {
         columnGap: "90px"
     }
 
-
     if (data) { 
         return (
             <>
@@ -39,9 +38,7 @@ const MainPage = (props: IMainPageProps) => {
                     ))}
                 </div>
     
-    
                 <Tringle />
-    
                 <Footer />
             </>
     
