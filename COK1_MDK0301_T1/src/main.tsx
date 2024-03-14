@@ -1,7 +1,18 @@
 import ReactDOM from 'react-dom/client';
-import { RouterProvider } from "react-router-dom";
-import { Routes } from './Routes';
+import { 
+    ApolloClient, 
+    ApolloProvider, 
+    InMemoryCache
+} from '@apollo/client';
+import App from './app';
+
+const client = new ApolloClient({
+    uri: 'http://localhost:4000/graphql',
+    cache: new InMemoryCache()
+});
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-    <RouterProvider router={Routes} />
+    <ApolloProvider client={client}> 
+        <App />
+    </ApolloProvider>
 );

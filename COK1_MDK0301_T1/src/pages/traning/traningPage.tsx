@@ -1,14 +1,9 @@
-import { CSSProperties, ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import $ from "jquery";
 import type { TraningData } from "../../types/Traning";
 import Tringle from "../../components/ui/tringle/tringle";
-import ArrowRight from "../../components/ui/arrowRight/arrowRight";
-import ArrowLeft from "../../components/ui/arrowLeft/arrowLeft";
 import TemplateLoader from "../../components/TemplateLoader/TemplateLoader";
-import { ANSWER_BUTTON_COLOR } from "../../UI.config";
-import {
-  getUserAnswers,
-} from "../../Controllers/answers/saveAnswer";
+import { getUserAnswers } from "../../Controllers/answers/saveAnswer";
 import createAnswerButton from "../../components/JQuery/AnswerButton/createAnswerButton";
 import { removeAnswerButton } from "../../components/JQuery/AnswerButton/removeAnswerButton";
 import highlightAnswersRadio from "../../components/highlightAnswers/radio/highlightAnswersRadio";
@@ -16,21 +11,15 @@ import highlightAnswersSelects from "../../components/highlightAnswers/select/hi
 import highlightAnswersCheckbox from "../../components/highlightAnswers/checkbox/highlightAnswersCheckbox";
 import highlightAnswersText from "../../components/highlightAnswers/text/highlightAnswersText";
 import TraningPageUI from "./ui/TraningPageUI";
-import handleSelectChange from "./functions/handleSelectChange";
 import answerButtonClick from "./functions/answerButtonClick";
 import takeCountTab from "./functions/takeCountTab";
-import setCountActiveTab from "./functions/setCountActiveTab";
-
+import { handleSelectChange, handleCheckboxChange, handleRadioChange } from "./functions/handlers";
+import ArrowsField from "./ui/ArrowsField";
 
 interface TraningPageProps {
   traning: TraningData[];
   child?: ReactNode;
 }
-
-const arrows: CSSProperties = {
-  bottom: "20px",
-  right: "50px",
-};
 
 const TraningPage = (props: TraningPageProps) => {
   const [countActiveTab, setActiveTab] = useState(0);
@@ -42,6 +31,20 @@ const TraningPage = (props: TraningPageProps) => {
   const HTMLContent = props.traning[countActiveTab]?.component
     ? TemplateLoader(props.traning[countActiveTab]?.component)
     : undefined;
+
+  const ImageUrl = props.traning[countActiveTab]?.image
+    ? props.traning[countActiveTab].image
+    : undefined;
+
+
+  useEffect(() => {
+    if (!traningType) {
+      setEnabledButton(true);
+    }
+    if (traningType && !currentAnswers) {
+      setEnabledButton(false);
+    }
+  }, [traningType]);
 
   function handleTextChange() {
     const textInputs = $('input[type="text"]');
@@ -58,6 +61,7 @@ const TraningPage = (props: TraningPageProps) => {
       });
 
       if (allFilled) {
+      
         if ($("#send-answers__button").length === 0) {
           createAnswerButton();
           answerButtonClick(
@@ -74,16 +78,6 @@ const TraningPage = (props: TraningPageProps) => {
     });
   }
 
-  function handleRadioChange() {
-    $('input[type="radio"]').on("change", function () {
-      $('input[type="radio"]').parent().css("background-color", "");
-
-      if ($(this).is(":checked")) {
-        $(this).parent().css("background-color", ANSWER_BUTTON_COLOR.selected);
-      }
-    });
-  }
-
   function addCountTab() {
     if (traningType) {
       setEnabledButton(false);
@@ -93,23 +87,9 @@ const TraningPage = (props: TraningPageProps) => {
       setEnabledButton(true);
     }
 
-    setCountActiveTab(
-      setActiveTab,
-      setEnabledButton,
-      countActiveTab + 1,
-      props
-    );
+    setActiveTab(countActiveTab + 1);
   }
 
-  useEffect(() => {
-    if (!traningType) {
-      setEnabledButton(true);
-    }
-    if (traningType && !currentAnswers) {
-      setEnabledButton(false);
-    }
-  }, [traningType]);
-  
   const handleSelectChangeCallback = () => handleSelectChange(
     setEnabledButton,
     countActiveTab,
@@ -117,6 +97,9 @@ const TraningPage = (props: TraningPageProps) => {
     currentAnswers,
     props
   );
+
+  const handleRadioChangeCallback = () => handleRadioChange(handleSelectChangeCallback);
+  const handleCheckboxChangeCallback = () => handleCheckboxChange(handleSelectChangeCallback);
 
   const takeCountTabCallback = () => takeCountTab(
     setActiveTab,
@@ -127,22 +110,22 @@ const TraningPage = (props: TraningPageProps) => {
   );
 
   const tabs = [];
-
-  const ImageUrl = props.traning[countActiveTab]?.image
-    ? props.traning[countActiveTab].image
-    : undefined;
+  // const tabs = Array.from({ length: props.traning.length }, (_, index) => <div key={index} className="tab"></div>);
 
   for (let index = 0; index < props.traning.length; index++) {
     tabs.push(<div key={index} className="tab"></div>);
-  }
+  };
 
+  // -------------
   $('input[name="options"]')
     .off("change")
     .on("change", function () {
       const selectedElements = $('input[name="options"]:checked');
 
       if (selectedElements.length > 0) {
-        if ($("#send-answers__button").length === 0) {
+        const sendAnswerButton = document.querySelectorAll('#send-answers__button');
+
+        if (sendAnswerButton.length === 0) {
           createAnswerButton();
           answerButtonClick(
             setEnabledButton,
@@ -152,46 +135,29 @@ const TraningPage = (props: TraningPageProps) => {
             props
           );
         }
-      }
-
-      if (selectedElements.length === 0) {
+      } else { 
         removeAnswerButton();
       }
 
-      if (traningType === "checkbox") {
-        if ($(this).is(":checked")) {
-          $(this)
-            .parent()
-            .css("background-color", ANSWER_BUTTON_COLOR.selected);
-        } else {
-          $(this).parent().css("background-color", "");
-        }
-      }
     });
+  // -------------
 
   if (traningType === "radio") {
     currentAnswers
-      ? highlightAnswersRadio(
-        props.traning[countActiveTab].answers,
-        getUserAnswers()[countActiveTab + 1],
-      )
-      : handleRadioChange();
+      ? highlightAnswersRadio(props.traning[countActiveTab].answers, getUserAnswers()[countActiveTab + 1])
+      : handleRadioChangeCallback();
   }
 
 
-  if (traningType === "checkbox" && currentAnswers) {
-    highlightAnswersCheckbox(
-      props.traning[countActiveTab].answers,
-      currentAnswers,
-    )
+  if (traningType === "checkbox") {
+    currentAnswers
+      ? highlightAnswersCheckbox(props.traning[countActiveTab].answers, currentAnswers)
+      : handleCheckboxChangeCallback();
   }
 
   if (traningType === "select") {
-    currentAnswers  
-      ? highlightAnswersSelects(
-        props.traning[countActiveTab].answers,
-        currentAnswers
-      )
+    currentAnswers
+      ? highlightAnswersSelects(props.traning[countActiveTab].answers, currentAnswers)
       : document.querySelectorAll('select').forEach(select => select.addEventListener("change", handleSelectChangeCallback));
   }
 
@@ -231,18 +197,12 @@ const TraningPage = (props: TraningPageProps) => {
           )}
         </div>
 
-        <div
-          id="arrows"
-          className="d-flex w-100 justify-content-end "
-          style={arrows}
-        >
-          {isEnabledButton && countActiveTab > 0 && (
-            <ArrowLeft onClick={takeCountTabCallback} />
-          )}
-          {isEnabledButton && (
-            <ArrowRight id="" onClick={addCountTab} />
-          )}
-        </div>
+        <ArrowsField
+          addCountTab={addCountTab}
+          countActiveTab={countActiveTab}
+          isEnabledButton={isEnabledButton}
+          takeCountTabCallback={takeCountTabCallback}
+        />
       </TraningPageUI>
       <Tringle background="CFDEEE" />
     </>

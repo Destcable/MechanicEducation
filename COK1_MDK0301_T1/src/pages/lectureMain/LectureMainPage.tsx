@@ -8,7 +8,6 @@ import lectureMain from "../../content/lectures/lecture_main.json";
 
 function LectureMainPage() {
     const navigate = useNavigate();
-    console.log(123);
     return (
         <>
             <Header />

@@ -1,8 +1,8 @@
 import React from "react";
 import $ from "jquery";
-import createAnswerButton from "../../../components/JQuery/AnswerButton/createAnswerButton";
-import checkSelectsNotEmpty from "../../../components/JQuery/checkSelectsNotEmpty";
-import answerButtonClick from "./answerButtonClick";
+import createAnswerButton from "../../../../components/JQuery/AnswerButton/createAnswerButton";
+import checkSelectsNotEmpty from "../../../../components/JQuery/checkSelectsNotEmpty";
+import answerButtonClick from "../answerButtonClick";
 
 const handleSelectChange = (
     setEnabledButton: React.Dispatch<React.SetStateAction<boolean>>,
