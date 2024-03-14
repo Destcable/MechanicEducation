@@ -10,9 +10,7 @@ const App = () => {
     const [isAuth, setAuth] = useState(false);
     const [selectableTopic, setSelectableTopic] = useState<Theme | null>(null);
 
-    if (selectableTopic) { 
-        return <MainPage />
-    }
+    if (selectableTopic) return <MainPage dataTopic={selectableTopic}/>
 
     if (isAuth) return <SelectThemeContainer onThemeSelected={(data: Theme | null) => setSelectableTopic(data)}/>
     

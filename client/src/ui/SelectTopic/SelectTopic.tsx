@@ -1,20 +1,18 @@
 import Footer from "../../components/ui/footer/footer";
 import Tringle from "../../components/ui/tringle/tringle";
-import { Theme } from "../../interfaces/theme";
+import { Topic } from "../../interfaces/topic";
 import Button from "../Button/Button";
 
-
-
 interface ISelectThemeProps { 
-    themes: Theme[],
-    onClick: (data: Theme) => void
+    topics: Topic[],
+    onClick: (data: Topic) => void
 }
 
-const SelectTheme = (props: ISelectThemeProps) => { 
+const SelectTopic = (props: ISelectThemeProps) => { 
     return( 
         <>
         <div className="d-grid m-5 gap-4">
-            {props.themes.map((item, key) => 
+            {props.topics.map((item, key) => 
                 <Button 
                     key={key}
                     id={item.id}
@@ -31,4 +29,4 @@ const SelectTheme = (props: ISelectThemeProps) => {
     )
 };
 
-export default SelectTheme;
+export default SelectTopic;
