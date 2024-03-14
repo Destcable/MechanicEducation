@@ -1,10 +1,14 @@
+async function getThemes(_, args, context) { 
+    return await context.prisma.topicTheme.findMany();
+}
+
 async function topicThemes(_, args, context) { 
     const { topicId } = args;
-
+ 
     return await context.prisma.topicTheme.findMany({
         where: { topicId }
     })
-};
+}; 
 
 async function topicThemeById(_, args, context) {
     const { id } = args;
@@ -17,5 +21,6 @@ async function topicThemeById(_, args, context) {
 
 module.exports = { 
     topicThemes,
-    topicThemeById
+    topicThemeById,
+    getThemes
 };

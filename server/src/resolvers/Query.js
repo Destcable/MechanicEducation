@@ -1,10 +1,11 @@
 const { topics } = require("../models/Topic/resolvers/Query");
 const { topicHeader } = require("../models/TopicHeader/resolvers/Query");
-const { topicThemes, topicThemeById } = require("../models/TopicTheme/resolvers/Query");
+const { getThemes, topicThemes, topicThemeById } = require("../models/TopicTheme/resolvers/Query");
 
 module.exports = { 
-    topics, 
+    topics,
     topicHeader,
+    getThemes,
     topicThemes,
     topicThemeById
-};
+}; 
