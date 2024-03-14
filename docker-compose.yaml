@@ -8,6 +8,15 @@ services:
       - POSTGRES_PASSWORD=root
       - POSTGRES_USER=admin
     image: postgres:15.5
+
+  # server:
+  #   build:
+  #     context: ./server
+  #   ports:
+  #     - "4000:4000"
+  #   volumes:
+  #     - ./server:/app
+  #   restart: always
   # server:
   #   build:
   #     context: ./server
