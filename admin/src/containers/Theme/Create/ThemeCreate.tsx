@@ -24,6 +24,12 @@ const ThemeCreate = () => {
                     validate={required()} 
                     fullWidth 
                 />
+                <TextInput 
+                    source="description" 
+                    validate={required()} 
+                    multiline 
+                    fullWidth
+                />
             </SimpleForm>
         </Create>
     )
