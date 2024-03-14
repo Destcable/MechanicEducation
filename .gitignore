@@ -1,13 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/cok_1/node_modules
 /client/node_modules
-/cok_3/node_modules
-/COK1_MDK0301_T1/node_modules
-/COK_2_MDK0301_T2/node_modules
-/COK_2_SODERZHATELNOE_OPISANIE/node_modules
-/COK_3_SODERZHATELNOE_OPISANIE/node_modules
 server/node_modules
 admin/node_modules
 /.pnp
