@@ -8,6 +8,7 @@
 /COK_2_SODERZHATELNOE_OPISANIE/node_modules
 /COK_3_SODERZHATELNOE_OPISANIE/node_modules
 server/node_modules
+admin/node_modules
 /.pnp
 .pnp.js
 
