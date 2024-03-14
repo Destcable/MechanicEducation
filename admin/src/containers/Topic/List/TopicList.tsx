@@ -5,6 +5,7 @@ const TopicList = () => {
     return( 
         <List >
             <Datagrid>
+                <TextField source="id" />
                 <TextField source="name" />
             </Datagrid>
         </List>

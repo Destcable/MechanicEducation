@@ -16,7 +16,8 @@ const getList = (resource: string, _: any) => {
             query = GET_TOPICS; 
             break;
         case 'theme': 
-            query = GET_THEMES
+            query = GET_THEMES;
+            break;
     }
     
     return queryClient.query({

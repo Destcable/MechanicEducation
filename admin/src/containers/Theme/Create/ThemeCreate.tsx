@@ -1,11 +1,26 @@
-import { Create, SimpleForm, TextInput, required } from "react-admin";
+import { 
+    AutocompleteInput, 
+    ReferenceInput, 
+    SimpleForm, 
+    TextInput,
+    required, 
+    Create 
+} from "react-admin";
 
 const ThemeCreate = () => { 
     return( 
         <Create> 
             <SimpleForm>
+                <ReferenceInput source="topicId" reference="topic">
+                    <AutocompleteInput 
+                        source="topicId" 
+                        optionText="name" 
+                        validate={required()} 
+                        fullWidth
+                    />
+                </ReferenceInput>
                 <TextInput 
-                    source="name" 
+                    source="title" 
                     validate={required()} 
                     fullWidth 
                 />
