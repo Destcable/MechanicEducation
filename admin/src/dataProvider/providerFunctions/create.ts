@@ -15,7 +15,7 @@ const create = (resource: string, params: ICreateParams) => {
         case 'topic':
             mutation = TOPIC_CREATE;
             break;
-        case 'create':
+        case 'theme':
             mutation = THEME_CREATE;
             break;
     }
