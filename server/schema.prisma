@@ -1,0 +1,34 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Topic { 
+  id Int @id @default(autoincrement())
+  name String
+  headers TopicHeader[]
+  themes TopicTheme[]
+}
+
+model TopicHeader { 
+  id Int @id @default(autoincrement())
+  topicId Int @unique
+  settings Json 
+  topic Topic @relation(fields: [topicId], references: [id])
+}
+
+model TopicTheme {
+  id Int @id @default(autoincrement())
+  topicId Int
+  title String
+  description String
+  topic Topic @relation(fields: [topicId], references: [id])
+}
+
+model ThemeTask { 
+  id Int @id @default(autoincrement())
+}

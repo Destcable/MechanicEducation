@@ -1,5 +1,5 @@
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-import AuthForm from "../ui/AuthForm";
+import AuthForm from "../ui/AuthForm/AuthForm";
 import authService from '../services/authService';
 import { AuthFormData } from '../interfaces/auth';
 

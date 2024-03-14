@@ -1,0 +1,14 @@
+type Query {
+    topicHeader(topicId: Int!): TopicHeader!
+}
+
+type Mutation { 
+    updateTopicHeader(topicId: Int!, settings: String!): TopicHeader!
+}
+
+type TopicHeader { 
+    id: Int
+    topicId: Int
+    settings: JSON 
+    topic: Topic
+}

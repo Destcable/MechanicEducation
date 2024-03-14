@@ -19,7 +19,7 @@ const AuthForm = (props: IAuthFormProps) => (
         </div>
         
         <br />
-        <button type="submit" className="btn w-100 text-white" style={{backgroundColor: '#4f7094'}}>Войти</button>
+        <button type="submit" className="btn p-2 w-100 text-white" style={{backgroundColor: '#4f7094'}}>Войти</button>
     </form>
 )
 

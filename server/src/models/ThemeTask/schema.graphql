@@ -1,0 +1,9 @@
+enum ETypeTask {
+    LECTURE
+}
+
+type ThemeTask { 
+    id: Int
+    themeId: Int
+    taskType: ETypeTask
+}

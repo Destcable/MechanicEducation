@@ -7,6 +7,7 @@
 /COK_2_MDK0301_T2/node_modules
 /COK_2_SODERZHATELNOE_OPISANIE/node_modules
 /COK_3_SODERZHATELNOE_OPISANIE/node_modules
+server/node_modules
 /.pnp
 .pnp.js
 

@@ -1,0 +1,17 @@
+type Query {
+    topicThemes(topicId: Int!): [TopicTheme]!
+    topicThemeById(id: Int!): TopicTheme!
+}
+
+type Mutation {
+    createTopicTheme(topicId: Int!, title: String!, description: String!): TopicTheme!
+    deleteTopicTheme(id: Int!): TopicTheme!
+}
+
+type TopicTheme { 
+    id: Int
+    topicId: Int
+    title: String
+    description: String
+    topic: Topic
+}

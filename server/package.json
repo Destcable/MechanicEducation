@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "prisma-migrate": "npx prisma migrate dev",
+    "dbpush": "npx prisma db push"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.7.1",
+    "apollo-server": "^3.13.0",
+    "graphql": "^15.8.0",
+    "nodemon": "^3.0.2"
+  },
+  "devDependencies": {
+    "prisma": "^5.7.1"
+  }
+}
