@@ -1,10 +1,16 @@
 import { gql } from "@apollo/client";
 
 export const getList = gql`
-    query Topics {
-        data: topics {
+    query getThemes {
+        data: getThemes {
             id
-            name
+            title
+            description
+            topic {
+                id
+                name
+            }
+            topicId
         }
     }
 `;
