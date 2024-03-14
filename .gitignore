@@ -2,6 +2,7 @@
 
 # dependencies
 /cok_1/node_modules
+/client/node_modules
 /cok_3/node_modules
 /COK1_MDK0301_T1/node_modules
 /COK_2_MDK0301_T2/node_modules
