@@ -1,11 +1,9 @@
 import Footer from "../../components/ui/footer/footer";
 import Tringle from "../../components/ui/tringle/tringle";
+import { Theme } from "../../interfaces/theme";
 import Button from "../Button/Button";
 
-interface Theme {
-    id: string;
-    name: string;
-}
+
 
 interface ISelectThemeProps { 
     themes: Theme[],

@@ -14,7 +14,7 @@ interface CardProps {
 
 const Card = (CardObj: CardProps) => {
     const [modalActive, setModalActive] = useState(false);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const styleCard: CSSProperties = {
         marginBottom: "35px",
@@ -32,7 +32,7 @@ const Card = (CardObj: CardProps) => {
     }
 
     const handleClickGoPage = () => {
-        navigate(CardObj.href);
+        // navigate(CardObj.href);
     };
 
     return (
