@@ -32,7 +32,7 @@ const MainPage = (props: IMainPageProps) => {
                         <Card 
                             key={idx}
                             title={theme.title}
-                            description={data.description}
+                            description={theme.description}
                             lineName={"test"}
                             href={data.href}
                         />

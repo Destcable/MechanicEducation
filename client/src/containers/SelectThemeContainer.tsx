@@ -1,9 +1,9 @@
 import useQueryTopics from "../hooks/useQueryTopics";
 import SelectTopic from "../ui/SelectTopic/SelectTopic";
-import { Theme } from "../interfaces/theme";
+import { Topic } from "../interfaces/topic";
 
 interface ISelectThemeContainerProps { 
-    onThemeSelected: (data: Theme) => void
+    onTopicSelected: (data: Topic) => void
 }
 
 const SelectThemeContainer = (props: ISelectThemeContainerProps) => { 
@@ -11,7 +11,7 @@ const SelectThemeContainer = (props: ISelectThemeContainerProps) => {
 
     if (loading) return <h1>Loading...</h1>
 
-    if (data) return <SelectTopic topic={data} onClick={props.onThemeSelected} />
+    if (data) return <SelectTopic topics={data} onClick={props.onTopicSelected} />
 };
 
 export default SelectThemeContainer;
