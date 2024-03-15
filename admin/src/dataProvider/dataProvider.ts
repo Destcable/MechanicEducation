@@ -10,7 +10,7 @@ const dataProvider = {
     getList,
     // getOne,
     // deleteMany,
-    // // getMany,
+    getMany,
     // delete: deleteOne,
     create,
     // update

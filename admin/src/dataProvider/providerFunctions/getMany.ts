@@ -1,9 +1,19 @@
-import { GET_USERS_MANY } from "@gql/Users/GET_USERS_MANY";
 import queryClient from "../queryClient";
+import { DocumentNode } from "graphql";
+import { 
+    getMany as GET_MANY_TOPIC
+} from "../gql/topic";
 
-const getMany = (_: string, params: any) => { 
+const getMany = (resource: string, params: any) => { 
+    let query: DocumentNode;
+
+    switch (resource) {
+        case 'topic':
+            query = GET_MANY_TOPIC;
+            break;
+    }
     return queryClient.query({
-        query: GET_USERS_MANY,
+        query: query,
         variables: { ids: params.ids }
     }).then(data => {
         return {data: data.data.data }

@@ -1,4 +1,4 @@
-import { Datagrid, List, TextField } from "react-admin";
+import { Datagrid, List, TextField, ReferenceField} from "react-admin";
 
 const ThemeList = () => { 
     return( 
@@ -6,9 +6,9 @@ const ThemeList = () => {
             <Datagrid>
                 <TextField source="id"/>
                 <TextField source="title"/>
-                {/* <ReferenceField source="topicId" reference="topic">
-                    <TextField />
-                </ReferenceField> */}
+                <ReferenceField source="topicId" reference="topic">
+                    <TextField source="name"/>
+                </ReferenceField> 
             </Datagrid>
         </List>
     )

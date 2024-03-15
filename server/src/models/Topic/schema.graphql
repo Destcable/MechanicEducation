@@ -1,5 +1,6 @@
 type Query { 
     getListTopic: [Topic]!
+    getManyTopic(ids: [Int]!): [Topic]!
 }
 
 type Mutation { 
