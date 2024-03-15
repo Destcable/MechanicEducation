@@ -27,8 +27,12 @@ model TopicTheme {
   title String
   description String
   topic Topic @relation(fields: [topicId], references: [id])
+  tasks ThemeTask[]
 }
 
 model ThemeTask { 
-  id Int @id @default(autoincrement())
+  id        Int         @id @default(autoincrement())
+  title     String
+  theme     TopicTheme  @relation(fields: [themeId], references: [id])
+  themeId   Int
 }
