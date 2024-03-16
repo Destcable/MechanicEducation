@@ -7,6 +7,9 @@ import {
 import { 
     getList as GET_THEMES
 } from "../gql/theme";
+import { 
+    getList as GET_TASKS
+} from "../gql/task";
 
 const getList = (resource: string, _: any) => {
     let query: DocumentNode;
@@ -17,6 +20,9 @@ const getList = (resource: string, _: any) => {
             break;
         case 'theme': 
             query = GET_THEMES;
+            break;
+        case 'task':
+            query = GET_TASKS;
             break;
     }
     
