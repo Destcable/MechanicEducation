@@ -1,8 +1,10 @@
 import { AutocompleteInput, ReferenceInput, SelectInput, SimpleForm, TextInput, required } from "react-admin";
+import { RichTextInput } from 'ra-input-rich-text';
 
 enum eTask { 
     LECTURE = "LECTURE"
 };
+
 
 const TaskCreateFields = () => { 
     return(
@@ -28,6 +30,7 @@ const TaskCreateFields = () => {
                 validate={required()}
                 fullWidth
             />
+            <RichTextInput source="taskData" />
         </SimpleForm>
     )
 };
