@@ -7,6 +7,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum TypeTask { 
+  LECTURE
+}
+
 model Topic { 
   id Int @id @default(autoincrement())
   name String
@@ -33,6 +37,8 @@ model TopicTheme {
 model ThemeTask { 
   id        Int         @id @default(autoincrement())
   title     String
+  type      TypeTask
+  taskData  Json
   theme     TopicTheme  @relation(fields: [themeId], references: [id])
   themeId   Int
 }

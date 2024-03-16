@@ -1,6 +1,6 @@
 const { ApolloServer } = require('apollo-server');
 const { PrismaClient } = require('@prisma/client');
-const Query = require('./src/resolvers/Query');
+const Query = require('./src/models');
 const Mutation = require('./src/resolvers/Mutation');
 const { readAndConcatenateSchemas } = require('./src/utils/readAndConcatenateSchemas');
 const { schemaFilePaths } = require('./schemaFilePaths');
