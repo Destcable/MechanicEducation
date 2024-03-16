@@ -1,21 +1,10 @@
-import { Create, SelectInput, SimpleForm } from "react-admin";
-
-enum eTask { 
-   LECTURE = "LECTURE"
-}
+import { Create } from "react-admin";
+import TaskCreateFields from "./TaskCreateFields";
 
 const TaskCreate = () => { 
     return(
         <Create>
-            <SimpleForm>
-                <SelectInput 
-                    source="taskType"
-                    fullWidth
-                    choices={[
-                        { id: eTask.LECTURE, name: eTask.LECTURE }
-                    ]}
-                />
-            </SimpleForm>
+            <TaskCreateFields />
         </Create>
     )
 };
