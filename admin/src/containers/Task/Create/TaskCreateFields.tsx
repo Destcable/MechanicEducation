@@ -1,4 +1,4 @@
-import { AutocompleteInput, ReferenceInput, SelectInput, SimpleForm, required } from "react-admin";
+import { AutocompleteInput, ReferenceInput, SelectInput, SimpleForm, TextInput, required } from "react-admin";
 
 enum eTask { 
     LECTURE = "LECTURE"
@@ -9,19 +9,25 @@ const TaskCreateFields = () => {
         <SimpleForm>
             <SelectInput 
                 source="taskType"
+                validate={required()}
                 fullWidth
                 choices={[
                     { id: eTask.LECTURE, name: eTask.LECTURE }
                 ]}
             />
-            <ReferenceInput source="taskType" reference="topic">
+            <ReferenceInput source="themeId" reference="theme">
                 <AutocompleteInput 
-                    source="topicId" 
-                    optionText="name" 
+                    source="themeId" 
+                    optionText="title"
                     validate={required()} 
                     fullWidth
                 />
             </ReferenceInput>
+            <TextInput
+                source="title"
+                validate={required()}
+                fullWidth
+            />
         </SimpleForm>
     )
 };
