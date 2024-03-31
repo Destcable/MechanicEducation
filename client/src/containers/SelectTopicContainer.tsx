@@ -6,7 +6,7 @@ interface ISelectThemeContainerProps {
     onTopicSelected: (data: Topic) => void
 }
 
-const SelectThemeContainer = (props: ISelectThemeContainerProps) => { 
+const SelectTopicContainer = (props: ISelectThemeContainerProps) => { 
     const { data, loading } = useQueryTopics();
 
     if (loading) return <h1>Loading...</h1>
@@ -14,4 +14,4 @@ const SelectThemeContainer = (props: ISelectThemeContainerProps) => {
     if (data) return <SelectTopic topics={data} onClick={props.onTopicSelected} />
 };
 
-export default SelectThemeContainer;
+export default SelectTopicContainer;

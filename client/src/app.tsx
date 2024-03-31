@@ -2,7 +2,7 @@ import { useState } from "react";
 import getStorageAuth from "./services/getStorageAuth";
 import authService from "./services/authService";
 import AuthFormContainer from "./containers/AuthFormContainer";
-import SelectThemeContainer from "./containers/SelectThemeContainer";
+import SelectTopicContainer from "./containers/SelectTopicContainer";
 import MainPage from "./pages/main/mainPage";
 import { Topic } from "./interfaces/topic";
 
@@ -13,7 +13,7 @@ const App = () => {
     if (selectableTopic) return <MainPage dataTopic={selectableTopic}/>
 
     // @ts-ignore
-    if (isAuth) return <SelectThemeContainer onTopicSelected={(data: Topic | null) => setSelectableTopic(data)}/>
+    if (isAuth) return <SelectTopicContainer onTopicSelected={(data: Topic | null) => setSelectableTopic(data)}/>
     
     if (!isAuth) {
         const { login, password } = getStorageAuth();
