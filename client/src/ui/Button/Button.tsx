@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 
 interface IButtonProps { 
-    id: string, 
+    id?: string, 
     className: string, 
-    onClick: () => void, 
+    onClick?: () => void, 
     children: ReactNode
 };
 
