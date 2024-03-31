@@ -5,13 +5,14 @@ import AuthFormContainer from "./containers/AuthFormContainer";
 import SelectTopicContainer from "./containers/SelectTopicContainer";
 import MainPage from "./pages/main/mainPage";
 import { Topic } from "./interfaces/topic";
+import SelectThemeContainer from "./containers/SelectThemeContainer";
 
 const App = () => { 
     const [isAuth, setAuth] = useState(false);
     const [selectableTopic, setSelectableTopic] = useState(null);
     const [selectableTheme, setSelectableTheme] = useState(null);
 
-    if (selectableTheme) return <h1>123</h1>;
+    if (selectableTheme) return <SelectThemeContainer />;
     
     if (selectableTopic) return <MainPage dataTopic={selectableTopic} onThemeSelected={(data: any) => setSelectableTheme(data)}/>
 
