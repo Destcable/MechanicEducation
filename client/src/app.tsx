@@ -9,8 +9,11 @@ import { Topic } from "./interfaces/topic";
 const App = () => { 
     const [isAuth, setAuth] = useState(false);
     const [selectableTopic, setSelectableTopic] = useState(null);
+    const [selectableTheme, setSelectableTheme] = useState(null);
 
-    if (selectableTopic) return <MainPage dataTopic={selectableTopic}/>
+    if (selectableTheme) return <h1>123</h1>;
+    
+    if (selectableTopic) return <MainPage dataTopic={selectableTopic} onThemeSelected={(data: any) => setSelectableTheme(data)}/>
 
     // @ts-ignore
     if (isAuth) return <SelectTopicContainer onTopicSelected={(data: Topic | null) => setSelectableTopic(data)}/>

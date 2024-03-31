@@ -9,6 +9,7 @@ import useQueryTopicThemes from '../../hooks/useQueryTopicThemes';
 
 interface IMainPageProps { 
     dataTopic: Theme
+    onThemeSelected: (data: any) => void
 }
 
 const MainPage = (props: IMainPageProps) => {
@@ -34,6 +35,7 @@ const MainPage = (props: IMainPageProps) => {
                             description={theme.description}
                             lineName={"test"}
                             href={data.href}
+                            onClick={props.onThemeSelected}
                         />
                     ))}
                 </div>
