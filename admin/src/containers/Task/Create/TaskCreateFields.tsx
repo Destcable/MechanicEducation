@@ -10,7 +10,7 @@ const TaskCreateFields = () => {
     return(
         <SimpleForm>
             <SelectInput 
-                source="taskType"
+                source="type"
                 validate={required()}
                 fullWidth
                 choices={[
@@ -30,7 +30,7 @@ const TaskCreateFields = () => {
                 validate={required()}
                 fullWidth
             />
-            <RichTextInput source="taskData" />
+            <RichTextInput source="dataLecture" />
         </SimpleForm>
     )
 };

@@ -4,8 +4,8 @@ export const getList = gql`
     query GetListThemeTask {
         data: getListThemeTask {
             id
-            taskData
-            taskType
+            dataLecture
+            type
             themeId
         }
     }

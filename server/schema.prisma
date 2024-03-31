@@ -38,7 +38,7 @@ model ThemeTask {
   id        Int         @id @default(autoincrement())
   title     String
   type      TypeTask
-  taskData  Json
+  dataLecture  String
   theme     TopicTheme  @relation(fields: [themeId], references: [id])
   themeId   Int
 }

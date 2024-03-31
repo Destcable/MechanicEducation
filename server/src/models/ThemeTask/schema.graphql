@@ -2,13 +2,18 @@ type Query {
     getListThemeTask: [ThemeTask]!
 }
 
+type Mutation { 
+    createThemeTask(type: ETypeTask, themeId: Int!, title: String, dataLecture: String ): ThemeTask!
+}
+
 enum ETypeTask {
     LECTURE
 }
 
 type ThemeTask { 
     id: Int
+    title: String
     themeId: Int
-    taskType: ETypeTask
-    taskData: JSON
+    type: ETypeTask
+    dataLecture: String
 }

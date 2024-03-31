@@ -48,10 +48,24 @@ async function createTopicTheme(_, args, context) {
             description
         }
     })
-}
+};
+
+async function createThemeTask(_,args, context) { 
+    const { type, themeId, title, dataLecture } = args;
+
+    return await context.prisma.themeTask.create({
+        data: { 
+            type,
+            themeId,
+            title,
+            dataLecture,
+        }
+    });
+};
 
 module.exports = { 
     createTopic, 
     deleteTopic,
     createTopicTheme,
+    createThemeTask
 }

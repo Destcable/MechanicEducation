@@ -7,6 +7,9 @@ import {
 import { 
     create as THEME_CREATE 
 } from "../gql/theme";
+import { 
+    create as TASK_CREATE 
+} from "../gql/task";
 
 const create = (resource: string, params: ICreateParams) => { 
     let mutation: DocumentNode;
@@ -17,6 +20,9 @@ const create = (resource: string, params: ICreateParams) => {
             break;
         case 'theme':
             mutation = THEME_CREATE;
+            break;
+        case 'task':
+            mutation = TASK_CREATE;
             break;
     }
 
