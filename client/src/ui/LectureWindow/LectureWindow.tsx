@@ -17,11 +17,11 @@ const LectureWindow = (props: TraningPageProps) => {
                             <p className="container_header container_title">{props.title}</p>
                             <div className="container-exercise w-100">
 
-                                <p className="text-zadanie w-100 fs-6">
+                                <div className="text-zadanie w-100 fs-6">
                                     <div className="d-flex container-filling align-center justify-content-center fw-light w-100">
                                         {props.children}
                                     </div>
-                                </p>
+                                </div>
 
                             </div>
                         </div>
