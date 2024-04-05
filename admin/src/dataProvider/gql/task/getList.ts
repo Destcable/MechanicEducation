@@ -7,6 +7,7 @@ export const getList = gql`
             dataLecture
             type
             themeId
+            title
         }
     }
 `;
