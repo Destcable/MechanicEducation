@@ -12,12 +12,18 @@ const App = () => {
     const [selectableTheme, setSelectableTheme] = useState(null);
     const [selectableTask, setSelectableTask] = useState(null);
 
-    if (selectableTask) return <h1>Task</h1>
+    if (selectableTask) { 
+        return <h1>Task</h1>
+    }
     
-    if (selectableTheme) return <SelectTaskContainer />;
+    if (selectableTheme) {
+        return <SelectTaskContainer 
+            dataTheme={selectableTheme}
+        />
+    }
     
     if (selectableTopic) return <SelectThemeContainer 
-        dataTopic={selectableTopic} 
+        dataTopic={selectableTopic}
         onThemeSelected={(data: any) => setSelectableTheme(data)}
     />
 

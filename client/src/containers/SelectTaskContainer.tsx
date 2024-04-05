@@ -1,9 +1,13 @@
-import useQueryThemeTasks from "../hooks/useQueryThemeTasks";
+import { useQueryManyThemeTasks } from "../hooks/useQueryThemeTasks";
 import SelectTask from "../ui/SelectTask/SelectTask";
 
-const SelectTaskContainer = () => { 
-    const { data, loading } = useQueryThemeTasks();
+interface ISelectTaskContainerProps { 
+    dataTheme: any
+};
 
+const SelectTaskContainer = (props: ISelectTaskContainerProps) => { 
+    const { data, loading } = useQueryManyThemeTasks(props.dataTheme?.id);
+    
     if (loading) return <h1>Loading...</h1>
 
     if (data) return <SelectTask tasks={data}/>

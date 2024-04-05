@@ -35,7 +35,7 @@ const SelectThemeContainer = (props: IMainPageProps) => {
                             description={theme.description}
                             lineName={"test"}
                             href={data.href}
-                            onClick={props.onThemeSelected}
+                            onClick={() => props.onThemeSelected(theme)}
                         />
                     ))}
                 </div>

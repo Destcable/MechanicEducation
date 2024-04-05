@@ -11,3 +11,15 @@ query GetListThemeTask {
     }
   }
 `;
+
+export const GET_MANY_TASKS = gql`
+query GetManyThemeTask($themeId: Int!) {
+  data: getManyThemeTask(themeId: $themeId) {
+    id
+    dataLecture
+    title
+    themeId
+    type
+  }
+}
+`;
