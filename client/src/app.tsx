@@ -10,7 +10,10 @@ const App = () => {
     const [isAuth, setAuth] = useState(false);
     const [selectableTopic, setSelectableTopic] = useState(null);
     const [selectableTheme, setSelectableTheme] = useState(null);
+    const [selectableTask, setSelectableTask] = useState(null);
 
+    if (selectableTask) return <h1>Task</h1>
+    
     if (selectableTheme) return <SelectTaskContainer />;
     
     if (selectableTopic) return <SelectThemeContainer 

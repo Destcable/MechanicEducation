@@ -1,5 +1,7 @@
 type Query { 
     getListThemeTask: [ThemeTask]!
+    getManyThemeTask(themeId: Int!): [ThemeTask]
+    getOneThemeTask(id: Int!): ThemeTask
 }
 
 type Mutation { 
