@@ -1,25 +1,25 @@
 import { gql } from '@apollo/client';
 
 export const GET_TASKS = gql`
-query GetListThemeTask {
-    data: getListThemeTask {
-      id
-      title
-      themeId
-      type
-      dataLecture
-    }
+query GetListThemeTask($themeId: Int) {
+  data: getListThemeTask(themeId: $themeId) {
+    dataLecture
+    themeId
+    id
+    title
+    type
   }
+}
 `;
 
 export const GET_MANY_TASKS = gql`
-query GetManyThemeTask($themeId: Int!) {
-  data: getManyThemeTask(themeId: $themeId) {
+query GetManyThemeTask($ids: [Int]!) {
+  data: getManyThemeTask(ids: $ids) {
     id
-    dataLecture
-    title
     themeId
+    title
     type
+    dataLecture
   }
 }
 `;

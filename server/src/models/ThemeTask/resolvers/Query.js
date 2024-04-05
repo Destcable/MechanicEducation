@@ -1,7 +1,11 @@
 const convertToNumbers = require("../../../utils/convertToNumbers");
 
-async function getListThemeTask(_, _, context) {
-    return await context.prisma.themeTask.findMany();
+async function getListThemeTask(_, args, context) {
+    const { themeId } = args;
+
+    return await context.prisma.themeTask.findMany({ 
+        where: { themeId }
+    });
 };
 
 async function getManyThemeTask(_, args, context) { 

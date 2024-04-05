@@ -1,8 +1,11 @@
 import { useQuery } from "@apollo/client";
 import { GET_MANY_TASKS, GET_TASKS } from "./gql/queryTasks";
 
-export const useQueryListThemeTasks = () => { 
-    const { data, loading } = useQuery(GET_TASKS);
+export const useQueryListThemeTasks = (themeId: number) => { 
+    console.log(themeId);
+    const { data, loading } = useQuery(GET_TASKS, { 
+        variables: { themeId }
+    });
 
     return {
         data: data ? data.data : null, 
@@ -10,9 +13,9 @@ export const useQueryListThemeTasks = () => {
     };
 };
 
-export const useQueryManyThemeTasks = (themeId: number) => { 
+export const useQueryManyThemeTasks = (ids: [number]) => { 
     const { data, loading } = useQuery(GET_MANY_TASKS, { 
-        variables: { themeId }
+        variables: { ids }
     });
 
     return { 
