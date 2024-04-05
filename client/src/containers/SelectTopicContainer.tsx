@@ -1,9 +1,8 @@
 import useQueryTopics from "../hooks/useQueryTopics";
 import SelectTopic from "../ui/SelectTopic/SelectTopic";
-import { Topic } from "../interfaces/topic";
 
 interface ISelectThemeContainerProps { 
-    onTopicSelected: (data: Topic) => void
+    onTopicSelected: (data: any) => void
 }
 
 const SelectTopicContainer = (props: ISelectThemeContainerProps) => { 

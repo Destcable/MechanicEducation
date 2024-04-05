@@ -3,9 +3,8 @@ import getStorageAuth from "./services/getStorageAuth";
 import authService from "./services/authService";
 import AuthFormContainer from "./containers/AuthFormContainer";
 import SelectTopicContainer from "./containers/SelectTopicContainer";
-import MainPage from "./pages/main/mainPage";
-import { Topic } from "./interfaces/topic";
 import SelectTaskContainer from "./containers/SelectTaskContainer";
+import SelectThemeContainer from "./containers/SelectThemeContainer";
 
 const App = () => { 
     const [isAuth, setAuth] = useState(false);
@@ -14,10 +13,9 @@ const App = () => {
 
     if (selectableTheme) return <SelectTaskContainer />;
     
-    if (selectableTopic) return <MainPage dataTopic={selectableTopic} onThemeSelected={(data: any) => setSelectableTheme(data)}/>
+    if (selectableTopic) return <SelectThemeContainer dataTopic={selectableTopic} onThemeSelected={(data: any) => setSelectableTheme(data)}/>
 
-    // @ts-ignore
-    if (isAuth) return <SelectTopicContainer onTopicSelected={(data: Topic | null) => setSelectableTopic(data)}/>
+    if (isAuth) return <SelectTopicContainer onTopicSelected={(data: any) => setSelectableTopic(data)}/>
     
     if (!isAuth) {
         const { login, password } = getStorageAuth();

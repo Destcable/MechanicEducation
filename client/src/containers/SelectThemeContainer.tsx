@@ -1,18 +1,18 @@
-import Header from '../../components/ui/Header/Header';
-import Card from '../../components/ui/Card/card';
-import Tringle from '../../components/ui/tringle/tringle';
-import Footer from '../../components/ui/footer/footer';
+import Header from '../components/ui/Header/Header';
+import Card from '../components/ui/Card/card';
+import Tringle from '../components/ui/tringle/tringle';
+import Footer from '../components/ui/footer/footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { CSSProperties } from 'react';
-import { Theme } from '../../interfaces/theme';
-import useQueryTopicThemes from '../../hooks/useQueryTopicThemes';
+import { Theme } from '../interfaces/theme';
+import useQueryTopicThemes from '../hooks/useQueryTopicThemes';
 
 interface IMainPageProps { 
     dataTopic: Theme
     onThemeSelected: (data: any) => void
 }
 
-const SelectTheme = (props: IMainPageProps) => {
+const SelectThemeContainer = (props: IMainPageProps) => {
     const { data } = useQueryTopicThemes(props.dataTopic?.id);
 
     const mainBlock: CSSProperties = { 
@@ -48,4 +48,4 @@ const SelectTheme = (props: IMainPageProps) => {
     }
 }
 
-export default SelectTheme;
+export default SelectThemeContainer;
