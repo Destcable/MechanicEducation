@@ -1,7 +1,7 @@
 import Header from '../components/ui/Header/Header';
 import Card from '../components/ui/Card/card';
 import Tringle from '../components/ui/tringle/tringle';
-import Footer from '../components/ui/footer/footer';
+import Footer from '../components/ui/footer/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { CSSProperties } from 'react';
 import { Theme } from '../interfaces/theme';

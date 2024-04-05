@@ -5,6 +5,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ModalGetFromContent, ModalGetKeyWords } from '../../../content/modals/ModalsData';
 import { Title } from '../../../config';
+import FlexBetween from '../../../ui/Semantic/FlexBetween';
 
 interface HeaderProps {
     loading?: boolean
@@ -48,14 +49,14 @@ const Header = (HeaderObj: HeaderProps) => {
         <header className="d-flex flex-column align-items-center w-100" style={styleHeader}>
             <div className="container d-flex flex-row">
                 <div className="position-absolute mt-4" style={styleLogo}>
-                    {HeaderObj.loading ? <Skeleton circle width={60} height={57} containerClassName="avatar-skeleton" /> 
-                                        : <Logo /> }
+                    {HeaderObj.loading ? <Skeleton circle width={60} height={57} containerClassName="avatar-skeleton" />
+                        : <Logo />}
                 </div>
                 <div className="d-flex flex-column w-100" style={ml90}>
-                    <div className="d-flex flex-wrap w-100 justify-content-between">
+                    <FlexBetween className="flex-wrap w-100">
                         <div className="pt-2">
-                            {HeaderObj.loading ? <Skeleton width={312} height={38}  /> 
-                                                : <h2 className="text-white">{Title}</h2>}
+                            {HeaderObj.loading ? <Skeleton width={312} height={38} />
+                                : <h2 className="text-white">{Title}</h2>}
                         </div>
                         <div className="d-flex align-items-center mt-10">
                             <a href='#'
@@ -71,12 +72,12 @@ const Header = (HeaderObj: HeaderProps) => {
                                 Ключевые слова
                             </a>
                         </div>
-                    </div>
+                    </FlexBetween>
                     <div>
                         <h3 className='position-absolute fw-bold'
                             style={styleSubtitle}>
-                                {HeaderObj.loading ? <Skeleton width={709} height={24} containerClassName="avatar-skeleton" />
-                                                    : "Выбор оборудования, инструмента и технологической оснастки"}
+                            {HeaderObj.loading ? <Skeleton width={709} height={24} containerClassName="avatar-skeleton" />
+                                : "Выбор оборудования, инструмента и технологической оснастки"}
                         </h3>
                     </div>
                 </div>

@@ -1,9 +1,10 @@
 import { CSSProperties } from "react";
 import Header from "../../components/ui/Header/Header";
-import Footer from "../../components/ui/footer/footer";
+import Footer from "../../components/ui/footer/Footer";
 import Tringle from "../../components/ui/tringle/tringle";
-import Button from "../Button/Button";
+import Button from "../Elements/Button/Button";
 import { Task } from "../../interfaces/task";
+import FlexBetween from "../Semantic/FlexBetween";
 
 interface ISelectTaskProps {
     tasks: Task[]
@@ -21,17 +22,20 @@ const SelectTask = (props: ISelectTaskProps) => {
             <Header />
             <div className="d-flex justify-content-center flex-wrap" style={mainBlock}>
                 {props.tasks.map((item, idx) =>
-                    <div key={idx} className="d-flex align-items-center w-50 justify-content-between border rounded-3 p-2 mb-3">
+                    <FlexBetween
+                        key={idx}
+                        className="align-items-center w-50 border rounded-3 p-2 mb-3"
+                    >
                         {item.type === "LECTURE" &&
-                            <span>ЛЕКЦИЯ</span> 
+                            <span>ЛЕКЦИЯ</span>
                         }
                         <span>{item.title}</span>
                         <div>
-                            <Button 
+                            <Button
                                 className='text-white w-100 p-1'
                                 onClick={() => props.onClick(item)}>Пройти</Button>
                         </div>
-                    </div>
+                    </FlexBetween>
                 )}
             </div>
 

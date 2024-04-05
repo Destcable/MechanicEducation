@@ -1,7 +1,7 @@
-import Footer from "../../components/ui/footer/footer";
+import Footer from "../../components/ui/footer/Footer";
 import Tringle from "../../components/ui/tringle/tringle";
 import { Topic } from "../../interfaces/topic";
-import Button from "../Button/Button";
+import Button from "../Elements/Button/Button";
 
 interface ISelectThemeProps {
     topics: Topic[],

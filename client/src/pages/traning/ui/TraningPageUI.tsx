@@ -1,6 +1,7 @@
 import { ReactNode } from "react"
 import Header from "../../../components/ui/Header/Header"
 import HomeButton from "../../../components/ui/homeButton/homeButton"
+import FlexBetween from "../../../ui/Semantic/FlexBetween"
 
 interface TraningPageUIProps {
     title: string,
@@ -11,7 +12,7 @@ interface TraningPageUIProps {
 }
 
 export default function TraningPageUI(props: TraningPageUIProps) {
-    
+
     return (
         <>
             <Header />
@@ -21,12 +22,14 @@ export default function TraningPageUI(props: TraningPageUIProps) {
                         <HomeButton href="/" />
                         <div className="container1">
                             <div className="container_header">
-                                <div className="d-flex align-items-center justify-content-between">
+                                <FlexBetween
+                                    className="align-items-center"
+                                >
                                     <p className="container_title">Динамическая инфографика</p>
                                     <p className="text-white pe-3">
                                         {`${props.countTab + 1} / ` + props.lengthTabs}
                                     </p>
-                                </div>
+                                </FlexBetween>
                                 <div className="d-flex tab-exercise-container">
                                     {props.tabs}
                                     {/* <div className="active_tab"></div> */}
@@ -35,10 +38,10 @@ export default function TraningPageUI(props: TraningPageUIProps) {
                             <div className="container-exercise w-100">
 
 
-                                    <p className="text-zadanie w-100 fs-6">
-                                        {props.title}
-                                        {props.children}
-                                    </p>
+                                <p className="text-zadanie w-100 fs-6">
+                                    {props.title}
+                                    {props.children}
+                                </p>
 
                             </div>
                         </div>
