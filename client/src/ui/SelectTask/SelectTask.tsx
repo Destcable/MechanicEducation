@@ -7,6 +7,7 @@ import { Task } from "../../interfaces/task";
 
 interface ISelectTaskProps {
     tasks: Task[]
+    onClick: (data: any) => void
 }
 
 const SelectTask = (props: ISelectTaskProps) => {
@@ -19,14 +20,16 @@ const SelectTask = (props: ISelectTaskProps) => {
         <>
             <Header />
             <div className="d-flex justify-content-center flex-wrap" style={mainBlock}>
-                {props.tasks.map((item) =>
-                    <div className="d-flex align-items-center w-50 justify-content-between border rounded-3 p-2">
+                {props.tasks.map((item, idx) =>
+                    <div key={idx} className="d-flex align-items-center w-50 justify-content-between border rounded-3 p-2">
                         {item.type === "LECTURE" &&
                             <span>ЛЕКЦИЯ</span> 
                         }
                         <span>{item.title}</span>
                         <div>
-                            <Button className='text-white w-100 p-1'>Пройти</Button>
+                            <Button 
+                                className='text-white w-100 p-1'
+                                onClick={() => props.onClick(item)}>Пройти</Button>
                         </div>
                     </div>
                 )}
