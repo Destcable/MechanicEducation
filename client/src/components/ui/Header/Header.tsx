@@ -49,14 +49,12 @@ const Header = (HeaderObj: HeaderProps) => {
         <header className="d-flex flex-column align-items-center w-100" style={styleHeader}>
             <div className="container d-flex flex-row">
                 <div className="position-absolute mt-4" style={styleLogo}>
-                    {HeaderObj.loading ? <Skeleton circle width={60} height={57} containerClassName="avatar-skeleton" />
-                        : <Logo />}
+                    <Logo />
                 </div>
                 <div className="d-flex flex-column w-100" style={ml90}>
                     <FlexBetween className="flex-wrap w-100">
-                        <div className="pt-2">
-                            {HeaderObj.loading ? <Skeleton width={312} height={38} />
-                                : <h2 className="text-white">{Title}</h2>}
+                        <div className="pt-3">
+                            <h3 className="text-white">{Title}</h3>
                         </div>
                         <div className="d-flex align-items-center mt-10">
                             <a href='#'

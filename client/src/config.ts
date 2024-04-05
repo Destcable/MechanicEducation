@@ -1,4 +1,4 @@
-export const Title = "Машиностроение";
+export const Title = "Цифровой образовательный контент";
 export const FirebaseURL = "gs://mechaniceducation-bebac.appspot.com";
 export const FirebaseConfig = {
     apiKey: "AIzaSyDk8eyLT_mYVjMvPvmMsT5WpJnr0p4jDas",

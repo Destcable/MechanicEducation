@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import { AutocompleteInput, ReferenceInput, SelectInput, SimpleForm, TextInput, required } from "react-admin";
+import React, { useState } from 'react';
+import { ArrayInput, AutocompleteInput, BooleanInput, ReferenceInput, SelectInput, SimpleForm, SimpleFormIterator, TextInput, required } from "react-admin";
 import { RichTextInput } from 'ra-input-rich-text';
 
-enum eTask { 
+enum eTask {
     LECTURE = "LECTURE",
-    TASK = "TASK"
+    QUIZ = "QUIZ"
 };
 
-const TaskCreateFields = () => { 
+const TaskCreateFields = () => {
     const [type, setType] = useState('');
 
     const handleTypeChange = (event: any) => {
@@ -16,21 +16,21 @@ const TaskCreateFields = () => {
 
     return (
         <SimpleForm>
-            <SelectInput 
+            <SelectInput
                 source="type"
                 validate={required()}
                 fullWidth
                 choices={[
                     { id: eTask.LECTURE, name: eTask.LECTURE },
-                    { id: eTask.TASK, name: eTask.TASK }
+                    { id: eTask.QUIZ, name: eTask.QUIZ }
                 ]}
                 onChange={handleTypeChange}
             />
             <ReferenceInput source="themeId" reference="theme">
-                <AutocompleteInput 
-                    source="themeId" 
+                <AutocompleteInput
+                    source="themeId"
                     optionText="title"
-                    validate={required()} 
+                    validate={required()}
                     fullWidth
                 />
             </ReferenceInput>
@@ -40,7 +40,18 @@ const TaskCreateFields = () => {
                 fullWidth
             />
             {type === eTask.LECTURE && <RichTextInput source="dataLecture" />}
-            {type === eTask.TASK && <TextInput source='TaskData'/>}
+
+            {type === eTask.QUIZ &&
+                <>
+                    <TextInput source='quizTitle'/>
+                    <ArrayInput source="dataQuiz" label="Options">
+                        <SimpleFormIterator>
+                            <TextInput source="title" />
+                            <BooleanInput source="isCorrect" />
+                        </SimpleFormIterator>
+                    </ArrayInput>
+                </>
+            }
         </SimpleForm>
     );
 };

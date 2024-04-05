@@ -1,3 +1,8 @@
+enum ETypeTask {
+    LECTURE
+    QUIZ
+}
+
 type Query { 
     getListThemeTask(themeId: Int): [ThemeTask]!
     getManyThemeTask(ids: [Int]!): [ThemeTask]
@@ -5,11 +10,7 @@ type Query {
 }
 
 type Mutation { 
-    createThemeTask(type: ETypeTask, themeId: Int!, title: String, dataLecture: String ): ThemeTask!
-}
-
-enum ETypeTask {
-    LECTURE
+    createThemeTask(type: ETypeTask!, themeId: Int!, title: String!, quizTitle: String, dataLecture: String, dataQuiz:JSON ): ThemeTask!
 }
 
 type ThemeTask { 
@@ -17,5 +18,7 @@ type ThemeTask {
     title: String
     themeId: Int
     type: ETypeTask
+    quizTitle: String
     dataLecture: String
+    dataQuiz: JSON
 }

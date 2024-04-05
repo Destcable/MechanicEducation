@@ -2,7 +2,6 @@ import { useQuery } from "@apollo/client";
 import { GET_MANY_TASKS, GET_TASKS } from "./gql/queryTasks";
 
 export const useQueryListThemeTasks = (themeId: number) => { 
-    console.log(themeId);
     const { data, loading } = useQuery(GET_TASKS, { 
         variables: { themeId }
     });

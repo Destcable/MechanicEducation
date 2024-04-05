@@ -4,6 +4,8 @@ export const GET_TASKS = gql`
 query GetListThemeTask($themeId: Int) {
   data: getListThemeTask(themeId: $themeId) {
     dataLecture
+    dataQuiz
+    quizTitle
     themeId
     id
     title

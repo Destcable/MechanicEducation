@@ -9,6 +9,7 @@ datasource db {
 
 enum TypeTask { 
   LECTURE
+  QUIZ
 }
 
 model Topic { 
@@ -35,10 +36,12 @@ model TopicTheme {
 }
 
 model ThemeTask { 
-  id        Int         @id @default(autoincrement())
-  title     String
-  type      TypeTask
-  dataLecture  String
-  theme     TopicTheme  @relation(fields: [themeId], references: [id])
-  themeId   Int
+  id            Int         @id @default(autoincrement())
+  title         String
+  type          TypeTask
+  quizTitle     String?
+  dataLecture   String?
+  dataQuiz      Json?
+  theme         TopicTheme  @relation(fields: [themeId], references: [id])
+  themeId       Int
 }

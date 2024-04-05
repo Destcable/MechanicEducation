@@ -7,7 +7,6 @@ interface ISelectTaskContainerProps {
 };
 
 const SelectTaskContainer = (props: ISelectTaskContainerProps) => { 
-    console.log(props.dataTheme);
     const { data, loading } = useQueryListThemeTasks(props.dataTheme?.id);
 
     if (loading) return <h1>Loading...</h1>
