@@ -5,11 +5,11 @@ import Tringle from "../../components/ui/tringle/tringle";
 import Button from "../Button/Button";
 import { Task } from "../../interfaces/task";
 
-interface ISelectThemeProps {
+interface ISelectTaskProps {
     tasks: Task[]
 }
 
-const SelectTheme = (props: ISelectThemeProps) => {
+const SelectTask = (props: ISelectTaskProps) => {
     const mainBlock: CSSProperties = {
         marginTop: "150px",
         columnGap: "90px"
@@ -38,4 +38,4 @@ const SelectTheme = (props: ISelectThemeProps) => {
     );
 };
 
-export default SelectTheme;
+export default SelectTask;
