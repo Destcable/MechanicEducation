@@ -13,9 +13,14 @@ const App = () => {
 
     if (selectableTheme) return <SelectTaskContainer />;
     
-    if (selectableTopic) return <SelectThemeContainer dataTopic={selectableTopic} onThemeSelected={(data: any) => setSelectableTheme(data)}/>
+    if (selectableTopic) return <SelectThemeContainer 
+        dataTopic={selectableTopic} 
+        onThemeSelected={(data: any) => setSelectableTheme(data)}
+    />
 
-    if (isAuth) return <SelectTopicContainer onTopicSelected={(data: any) => setSelectableTopic(data)}/>
+    if (isAuth) return <SelectTopicContainer 
+        onTopicSelected={(data: any) => setSelectableTopic(data)}
+    />
     
     if (!isAuth) {
         const { login, password } = getStorageAuth();
