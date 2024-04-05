@@ -6,12 +6,13 @@ import SelectTopicContainer from "./containers/SelectTopicContainer";
 import SelectTaskContainer from "./containers/SelectTaskContainer";
 import SelectThemeContainer from "./containers/SelectThemeContainer";
 import LectureWindowContainer from "./containers/LectureWindowContainer";
+
 const App = () => { 
     const [isAuth, setAuth] = useState(false);
     const [selectableTopic, setSelectableTopic] = useState(null);
     const [selectableTheme, setSelectableTheme] = useState(null);
     const [selectableTask, setSelectableTask] = useState(null);
-
+    
     if (selectableTask) return <LectureWindowContainer dataTask={selectableTask}/>
 
     if (selectableTheme) {

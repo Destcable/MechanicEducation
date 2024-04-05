@@ -21,7 +21,7 @@ const SelectTask = (props: ISelectTaskProps) => {
             <Header />
             <div className="d-flex justify-content-center flex-wrap" style={mainBlock}>
                 {props.tasks.map((item, idx) =>
-                    <div key={idx} className="d-flex align-items-center w-50 justify-content-between border rounded-3 p-2">
+                    <div key={idx} className="d-flex align-items-center w-50 justify-content-between border rounded-3 p-2 mb-3">
                         {item.type === "LECTURE" &&
                             <span>ЛЕКЦИЯ</span> 
                         }
