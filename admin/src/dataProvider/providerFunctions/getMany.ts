@@ -3,6 +3,9 @@ import { DocumentNode } from "graphql";
 import { 
     getMany as GET_MANY_TOPIC
 } from "../gql/topic";
+import { 
+    getMany as GET_MANY_THEME
+} from "../gql/theme";
 
 const getMany = (resource: string, params: any) => { 
     let query: DocumentNode;
@@ -10,6 +13,9 @@ const getMany = (resource: string, params: any) => {
     switch (resource) {
         case 'topic':
             query = GET_MANY_TOPIC;
+            break;
+        case 'theme': 
+            query = GET_MANY_THEME
             break;
     }
     return queryClient.query({

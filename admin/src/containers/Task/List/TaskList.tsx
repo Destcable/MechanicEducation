@@ -1,4 +1,4 @@
-import { Datagrid, List, TextField } from "react-admin";
+import { Datagrid, List, ReferenceField, TextField } from "react-admin";
 
 const TaskList = () => { 
     return( 
@@ -6,6 +6,9 @@ const TaskList = () => {
             <Datagrid>
                 <TextField source="id"/>
                 <TextField source="title" />
+                <ReferenceField source="themeId" reference="theme">
+                    <TextField source="title"/>
+                </ReferenceField> 
             </Datagrid>
         </List>
     )

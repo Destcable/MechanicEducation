@@ -1,7 +1,9 @@
 import { create } from "./create"
 import { getList } from "./getList"
+import { getMany } from "./getMany"
 
 export { 
     getList,
-    create    
+    getMany,
+    create
 }

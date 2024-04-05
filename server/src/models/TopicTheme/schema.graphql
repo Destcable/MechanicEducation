@@ -1,5 +1,6 @@
 type Query {
     getThemes: [TopicTheme]!
+    getManyTopicThemes(ids: [Int]!): [TopicTheme]!
     topicThemes(topicId: Int!): [TopicTheme]!
     topicThemeById(id: Int!): TopicTheme!
 }

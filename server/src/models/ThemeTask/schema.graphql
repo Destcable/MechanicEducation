@@ -1,6 +1,6 @@
 type Query { 
     getListThemeTask: [ThemeTask]!
-    getManyThemeTask(themeId: Int!): [ThemeTask]
+    getManyThemeTask(ids: [Int]!): [ThemeTask]
     getOneThemeTask(id: Int!): ThemeTask
 }
 
