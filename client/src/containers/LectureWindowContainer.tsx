@@ -1,20 +1,17 @@
+import { get } from 'lodash';
 import LectureWindow from "../ui/LectureWindow/LectureWindow";
 
 interface ILectureWindowContainerProps {
     dataTask: any,
 };
 
-const LectureWindowContainer = (props: ILectureWindowContainerProps) => {
-    const TaskTitle = props.dataTask.title;
-    const TaskContent = props.dataTask.dataLecture;
+const LectureWindowContainer = ({ dataTask }: ILectureWindowContainerProps) => {
+    const TaskTitle = get(dataTask, 'title', '');
+    const TaskContent = get(dataTask, 'dataLecture', '');
 
-    if (props.dataTask) {
-        return <LectureWindow title={TaskTitle}>
-            {TaskContent && (
-                <div dangerouslySetInnerHTML={{ __html: TaskContent }} />
-            )}
-        </LectureWindow>
-    }
+    return dataTask && <LectureWindow title={TaskTitle}>
+        {TaskContent && <div dangerouslySetInnerHTML={{ __html: TaskContent }} />}
+    </LectureWindow>;
 };
 
 export default LectureWindowContainer;
