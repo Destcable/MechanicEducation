@@ -1,5 +1,4 @@
 import { CSSProperties } from "react";
-// import { useNavigate } from "react-router-dom";
 import ProgressBar from "../progressBar/progressBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../../styles/main.css';
@@ -13,7 +12,6 @@ interface CardProps {
 }
 
 const Card = (props: CardProps) => {
-    // const navigate = useNavigate();
 
     const styleCard: CSSProperties = {
         marginBottom: "35px",

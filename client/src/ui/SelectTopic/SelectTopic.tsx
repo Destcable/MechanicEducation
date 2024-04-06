@@ -1,4 +1,4 @@
-import Footer from "../../components/ui/footer/Footer";
+import Footer from "../Elements/Footer/Footer";
 import Tringle from "../../components/ui/tringle/tringle";
 import { Topic } from "../../interfaces/topic";
 import Button from "../Elements/Button/Button";
