@@ -5,9 +5,7 @@ import { ANSWER_BUTTON_COLOR } from '../UI.config';
 interface IQuizWindowContainer {
     dataTask: {
         title: string;
-        dataQuiz: {
-            title: string;
-        }[];
+        dataQuiz: { title: string }[];
     };
 }
 
