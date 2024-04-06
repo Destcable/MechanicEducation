@@ -2,7 +2,8 @@ import { ReactNode } from "react";
 import Header from "../../components/ui/Header/Header";
 
 interface IQuizWindow {
-    title: string,
+    title: string;
+    quizTitle: string;
     children?: ReactNode;
 }
 
@@ -19,6 +20,7 @@ const QuizWindow = (props: IQuizWindow) => {
                             <div className="container-exercise w-100">
 
                                 <div className="text-zadanie w-100 fs-6">
+                                    {props.quizTitle}
                                     <div className="d-flex container-filling align-center justify-content-center fw-light w-100">
                                         {props.children}
                                     </div>
