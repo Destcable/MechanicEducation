@@ -10,6 +10,7 @@ datasource db {
 enum TypeTask { 
   LECTURE
   QUIZ
+  MATCH
 }
 
 model Topic { 
@@ -40,8 +41,10 @@ model ThemeTask {
   title         String
   type          TypeTask
   quizTitle     String?
+  matchTitle    String?
   dataLecture   String?
   dataQuiz      Json?
+  dataMatch     Json?
   theme         TopicTheme  @relation(fields: [themeId], references: [id])
   themeId       Int
 }

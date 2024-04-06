@@ -1,23 +1,43 @@
+import React from 'react';
 import { ArrayInput, ImageField, ImageInput, SimpleFormIterator, TextInput } from "react-admin";
+import { v4 as uuidv4 } from 'uuid';
 
-const TaskCreateMatchField = () => {
+const TaskCreateMatchField: React.FC = () => {
+
     return (
         <>
-            <TextInput source="matchTitle" label="Текст задания" />
-            <ArrayInput source="dataMatch" label="Опции для задания">
-                <SimpleFormIterator>
-                    <TextInput source="leftOption" label="Левая часть (текст)" />
-                    <ImageInput source="leftImage" label="Левая часть (изображение)" accept="image/*">
+            <TextInput source="matchTitle" label="Текст задания" fullWidth />
+            <ArrayInput source="dataQuiz" label="Опции для задания">
+                <SimpleFormIterator fullWidth>
+                    
+                    {/* Левая часть */}
+                    <ImageInput
+                        source="leftImage"
+                        label="Левая часть (изображение)"
+                        placeholder="Загрузите изображение"
+                        accept="image/*"
+                    >
                         <ImageField source="src" title="title" />
                     </ImageInput>
-                    <TextInput source="rightOption" label="Right Option (Text)" />
-                    <ImageInput source="rightImage" label="Right Option (Image)" accept="image/*">
+                    <TextInput source="leftText" label="Левая часть (текст)" fullWidth />
+
+                    {/* Правая часть */}
+                    <ImageInput
+                        source="rightImage"
+                        label="Правая часть (изображение)"
+                        placeholder="Загрузите изображение"
+                        accept="image/*"
+                    >
                         <ImageField source="src" title="title" />
                     </ImageInput>
+                    <TextInput source={"rightText"} label="Правая часть (текст)" fullWidth />
+                    <TextInput source="rightId" defaultValue={uuidv4()} style={{ display: 'none'}} />
+
                 </SimpleFormIterator>
             </ArrayInput>
         </>
-    )
+    );
 };
+
 
 export default TaskCreateMatchField;
