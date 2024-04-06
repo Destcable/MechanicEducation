@@ -7,7 +7,7 @@ const TaskCreateMatchField: React.FC = () => {
     return (
         <>
             <TextInput source="matchTitle" label="Текст задания" fullWidth />
-            <ArrayInput source="dataQuiz" label="Опции для задания">
+            <ArrayInput source="dataMatch" label="Опции для задания">
                 <SimpleFormIterator fullWidth>
                     
                     {/* Левая часть */}
