@@ -1,9 +1,7 @@
-import ReactDOM from 'react-dom/client';
-import { 
-    ApolloClient, 
-    ApolloProvider, 
-    InMemoryCache
-} from '@apollo/client';
+import ReactDOM from 'react-dom';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend'; // Импортируем бэкенд для HTML5 перетаскивания
 import App from './app';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/main.css';
@@ -13,8 +11,11 @@ const client = new ApolloClient({
     cache: new InMemoryCache()
 });
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-    <ApolloProvider client={client}> 
-        <App />
-    </ApolloProvider>
+ReactDOM.render(
+    <ApolloProvider client={client}>
+        <DndProvider backend={HTML5Backend}> {/* Оборачиваем компонент App в DndProvider */}
+            <App />
+        </DndProvider>
+    </ApolloProvider>,
+    document.getElementById("root")
 );
