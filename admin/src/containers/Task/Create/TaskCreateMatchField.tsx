@@ -1,6 +1,5 @@
 import React from 'react';
-import { ArrayInput, ImageField, ImageInput, SimpleFormIterator, TextInput } from "react-admin";
-import { v4 as uuidv4 } from 'uuid';
+import { ArrayInput, SimpleFormIterator, TextInput } from "react-admin";
 
 const TaskCreateMatchField: React.FC = () => {
 
@@ -11,27 +10,12 @@ const TaskCreateMatchField: React.FC = () => {
                 <SimpleFormIterator fullWidth>
                     
                     {/* Левая часть */}
-                    <ImageInput
-                        source="leftImage"
-                        label="Левая часть (изображение)"
-                        placeholder="Загрузите изображение"
-                        accept="image/*"
-                    >
-                        <ImageField source="src" title="title" />
-                    </ImageInput>
+                    <TextInput source="leftImage" label="Левая часть (изображение) ссылка" fullWidth />
                     <TextInput source="leftText" label="Левая часть (текст)" fullWidth />
 
                     {/* Правая часть */}
-                    <ImageInput
-                        source="rightImage"
-                        label="Правая часть (изображение)"
-                        placeholder="Загрузите изображение"
-                        accept="image/*"
-                    >
-                        <ImageField source="src" title="title" />
-                    </ImageInput>
+                    <TextInput source="rightImage" label="Правая часть (изображение) ссылка" fullWidth />
                     <TextInput source={"rightText"} label="Правая часть (текст)" fullWidth />
-                    <TextInput source="rightId" defaultValue={uuidv4()} style={{ display: 'none'}} />
 
                 </SimpleFormIterator>
             </ArrayInput>

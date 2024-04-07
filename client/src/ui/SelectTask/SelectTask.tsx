@@ -29,6 +29,7 @@ const SelectTask = (props: ISelectTaskProps) => {
                         {item.type === "LECTURE" &&
                             <span>ЛЕКЦИЯ</span>
                         }
+                        
                         <span>{item.title}</span>
                         <div>
                             <Button

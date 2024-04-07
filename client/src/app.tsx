@@ -7,6 +7,7 @@ import SelectTaskContainer from "./containers/SelectTaskContainer";
 import SelectThemeContainer from "./containers/SelectThemeContainer";
 import LectureWindowContainer from "./containers/LectureWindowContainer";
 import QuizWindowContainer from "./containers/QuizWindowContainer";
+import MatchWindowContainer from "./containers/MatchWindowContainer";
 
 const App = () => { 
     const [isAuth, setAuth] = useState(false);
@@ -14,6 +15,9 @@ const App = () => {
     const [selectableTheme, setSelectableTheme] = useState(null);
     const [selectableTask, setSelectableTask] = useState(null);
     
+    // @ts-ignore
+    if (selectableTask?.type === "MATCH") return <MatchWindowContainer dataTask={selectableTask} />
+
     // @ts-ignore
     if (selectableTask?.type === "QUIZ" ) return <QuizWindowContainer dataTask={selectableTask}/>
 
