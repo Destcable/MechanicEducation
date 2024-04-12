@@ -1,7 +1,6 @@
 import { CSSProperties } from "react";
 import Header from "../../components/ui/Header/Header";
-import Footer from "../../components/ui/footer/Footer";
-import Tringle from "../../components/ui/tringle/tringle";
+import Footer from "../Elements/Footer/Footer";
 import Button from "../Elements/Button/Button";
 import { Task } from "../../interfaces/task";
 import FlexBetween from "../Semantic/FlexBetween";
@@ -40,8 +39,9 @@ const SelectTask = (props: ISelectTaskProps) => {
                 )}
             </div>
 
-            <Tringle />
-            <Footer />
+            <Footer 
+                isBottom={false}
+            />
         </>
     );
 };

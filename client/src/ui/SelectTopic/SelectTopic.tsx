@@ -1,5 +1,4 @@
 import Footer from "../Elements/Footer/Footer";
-import Tringle from "../../components/ui/tringle/tringle";
 import { Topic } from "../../interfaces/topic";
 import Button from "../Elements/Button/Button";
 
@@ -24,10 +23,8 @@ const SelectTopic = (props: ISelectThemeProps) => {
                 )}
             </div>
 
-            <div style={{ position: 'fixed', bottom: 0, left: 0, width: '100%', boxSizing: 'border-box', zIndex: 999 }}>
-                <Tringle />
-                <Footer />
-            </div>
+
+            <Footer />
         </>
     )
 };

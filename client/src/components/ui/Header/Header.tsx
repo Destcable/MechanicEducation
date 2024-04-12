@@ -67,7 +67,7 @@ const Header = (HeaderObj: HeaderProps) => {
                                 className="btn-words rounded-3 fw-bold text-white text-decoration-none"
                                 onClick={() => setModalActiveKeyWords(true)}
                                 style={styleButton}>
-                                Ключевые слова
+                                Профиль
                             </a>
                         </div>
                     </FlexBetween>
