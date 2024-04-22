@@ -1,4 +1,3 @@
-import { includes } from "lodash";
 import { ANSWER_BUTTON_COLOR } from "../../UI.config";
 
 interface TaskOptionProps {
@@ -8,16 +7,11 @@ interface TaskOptionProps {
     handleOptionChange: (props: any) => void;
 }
 
-const QuizWindowTaskOption: React.FC<TaskOptionProps> = ({ idInput, task, selectedAnswers, handleOptionChange }) => {
+const QuizWindowTaskOption: React.FC<TaskOptionProps> = ({ idInput, task, handleOptionChange }) => {
     return (
         <label
             className="btn colorButton d-block mb-2 w-100"
-            style={{
-                // backgroundColor: includes(selectedAnswers, task.title)
-                    // ? ANSWER_BUTTON_COLOR.selected
-                    // : 
-                    backgroundColor: ANSWER_BUTTON_COLOR.default
-            }}
+            style={{ backgroundColor: ANSWER_BUTTON_COLOR.default }}
         >
             <input
                 id={idInput}
