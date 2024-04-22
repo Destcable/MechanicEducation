@@ -28,7 +28,7 @@ model TopicHeader {
 }
 
 model TopicTheme {
-  id Int @id @default(autoincrement())
+  id            Int         @id @default(autoincrement())
   topicId Int
   title String
   description String
@@ -47,4 +47,9 @@ model ThemeTask {
   dataMatch     Json?
   theme         TopicTheme  @relation(fields: [themeId], references: [id])
   themeId       Int
+}
+
+model Group { 
+  id            Int         @id @default(autoincrement())
+  title         String
 }

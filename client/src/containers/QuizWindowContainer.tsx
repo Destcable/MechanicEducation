@@ -7,20 +7,28 @@ interface IQuizWindowContainer {
     dataTask: {
         title: string;
         quizTitle: string;
-        dataQuiz: { title: string }[];
+        dataQuiz: { title: string, isCorrect: boolean }[];
     };
 }
 
 const QuizWindowContainer: React.FC<IQuizWindowContainer> = ({ dataTask }) => {
     const { title: taskTitle, dataQuiz: taskContent } = dataTask;
     const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
+    const [answered, setAnswered] = useState<boolean>(false);
 
     const handleOptionChange = (task: string) => {
+
         setSelectedAnswers((prevAnswers) => xor(prevAnswers, [task]));
     };
 
+    const handleSubmit = () => {
+        setAnswered(true);
+    };
+
+    console.log(answered);
+
     return (
-        <QuizWindow title={taskTitle} quizTitle={dataTask.quizTitle}>
+        <QuizWindow title={taskTitle} quizTitle={dataTask.quizTitle} onSubmit={handleSubmit}>
             {taskContent && (
                 <div>
                     {taskContent.map((task, idx) => (
@@ -33,6 +41,7 @@ const QuizWindowContainer: React.FC<IQuizWindowContainer> = ({ dataTask }) => {
                     ))}
                 </div>
             )}
+            { !answered && <button onClick={handleSubmit}>Ответить</button> }
         </QuizWindow>
     );
 };
