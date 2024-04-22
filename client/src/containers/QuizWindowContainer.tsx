@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import QuizWindow from '../ui/QuizWindow/QuizWindow';
-import { xor } from 'lodash';
+import { find, xor } from 'lodash';
 import QuizWindowTaskOption from '../ui/QuizWindow/QuizWindowTaskOption';
 import { ANSWER_BUTTON_COLOR } from '../UI.config';
+import AnswerButton from '../components/ui/AnswerButton/AnswerButton';
 
 interface IQuizWindowContainer {
     dataTask: {
@@ -18,25 +19,38 @@ const QuizWindowContainer: React.FC<IQuizWindowContainer> = ({ dataTask }) => {
     const [answered, setAnswered] = useState<boolean>(false);
 
     const handleOptionChange = (element: any) => {
-        const parentElement = element.event.target.parentNode; 
+        if (!answered) {
+            const parentElement = element.event.target.parentNode; 
 
-        if (parentElement.style.backgroundColor !== ANSWER_BUTTON_COLOR.selected) {
-            parentElement.style.backgroundColor = ANSWER_BUTTON_COLOR.selected;
-        } else { 
-            parentElement.style.backgroundColor = ANSWER_BUTTON_COLOR.default;
+            if (parentElement.style.backgroundColor !== ANSWER_BUTTON_COLOR.selected) {
+                parentElement.style.backgroundColor = ANSWER_BUTTON_COLOR.selected;
+            } else { 
+                parentElement.style.backgroundColor = ANSWER_BUTTON_COLOR.default;
+            }
+            setSelectedAnswers(prevAnswers => xor(prevAnswers, [element]));
         }
-        setSelectedAnswers(prevAnswers => xor(prevAnswers, [element.title]));
     };
 
     const handleSubmit = () => {
+        selectedAnswers.map(({title, event}) => { 
+            const parentElement = event.target.parentNode;
+            const correctAnswers = dataTask.dataQuiz.filter(obj => obj.isCorrect === true);
+            if (find(correctAnswers, { title: title })) { 
+                return parentElement.style.backgroundColor = ANSWER_BUTTON_COLOR.success;
+            }
+
+            return parentElement.style.backgroundColor = ANSWER_BUTTON_COLOR.error;
+        });
+
         setAnswered(true);
     };
 
-    console.log(answered);
-    console.log(selectedAnswers);
-
     return (
-        <QuizWindow title={taskTitle} quizTitle={dataTask.quizTitle}>
+        <QuizWindow 
+            title={taskTitle} 
+            quizTitle={dataTask.quizTitle} 
+            answerButton={!answered && <AnswerButton onClick={handleSubmit}/>}
+        >
             {taskContent && (
                 <div>
                     {taskContent.map((task, idx) => (
@@ -50,7 +64,6 @@ const QuizWindowContainer: React.FC<IQuizWindowContainer> = ({ dataTask }) => {
                     ))}
                 </div>
             )}
-            { !answered && <button onClick={handleSubmit}>Ответить</button> }
         </QuizWindow>
     );
 };

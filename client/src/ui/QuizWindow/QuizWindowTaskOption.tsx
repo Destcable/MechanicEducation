@@ -14,7 +14,6 @@ const QuizWindowTaskOption: React.FC<TaskOptionProps> = ({ idInput, task, handle
             style={{ backgroundColor: ANSWER_BUTTON_COLOR.default }}
         >
             <input
-                id={idInput}
                 type="checkbox"
                 name="options"
                 style={{ display: 'none' }}

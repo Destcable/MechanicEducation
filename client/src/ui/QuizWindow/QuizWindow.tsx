@@ -5,6 +5,7 @@ interface IQuizWindow {
     title: string;
     quizTitle: string;
     children?: ReactNode;
+    answerButton?: ReactNode;
 }
 
 const QuizWindow = (props: IQuizWindow) => {
@@ -24,6 +25,7 @@ const QuizWindow = (props: IQuizWindow) => {
                                     <div className="d-flex container-filling align-center justify-content-center fw-light w-100">
                                         {props.children}
                                     </div>
+                                    {props.answerButton}
                                 </div>
 
                             </div>
