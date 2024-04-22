@@ -4,13 +4,14 @@ import authService from '../services/authService';
 import { AuthFormData } from '../interfaces/auth';
 
 interface IAuthFormContainerProps { 
-    onSuccess: () => void
+    onSuccess?: () => void
 }
 
 const AuthFormContainer = (props: IAuthFormContainerProps) => { 
     const {register, handleSubmit} = useForm();
 
     const onSubmit: SubmitHandler<FieldValues> = (data) => {
+
         const authData: AuthFormData = {
             email: data.email,
             password: data.password
@@ -19,7 +20,7 @@ const AuthFormContainer = (props: IAuthFormContainerProps) => {
         if (authService.login(authData.email, authData.password)) {
             localStorage.setItem('auth-login', authData.email);
             localStorage.setItem('auth-password', authData.password);
-            props.onSuccess();
+            if (props.onSuccess) props.onSuccess();
         }
     };
 
