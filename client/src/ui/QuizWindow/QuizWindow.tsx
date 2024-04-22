@@ -4,7 +4,6 @@ import Header from "../../components/ui/Header/Header";
 interface IQuizWindow {
     title: string;
     quizTitle: string;
-    onSubmit?: () => void;
     children?: ReactNode;
 }
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import QuizWindow from '../ui/QuizWindow/QuizWindow';
 import { xor } from 'lodash';
 import QuizWindowTaskOption from '../ui/QuizWindow/QuizWindowTaskOption';
+import { ANSWER_BUTTON_COLOR } from '../UI.config';
 
 interface IQuizWindowContainer {
     dataTask: {
@@ -16,9 +17,15 @@ const QuizWindowContainer: React.FC<IQuizWindowContainer> = ({ dataTask }) => {
     const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
     const [answered, setAnswered] = useState<boolean>(false);
 
-    const handleOptionChange = (task: string) => {
+    const handleOptionChange = (element: any) => {
+        const parentElement = element.event.target.parentNode; 
 
-        setSelectedAnswers((prevAnswers) => xor(prevAnswers, [task]));
+        if (parentElement.style.backgroundColor !== ANSWER_BUTTON_COLOR.selected) {
+            parentElement.style.backgroundColor = ANSWER_BUTTON_COLOR.selected;
+        } else { 
+            parentElement.style.backgroundColor = ANSWER_BUTTON_COLOR.default;
+        }
+        setSelectedAnswers(prevAnswers => xor(prevAnswers, [element.title]));
     };
 
     const handleSubmit = () => {
@@ -26,13 +33,15 @@ const QuizWindowContainer: React.FC<IQuizWindowContainer> = ({ dataTask }) => {
     };
 
     console.log(answered);
+    console.log(selectedAnswers);
 
     return (
-        <QuizWindow title={taskTitle} quizTitle={dataTask.quizTitle} onSubmit={handleSubmit}>
+        <QuizWindow title={taskTitle} quizTitle={dataTask.quizTitle}>
             {taskContent && (
                 <div>
                     {taskContent.map((task, idx) => (
                         <QuizWindowTaskOption
+                            idInput={idx.toString()}
                             key={idx}
                             task={task}
                             selectedAnswers={selectedAnswers}
