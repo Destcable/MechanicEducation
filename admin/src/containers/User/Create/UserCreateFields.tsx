@@ -1,4 +1,4 @@
-import { AutocompleteInput, ReferenceArrayInput, SimpleForm, TextInput, required } from "react-admin";
+import { AutocompleteArrayInput, ReferenceArrayInput, SimpleForm, TextInput, required } from "react-admin";
 
 const UserCreateFields = () => { 
     return( 
@@ -11,7 +11,7 @@ const UserCreateFields = () => {
             />
 
             <ReferenceArrayInput source="groups" reference="group">
-                <AutocompleteInput
+                <AutocompleteArrayInput
                     label="Группы"
                     source="groups"
                     optionText="title"

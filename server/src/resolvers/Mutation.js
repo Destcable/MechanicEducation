@@ -63,10 +63,17 @@ async function createGroup(_,args, context) {
     });
 };
 
+async function createUser(_,args, context) { 
+    return await context.prisma.user.create({
+        data: args
+    });
+};
+
 module.exports = { 
     createTopic, 
     deleteTopic,
     createTopicTheme,
     createThemeTask, 
-    createGroup
+    createGroup,
+    createUser
 }

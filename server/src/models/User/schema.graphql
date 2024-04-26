@@ -4,9 +4,9 @@ type Query {
     getManyUser(ids: [Int]!): [User]!
 }
 
-# type Mutation { 
-#     createUser(name: String!, groups: [Group]): User!
-# }
+type Mutation { 
+    createUser(name: String!, groups: [Int]): User!
+}
 
 type User { 
     id:            Int

@@ -12,6 +12,9 @@ import {
 import { 
     create as GROUP_CREATE 
 } from "../gql/group";
+import { 
+    create as USER_CREATE 
+} from "../gql/user";
 
 const create = (resource: string, params: ICreateParams) => { 
     let mutation: any;
@@ -28,6 +31,9 @@ const create = (resource: string, params: ICreateParams) => {
             break;
         case 'group': 
             mutation = GROUP_CREATE;
+            break;
+        case 'user':
+            mutation = USER_CREATE;
             break;
     }
 
