@@ -1,0 +1,16 @@
+type Query { 
+    getListUser: [User]!
+    getOneUser(id: Int!): User!
+    getManyUser(ids: [Int]!): [User]!
+}
+
+# type Mutation { 
+#     createUser(name: String!, groups: [Group]): User!
+# }
+
+type User { 
+    id:            Int
+    name:          String
+    tasks:         [Int]
+    groups:        [Group]
+}

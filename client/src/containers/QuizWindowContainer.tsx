@@ -32,6 +32,7 @@ const QuizWindowContainer: React.FC<IQuizWindowContainer> = ({ dataTask }) => {
     };
 
     const handleSubmit = () => {
+        // @ts-ignore
         selectedAnswers.map(({title, event}) => { 
             const parentElement = event.target.parentNode;
             const correctAnswers = dataTask.dataQuiz.filter(obj => obj.isCorrect === true);

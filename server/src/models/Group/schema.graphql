@@ -1,0 +1,15 @@
+type Query { 
+    getListGroup: [Group]!
+    getOneGroup(id: Int): Group!
+    getManyGroup(ids: [Int]!): [Group]!
+}
+
+# type Mutation { 
+#     createGroup(title: String!, users: [User]): Group!
+# }
+
+type Group {
+    id:         Int
+    title:      String
+    users:      [User]
+}

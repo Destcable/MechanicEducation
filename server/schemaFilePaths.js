@@ -6,6 +6,8 @@ const schemaFilePaths = [
     path.join(__dirname, 'src/models/TopicHeader/schema.graphql'),
     path.join(__dirname, 'src/models/TopicTheme/schema.graphql'),
     path.join(__dirname, 'src/models/ThemeTask/schema.graphql'),
+    path.join(__dirname, 'src/models/Group/schema.graphql'),
+    path.join(__dirname, 'src/models/User/schema.graphql'),
 ];
 
 module.exports = { 
