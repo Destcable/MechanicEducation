@@ -3,12 +3,12 @@ import dataProvider from "./dataProvider/dataProvider";
 import { TopicCreate, TopicList, TopicName } from "./containers/Topic";
 import { ThemeCreate, ThemeList, ThemeName } from "./containers/Theme";
 import { TaskCreate, TaskList, TaskName } from "./containers/Task";
-import { GroupList, GroupName } from "./containers/Group";
+import { GroupCreate, GroupList, GroupName } from "./containers/Group";
 
 const App = () => (
   // @ts-ignore
   <Admin dataProvider={dataProvider}>
-    <Resource name={GroupName} list={GroupList} />
+    <Resource name={GroupName} list={GroupList} create={GroupCreate}/>
     <Resource name={TopicName} list={TopicList} create={TopicCreate} />
     <Resource name={ThemeName} list={ThemeList} create={ThemeCreate} />
     <Resource name={TaskName} list={TaskList} create={TaskCreate} />
