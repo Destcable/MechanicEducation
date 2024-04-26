@@ -14,7 +14,7 @@ const GroupCreateFields = () => {
                 <AutocompleteInput
                     label="Пользователи"
                     source="users"
-                    optionText="title"
+                    optionText="name"
                     fullWidth
                 />
             </ReferenceInput>

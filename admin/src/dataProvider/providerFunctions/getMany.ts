@@ -5,6 +5,9 @@ import {
 import { 
     getMany as GET_MANY_THEME
 } from "../gql/theme";
+import { 
+    getMany as GET_MANY_USER
+} from "../gql/user";
 
 const getMany = (resource: string, params: any) => { 
     let query: any;
@@ -14,9 +17,13 @@ const getMany = (resource: string, params: any) => {
             query = GET_MANY_TOPIC;
             break;
         case 'theme': 
-            query = GET_MANY_THEME
+            query = GET_MANY_THEME;
+            break;
+        case 'user':
+            query = GET_MANY_USER;
             break;
     }
+    
     return queryClient.query({
         query: query,
         variables: { ids: params.ids }

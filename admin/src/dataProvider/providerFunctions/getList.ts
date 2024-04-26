@@ -12,6 +12,9 @@ import {
 import { 
     getList as GET_GROUPS
 } from "../gql/group";
+import { 
+    getList as GET_USERS
+} from "../gql/user";
 
 const getList = (resource: string, _: any) => {
     let query: any;
@@ -28,6 +31,9 @@ const getList = (resource: string, _: any) => {
             break;
         case 'group':
             query = GET_GROUPS;
+            break;
+        case 'user':
+            query = GET_USERS;
             break;
     }
     
