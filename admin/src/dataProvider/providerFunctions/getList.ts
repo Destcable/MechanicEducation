@@ -10,6 +10,9 @@ import {
 import { 
     getList as GET_TASKS
 } from "../gql/task";
+import { 
+    getList as GET_GROUPS
+} from "../gql/group";
 
 const getList = (resource: string, _: any) => {
     let query: DocumentNode;
@@ -23,6 +26,9 @@ const getList = (resource: string, _: any) => {
             break;
         case 'task':
             query = GET_TASKS;
+            break;
+        case 'group':
+            query = GET_GROUPS;
             break;
     }
     
