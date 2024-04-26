@@ -57,9 +57,16 @@ async function createThemeTask(_,args, context) {
     });
 };
 
+async function createGroup(_,args, context) { 
+    return await context.prisma.group.create({
+        data: args
+    });
+};
+
 module.exports = { 
     createTopic, 
     deleteTopic,
     createTopicTheme,
-    createThemeTask
+    createThemeTask, 
+    createGroup
 }

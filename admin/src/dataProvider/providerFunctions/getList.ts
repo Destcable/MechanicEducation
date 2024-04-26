@@ -1,4 +1,3 @@
-import { DocumentNode } from "graphql";
 import queryClient from "../queryClient";
 import parseData from "../parseData";
 import { 
@@ -15,7 +14,7 @@ import {
 } from "../gql/group";
 
 const getList = (resource: string, _: any) => {
-    let query: DocumentNode;
+    let query: any;
 
     switch (resource) {
         case 'topic':

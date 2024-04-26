@@ -1,4 +1,3 @@
-import { DocumentNode } from "graphql";
 import queryClient from "../queryClient";
 import { ICreateParams } from "./interfaces";
 import { 
@@ -10,9 +9,12 @@ import {
 import { 
     create as TASK_CREATE 
 } from "../gql/task";
+import { 
+    create as GROUP_CREATE 
+} from "../gql/group";
 
 const create = (resource: string, params: ICreateParams) => { 
-    let mutation: DocumentNode;
+    let mutation: any;
     
     switch (resource) { 
         case 'topic':
@@ -24,10 +26,13 @@ const create = (resource: string, params: ICreateParams) => {
         case 'task':
             mutation = TASK_CREATE;
             break;
+        case 'group': 
+            mutation = GROUP_CREATE;
+            break;
     }
 
     return queryClient
-    .mutate({ 
+    .mutate({
         mutation: mutation,
         variables: params.data,
     })
