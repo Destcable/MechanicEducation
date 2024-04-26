@@ -1,4 +1,4 @@
-import { AutocompleteInput, ReferenceInput, SimpleForm, TextInput, required } from "react-admin"
+import { AutocompleteInput, ReferenceArrayInput, SimpleForm, TextInput, required } from "react-admin"
 
 const GroupCreateFields = () => {
     return (
@@ -10,14 +10,14 @@ const GroupCreateFields = () => {
                 fullWidth
             />
 
-            <ReferenceInput source="users" reference="user">
+            <ReferenceArrayInput source="users" reference="user">
                 <AutocompleteInput
                     label="Пользователи"
                     source="users"
                     optionText="name"
                     fullWidth
                 />
-            </ReferenceInput>
+            </ReferenceArrayInput>
         </SimpleForm>
     );
 };
