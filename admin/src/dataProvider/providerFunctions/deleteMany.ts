@@ -6,6 +6,9 @@ import {
 import { 
     deleteMany as DELETE_MANY_USER
 } from "../gql/user";
+import { 
+    deleteMany as DELETE_MANY_TASK
+} from "../gql/task";
 
 const deleteMany = (resource: string, params: any) => {
     let mutation: any;
@@ -16,6 +19,9 @@ const deleteMany = (resource: string, params: any) => {
             break;
         case 'user':
             mutation = DELETE_MANY_USER;
+            break;
+        case 'task':
+            mutation = DELETE_MANY_TASK;
             break;
     }
     

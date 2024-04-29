@@ -21,6 +21,7 @@ type Mutation {
         dataQuiz: JSON
         dataMatch: JSON
     ): ThemeTask!
+    deleteManyThemeTask(ids: [Int]!): [ThemeTask]
 }
 
 type ThemeTask { 
