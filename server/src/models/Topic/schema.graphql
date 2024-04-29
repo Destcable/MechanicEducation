@@ -6,6 +6,7 @@ type Query {
 type Mutation { 
     createTopic(name: String!): Topic!
     deleteTopic(id: Int!): Topic!
+    deleteManyTopic(ids: [Int]!): [Topic]
 }
 
 type Topic { 

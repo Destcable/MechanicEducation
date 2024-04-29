@@ -73,10 +73,10 @@ async function createUser(_, args, context) {
 
 async function deleteManyUser(_, args, context) {
     const { ids } = args;
-    
+
     const dataDeleted = await context.prisma.user.findMany({
-        where: { 
-            id: { 
+        where: {
+            id: {
                 in: convertToNumbers(ids)
             },
         },
@@ -91,12 +91,12 @@ async function deleteManyUser(_, args, context) {
     return dataDeleted;
 };
 
-async function deleteManyGroup(_, args, context) { 
+async function deleteManyGroup(_, args, context) {
     const { ids } = args;
-    
+
     const dataDeleted = await context.prisma.group.findMany({
-        where: { 
-            id: { 
+        where: {
+            id: {
                 in: convertToNumbers(ids)
             },
         },
@@ -111,12 +111,12 @@ async function deleteManyGroup(_, args, context) {
     return dataDeleted;
 };
 
-async function deleteManyThemeTask(_, args, context) { 
+async function deleteManyThemeTask(_, args, context) {
     const { ids } = args;
-    
+
     const dataDeleted = await context.prisma.themeTask.findMany({
-        where: { 
-            id: { 
+        where: {
+            id: {
                 in: convertToNumbers(ids)
             },
         },
@@ -129,7 +129,35 @@ async function deleteManyThemeTask(_, args, context) {
     });
 
     return dataDeleted;
-}
+};
+
+async function deleteManyTopic(_, args, context) {
+    const { ids } = args;
+
+    const dataDeleted = await context.prisma.topic.findMany({
+        where: {
+            id: {
+                in: convertToNumbers(ids)
+            },
+        },
+    });
+
+    await context.prisma.topicHeader.deleteMany({
+        where: {
+            topicId: {
+                in: convertToNumbers(ids)
+            }
+        },
+    });
+
+    await context.prisma.topic.deleteMany({
+        where: {
+            id: { in: ids },
+        },
+    });
+
+    return dataDeleted;
+};
 
 module.exports = {
     createTopic,
@@ -140,5 +168,6 @@ module.exports = {
     createUser,
     deleteManyUser,
     deleteManyGroup,
-    deleteManyThemeTask
+    deleteManyThemeTask,
+    deleteManyTopic
 }
