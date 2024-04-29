@@ -11,5 +11,4 @@ type Mutation {
 type Group {
     id:         Int
     title:      String
-    users:      [User]
 }

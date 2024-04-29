@@ -1,4 +1,4 @@
-import { Datagrid, List, TextField } from "react-admin";
+import { Datagrid, List, ReferenceField, TextField } from "react-admin";
 
 const UserList = () => {
     return (
@@ -6,6 +6,9 @@ const UserList = () => {
             <Datagrid>
                 <TextField source="id" />
                 <TextField source="name" />
+                <ReferenceField source="groupId" reference="group">
+                    <TextField source="title"/>
+                </ReferenceField> 
             </Datagrid>
         </List>
     )

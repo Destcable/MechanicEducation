@@ -5,12 +5,14 @@ type Query {
 }
 
 type Mutation { 
-    createUser(name: String!, groups: [Int]): User!
+    createUser(name: String!, groupId: Int): User!
 }
 
 type User { 
     id:            Int
     name:          String
+    login:         String
+    password:      String
     tasks:         [Int]
-    groups:        [Group]
+    groupId:       Int
 }

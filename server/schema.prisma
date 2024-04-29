@@ -52,22 +52,15 @@ model ThemeTask {
 model Group {
     id          Int           @id @default(autoincrement())
     title       String
-    users       UserToGroup[]
+    users       User[]
 }
 
 model User {
     id          Int           @id @default(autoincrement())
     name        String
+    login       String
+    password    String
     tasks       Int[]
-    groups      UserToGroup[]
-}
-
-model UserToGroup {
-    id          Int   @id @default(autoincrement())
-    user        User  @relation(fields: [userId], references: [id])
-    userId      Int
     group       Group @relation(fields: [groupId], references: [id])
     groupId     Int
-
-    @@unique([userId, groupId])
 }

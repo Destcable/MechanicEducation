@@ -1,8 +1,22 @@
-import { AutocompleteArrayInput, ReferenceArrayInput, SimpleForm, TextInput, required } from "react-admin";
+import { AutocompleteInput, ReferenceInput, SimpleForm, TextInput, required } from "react-admin";
 
 const UserCreateFields = () => { 
     return( 
         <SimpleForm>
+            <TextInput
+                label="Логин"
+                source="login"
+                validate={required()}
+                fullWidth
+            />
+            
+            <TextInput
+                label="Пароль"
+                source="password"
+                validate={required()}
+                fullWidth
+            />
+
             <TextInput
                 label="ФИО"
                 source="name"
@@ -10,14 +24,14 @@ const UserCreateFields = () => {
                 fullWidth
             />
 
-            <ReferenceArrayInput source="groups" reference="group">
-                <AutocompleteArrayInput
+            <ReferenceInput source="groupId" reference="group">
+                <AutocompleteInput
                     label="Группы"
-                    source="groups"
+                    source="groupId"
                     optionText="title"
                     fullWidth
                 />
-            </ReferenceArrayInput>
+            </ReferenceInput>
         </SimpleForm>
     )
 };

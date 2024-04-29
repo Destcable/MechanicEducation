@@ -74,6 +74,6 @@ module.exports = {
     deleteTopic,
     createTopicTheme,
     createThemeTask, 
-    createGroup,
+    createGroup, 
     createUser
 }
