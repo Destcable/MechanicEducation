@@ -3,7 +3,7 @@ const { getListThemeTask, getManyThemeTask, getOneThemeTask } = require("./Theme
 const { getListTopic, getManyTopic } = require("./Topic/resolvers/Query");
 const { topicHeader } = require("./TopicHeader/resolvers/Query");
 const { getThemes, topicThemes, topicThemeById, getManyTopicThemes } = require("./TopicTheme/resolvers/Query");
-const { getListUser, getManyUser, getOneUser } = require("./User/resolvers/Query");
+const { getListUser, getManyUser, getOneUser, authUser } = require("./User/resolvers/Query");
 
 module.exports = { 
     getListThemeTask,
@@ -17,7 +17,7 @@ module.exports = {
     getManyTopicThemes,
     topicThemeById,
 
-
+    authUser,
     getOneGroup,
     getListGroup,
     getManyGroup,

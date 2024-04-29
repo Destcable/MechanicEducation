@@ -1,11 +1,12 @@
 type Query { 
+    authUser(login: String!, password: String!): User
     getListUser: [User]!
     getOneUser(id: Int!): User!
     getManyUser(ids: [Int]!): [User]!
 }
 
 type Mutation { 
-    createUser(name: String!, groupId: Int): User!
+    createUser(name: String!, login: String!, password: String!, groupId: Int): User!
 }
 
 type User { 

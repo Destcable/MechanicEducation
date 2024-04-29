@@ -5,7 +5,7 @@ type Query {
 }
 
 type Mutation { 
-    createGroup(title: String!, users: [Int]): Group!
+    createGroup(title: String!): Group!
 }
 
 type Group {

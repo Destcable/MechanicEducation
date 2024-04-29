@@ -8,6 +8,9 @@ import {
 import { 
     getMany as GET_MANY_USER
 } from "../gql/user";
+import { 
+    getMany as GET_MANY_GROUP
+} from "../gql/group";
 
 const getMany = (resource: string, params: any) => { 
     let query: any;
@@ -21,6 +24,9 @@ const getMany = (resource: string, params: any) => {
             break;
         case 'user':
             query = GET_MANY_USER;
+            break;
+        case 'group':
+            query = GET_MANY_GROUP;
             break;
     }
     
