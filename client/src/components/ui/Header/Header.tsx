@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { ModalGetFromContent, ModalGetKeyWords } from '../../../content/modals/ModalsData';
 import { Title } from '../../../config';
 import FlexBetween from '../../../ui/Semantic/FlexBetween';
-import { store } from '../../../app';
+import { store } from '../../../reducer';
 
 interface HeaderProps {
     loading?: boolean

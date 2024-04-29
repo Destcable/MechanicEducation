@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { CSSProperties } from 'react';
 import { Theme } from '../interfaces/theme';
 import useQueryTopicThemes from '../hooks/useQueryTopicThemes';
-import { store } from '../app';
+import { store } from '../reducer';
 
 interface IMainPageProps { 
     dataTopic: Theme
@@ -14,8 +14,8 @@ interface IMainPageProps {
 
 const SelectThemeContainer = (props: IMainPageProps) => {
     const { data } = useQueryTopicThemes(props.dataTopic?.id);
-    console.log(props.dataTopic.name);
     store.dispatch({ type: 'headerTheme/change', payload: props.dataTopic.name });
+
     const mainBlock: CSSProperties = { 
         marginTop: "150px",
         columnGap: "90px"
