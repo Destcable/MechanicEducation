@@ -1,11 +1,11 @@
 import { CSSProperties, useState } from 'react';
 import Logo from '../logo/logo';
-import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ModalGetFromContent, ModalGetKeyWords } from '../../../content/modals/ModalsData';
 import { Title } from '../../../config';
 import FlexBetween from '../../../ui/Semantic/FlexBetween';
+import { store } from '../../../app';
 
 interface HeaderProps {
     loading?: boolean
@@ -14,6 +14,7 @@ interface HeaderProps {
 const Header = (HeaderObj: HeaderProps) => {
     const [modalActiveContent, setModalActiveContent] = useState(false);
     const [modalActiveKeyWords, setModalActiveKeyWords] = useState(false);
+    const currentState = store.getState();
 
     const styleHeader: CSSProperties = {
         height: "104px",
@@ -58,12 +59,6 @@ const Header = (HeaderObj: HeaderProps) => {
                         </div>
                         <div className="d-flex align-items-center mt-10">
                             <a href='#'
-                                className="btn-contacts rounded-3 fw-bold text-white text-decoration-none"
-                                onClick={() => setModalActiveContent(true)}
-                                style={styleButton}>
-                                Информация о контенте
-                            </a>
-                            <a href='#'
                                 className="btn-words rounded-3 fw-bold text-white text-decoration-none"
                                 onClick={() => setModalActiveKeyWords(true)}
                                 style={styleButton}>
@@ -74,8 +69,9 @@ const Header = (HeaderObj: HeaderProps) => {
                     <div>
                         <h3 className='position-absolute fw-bold'
                             style={styleSubtitle}>
-                            {HeaderObj.loading ? <Skeleton width={709} height={24} containerClassName="avatar-skeleton" />
-                                : "Выбор оборудования, инструмента и технологической оснастки"}
+                                {currentState.headerTheme}
+                            {/* {HeaderObj.loading ? <Skeleton width={709} height={24} containerClassName="avatar-skeleton" />
+                                : "Выбор оборудования, инструмента и технологической оснастки"} */}
                         </h3>
                     </div>
                 </div>

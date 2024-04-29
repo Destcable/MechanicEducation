@@ -8,13 +8,27 @@ import SelectThemeContainer from "./containers/SelectThemeContainer";
 import LectureWindowContainer from "./containers/LectureWindowContainer";
 import QuizWindowContainer from "./containers/QuizWindowContainer";
 import MatchWindowContainer from "./containers/MatchWindowContainer";
+import { createStore } from "redux";
+
+function counterReducer(state = { 
+    headerTheme: 'Тема' 
+}, action: any) {
+    switch (action.type) {
+      case 'headerTheme/change':
+        return { headerTheme: action.headerTheme }
+      default:
+        return state
+    }
+};
+
+export let store = createStore(counterReducer)
 
 const App = () => { 
     const [isAuth, setAuth] = useState(false);
     const [selectableTopic, setSelectableTopic] = useState(null);
     const [selectableTheme, setSelectableTheme] = useState(null);
     const [selectableTask, setSelectableTask] = useState(null);
-    
+
     // @ts-ignore
     if (selectableTask?.type === "MATCH") return <MatchWindowContainer dataTask={selectableTask} />
 
