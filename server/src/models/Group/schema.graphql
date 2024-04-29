@@ -6,6 +6,7 @@ type Query {
 
 type Mutation { 
     createGroup(title: String!): Group!
+    deleteManyGroup(ids: [Int]!): [Group]
 }
 
 type Group {

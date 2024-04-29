@@ -9,7 +9,7 @@ import getMany from "./providerFunctions/getMany";
 const dataProvider = {
     getList,
     // getOne,
-    // deleteMany,
+    deleteMany,
     getMany,
     // delete: deleteOne,
     create,
