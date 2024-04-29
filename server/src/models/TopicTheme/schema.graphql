@@ -8,6 +8,7 @@ type Query {
 type Mutation {
     createTopicTheme(topicId: Int!, title: String!, description: String!): TopicTheme!
     deleteTopicTheme(id: Int!): TopicTheme!
+    deleteManyTopicTheme(ids: [Int]!): [TopicTheme]
 }
 
 type TopicTheme { 

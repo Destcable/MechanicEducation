@@ -10,6 +10,9 @@ import {
     deleteMany as DELETE_MANY_TOPIC
 } from "../gql/topic";
 import { 
+    deleteMany as DELETE_MANY_THEME
+} from "../gql/theme";
+import { 
     deleteMany as DELETE_MANY_TASK
 } from "../gql/task";
 
@@ -25,6 +28,9 @@ const deleteMany = (resource: string, params: any) => {
             break;
         case 'topic':
             mutation = DELETE_MANY_TOPIC;
+            break;
+        case 'theme':
+            mutation = DELETE_MANY_THEME;
             break;
         case 'task':
             mutation = DELETE_MANY_TASK;

@@ -159,6 +159,26 @@ async function deleteManyTopic(_, args, context) {
     return dataDeleted;
 };
 
+async function deleteManyTopicTheme(_, args, context) { 
+    const { ids } = args;
+
+    const dataDeleted = await context.prisma.topicTheme.findMany({
+        where: {
+            id: {
+                in: convertToNumbers(ids)
+            },
+        },
+    });
+
+    await context.prisma.topicTheme.deleteMany({
+        where: {
+            id: { in: ids },
+        },
+    });
+
+    return dataDeleted;
+};
+
 module.exports = {
     createTopic,
     deleteTopic,
@@ -169,5 +189,6 @@ module.exports = {
     deleteManyUser,
     deleteManyGroup,
     deleteManyThemeTask,
-    deleteManyTopic
+    deleteManyTopic,
+    deleteManyTopicTheme
 }
