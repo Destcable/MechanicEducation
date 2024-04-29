@@ -9,16 +9,18 @@ interface IAuthFormContainerProps {
 
 const AuthFormContainer = (props: IAuthFormContainerProps) => { 
     const {register, handleSubmit} = useForm();
-
-    const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    
+    const onSubmit: SubmitHandler<FieldValues> = async (data) => {
 
         const authData: AuthFormData = {
-            email: data.email,
+            login: data.login,
             password: data.password
         };
+
+        const dataLogin = await authService.login(authData.login, authData.password);
     
-        if (authService.login(authData.email, authData.password)) {
-            localStorage.setItem('auth-login', authData.email);
+        if (dataLogin) {
+            localStorage.setItem('auth-login', authData.login);
             localStorage.setItem('auth-password', authData.password);
             if (props.onSuccess) props.onSuccess();
         }

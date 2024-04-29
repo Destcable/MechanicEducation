@@ -7,9 +7,9 @@ interface IAuthFormProps {
 
 const AuthForm = (props: IAuthFormProps) => ( 
     <form className='m-5' onSubmit={props.onSubmit}>
-        <div className="form-group" id="formBasicEmail">
-            <label>Введите E-mail</label>
-            <input type="email" className="form-control" placeholder="Введите email" {...props.register('email')}/>
+        <div className="form-group" id="formBasicLogin">
+            <label>Введите логин</label>
+            <input type="text" className="form-control" placeholder="Введите логин" {...props.register('login')}/>
         </div>
 
         <div className="form-group">

@@ -7,13 +7,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/main.css';
 import { BrowserRouter } from 'react-router-dom';
 
-const client = new ApolloClient({
+export const dataProvider = new ApolloClient({
     uri: 'http://localhost:4000/graphql',
     cache: new InMemoryCache()
 });
 
 ReactDOM.render(
-    <ApolloProvider client={client}>
+    <ApolloProvider client={dataProvider}>
         <DndProvider backend={HTML5Backend}>
             <BrowserRouter>
                 <Router />
