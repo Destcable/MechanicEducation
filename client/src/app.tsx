@@ -43,8 +43,9 @@ const App = () => {
     if (!isAuth) {
         const { login, password } = getStorageAuth();
         
-        if (login && password && authService.login(login, password)) {
-            setAuth(true); 
+        if (login && password) {
+            const dataLogin = authService.login(login, password);
+            dataLogin.then(data => setAuth(data));
         }
 
         return <AuthFormContainer onSuccess={() => setAuth(true)}/>

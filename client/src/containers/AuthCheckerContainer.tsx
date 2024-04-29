@@ -7,14 +7,19 @@ interface IAuthCheckerContainer {
     children?: ReactNode
 }
 // @ts-ignore
-const AuthCheckerContainer: React.FC<IAuthCheckerContainer> = ({children}) => { 
+const PageContainer: React.FC<IAuthCheckerContainer> = async ({children}) => { 
     const { login, password } = getStorageAuth();
-    if (login && password && authService.login(login, password)) {
-        alert(123);
-        return {children};
+    if (login && password) {
+        const dataLogin =  await authService.login(login, password)
+        
+        if (dataLogin) { 
+            return {children};
+        }
+
+        return <AuthFormContainer />
     }
 
     return <AuthFormContainer />
 };
 
-export default AuthCheckerContainer;
+export default PageContainer;
