@@ -69,7 +69,7 @@ const Header = (HeaderObj: HeaderProps) => {
                     <div>
                         <h3 className='position-absolute fw-bold'
                             style={styleSubtitle}>
-                                {currentState.headerTheme}
+                                {currentState.headerTheme ? currentState.headerTheme : 'Тема' }
                             {/* {HeaderObj.loading ? <Skeleton width={709} height={24} containerClassName="avatar-skeleton" />
                                 : "Выбор оборудования, инструмента и технологической оснастки"} */}
                         </h3>

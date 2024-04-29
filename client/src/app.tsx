@@ -15,7 +15,7 @@ function counterReducer(state = {
 }, action: any) {
     switch (action.type) {
       case 'headerTheme/change':
-        return { headerTheme: action.headerTheme }
+        return { headerTheme: action.payload }
       default:
         return state
     }
