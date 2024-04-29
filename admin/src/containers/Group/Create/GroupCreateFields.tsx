@@ -1,23 +1,14 @@
-import { AutocompleteInput, ReferenceInput, SimpleForm, TextInput, required } from "react-admin"
+import { SimpleForm, TextInput, required } from "react-admin"
 
 const GroupCreateFields = () => {
     return (
         <SimpleForm>
             <TextInput
-                label="Заголовок"
+                label="Наименование группы"
                 source="title"
                 validate={required()}
                 fullWidth
             />
-
-            <ReferenceInput source="users" reference="user">
-                <AutocompleteInput
-                    label="Пользователи"
-                    source="users"
-                    optionText="name"
-                    fullWidth
-                />
-            </ReferenceInput>
         </SimpleForm>
     );
 };
