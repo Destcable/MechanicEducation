@@ -1,7 +1,7 @@
 import { createStore } from "redux"
 
 function storeReducer(state = { 
-    headerTheme: 'Тема' 
+    headerTheme: null
 }, action: any) {
     switch (action.type) {
       case 'headerTheme/change':

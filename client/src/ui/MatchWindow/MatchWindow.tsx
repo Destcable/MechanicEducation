@@ -2,9 +2,10 @@ import { ReactNode } from "react";
 import Header from "../../components/ui/Header/Header";
 
 interface IMatchWindowProps {
-    title: string;
+    title: string
     matchTitle: string
-    children?: ReactNode;
+    children?: ReactNode
+    answerButton?: ReactNode 
 }
 
 const MatchWindow = (props: IMatchWindowProps) => {
@@ -19,9 +20,11 @@ const MatchWindow = (props: IMatchWindowProps) => {
                             <div className="container-exercise w-100">
 
                                 <div className="text-zadanie w-100 fs-6">
+                                    {props.matchTitle}
                                     <div className="d-flex container-filling align-center justify-content-center fw-light w-100">
                                         {props.children}
                                     </div>
+                                    {props.answerButton}
                                 </div>
 
                             </div>

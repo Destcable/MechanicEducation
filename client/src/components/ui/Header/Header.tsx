@@ -6,12 +6,10 @@ import { ModalGetFromContent, ModalGetKeyWords } from '../../../content/modals/M
 import { Title } from '../../../config';
 import FlexBetween from '../../../ui/Semantic/FlexBetween';
 import { store } from '../../../reducer';
+import { useNavigate } from 'react-router-dom';
 
-interface HeaderProps {
-    loading?: boolean
-}
-
-const Header = (HeaderObj: HeaderProps) => {
+const Header = () => {
+    const navigate = useNavigate();
     const [modalActiveContent, setModalActiveContent] = useState(false);
     const [modalActiveKeyWords, setModalActiveKeyWords] = useState(false);
     const currentState = store.getState();
@@ -27,7 +25,7 @@ const Header = (HeaderObj: HeaderProps) => {
 
     const styleButton: CSSProperties = {
         fontSize: "14px",
-        padding: "14px 32px 25px"
+        padding: "14px 30px 15px"
     }
 
     const styleHeaderSecond: CSSProperties = {
@@ -60,23 +58,24 @@ const Header = (HeaderObj: HeaderProps) => {
                         <div className="d-flex align-items-center mt-10">
                             <a href='#'
                                 className="btn-words rounded-3 fw-bold text-white text-decoration-none"
-                                onClick={() => setModalActiveKeyWords(true)}
+                                onClick={() => navigate('/profile')}
                                 style={styleButton}>
                                 Профиль
                             </a>
                         </div>
                     </FlexBetween>
-                    <div>
-                        <h3 className='position-absolute fw-bold'
-                            style={styleSubtitle}>
-                                {currentState.headerTheme ? currentState.headerTheme : 'Тема' }
-                            {/* {HeaderObj.loading ? <Skeleton width={709} height={24} containerClassName="avatar-skeleton" />
-                                : "Выбор оборудования, инструмента и технологической оснастки"} */}
-                        </h3>
-                    </div>
+                    {currentState.headerTheme &&
+                        <div>
+                            <h3 className='position-absolute fw-bold' style={styleSubtitle}>
+                                {currentState.headerTheme ? currentState.headerTheme : 'Тема'}
+                                {/* {HeaderObj.loading ? <Skeleton width={709} height={24} containerClassName="avatar-skeleton" />
+                            : "Выбор оборудования, инструмента и технологической оснастки"} */}
+                            </h3>
+                        </div>
+                    }
                 </div>
             </div>
-            <div className="position-absolute w-100" style={styleHeaderSecond}></div>
+                <div className="position-absolute w-100" style={styleHeaderSecond}></div>
             <ModalGetFromContent active={modalActiveContent} setActive={setModalActiveContent} />
             <ModalGetKeyWords active={modalActiveKeyWords} setActive={setModalActiveKeyWords} />
         </header>

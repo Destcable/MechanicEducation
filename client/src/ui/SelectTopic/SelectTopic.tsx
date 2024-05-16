@@ -1,6 +1,8 @@
 import Footer from "../Elements/Footer/Footer";
 import { Topic } from "../../interfaces/topic";
 import Button from "../Elements/Button/Button";
+import Header from "../../components/ui/Header/Header";
+import { store } from "../../reducer";
 
 interface ISelectThemeProps {
     topics: Topic[],
@@ -8,8 +10,12 @@ interface ISelectThemeProps {
 }
 
 const SelectTopic = (props: ISelectThemeProps) => {
+    store.dispatch({ type: 'headerTheme/change', payload: null });
+
     return (
         <>
+            <Header />
+
             <div className="d-grid m-5 gap-4">
                 {props.topics.map((item, key) =>
                     <Button
@@ -22,7 +28,6 @@ const SelectTopic = (props: ISelectThemeProps) => {
                     </Button>
                 )}
             </div>
-
 
             <Footer />
         </>

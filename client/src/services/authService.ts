@@ -9,7 +9,6 @@ const authService = {
             variables: { login, password}
         }).then(({data}) => data.data.id ? true : false);
 
-        // return await login === "demo@mail.ru" && password === "demo" ? true : false;
     }
 };
 

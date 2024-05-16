@@ -2,19 +2,15 @@ import { CSSProperties } from "react";
 import { useNavigate } from "react-router-dom";
 import right_arrow from './img/right_arrow.png';
 
-interface HomeButtonProps { 
-    href: string
-}
-
 const colorTextHome: CSSProperties = { 
     color: "#43698F",
 };
 
-const HomeButton = (HomeObj: HomeButtonProps) => {
+const HomeButton = () => {
     const navigate = useNavigate();
 
     const handleClickGoPage = () => { 
-        navigate(HomeObj.href);
+        navigate('/');
     };
 
     return ( 

@@ -66,6 +66,10 @@ footer {
     font-size: 14px;
 }
 
+.h-88 { 
+    height: 88% !important;
+}
+
 .btn-contacts {
     background-color: #6287AA;
 }

@@ -24,9 +24,7 @@ const SelectThemeContainer = (props: IMainPageProps) => {
     if (data) { 
         return (
             <>
-                <Header
-                    loading={false}
-                />
+                <Header />
     
                 <div className="d-flex justify-content-center flex-wrap" style={mainBlock}>
                     {data.map((theme: Theme, idx: number) => (
