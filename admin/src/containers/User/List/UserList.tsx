@@ -5,6 +5,7 @@ const UserList = () => {
         <List>
             <Datagrid>
                 <TextField source="id" />
+                <TextField source="login" />
                 <TextField source="name" />
                 <ReferenceField source="groupId" reference="group">
                     <TextField source="title"/>

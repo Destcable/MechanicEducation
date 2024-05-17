@@ -8,6 +8,7 @@ type Query {
 type Mutation { 
     createUser(name: String!, login: String!, password: String!, groupId: Int): User!
     deleteManyUser(ids: [Int]!): [User]
+    addUserTask(login: String!, taskID: Int!): User
 }
 
 type User { 

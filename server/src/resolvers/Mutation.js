@@ -179,6 +179,36 @@ async function deleteManyTopicTheme(_, args, context) {
     return dataDeleted;
 };
 
+async function addUserTask(_, args, context) { 
+    const { login, taskID } = args;
+
+    // Найти пользователя по логину
+    const user = await context.prisma.user.findUnique({
+      where: {
+        login: login,
+      }
+    });
+  
+    if (!user) {
+      throw new Error(`User with login ${login} not found`);
+    }
+  
+    // Обновить задачи пользователя
+    const updatedTasks = [...user.tasks, taskID];
+  
+    // Обновить пользователя с новыми задачами
+    const updateUser = await context.prisma.user.update({
+      where: {
+        login: login,
+      },
+      data: {
+        tasks: updatedTasks,
+      }
+    });
+  
+    return updateUser;
+};
+
 module.exports = {
     createTopic,
     deleteTopic,
@@ -190,5 +220,6 @@ module.exports = {
     deleteManyGroup,
     deleteManyThemeTask,
     deleteManyTopic,
-    deleteManyTopicTheme
+    deleteManyTopicTheme,
+    addUserTask
 }

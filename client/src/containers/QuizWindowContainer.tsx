@@ -39,7 +39,7 @@ const QuizWindowContainer: React.FC<IQuizWindowContainer> = ({ dataTask }) => {
             if (find(correctAnswers, { title: title })) { 
                 return parentElement.style.backgroundColor = ANSWER_BUTTON_COLOR.success;
             }
-
+            // console.log(dataTask.id);
             return parentElement.style.backgroundColor = ANSWER_BUTTON_COLOR.error;
         });
 

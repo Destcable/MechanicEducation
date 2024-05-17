@@ -1,14 +1,20 @@
 import { createStore } from "redux"
 
-function storeReducer(state = { 
-    headerTheme: null
+function storeReducer(state = {
+    headerTheme: null,
+    tasks: [],
 }, action: any) {
     switch (action.type) {
-      case 'headerTheme/change':
-        return { headerTheme: action.payload }
+        case 'headerTheme/change':
+            state.headerTheme = action.payload;
+            return state;
+        case 'tasks/change':
+            state.tasks = action.payload;
+            return state
       default:
-        return state
+            return state
     }
 };
 
+// @ts-ignore
 export let store = createStore(storeReducer)

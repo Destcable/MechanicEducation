@@ -4,6 +4,9 @@ import Footer from "../Elements/Footer/Footer";
 import Button from "../Elements/Button/Button";
 import { Task } from "../../interfaces/task";
 import FlexBetween from "../Semantic/FlexBetween";
+import _ from "lodash";
+import { store } from "../../reducer";
+import { TbLockFilled } from "react-icons/tb";
 
 interface ISelectTaskProps {
     tasks: Task[]
@@ -15,6 +18,9 @@ const SelectTask = (props: ISelectTaskProps) => {
         marginTop: "150px",
         columnGap: "90px"
     }
+
+    const storeReducer = store.getState();
+    console.log(storeReducer.tasks);
 
     return (
         <>
@@ -28,18 +34,23 @@ const SelectTask = (props: ISelectTaskProps) => {
                         {item.type === "LECTURE" &&
                             <span>ЛЕКЦИЯ</span>
                         }
-                        
+
                         <span>{item.title}</span>
                         <div>
-                            <Button
-                                className='text-white w-100 p-1'
-                                onClick={() => props.onClick(item)}>Пройти</Button>
+                            {!_.includes(storeReducer.tasks, item.id) &&
+                                <Button
+                                    className='text-white w-100 p-1'
+                                    onClick={() => props.onClick(item)}>Пройти</Button>
+                            }
+                            {_.includes(storeReducer.tasks, item.id) &&
+                                <TbLockFilled />
+                            }
                         </div>
                     </FlexBetween>
                 )}
             </div>
 
-            <Footer 
+            <Footer
                 isBottom={false}
             />
         </>
