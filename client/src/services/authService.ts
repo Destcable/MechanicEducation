@@ -10,8 +10,12 @@ const authService = {
             variables: { login, password}
         }).then(({data}) => { 
             
-            if (data.data.tasks) { 
+            if (data.data.tasks) {
                 store.dispatch({ type: 'tasks/change', payload: data.data.tasks })
+            }
+
+            if (data.data.name) { 
+                store.dispatch({ type: 'username/change', payload: data.data.name}) 
             }
 
             return data.data.id ? true : false
