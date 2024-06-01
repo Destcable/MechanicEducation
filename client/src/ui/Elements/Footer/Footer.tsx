@@ -29,8 +29,8 @@ const Footer = ({ isBottom = true }: IFooterProps) => {
                             <p className="text-white mt-10">Технология машиностроения</p>
                         </div>
                         <div className="blockmdk d-flex flex-column">
-                            <h4 className="text-white ">МДК 01.01</h4>
-                            <p className="text-white mt-2"> Разработка технологических процессов изготовления деталей машин с применением систем автоматизированного проектирования</p>
+                            <h4 className="text-white ">МЦК-ЧЭМК</h4>
+                            <p className="text-white mt-2 mb-2">«Межрегиональный центр компетенций – Чебоксарский электромеханический колледж»</p>
                         </div>
                     </div>
 
@@ -40,7 +40,7 @@ const Footer = ({ isBottom = true }: IFooterProps) => {
                                 <h5 className="text-white">Цифровой образовательный контент</h5>
                             </div>
                             <div className="img_logo_prof">
-                                <img src={profLogo} alt="prof_logo" />
+                                <img style={{ width: '100px' }} className='ms-2 mb-3' src={profLogo} alt="prof_logo" />
                             </div>
                         </div>
                     </div>
