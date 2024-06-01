@@ -1,5 +1,5 @@
 ( + ) // в Header заменить: чтобы кнопка была за место профиль: Профиль: {name}
-// в footer заменить:
+( + / - ) // в footer заменить:
 ФГОС СПО 15.02.16 на иконку: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsSLvAhXAwZHO3EKdg0WV2M81Fsso4NlDfxVpo9ykuhw&s
 { 
     МДК 01.01
