@@ -7,6 +7,7 @@ import { Title } from '../../../config';
 import FlexBetween from '../../../ui/Semantic/FlexBetween';
 import { store } from '../../../reducer';
 import { useNavigate } from 'react-router-dom';
+import { FaUserLarge } from "react-icons/fa6";
 
 const Header = () => {
     const navigate = useNavigate();
@@ -55,12 +56,13 @@ const Header = () => {
                         <div className="pt-3">
                             <h3 className="text-white">{Title}</h3>
                         </div>
-                        <div className="d-flex align-items-center mt-10">
+                        <div className="d-flex align-items-center mt-10 d-flex">
                             <a href='#'
-                                className="btn-words rounded-3 fw-bold text-white text-decoration-none"
+                                className="d-flex align-items-center gap-2 btn-words rounded-3 fw-bold text-white text-decoration-none"
                                 onClick={() => navigate('/profile')}
                                 style={styleButton}>
-                                Профиль
+                                {currentState.username}
+                                <FaUserLarge />
                             </a>
                         </div>
                     </FlexBetween>
