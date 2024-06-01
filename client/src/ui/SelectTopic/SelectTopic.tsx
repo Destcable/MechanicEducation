@@ -15,20 +15,22 @@ const SelectTopic = (props: ISelectThemeProps) => {
     return (
         <>
             <Header />
+            <div className=" d-flex h-100">
+                <h1 className="h-100 bg-light">123</h1>
+                <div className="w-100 m-5 gap-4">
+                    {props.topics.map((item, key) =>
+                        <Button
+                            key={key}
+                            id={item.id}
+                            className='text-white w-100 p-2'
+                            onClick={() => props.onClick(item)}
+                        >
+                            {item.name}
+                        </Button>
+                    )}
+                </div>
 
-            <div className="d-grid m-5 gap-4">
-                {props.topics.map((item, key) =>
-                    <Button
-                        key={key}
-                        id={item.id}
-                        className='text-white w-100 p-2'
-                        onClick={() => props.onClick(item)}
-                    >
-                        {item.name}
-                    </Button>
-                )}
             </div>
-
             <Footer />
         </>
     )

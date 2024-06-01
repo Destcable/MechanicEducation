@@ -6,6 +6,10 @@ body {
     position: relative;
 }
 
+html, body, #root { 
+    height: 100% !important;
+}
+
 
 h2 {
     margin: 0;

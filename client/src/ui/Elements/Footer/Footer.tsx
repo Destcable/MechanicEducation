@@ -34,13 +34,13 @@ const Footer = ({ isBottom = true }: IFooterProps) => {
                         </div>
                     </div>
 
-                    <div className="d-flex flex-column mt-4">
-                        <div className="column3 d-flex">
-                            <div className="white_line_left footer_third-col">
-                                <h5 className="text-white">Цифровой образовательный контент</h5>
+                    <div className="d-flex flex-column mt-3 align-items-center">
+                        <div className="column3 d-flex mb-3">
+                            <div className="d-flex white_line_left footer_third-col align-items-center">
+                                <h5 className="text-white ">Цифровой образовательный контент</h5>
                             </div>
                             <div className="img_logo_prof">
-                                <img style={{ width: '100px' }} className='ms-2 mb-3' src={profLogo} alt="prof_logo" />
+                                <img style={{ width: '100px' }} className='ms-2' src={profLogo} alt="prof_logo" />
                             </div>
                         </div>
                     </div>
