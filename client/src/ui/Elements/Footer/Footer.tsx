@@ -27,8 +27,6 @@ const Footer = ({ isBottom = true }: IFooterProps) => {
                     <div className="footer_columns d-flex mt-1 mb-1 flex-wrap align-items-center">
                         <div className="d-flex flex-column align-items-center">
                             <img style={{ width: '90px' }} className='ms-2' src={chemkLogo} alt="chemk_logo" />
-                            {/* <h4 className="text-white">ФГОС СПО 15.02.16</h4> */}
-                            {/* <p className="text-white mt-10">Технология машиностроения</p> */}
                         </div>
                         <div className="blockmdk d-flex flex-column">
                             <h4 className="text-white ">МЦК-ЧЭМК</h4>
