@@ -15,9 +15,9 @@ const SelectTopic = (props: ISelectThemeProps) => {
     return (
         <>
             <Header />
-            <div className="d-flex h-100">
+            <div className="d-flex">
                 <div className="d-flex  p-3 w-50 flex-wrap" style={{ backgroundColor: '#4276af6b' }}>
-                    <span>Выбор темы:</span>
+                    <span className="mb-3">Выбор предмета:</span>
                     <span>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. 
                         Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. 
                         В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, 
