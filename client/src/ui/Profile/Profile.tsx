@@ -18,6 +18,10 @@ const Profile = () => {
                                 <a className="nav-link" href="#" onClick={() => setPage('INFO')}>Информация</a>
                                 <a className="nav-link" href="#" onClick={() => setPage('GRADES')}>Оценки</a>
                                 <a className="nav-link" href="#" onClick={() => setPage('SETTINGS')}>Настройки</a>
+                                <a className="nav-link" href="/login" onClick={() => {
+                                    localStorage.removeItem('auth-login');
+                                    localStorage.removeItem('auth-password');
+                                }}>Выйти</a>
                             </nav>
                         </div>
 
