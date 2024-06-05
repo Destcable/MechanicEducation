@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { FC, useState } from 'react';
 import QuizWindow from '../ui/QuizWindow/QuizWindow';
 import { find, get } from 'lodash';
 import QuizWindowTaskOption from '../ui/QuizWindow/QuizWindowTaskOption';
@@ -16,7 +16,7 @@ interface IQuizWindowContainer {
     };
 }
 
-const QuizWindowContainer: React.FC<IQuizWindowContainer> = ({ dataTask }) => {
+const QuizWindowContainer: FC<IQuizWindowContainer> = ({ dataTask }) => {
     // @ts-ignore
     const { data } = useQueryListThemeTasks(get(dataTask, 'themeId', ''));
     
