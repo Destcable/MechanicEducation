@@ -23,37 +23,39 @@ const SelectTask = (props: ISelectTaskProps) => {
     console.log(storeReducer.tasks);
 
     return (
-        <>
-            <Header />
-            <div className="d-flex justify-content-center flex-wrap" style={mainBlock}>
-                {props.tasks.map((item, idx) =>
-                    <FlexBetween
-                        key={idx}
-                        className="align-items-center w-50 border rounded-3 p-2 mb-3"
-                    >
-                        {item.type === "LECTURE" &&
-                            <span>ЛЕКЦИЯ</span>
-                        }
+        <div className="page-container">
+            <div className="content-wrap">
+                <Header />
+                <div className="d-flex justify-content-center flex-wrap" style={mainBlock}>
+                    {props.tasks.map((item, idx) =>
+                        <FlexBetween
+                            key={idx}
+                            className="align-items-center w-50 border rounded-3 p-2 mb-3"
+                        >
+                            {item.type === "LECTURE" &&
+                                <span>ЛЕКЦИЯ</span>
+                            }
 
-                        <span>{item.title}</span>
-                        <div>
-                            {!_.includes(storeReducer.tasks, item.id) &&
-                                <Button
-                                    className='text-white w-100 p-1'
-                                    onClick={() => props.onClick(item)}>Пройти</Button>
-                            }
-                            {_.includes(storeReducer.tasks, item.id) &&
-                                <TbLockFilled />
-                            }
-                        </div>
-                    </FlexBetween>
-                )}
+                            <span>{item.title}</span>
+                            <div>
+                                {!_.includes(storeReducer.tasks, item.id) &&
+                                    <Button
+                                        className='text-white w-100 p-1'
+                                        onClick={() => props.onClick(item)}>Пройти</Button>
+                                }
+                                {_.includes(storeReducer.tasks, item.id) &&
+                                    <TbLockFilled />
+                                }
+                            </div>
+                        </FlexBetween>
+                    )}
+                </div>
             </div>
-
             <Footer
-                isBottom={false}
+                isBottom={true}
+                backgroundColorTringle="#f8f9fa"
             />
-        </>
+        </div>
     );
 };
 
