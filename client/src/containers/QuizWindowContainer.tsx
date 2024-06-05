@@ -19,12 +19,15 @@ interface IQuizWindowContainer {
 const QuizWindowContainer: React.FC<IQuizWindowContainer> = ({ dataTask }) => {
     // @ts-ignore
     const { data } = useQueryListThemeTasks(get(dataTask, 'themeId', ''));
-    console.log(data);
+    
     const [selectedAnswers, setSelectedAnswers] = useState<HTMLInputElement[]>([]);
     const [getTaskContent, setTaskContent] = useState(get(dataTask, 'dataQuiz'));
     const [getTaskTitle, setTaskTitle] = useState(get(dataTask, 'title', ''));
     const [answered, setAnswered] = useState<boolean>(false);
     const [getTaskId, setTaskId] = useState<string>(get(dataTask, 'id', ''));
+    const [getCorrectAnswers, setCorrectAnswers] = useState(dataTask.dataQuiz.filter(obj => obj.isCorrect === true));
+    const [getQuizTitle, setQuizTitle] = useState(get(dataTask, 'quizTitle', ''));
+
     // @ts-ignore
     const idx = data.findIndex(item => item.id === getTaskId);
 
@@ -52,8 +55,7 @@ const QuizWindowContainer: React.FC<IQuizWindowContainer> = ({ dataTask }) => {
         checkedCheckboxes.forEach(checkbox => {
             const parentElement = checkbox.parentNode as HTMLElement;
             const title = checkbox.value;
-            const correctAnswers = dataTask.dataQuiz.filter(obj => obj.isCorrect === true);
-            if (find(correctAnswers, { title: title })) { 
+            if (find(getCorrectAnswers, { title: title })) { 
                 return parentElement.style.backgroundColor = ANSWER_BUTTON_COLOR.success;
             };
             return parentElement.style.backgroundColor = ANSWER_BUTTON_COLOR.error;
@@ -65,17 +67,28 @@ const QuizWindowContainer: React.FC<IQuizWindowContainer> = ({ dataTask }) => {
     const nextTask = () => { 
         // @ts-ignore
         const indexTask = data.findIndex(item => item.id === getTaskId);
+        const checkboxes = document.querySelectorAll<HTMLInputElement>('input[type="checkbox"]');
         dataTask = data[indexTask + 1];
 
         setTaskId(get(dataTask, 'id', ''));
         setTaskTitle(get(dataTask, 'title', ''));
+        setQuizTitle(get(dataTask, 'quizTitle', ''));
         setTaskContent(get(dataTask, 'dataQuiz'));
+        setCorrectAnswers(dataTask.dataQuiz.filter(obj => obj.isCorrect === true));
+        setSelectedAnswers([]);
+        setAnswered(false);
+
+        checkboxes.forEach(checkbox => { 
+            checkbox.checked = false;
+            const parentElement = checkbox.parentNode as HTMLElement;
+            parentElement.style.backgroundColor = ANSWER_BUTTON_COLOR.default;
+        })
     }
 
     return (
         <QuizWindow 
             title={getTaskTitle} 
-            quizTitle={dataTask.quizTitle} 
+            quizTitle={getQuizTitle} 
             answerButton={
                 selectedAnswers.length > 0 
                     ? answered && buttonEnding || <AnswerButton onClick={handleSubmit}/>
