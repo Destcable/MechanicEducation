@@ -40,7 +40,8 @@ const SelectThemeContainer = (props: IMainPageProps) => {
                 </div>
                 
                 <Footer 
-                    isBottom={false}
+                    isBottom={true}
+                    backgroundColorTringle="#f8f9fa"
                 />
             </>
     

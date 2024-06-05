@@ -22,18 +22,11 @@ const SelectTopic = (props: ISelectThemeProps) => {
                 <div className="d-flex bg-light">
                     <div className="w-100 m-5 gap-4 d-flex flex-wrap mb-5">
                         {props.topics.map((item, key) =>
-                        <>
-                                                    <TemplateSelectTopic
-                            key={key}
-                            name={item.name}
-                            onClick={() => props.onClick(item)}
-                        />
-                        <TemplateSelectTopic
-                        key={key}
-                        name={item.name}
-                        onClick={() => props.onClick(item)}
-                    />
-                        </>
+                            <TemplateSelectTopic
+                                key={key}
+                                name={item.name}
+                                onClick={() => props.onClick(item)}
+                            />
                         )}
                     </div>
                 </div>
@@ -65,13 +58,13 @@ const TemplateSelectTopic: FC<ITemplateSelectTopic> = ({ name, onClick }) => (
             </span>
         </div>
         <p className="fs-5 fw-bold mt-3 mb-4">{name}</p>
-        <Button 
-            className='font-monospace bg-white border-0 p-0' 
+        <Button
+            className='font-monospace bg-white border-0 p-0'
             style={{ color: '#0250ce' }}
             // @ts-ignore
             onClick={onClick}
         >
-            Перейти <FaArrowRight /> 
+            Перейти <FaArrowRight />
         </Button>
     </div>
 );
