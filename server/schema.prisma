@@ -45,6 +45,7 @@ model ThemeTask {
     dataLecture String?
     dataQuiz    Json?
     dataMatch   Json?
+    dataWord    Json?
     theme       TopicTheme @relation(fields: [themeId], references: [id])
     themeId     Int
 }

@@ -3,12 +3,14 @@ import { AutocompleteInput, ReferenceInput, SelectInput, SimpleForm, TextInput, 
 import { RichTextInput } from 'ra-input-rich-text';
 import TaskCreateQuizField from './TaskCreateQuizField';
 import TaskCreateMatchField from './TaskCreateMatchField';
+import TaskCreateWordField from './TaskCreateWordField';
 
 enum eTask {
     LECTURE = "LECTURE",
     QUIZ = "QUIZ",
-    MATCH = "MATCH"
-};
+    MATCH = "MATCH",
+    WORD = "WORD"
+}
 
 const TaskCreateFields = () => {
     const [type, setType] = useState('');
@@ -27,7 +29,8 @@ const TaskCreateFields = () => {
                 choices={[
                     { id: eTask.LECTURE, name: eTask.LECTURE },
                     { id: eTask.QUIZ, name: eTask.QUIZ },
-                    { id: eTask.MATCH, name: eTask.MATCH }
+                    { id: eTask.MATCH, name: eTask.MATCH },
+                    { id: eTask.WORD, name: eTask.WORD }
                 ]}
                 onChange={handleTypeChange}
             />
@@ -51,6 +54,8 @@ const TaskCreateFields = () => {
             {type === eTask.QUIZ && <TaskCreateQuizField />}
 
             {type === eTask.MATCH && <TaskCreateMatchField />}
+
+            {type === eTask.WORD && <TaskCreateWordField />}
         </SimpleForm>
     );
 };
