@@ -20,17 +20,10 @@ const LectureWindowContainer = ({ dataTask }: ILectureWindowContainerProps) => {
         const test = data.findIndex(item => item.id === getTaskId);
         dataTask = data[test+1];
         
-        setTaskId(
-            get(dataTask, 'id', '')
-
-        );
-        setTaskTitle(
-            get(dataTask, 'title', '')
-        );
+        setTaskId( get(dataTask, 'id', '') );
+        setTaskTitle( get(dataTask, 'title', '') );
         
-        setTaskContent( 
-            get(dataTask, 'dataLecture', '')
-        );
+        setTaskContent( get(dataTask, 'dataLecture', '') );
     };
 
     return dataTask && <LectureWindow title={getTaskTitle} nextButton={<NextButton onClick={() => nextTask()} />}>
