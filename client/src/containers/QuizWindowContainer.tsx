@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import QuizWindow from '../ui/QuizWindow/QuizWindow';
-import { find } from 'lodash';
+import { find, get } from 'lodash';
 import QuizWindowTaskOption from '../ui/QuizWindow/QuizWindowTaskOption';
 import { ANSWER_BUTTON_COLOR } from '../UI.config';
 import AnswerButton from '../components/ui/AnswerButton/AnswerButton';
 import NextButton from '../ui/NextButton/NextButton';
+import { useQueryListThemeTasks } from '../hooks/useQueryThemeTasks';
+import FinishButton from '../ui/FinishButton/FinishButton';
 
 interface IQuizWindowContainer {
     dataTask: {
@@ -15,9 +17,18 @@ interface IQuizWindowContainer {
 }
 
 const QuizWindowContainer: React.FC<IQuizWindowContainer> = ({ dataTask }) => {
-    const { title: taskTitle, dataQuiz: taskContent } = dataTask;
+    // @ts-ignore
+    const { data } = useQueryListThemeTasks(get(dataTask, 'themeId', ''));
+    console.log(data);
     const [selectedAnswers, setSelectedAnswers] = useState<HTMLInputElement[]>([]);
+    const [getTaskContent, setTaskContent] = useState(get(dataTask, 'dataQuiz'));
+    const [getTaskTitle, setTaskTitle] = useState(get(dataTask, 'title', ''));
     const [answered, setAnswered] = useState<boolean>(false);
+    const [getTaskId, setTaskId] = useState<string>(get(dataTask, 'id', ''));
+    // @ts-ignore
+    const idx = data.findIndex(item => item.id === getTaskId);
+
+    const buttonEnding = idx + 1 === data.length ? <FinishButton /> : <NextButton onClick={() => nextTask()}/>;
 
     const handleOptionChange = () => {
         if (answered) return;
@@ -51,19 +62,29 @@ const QuizWindowContainer: React.FC<IQuizWindowContainer> = ({ dataTask }) => {
         setAnswered(true);
     };
 
+    const nextTask = () => { 
+        // @ts-ignore
+        const indexTask = data.findIndex(item => item.id === getTaskId);
+        dataTask = data[indexTask + 1];
+
+        setTaskId(get(dataTask, 'id', ''));
+        setTaskTitle(get(dataTask, 'title', ''));
+        setTaskContent(get(dataTask, 'dataQuiz'));
+    }
+
     return (
         <QuizWindow 
-            title={taskTitle} 
+            title={getTaskTitle} 
             quizTitle={dataTask.quizTitle} 
             answerButton={
                 selectedAnswers.length > 0 
-                    ? answered && <NextButton /> || <AnswerButton onClick={handleSubmit}/>
+                    ? answered && buttonEnding || <AnswerButton onClick={handleSubmit}/>
                     : false
             }
         >
-            {taskContent && (
+            {getTaskContent && (
                 <div>
-                    {taskContent.map((task, idx) => (
+                    {getTaskContent.map((task, idx) => (
                         <QuizWindowTaskOption
                             idInput={idx.toString()}
                             key={idx}
