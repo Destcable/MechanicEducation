@@ -8,6 +8,11 @@ body {
 
 html, body, #root { 
     height: 100% !important;
+    background-color: #f8f9fa !important;
+}
+
+.w-32 { 
+    width: 32% !important;
 }
 
 .page-container {

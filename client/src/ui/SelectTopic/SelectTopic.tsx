@@ -21,17 +21,20 @@ const SelectTopic = (props: ISelectThemeProps) => {
                 <Header />
                 <div className="d-flex bg-light">
                     <div className="w-100 m-5 gap-4 d-flex flex-wrap mb-5">
-
                         {props.topics.map((item, key) =>
-                            <TemplateSelectTopic
-                                key={key}
-                                name={item.name}
-                                onClick={() => props.onClick(item)}
-                            />
+                        <>
+                                                    <TemplateSelectTopic
+                            key={key}
+                            name={item.name}
+                            onClick={() => props.onClick(item)}
+                        />
+                        <TemplateSelectTopic
+                        key={key}
+                        name={item.name}
+                        onClick={() => props.onClick(item)}
+                    />
+                        </>
                         )}
-
-
-
                     </div>
                 </div>
             </div>
@@ -49,9 +52,9 @@ interface ITemplateSelectTopic {
 }
 
 const TemplateSelectTopic: FC<ITemplateSelectTopic> = ({ name, onClick }) => (
-    <div className="p-3 border rounded bg-white">
-        <div className="justify-content-center d-flex w-100">
-            <img src={testLogo} alt="testLogo" />
+    <div className="p-3 border rounded bg-white w-32">
+        <div className="justify-content-center text-center">
+            <img src={testLogo} alt="testLogo" className="img-fluid" style={{ maxWidth: '100%', height: 'auto' }} />
         </div>
         <div className="d-flex mt-3">
             <span
