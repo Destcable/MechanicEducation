@@ -21,11 +21,10 @@ const LectureWindowContainer = ({ dataTask }: ILectureWindowContainerProps) => {
     const nextTask = () => {
         // @ts-ignore
         const indexTask = data.findIndex(item => item.id === getTaskId);
-
         dataTask = data[indexTask + 1];
+
         setTaskId(get(dataTask, 'id', ''));
         setTaskTitle(get(dataTask, 'title', ''));
-
         setTaskContent(get(dataTask, 'dataLecture', ''));
     };
 
