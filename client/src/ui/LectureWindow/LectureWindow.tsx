@@ -4,6 +4,7 @@ import Header from "../../components/ui/Header/Header";
 interface TraningPageProps {
     title: string,
     children?: ReactNode;
+    nextButton?: ReactNode; 
 }
 
 const LectureWindow = (props: TraningPageProps) => {
@@ -21,6 +22,7 @@ const LectureWindow = (props: TraningPageProps) => {
                                     <div className="d-flex container-filling align-center justify-content-center fw-light w-100">
                                         {props.children}
                                     </div>
+                                    {props.nextButton}
                                 </div>
 
                             </div>
