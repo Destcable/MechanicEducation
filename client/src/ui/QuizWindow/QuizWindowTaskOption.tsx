@@ -17,6 +17,7 @@ const QuizWindowTaskOption: React.FC<TaskOptionProps> = ({ idInput, task, handle
                 type="checkbox"
                 name="options"
                 style={{ display: 'none' }}
+                value={task.title}
                 onChange={(element) => handleOptionChange({ title: task.title, idInput, event: element })}
             />
             {task.title}

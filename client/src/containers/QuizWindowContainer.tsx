@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import QuizWindow from '../ui/QuizWindow/QuizWindow';
-import { find, xor } from 'lodash';
+import { find } from 'lodash';
 import QuizWindowTaskOption from '../ui/QuizWindow/QuizWindowTaskOption';
 import { ANSWER_BUTTON_COLOR } from '../UI.config';
 import AnswerButton from '../components/ui/AnswerButton/AnswerButton';
+import NextButton from '../ui/NextButton/NextButton';
 
 interface IQuizWindowContainer {
     dataTask: {
@@ -15,31 +16,35 @@ interface IQuizWindowContainer {
 
 const QuizWindowContainer: React.FC<IQuizWindowContainer> = ({ dataTask }) => {
     const { title: taskTitle, dataQuiz: taskContent } = dataTask;
-    const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
+    const [selectedAnswers, setSelectedAnswers] = useState<HTMLInputElement[]>([]);
     const [answered, setAnswered] = useState<boolean>(false);
 
-    const handleOptionChange = (element: any) => {
-        if (!answered) {
-            const parentElement = element.event.target.parentNode; 
+    const handleOptionChange = () => {
+        if (answered) return;
+        const checkboxes = document.querySelectorAll<HTMLInputElement>('input[type="checkbox"]');
+        const checkedCheckboxes = Array.from(checkboxes).filter(checkbox => checkbox.checked);
+        
+        checkboxes.forEach(checkbox => { 
+            const parentElement = checkbox.parentNode as HTMLElement;
+            if (checkbox.checked) parentElement.style.backgroundColor = ANSWER_BUTTON_COLOR.selected;
+            else parentElement.style.backgroundColor = ANSWER_BUTTON_COLOR.default;
+        });
 
-            if (parentElement.style.backgroundColor !== ANSWER_BUTTON_COLOR.selected) {
-                parentElement.style.backgroundColor = ANSWER_BUTTON_COLOR.selected;
-            } else { 
-                parentElement.style.backgroundColor = ANSWER_BUTTON_COLOR.default;
-            }
-            setSelectedAnswers(prevAnswers => xor(prevAnswers, [element]));
-        }
+        
+        setSelectedAnswers(checkedCheckboxes);
     };
 
     const handleSubmit = () => {
-        // @ts-ignore
-        selectedAnswers.map(({title, event}) => { 
-            const parentElement = event.target.parentNode;
+        const checkboxes = document.querySelectorAll<HTMLInputElement>('input[type="checkbox"]');
+        const checkedCheckboxes = Array.from(checkboxes).filter(checkbox => checkbox.checked);
+
+        checkedCheckboxes.forEach(checkbox => {
+            const parentElement = checkbox.parentNode as HTMLElement;
+            const title = checkbox.value;
             const correctAnswers = dataTask.dataQuiz.filter(obj => obj.isCorrect === true);
             if (find(correctAnswers, { title: title })) { 
                 return parentElement.style.backgroundColor = ANSWER_BUTTON_COLOR.success;
-            }
-            // console.log(dataTask.id);
+            };
             return parentElement.style.backgroundColor = ANSWER_BUTTON_COLOR.error;
         });
 
@@ -50,7 +55,11 @@ const QuizWindowContainer: React.FC<IQuizWindowContainer> = ({ dataTask }) => {
         <QuizWindow 
             title={taskTitle} 
             quizTitle={dataTask.quizTitle} 
-            answerButton={!answered && <AnswerButton onClick={handleSubmit}/>}
+            answerButton={
+                selectedAnswers.length > 0 
+                    ? answered && <NextButton /> || <AnswerButton onClick={handleSubmit}/>
+                    : false
+            }
         >
             {taskContent && (
                 <div>
@@ -59,6 +68,7 @@ const QuizWindowContainer: React.FC<IQuizWindowContainer> = ({ dataTask }) => {
                             idInput={idx.toString()}
                             key={idx}
                             task={task}
+                            // @ts-ignore
                             selectedAnswers={selectedAnswers}
                             handleOptionChange={handleOptionChange}
                         />
