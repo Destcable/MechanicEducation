@@ -14,6 +14,7 @@ const LectureWindow = (props: TraningPageProps) => {
             <div className="bg_color_block d-flex flex-column ">
                 <div className="d-flex justify-content-center align-center">
                     <div className="content1 d-flex flex-column max-content w-100">
+                        {/* <HomeButton /> */}
                         <div className="container1">
                             <p className="container_header container_title">{props.title}</p>
                             <div className="container-exercise w-100">
