@@ -9,27 +9,21 @@ interface ILectureWindowContainerProps {
 };
 
 const LectureWindowContainer = ({ dataTask }: ILectureWindowContainerProps) => {
-    const { data } = useQueryListThemeTasks(
-        get(dataTask, 'themeId', '')
-    );
+    const { data } = useQueryListThemeTasks( get(dataTask, 'themeId', '') );
 
-    const [getTaskTitle, setTaskTitle] = useState(
-        get(dataTask, 'title', '')
-    );
-
-    const [getTaskId, setTaskId] = useState(
-        get(dataTask, 'id', '')
-    );
-
-    const [getTaskContent, setTaskContent] = useState(
-        get(dataTask, 'dataLecture', '')
-    );
+    const [getTaskTitle, setTaskTitle] = useState( get(dataTask, 'title', '') );
+    const [getTaskId, setTaskId] = useState( get(dataTask, 'id', '') );
+    const [getTaskContent, setTaskContent] = useState( get(dataTask, 'dataLecture', '') );
 
     const nextTask = () => {
         // @ts-ignore
         const test = data.findIndex(item => item.id === getTaskId);
         dataTask = data[test+1];
         
+        setTaskId(
+            get(dataTask, 'id', '')
+
+        );
         setTaskTitle(
             get(dataTask, 'title', '')
         );
