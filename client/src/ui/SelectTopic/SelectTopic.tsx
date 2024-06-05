@@ -1,9 +1,11 @@
 import Footer from "../Elements/Footer/Footer";
 import { Topic } from "../../interfaces/topic";
-import Button from "../Elements/Button/Button";
 import Header from "../../components/ui/Header/Header";
 import { store } from "../../reducer";
-import SelectTopicInfo from "./SelectTopicInfo";
+import testLogo from "./img/test.png";
+import { FaArrowRight } from "react-icons/fa6";
+import { FC } from "react";
+import { Button } from "react-bootstrap";
 
 interface ISelectThemeProps {
     topics: Topic[],
@@ -14,29 +16,61 @@ const SelectTopic = (props: ISelectThemeProps) => {
     store.dispatch({ type: 'headerTheme/change', payload: null });
 
     return (
-        <>
-            <Header />
-            <div className="d-flex">
-                <div className="d-flex  p-3 w-50 flex-wrap" style={{ backgroundColor: 'rgba(160, 190, 221, 25%)' }}>
-                    <SelectTopicInfo />
-                </div>
-                <div className="w-100 m-5 gap-4">
-                    {props.topics.map((item, key) =>
-                        <Button
-                            key={key}
-                            id={item.id}
-                            className='text-white w-100 p-2'
-                            onClick={() => props.onClick(item)}
-                        >
-                            {item.name}
-                        </Button>
-                    )}
-                </div>
+        <div className="page-container">
+            <div className="content-wrap">
+                <Header />
+                <div className="d-flex bg-light">
+                    <div className="w-100 m-5 gap-4 d-flex flex-wrap mb-5">
 
+                        {props.topics.map((item, key) =>
+                            <TemplateSelectTopic
+                                key={key}
+                                name={item.name}
+                                onClick={() => props.onClick(item)}
+                            />
+                        )}
+
+
+
+                    </div>
+                </div>
             </div>
-            <Footer />
-        </>
+            <Footer
+                isBottom={true}
+                backgroundColorTringle="#f8f9fa"
+            />
+        </div>
     )
 };
+
+interface ITemplateSelectTopic {
+    name: string,
+    onClick?: (data: Topic) => void
+}
+
+const TemplateSelectTopic: FC<ITemplateSelectTopic> = ({ name, onClick }) => (
+    <div className="p-3 border rounded bg-white">
+        <div className="justify-content-center d-flex w-100">
+            <img src={testLogo} alt="testLogo" />
+        </div>
+        <div className="d-flex mt-3">
+            <span
+                className="p-2 rounded font-monospace"
+                style={{ backgroundColor: '#f6ecff', color: '#a348ff' }}
+            >
+                Разное
+            </span>
+        </div>
+        <p className="fs-5 fw-bold mt-3 mb-4">{name}</p>
+        <Button 
+            className='font-monospace bg-white border-0 p-0' 
+            style={{ color: '#0250ce' }}
+            // @ts-ignore
+            onClick={onClick}
+        >
+            Перейти <FaArrowRight /> 
+        </Button>
+    </div>
+);
 
 export default SelectTopic;

@@ -5,28 +5,23 @@ import chemkLogo from './img/chemk_logo.png';
 
 interface IFooterProps { 
     isBottom?: boolean;
+    backgroundColorTringle?: string; 
 }
 
-
-const Footer = ({ isBottom = true }: IFooterProps) => { 
+const Footer = ({ isBottom = true, backgroundColorTringle = '#fff' }: IFooterProps) => { 
     
     const bottomStyle: CSSProperties = { 
-        position: 'fixed', 
-        bottom: 0, 
-        left: 0, 
-        width: '100%', 
-        boxSizing: 'border-box', 
-        zIndex: 999
+        width: '100%',
     };
 
     return (
         <div style={isBottom == true ? bottomStyle : undefined}>
-            <Tringle />
+            <Tringle backgroundColor={backgroundColorTringle}/>
             <footer className="d-flex justify-content-center">
                 <div className="footer1 d-flex flex-wrap">
                     <div className="footer_columns d-flex mt-1 mb-1 flex-wrap align-items-center">
                         <div className="d-flex flex-column align-items-center">
-                            <img style={{ width: '90px' }} className='ms-2' src={chemkLogo} alt="chemk_logo" />
+                            <img style={{ width: '85px' }} className='ms-2' src={chemkLogo} alt="chemk_logo" />
                         </div>
                         <div className="blockmdk d-flex flex-column">
                             <h4 className="text-white ">МЦК-ЧЭМК</h4>
@@ -40,7 +35,7 @@ const Footer = ({ isBottom = true }: IFooterProps) => {
                                 <h5 className="text-white ">Цифровой образовательный контент</h5>
                             </div>
                             <div className="img_logo_prof">
-                                <img style={{ width: '100px' }} className='ms-2' src={profLogo} alt="prof_logo" />
+                                <img style={{ width: '90px' }} className='ms-2' src={profLogo} alt="prof_logo" />
                             </div>
                         </div>
                     </div>
