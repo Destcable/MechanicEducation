@@ -4,6 +4,7 @@ import NextButton from '../ui/NextButton/NextButton';
 import { useQueryListThemeTasks } from '../hooks/useQueryThemeTasks';
 import { useState } from 'react';
 import FinishButton from '../ui/FinishButton/FinishButton';
+import QuizWindowContainer from './QuizWindowContainer';
 
 interface ILectureWindowContainerProps {
     dataTask: any,
@@ -12,9 +13,12 @@ interface ILectureWindowContainerProps {
 const LectureWindowContainer = ({ dataTask }: ILectureWindowContainerProps) => {
     const { data } = useQueryListThemeTasks(get(dataTask, 'themeId', ''));
 
+    const [getDataTask, setDataTask] = useState(dataTask);
     const [getTaskTitle, setTaskTitle] = useState(get(dataTask, 'title', ''));
     const [getTaskId, setTaskId] = useState(get(dataTask, 'id', ''));
     const [getTaskContent, setTaskContent] = useState(get(dataTask, 'dataLecture', ''));
+    const [getTypeTask, setTypeTask] = useState<string>(get(dataTask, 'type'));
+    
     // @ts-ignore
     const idx = data.findIndex(item => item.id === getTaskId);
 
@@ -22,11 +26,19 @@ const LectureWindowContainer = ({ dataTask }: ILectureWindowContainerProps) => {
         // @ts-ignore
         const indexTask = data.findIndex(item => item.id === getTaskId);
         dataTask = data[indexTask + 1];
+        setDataTask(dataTask);
+        setTypeTask(get(dataTask, 'type'));
 
-        setTaskId(get(dataTask, 'id', ''));
-        setTaskTitle(get(dataTask, 'title', ''));
-        setTaskContent(get(dataTask, 'dataLecture', ''));
+        if (getTypeTask === "LECTURE") { 
+            setTaskId(get(dataTask, 'id', ''));
+            setTaskTitle(get(dataTask, 'title', ''));
+            setTaskContent(get(dataTask, 'dataLecture', ''));
+        }
     };
+
+    if (getTypeTask === "QUIZ") { 
+        return <QuizWindowContainer dataTask={getDataTask} />
+    }
 
     return dataTask && <LectureWindow
         title={getTaskTitle}
