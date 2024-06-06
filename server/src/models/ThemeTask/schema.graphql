@@ -2,6 +2,7 @@ enum ETypeTask {
     LECTURE
     QUIZ
     MATCH
+    WORD
 }
 
 type Query { 
@@ -20,6 +21,7 @@ type Mutation {
         dataLecture: String, 
         dataQuiz: JSON
         dataMatch: JSON
+        dataWord:  JSON
     ): ThemeTask!
     deleteManyThemeTask(ids: [Int]!): [ThemeTask]
 }
@@ -34,4 +36,5 @@ type ThemeTask {
     dataLecture: String
     dataQuiz: JSON
     dataMatch: JSON
+    dataWord:  JSON
 }

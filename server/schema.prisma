@@ -11,6 +11,7 @@ enum TypeTask {
     LECTURE
     QUIZ
     MATCH
+    WORD
 }
 
 model Topic {
