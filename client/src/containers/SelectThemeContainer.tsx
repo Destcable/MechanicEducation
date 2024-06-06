@@ -7,7 +7,7 @@ import { Theme } from '../interfaces/theme';
 import useQueryTopicThemes from '../hooks/useQueryTopicThemes';
 import { store } from '../reducer';
 
-interface IMainPageProps { 
+interface IMainPageProps {
     dataTopic: Theme
     onThemeSelected: (data: any) => void
 }
@@ -16,35 +16,37 @@ const SelectThemeContainer = (props: IMainPageProps) => {
     const { data } = useQueryTopicThemes(props.dataTopic?.id);
     store.dispatch({ type: 'headerTheme/change', payload: props.dataTopic.name });
 
-    const mainBlock: CSSProperties = { 
+    const mainBlock: CSSProperties = {
         marginTop: "150px",
         columnGap: "90px"
     }
 
-    if (data) { 
+    if (data) {
         return (
-            <>
-                <Header />
-    
-                <div className="d-flex justify-content-center flex-wrap" style={mainBlock}>
-                    {data.map((theme: Theme, idx: number) => (
-                        <Card 
-                            key={idx}
-                            title={theme.title}
-                            description={theme.description}
-                            lineName={"test"}
-                            href={data.href}
-                            onClick={() => props.onThemeSelected(theme)}
-                        />
-                    ))}
+            <div className="page-container">
+                <div className="content-wrap">
+                    <Header />
+
+                    <div className="d-flex justify-content-center flex-wrap" style={mainBlock}>
+                        {data.map((theme: Theme, idx: number) => (
+                            <Card
+                                key={idx}
+                                title={theme.title}
+                                description={theme.description}
+                                lineName={"test"}
+                                href={data.href}
+                                onClick={() => props.onThemeSelected(theme)}
+                            />
+                        ))}
+                    </div>
                 </div>
-                
-                <Footer 
+
+                <Footer
                     isBottom={true}
                     backgroundColorTringle="#f8f9fa"
                 />
-            </>
-    
+            </div>
+
         )
     }
 }
