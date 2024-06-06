@@ -8,6 +8,7 @@ import SelectThemeContainer from "./containers/SelectThemeContainer";
 import LectureWindowContainer from "./containers/LectureWindowContainer";
 import QuizWindowContainer from "./containers/QuizWindowContainer";
 import MatchWindowContainer from "./containers/MatchWindowContainer";
+import WordWindowContainer from "./containers/WordWindowContainer";
 
 const App = () => { 
     const [isAuth, setAuth] = useState(false);
@@ -23,6 +24,9 @@ const App = () => {
 
     // @ts-ignore
     if (selectableTask?.type === "LECTURE" ) return <LectureWindowContainer dataTask={selectableTask}/>
+
+    // @ts-ignore
+    if (selectableTask?.type === "WORD" ) return <WordWindowContainer dataTask={selectableTask} />
 
     if (selectableTheme) {
         return <SelectTaskContainer 

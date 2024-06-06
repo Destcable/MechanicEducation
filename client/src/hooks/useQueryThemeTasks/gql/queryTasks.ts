@@ -6,6 +6,7 @@ query GetListThemeTask($themeId: Int) {
     dataLecture
     dataQuiz
     dataMatch
+    dataWord
     quizTitle
     matchTitle
     themeId
