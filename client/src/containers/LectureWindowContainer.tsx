@@ -5,6 +5,7 @@ import { useQueryListThemeTasks } from '../hooks/useQueryThemeTasks';
 import { useState } from 'react';
 import FinishButton from '../ui/FinishButton/FinishButton';
 import QuizWindowContainer from './QuizWindowContainer';
+import WordWindowContainer from './WordWindowContainer';
 
 interface ILectureWindowContainerProps {
     dataTask: any,
@@ -35,7 +36,9 @@ const LectureWindowContainer = ({ dataTask }: ILectureWindowContainerProps) => {
             setTaskContent(get(dataTask, 'dataLecture', ''));
         }
     };
-
+    if (getTypeTask === "WORD") { 
+        return <WordWindowContainer dataTask={getDataTask} />
+    }
     if (getTypeTask === "QUIZ") { 
         return <QuizWindowContainer dataTask={getDataTask} />
     }

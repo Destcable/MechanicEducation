@@ -8,6 +8,7 @@ import NextButton from '../ui/NextButton/NextButton';
 import { useQueryListThemeTasks } from '../hooks/useQueryThemeTasks';
 import FinishButton from '../ui/FinishButton/FinishButton';
 import LectureWindowContainer from './LectureWindowContainer';
+import WordWindowContainer from './WordWindowContainer';
 
 interface IQuizWindowContainer {
     dataTask: {
@@ -95,7 +96,10 @@ const QuizWindowContainer: FC<IQuizWindowContainer> = ({ dataTask }) => {
         }
     }
 
-    console.log(dataTask);
+    if (getTypeTask === "WORD") {
+        // @ts-ignore
+        return <WordWindowContainer dataTask={getDataTask} />
+    }
 
     if (getTypeTask === "LECTURE") {
         return <LectureWindowContainer dataTask={getDataTask} />
