@@ -32,10 +32,6 @@ const SelectTask = (props: ISelectTaskProps) => {
                             key={idx}
                             className="align-items-center w-50 border rounded-3 p-2 mb-3"
                         >
-                            {item.type === "LECTURE" &&
-                                <span>ЛЕКЦИЯ</span>
-                            }
-
                             <span>{item.title}</span>
                             <div>
                                 {!_.includes(storeReducer.tasks, item.id) &&
