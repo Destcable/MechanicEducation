@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import ProgressBar from "../progressBar/progressBar";
+// import ProgressBar from "../progressBar/progressBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../../styles/main.css';
 
@@ -31,7 +31,7 @@ const Card = (props: CardProps) => {
     return (
         <>
             <div className="d-flex flex-column" style={styleCard}>
-                <ProgressBar lineName={props.lineName} />
+                {/* <ProgressBar lineName={props.lineName} /> */}
                 <div className="flex-column" style={styleBlock}>
                     <div className="w-100 shape-color_1 mb-4" style={styleShape}>
                         <p className="card-text_main">{props.title}</p>
