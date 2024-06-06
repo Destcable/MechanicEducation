@@ -1,7 +1,7 @@
 const convertToNumbers = require("../utils/convertToNumbers");
 
 async function createTopic(root, args, context) {
-    const { name } = args;
+    const { name, section } = args;
 
     const templateHeaderSettings = {
         title: "Title",
@@ -16,7 +16,8 @@ async function createTopic(root, args, context) {
 
     const topicData = await context.prisma.topic.create({
         data: {
-            name
+            name,
+            section
         }
     });
 

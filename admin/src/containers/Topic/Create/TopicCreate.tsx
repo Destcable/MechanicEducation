@@ -1,13 +1,18 @@
 import { Create, SimpleForm, TextInput, required } from "react-admin";
 
-const TopicCreate = () => { 
-    return( 
+const TopicCreate = () => {
+    return (
         <Create>
             <SimpleForm>
-                <TextInput 
-                    source="name" 
-                    validate={required()} 
-                    fullWidth 
+                <TextInput
+                    source="name"
+                    validate={required()}
+                    fullWidth
+                />
+                <TextInput
+                    source="section"
+                    validate={required()}
+                    fullWidth
                 />
             </SimpleForm>
         </Create>

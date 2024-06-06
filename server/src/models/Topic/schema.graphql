@@ -4,7 +4,7 @@ type Query {
 }
 
 type Mutation { 
-    createTopic(name: String!): Topic!
+    createTopic(section: String!, name: String!): Topic!
     deleteTopic(id: Int!): Topic!
     deleteManyTopic(ids: [Int]!): [Topic]
 }
@@ -12,4 +12,5 @@ type Mutation {
 type Topic { 
     id: Int
     name: String
+    section: String
 }

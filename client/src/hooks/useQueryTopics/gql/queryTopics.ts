@@ -5,6 +5,7 @@ export const GET_TOPICS = gql`
         data: getListTopic {
             id
             name
+            section
         }
     }
 `;

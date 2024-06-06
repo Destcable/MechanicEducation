@@ -25,6 +25,7 @@ const SelectTopic = (props: ISelectThemeProps) => {
                             <TemplateSelectTopic
                                 key={key}
                                 name={item.name}
+                                section={item.section}
                                 onClick={() => props.onClick(item)}
                             />
                         )}
@@ -41,10 +42,11 @@ const SelectTopic = (props: ISelectThemeProps) => {
 
 interface ITemplateSelectTopic {
     name: string,
+    section: string,
     onClick?: (data: Topic) => void
 }
 
-const TemplateSelectTopic: FC<ITemplateSelectTopic> = ({ name, onClick }) => (
+const TemplateSelectTopic: FC<ITemplateSelectTopic> = ({ name, section, onClick }) => (
     <div className="p-3 border rounded bg-white w-32">
         <div className="justify-content-center text-center">
             <img src={testLogo} alt="testLogo" className="img-fluid" style={{ maxWidth: '100%', height: 'auto' }} />
@@ -54,7 +56,7 @@ const TemplateSelectTopic: FC<ITemplateSelectTopic> = ({ name, onClick }) => (
                 className="p-2 rounded font-monospace"
                 style={{ backgroundColor: '#f6ecff', color: '#a348ff' }}
             >
-                Разное
+                {section}
             </span>
         </div>
         <p className="fs-5 fw-bold mt-3 mb-4">{name}</p>

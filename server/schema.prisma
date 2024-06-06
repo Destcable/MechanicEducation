@@ -17,6 +17,7 @@ enum TypeTask {
 model Topic {
     id      Int           @id @default(autoincrement())
     name    String
+    section  String
     headers TopicHeader[]
     themes  TopicTheme[]
 }
