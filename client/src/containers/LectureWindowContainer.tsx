@@ -12,7 +12,9 @@ interface ILectureWindowContainerProps {
 };
 
 const LectureWindowContainer = ({ dataTask }: ILectureWindowContainerProps) => {
-    const { data } = useQueryListThemeTasks(get(dataTask, 'themeId', ''));
+    const themeId = get(dataTask, 'themeId');
+
+    const { data } = useQueryListThemeTasks(themeId);
 
     const [getDataTask, setDataTask] = useState(dataTask);
     const [getTaskTitle, setTaskTitle] = useState(get(dataTask, 'title', ''));
@@ -47,7 +49,7 @@ const LectureWindowContainer = ({ dataTask }: ILectureWindowContainerProps) => {
         title={getTaskTitle}
         nextButton={
             idx + 1 === data.length
-                ? <FinishButton />
+                ? <FinishButton themeId={themeId}/>
                 : <NextButton onClick={() => nextTask()} />
         }
     >

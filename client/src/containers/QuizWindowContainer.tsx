@@ -20,8 +20,10 @@ interface IQuizWindowContainer {
 }
 
 const QuizWindowContainer: FC<IQuizWindowContainer> = ({ dataTask }) => {
+    const themeId = get(dataTask, 'themeId');
+    
     // @ts-ignore
-    const { data } = useQueryListThemeTasks(get(dataTask, 'themeId', ''));
+    const { data } = useQueryListThemeTasks(themeId);
 
     const [selectedAnswers, setSelectedAnswers] = useState<HTMLInputElement[]>([]);
     const [getDataTask, setDataTask] = useState(dataTask);
@@ -36,7 +38,7 @@ const QuizWindowContainer: FC<IQuizWindowContainer> = ({ dataTask }) => {
     // @ts-ignore
     const idx = data.findIndex(item => item.id === getTaskId);
 
-    const buttonEnding = idx + 1 === data.length ? <FinishButton /> : <NextButton onClick={() => nextTask()} />;
+    const buttonEnding = idx + 1 === data.length ? <FinishButton themeId={themeId}/> : <NextButton onClick={() => nextTask()} />;
 
     const handleOptionChange = () => {
         if (answered) return;
@@ -94,7 +96,7 @@ const QuizWindowContainer: FC<IQuizWindowContainer> = ({ dataTask }) => {
                 parentElement.style.backgroundColor = ANSWER_BUTTON_COLOR.default;
             })
         }
-    }
+    };
 
     if (getTypeTask === "WORD") {
         // @ts-ignore
