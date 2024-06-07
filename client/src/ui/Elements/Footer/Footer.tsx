@@ -5,10 +5,11 @@ import chemkLogo from './img/chemk_logo.png';
 
 interface IFooterProps { 
     isBottom?: boolean;
-    backgroundColorTringle?: string; 
+    backgroundColorTringle?: string;
+    isTringle?: boolean; 
 }
 
-const Footer = ({ isBottom = true, backgroundColorTringle = '#fff' }: IFooterProps) => { 
+const Footer = ({ isBottom = true, backgroundColorTringle = '#fff', isTringle = true }: IFooterProps) => { 
     
     const bottomStyle: CSSProperties = { 
         width: '100%',
@@ -16,7 +17,9 @@ const Footer = ({ isBottom = true, backgroundColorTringle = '#fff' }: IFooterPro
 
     return (
         <div style={isBottom == true ? bottomStyle : undefined}>
-            <Tringle backgroundColor={backgroundColorTringle}/>
+            { isTringle == true && 
+                <Tringle backgroundColor={backgroundColorTringle}/> 
+            }
             <footer className="d-flex justify-content-center">
                 <div className="footer1 d-flex flex-wrap">
                     <div className="footer_columns d-flex mt-1 mb-1 flex-wrap align-items-center">
