@@ -7,6 +7,8 @@ import extractWordsInBraces from '../utils/extractWordsInBraces';
 import replaceWordsWithInput from '../utils/replaceWordsWithInput';
 import AnswerButton from '../components/ui/AnswerButton/AnswerButton';
 import { ANSWER_BUTTON_COLOR } from '../UI.config';
+import NextButton from '../ui/NextButton/NextButton';
+import FinishButton from '../ui/FinishButton/FinishButton';
 // import FinishButton from '../ui/FinishButton/FinishButton';
 
 interface IWordWindowContainer {
@@ -25,7 +27,7 @@ const WordWindowContainer: FC<IWordWindowContainer> = ({ dataTask }) => {
     const [getTaskContent, setTaskContent] = useState<string>(get(dataTask, 'dataWord'));
     const [getTaskTitle, setTaskTitle] = useState<string>(get(dataTask, 'title', ''));
     const [getTaskId, setTaskId] = useState<string>(get(dataTask, 'id', ''));
-    // const [answered, setAnswered] = useState<boolean>(false);
+    const [answered, setAnswered] = useState<boolean>(false);
     const correctWords = extractWordsInBraces(getTaskContent);
     const dataInput = replaceWordsWithInput(getTaskContent);
     // const [getCorrectAnswers, setCorrectAnswers] = useState(dataTask.dataQuiz.filter(obj => obj.isCorrect === true));
@@ -44,14 +46,18 @@ const WordWindowContainer: FC<IWordWindowContainer> = ({ dataTask }) => {
             else input.style.backgroundColor = ANSWER_BUTTON_COLOR.error;
             
             input.disabled = true;
-        }
+        };
+
+        setAnswered(true);
     };
 
+    console.log(data.length )
+    
     const nextTask = () => { 
         // @ts-ignore
-        // const indexTask = data.findIndex(item => item.id === getTaskId);
+        const indexTask = data.findIndex(item => item.id === getTaskId);
         // const checkboxes = document.querySelectorAll<HTMLInputElement>('input[type="checkbox"]');
-        // dataTask = data[indexTask + 1];
+        dataTask = data[indexTask + 1];
 
         // setTaskId(get(dataTask, 'id', ''));
         // setTaskTitle(get(dataTask, 'title', ''));
@@ -70,7 +76,9 @@ const WordWindowContainer: FC<IWordWindowContainer> = ({ dataTask }) => {
     return ( 
         <WordWindow
             title={getTaskTitle}
-            button={<AnswerButton onClick={handleSubmit}/>}
+            button={answered 
+                        ? idx != data.length ? <NextButton onClick={() => nextTask()}/> : <FinishButton /> 
+                        : <AnswerButton onClick={handleSubmit}/>}
         >
             <span dangerouslySetInnerHTML={{ __html: dataInput }} />
         </WordWindow>

@@ -15,14 +15,14 @@ interface IQuizWindowContainer {
         type: string;
         title: string;
         quizTitle: string;
+        themeId: number;
         dataQuiz: { title: string, isCorrect: boolean }[];
     };
 }
 
 const QuizWindowContainer: FC<IQuizWindowContainer> = ({ dataTask }) => {
-    const themeId = get(dataTask, 'themeId');
+    const themeId: number = get(dataTask, 'themeId');
     
-    // @ts-ignore
     const { data } = useQueryListThemeTasks(themeId);
 
     const [selectedAnswers, setSelectedAnswers] = useState<HTMLInputElement[]>([]);
@@ -106,11 +106,12 @@ const QuizWindowContainer: FC<IQuizWindowContainer> = ({ dataTask }) => {
     if (getTypeTask === "LECTURE") {
         return <LectureWindowContainer dataTask={getDataTask} />
     }
-
     return (
         <QuizWindow
+            themeId={themeId}
             title={getTaskTitle}
             quizTitle={getQuizTitle}
+            numberTask={idx + 1}
             answerButton={
                 selectedAnswers.length > 0
                     ? answered && buttonEnding || <AnswerButton onClick={handleSubmit} />

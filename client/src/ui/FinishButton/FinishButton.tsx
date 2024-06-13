@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 interface IFinishButtonProps { 
     onClick?: () => void;
-    themeId?: string
+    themeId?: number
 };
 
 const FinishButton: FC<IFinishButtonProps> = ({ themeId }): ReactNode => {
