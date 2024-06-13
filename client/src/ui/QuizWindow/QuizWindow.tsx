@@ -10,9 +10,7 @@ interface IQuizWindow {
     themeId: number;
 }
 
-const QuizWindow: FC<IQuizWindow> = (props) => {
-
-    return (
+const QuizWindow: FC<IQuizWindow> = (props) => (
         <WindowTaskContainer 
             numberTask={props.numberTask}
             themeId={props.themeId} 
@@ -26,7 +24,6 @@ const QuizWindow: FC<IQuizWindow> = (props) => {
                 {props.answerButton}
             </div>
         </WindowTaskContainer>
-    )
-};
+);
 
 export default QuizWindow;
