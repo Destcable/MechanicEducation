@@ -1,4 +1,5 @@
 import useQueryTopics from "../hooks/useQueryTopics";
+import Loading from "../ui/Loading";
 import SelectTopic from "../ui/SelectTopic/SelectTopic";
 
 interface ISelectThemeContainerProps { 
@@ -8,7 +9,7 @@ interface ISelectThemeContainerProps {
 const SelectTopicContainer = (props: ISelectThemeContainerProps) => { 
     const { data, loading } = useQueryTopics();
 
-    if (loading) return <h1>Loading...</h1>
+    if (loading) return <Loading />
 
     if (data) return <SelectTopic topics={data} onClick={props.onTopicSelected} />
 };

@@ -1,4 +1,5 @@
 import { useQueryListThemeTasks } from "../hooks/useQueryThemeTasks";
+import Loading from "../ui/Loading";
 import SelectTask from "../ui/SelectTask/SelectTask";
 
 interface ISelectTaskContainerProps { 
@@ -9,7 +10,7 @@ interface ISelectTaskContainerProps {
 const SelectTaskContainer = (props: ISelectTaskContainerProps) => { 
     const { data, loading } = useQueryListThemeTasks(props.dataTheme?.id);
 
-    if (loading) return <h1>Loading...</h1>
+    if (loading) return <Loading />
 
     if (data) return <SelectTask tasks={data} onClick={props.onTaskSelected}/>
 };
