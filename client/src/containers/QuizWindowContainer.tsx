@@ -106,6 +106,7 @@ const QuizWindowContainer: FC<IQuizWindowContainer> = ({ dataTask }) => {
     if (getTypeTask === "LECTURE") {
         return <LectureWindowContainer dataTask={getDataTask} />
     }
+
     return (
         <QuizWindow
             themeId={themeId}

@@ -1,6 +1,5 @@
 import { FC, useState } from 'react';
-import { find, get } from 'lodash';
-// import NextButton from '../ui/NextButton/NextButton';
+import { get } from 'lodash';
 import { useQueryListThemeTasks } from '../hooks/useQueryThemeTasks';
 import WordWindow from '../ui/WordWindow/WordWindow';
 import extractWordsInBraces from '../utils/extractWordsInBraces';
@@ -9,33 +8,35 @@ import AnswerButton from '../components/ui/AnswerButton/AnswerButton';
 import { ANSWER_BUTTON_COLOR } from '../UI.config';
 import NextButton from '../ui/NextButton/NextButton';
 import FinishButton from '../ui/FinishButton/FinishButton';
-// import FinishButton from '../ui/FinishButton/FinishButton';
+import QuizWindowContainer from './QuizWindowContainer';
+import LectureWindowContainer from './LectureWindowContainer';
 
 interface IWordWindowContainer {
     dataTask: {
         id: string;
+        type: string;
         title: string;
         dataWord: string;
+        themeId: number
     }
 }
 
 const WordWindowContainer: FC<IWordWindowContainer> = ({ dataTask }) => {
-    // @ts-ignore
-    const { data } = useQueryListThemeTasks(get(dataTask, 'themeId', ''));
+    const themeId = get(dataTask, 'themeId');
+
+    const { data } = useQueryListThemeTasks(themeId);
     
-    // const [selectedAnswers, setSelectedAnswers] = useState<HTMLInputElement[]>([]);
+    const [getDataTask, setDataTask] = useState(dataTask);
+    const [getTypeTask, setTypeTask] = useState<string>(get(dataTask, 'type'));
     const [getTaskContent, setTaskContent] = useState<string>(get(dataTask, 'dataWord'));
     const [getTaskTitle, setTaskTitle] = useState<string>(get(dataTask, 'title', ''));
     const [getTaskId, setTaskId] = useState<string>(get(dataTask, 'id', ''));
     const [answered, setAnswered] = useState<boolean>(false);
     const correctWords = extractWordsInBraces(getTaskContent);
     const dataInput = replaceWordsWithInput(getTaskContent);
-    // const [getCorrectAnswers, setCorrectAnswers] = useState(dataTask.dataQuiz.filter(obj => obj.isCorrect === true));
 
     // @ts-ignore
     const idx = data.findIndex(item => item.id === getTaskId);
-
-    // const buttonEnding = idx + 1 === data.length ? <FinishButton /> : <NextButton onClick={() => nextTask()}/>;
 
     const handleSubmit = () => {
         const inputs = document.querySelectorAll<HTMLInputElement>('input[type="text"]');
@@ -50,44 +51,45 @@ const WordWindowContainer: FC<IWordWindowContainer> = ({ dataTask }) => {
 
         setAnswered(true);
     };
-
-    console.log(data.length )
     
     const nextTask = () => { 
         // @ts-ignore
         const indexTask = data.findIndex(item => item.id === getTaskId);
-        // const checkboxes = document.querySelectorAll<HTMLInputElement>('input[type="checkbox"]');
         dataTask = data[indexTask + 1];
 
-        // setTaskId(get(dataTask, 'id', ''));
-        // setTaskTitle(get(dataTask, 'title', ''));
-        // setQuizTitle(get(dataTask, 'quizTitle', ''));
-        // setTaskContent(get(dataTask, 'dataQuiz'));
-        // setCorrectAnswers(dataTask.dataQuiz.filter(obj => obj.isCorrect === true));
-        // setSelectedAnswers([]);
-        // setAnswered(false);
+        setDataTask(dataTask);
+        setTypeTask(get(dataTask, 'type'));
 
-        // checkboxes.forEach(checkbox => { 
-        //     checkbox.checked = false;
-        //     const parentElement = checkbox.parentNode as HTMLElement;
-        //     parentElement.style.backgroundColor = ANSWER_BUTTON_COLOR.default;
-        // })
+        if ( getTypeTask === "WORD") { 
+            setTaskContent(get(dataTask, 'dataWord') );
+            setTaskId(get(dataTask, 'id', ''));
+            setTaskTitle(get(dataTask, 'title', ''));
+        }
+
+        setAnswered(false);
     }
+
+    if (getTypeTask === "QUIZ") {
+        // @ts-ignore
+        return <QuizWindowContainer dataTask={getDataTask} />
+    }
+
+    if (getTypeTask === "LECTURE") {
+        return <LectureWindowContainer dataTask={getDataTask} />
+    }
+
     return ( 
         <WordWindow
             title={getTaskTitle}
+            themeId={themeId}
+            numberTask={idx + 1}
             button={answered 
-                        ? idx != data.length ? <NextButton onClick={() => nextTask()}/> : <FinishButton /> 
-                        : <AnswerButton onClick={handleSubmit}/>}
+                ? idx + 1 != data.length ? <NextButton onClick={() => nextTask()}/> : <FinishButton themeId={themeId}/> 
+                : <AnswerButton onClick={handleSubmit}/>}
         >
             <span dangerouslySetInnerHTML={{ __html: dataInput }} />
         </WordWindow>
     )
-    //         answerButton={
-    //             selectedAnswers.length > 0 
-    //                 ? answered && buttonEnding || <AnswerButton onClick={handleSubmit}/>
-    //                 : false
-    //         }
 };
 
 export default WordWindowContainer;
