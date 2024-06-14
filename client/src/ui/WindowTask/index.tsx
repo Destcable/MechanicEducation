@@ -14,8 +14,13 @@ const WindowTask: FC<IWindowTask> = (props) => {
         const arr = [];
         for (let i = 0; i < props.countTasks; i++) {
             arr.push(<div
-                className="w-100 bg-danger rounded-clipse"
-                style={{ height: '20px' }}
+                className="w-100 rounded-clipse"
+                style={{ 
+                    height: '20px', 
+                    backgroundColor: i < props.numberTask 
+                                            ? '#FEFEFE'
+                                            : 'rgba(254, 254, 254, 0.5)'
+                }}
             />)
         };
 
