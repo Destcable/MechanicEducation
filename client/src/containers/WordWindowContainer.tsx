@@ -33,7 +33,7 @@ const WordWindowContainer: FC<IWordWindowContainer> = ({ dataTask }) => {
     const [getTaskId, setTaskId] = useState<string>(get(dataTask, 'id', ''));
     const [answered, setAnswered] = useState<boolean>(false);
     const correctWords = extractWordsInBraces(getTaskContent);
-    const dataInput = replaceWordsWithInput(getTaskContent);
+    const dataInput = getTypeTask === "WORD" ? replaceWordsWithInput(getTaskContent) : '';
 
     // @ts-ignore
     const idx = data.findIndex(item => item.id === getTaskId);
@@ -59,7 +59,7 @@ const WordWindowContainer: FC<IWordWindowContainer> = ({ dataTask }) => {
 
         setDataTask(dataTask);
         setTypeTask(get(dataTask, 'type'));
-
+        
         if ( getTypeTask === "WORD") { 
             setTaskContent(get(dataTask, 'dataWord') );
             setTaskId(get(dataTask, 'id', ''));
@@ -68,7 +68,7 @@ const WordWindowContainer: FC<IWordWindowContainer> = ({ dataTask }) => {
 
         setAnswered(false);
     }
-
+    
     if (getTypeTask === "QUIZ") {
         // @ts-ignore
         return <QuizWindowContainer dataTask={getDataTask} />

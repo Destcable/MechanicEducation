@@ -41,6 +41,7 @@ const LectureWindowContainer = ({ dataTask }: ILectureWindowContainerProps) => {
     if (getTypeTask === "WORD") { 
         return <WordWindowContainer dataTask={getDataTask} />
     }
+    
     if (getTypeTask === "QUIZ") { 
         return <QuizWindowContainer dataTask={getDataTask} />
     }
