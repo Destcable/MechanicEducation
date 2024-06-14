@@ -10,6 +10,18 @@ interface IWindowTask {
 }
 
 const WindowTask: FC<IWindowTask> = (props) => {
+    const WindowClipse = () => {
+        const arr = [];
+        for (let i = 0; i < props.countTasks; i++) {
+            arr.push(<div
+                className="w-100 bg-danger rounded-clipse"
+                style={{ height: '20px' }}
+            />)
+        };
+
+        return arr;
+    };
+
     return (
         <div className="page-container">
             <div className="content-wrap">
@@ -18,16 +30,21 @@ const WindowTask: FC<IWindowTask> = (props) => {
                     <div className="d-flex justify-content-center align-center">
                         <div className="content1 d-flex flex-column max-content w-100">
                             <div className="container1">
-                                <div className="container_header d-flex justify-content-between ">
-                                    <p className="container_title">{props.title}</p>
-                                    {props.countTasks &&
-                                        <div
-                                            style={{ fontSize: "23px" }}
-                                            className="d-flex align-items-center text-white p-4 display-7"
-                                        >
-                                           {props.numberTask} / {props.countTasks}
-                                        </div>
-                                    }
+                                <div className="container_header">
+                                    <div className="d-flex justify-content-between ">
+                                        <p className="container_title">{props.title}</p>
+                                        {props.countTasks &&
+                                            <div
+                                                style={{ fontSize: "23px" }}
+                                                className="d-flex align-items-center text-white p-4 display-7"
+                                            >
+                                                {props.numberTask} / {props.countTasks}
+                                            </div>
+                                        }
+                                    </div>
+                                    <div className="d-flex">
+                                        <WindowClipse />
+                                    </div>
                                 </div>
                                 <div className="container-exercise w-100">
 

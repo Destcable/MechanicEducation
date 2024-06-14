@@ -235,13 +235,18 @@ footer {
 
 .container_header {
     background-color: #43698F;
-    height: 80px;
+    height: auto;
     width: 100%;
     border-radius: 15px 15px 0 0;
     -webkit-border-radius: 15px 15px 0 0;
     -moz-border-radius: 15px 15px 0 0;
     -ms-border-radius: 15px 15px 0 0;
     -o-border-radius: 15px 15px 0 0;
+}
+
+.rounded-clipse { 
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .max-content {

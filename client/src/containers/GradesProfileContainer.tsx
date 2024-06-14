@@ -15,7 +15,7 @@ const GradesProfileContainer = () => {
     const COLUMNS = [
         { label: 'Тема', renderCell: (item: any) => item.name },
         {
-            label: 'Deadline',
+            label: 'Дата',
             renderCell: (item: any) =>
                 item.deadline.toLocaleDateString('en-US', {
                     year: 'numeric',
@@ -25,10 +25,10 @@ const GradesProfileContainer = () => {
         },
         { label: 'Type', renderCell: (item: any) => item.type },
         {
-            label: 'Complete',
+            label: 'Выполнено (%)',
             renderCell: (item: any) => item.isComplete.toString(),
         },
-        { label: 'Tasks', renderCell: (item: any) => item.nodes },
+        { label: 'Оценка', renderCell: (item: any) => item.nodes },
     ];
 
     return <Table columns={COLUMNS} data={data}/>
