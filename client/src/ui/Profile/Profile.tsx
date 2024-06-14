@@ -1,5 +1,6 @@
 import { CSSProperties, useState } from "react";
 import ProfileWindow from "../ProfileWindow/ProfileWindow";
+import GradesProfileContainer from "../../containers/GradesProfileContainer";
 
 const Profile = () => {
     const [getPage, setPage] = useState('INFO');
@@ -36,7 +37,7 @@ const Profile = () => {
                             {getPage === 'GRADES' &&
                                 <div className="content" style={textStyle}>
                                     <h1>Оценки</h1>
-                                    <p>Находится в разработке...</p>
+                                    <GradesProfileContainer />
                                 </div>
                             }
 
