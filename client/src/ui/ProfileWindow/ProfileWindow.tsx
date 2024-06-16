@@ -9,9 +9,9 @@ interface ProfileWindowProps {
 
 const ProfileWindow: FC<ProfileWindowProps> = ({ children }) => (
     <div className="page-container">
-        <div className="content-wrap">
+        <div className="content-wrap bg_color_block">
             <Header />
-            <div className="bg_color_block d-flex flex-column ">
+            <div className="d-flex flex-column ">
                 <div className="d-flex justify-content-center align-center">
                     <div className="content1 d-flex flex-column max-content w-100">
                         <HomeButton />

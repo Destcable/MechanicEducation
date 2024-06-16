@@ -12,6 +12,7 @@ import WordWindowContainer from './WordWindowContainer';
 
 interface IQuizWindowContainer {
     dataTask: {
+        id: number;
         type: string;
         title: string;
         quizTitle: string;
@@ -30,7 +31,7 @@ const QuizWindowContainer: FC<IQuizWindowContainer> = ({ dataTask }) => {
     const [getTaskContent, setTaskContent] = useState(get(dataTask, 'dataQuiz'));
     const [getTaskTitle, setTaskTitle] = useState(get(dataTask, 'title', ''));
     const [answered, setAnswered] = useState<boolean>(false);
-    const [getTaskId, setTaskId] = useState<string>(get(dataTask, 'id', ''));
+    const [getTaskId, setTaskId] = useState<number>(get(dataTask, 'id'));
     const [getTypeTask, setTypeTask] = useState<string>(get(dataTask, 'type'));
     const [getCorrectAnswers, setCorrectAnswers] = useState(dataTask.dataQuiz.filter(obj => obj.isCorrect === true));
     const [getQuizTitle, setQuizTitle] = useState(get(dataTask, 'quizTitle', ''));
@@ -82,7 +83,7 @@ const QuizWindowContainer: FC<IQuizWindowContainer> = ({ dataTask }) => {
         if (getTypeTask === "QUIZ") {
             const checkboxes = document.querySelectorAll<HTMLInputElement>('input[type="checkbox"]');
 
-            setTaskId(get(dataTask, 'id', ''));
+            setTaskId(get(dataTask, 'id'));
             setTaskTitle(get(dataTask, 'title', ''));
             setQuizTitle(get(dataTask, 'quizTitle', ''));
             setTaskContent(get(dataTask, 'dataQuiz'));
@@ -115,7 +116,7 @@ const QuizWindowContainer: FC<IQuizWindowContainer> = ({ dataTask }) => {
             numberTask={idx + 1}
             answerButton={
                 selectedAnswers.length > 0
-                    ? answered && buttonEnding || <AnswerButton onClick={handleSubmit} />
+                    ? answered && buttonEnding || <AnswerButton taskId={getTaskId} onClick={handleSubmit} />
                     : false
             }
         >

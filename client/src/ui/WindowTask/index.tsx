@@ -29,9 +29,9 @@ const WindowTask: FC<IWindowTask> = (props) => {
 
     return (
         <div className="page-container">
-            <div className="content-wrap">
+            <div className="bg_color_block content-wrap">
                 <Header />
-                <div className="bg_color_block d-flex flex-column ">
+                <div className="d-flex flex-column ">
                     <div className="d-flex justify-content-center align-center">
                         <div className="content1 d-flex flex-column max-content w-100">
                             <div className="container1">
