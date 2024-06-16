@@ -1,13 +1,23 @@
 import { FC, ReactNode } from "react";
 
 interface IAnswerButtonProps {
-    taskId: number
+    task: any
+    answers: any
     onClick?: () => void
 };
 
-const AnswerButton: FC<IAnswerButtonProps> = ({onClick, taskId}): ReactNode => {
+const AnswerButton: FC<IAnswerButtonProps> = ({onClick, task, answers}): ReactNode => {
     const handleClick = () => {
-        sessionStorage.setItem(`task-${taskId}`, '3')
+        if (task.type === "QUIZ") {
+            const values = answers.map((item: HTMLInputElement) => item.value);
+
+            sessionStorage.setItem(`task-${task.id}`, JSON.stringify({
+                task: { 
+                    type: task.type
+                },
+                answers: values
+            }))
+        }
         if (onClick) onClick()
     };
 

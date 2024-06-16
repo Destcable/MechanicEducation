@@ -35,7 +35,7 @@ const QuizWindowContainer: FC<IQuizWindowContainer> = ({ dataTask }) => {
     const [getTypeTask, setTypeTask] = useState<string>(get(dataTask, 'type'));
     const [getCorrectAnswers, setCorrectAnswers] = useState(dataTask.dataQuiz.filter(obj => obj.isCorrect === true));
     const [getQuizTitle, setQuizTitle] = useState(get(dataTask, 'quizTitle', ''));
-
+    
     // @ts-ignore
     const idx = data.findIndex(item => item.id === getTaskId);
 
@@ -107,7 +107,7 @@ const QuizWindowContainer: FC<IQuizWindowContainer> = ({ dataTask }) => {
     if (getTypeTask === "LECTURE") {
         return <LectureWindowContainer dataTask={getDataTask} />
     }
-
+    
     return (
         <QuizWindow
             themeId={themeId}
@@ -116,7 +116,11 @@ const QuizWindowContainer: FC<IQuizWindowContainer> = ({ dataTask }) => {
             numberTask={idx + 1}
             answerButton={
                 selectedAnswers.length > 0
-                    ? answered && buttonEnding || <AnswerButton taskId={getTaskId} onClick={handleSubmit} />
+                    ? answered && buttonEnding || <AnswerButton 
+                        task={getDataTask}
+                        answers={selectedAnswers} 
+                        onClick={handleSubmit} 
+                    />
                     : false
             }
         >
