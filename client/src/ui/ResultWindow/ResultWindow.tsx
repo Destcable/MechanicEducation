@@ -1,23 +1,26 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
-import question_1 from "../../content/questions/question_1.json";
 import FlexBetween from '../Semantic/FlexBetween';
-import countCorrectAnswers from '../../utils/countCorrectAnswers';
 import HomeButton from '../HomeButton/HomeButton';
 import Header from '../../components/ui/Header/Header';
-import { getUserAnswers } from '../../Controllers/answers/saveAnswer';
 import { FC } from 'react';
 import Footer from '../Elements/Footer/Footer';
 
 interface IResultWindowProps {
     isLecture: boolean
+    correctAnswers?: number
+    maxScore?: number
 }
 
+interface IRenderIsTask{ 
+    correctAnswers?: number
+    maxScore?: number
+}
 
-const ResultWindow: FC<IResultWindowProps> = ({ isLecture }) => {
+const ResultWindow: FC<IResultWindowProps> = ({ isLecture, correctAnswers, maxScore }) => {
     ChartJS.register(ArcElement, Tooltip, Legend);
 
-    const test = countCorrectAnswers(question_1, getUserAnswers());
+    const noCorrectAnswers = maxScore && correctAnswers ? maxScore - correctAnswers : 0;
 
     return (
         <div className="page-container">
@@ -43,9 +46,9 @@ const ResultWindow: FC<IResultWindowProps> = ({ isLecture }) => {
                                     </FlexBetween>
                                     {isLecture === false &&
                                         <div className="d-flex container-filling align-center justify-content-center">
-                                            Количество правильных ответов: {test.correct}
+                                            Количество правильных ответов: {correctAnswers}
                                             <br />
-                                            Количество не верных ответов: {test.incorrect}
+                                            Количество не верных ответов: {noCorrectAnswers}
                                         </div>
                                     }
                                     <div className="d-flex justify-content-center w-100" style={{ width: '200px', height: '200px' }}>
@@ -54,7 +57,7 @@ const ResultWindow: FC<IResultWindowProps> = ({ isLecture }) => {
                                         }
 
                                         {isLecture == false &&
-                                            <RenderIsTask />
+                                            <RenderIsTask correctAnswers={correctAnswers} maxScore={noCorrectAnswers}/>
                                         }
                                     </div>
 
@@ -99,13 +102,13 @@ const RenderIsLecture = () => {
     />
 };
 
-const RenderIsTask = () => {
+const RenderIsTask: FC<IRenderIsTask> = (props) => {
     const data = {
         labels: ['Не верные ответы', 'Верные ответы'],
         datasets: [
             {
                 label: 'Количество ответов: ',
-                data: [100, 0],
+                data: [props.maxScore, props.correctAnswers],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(75, 192, 192, 0.2)',

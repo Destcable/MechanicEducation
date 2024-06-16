@@ -7,17 +7,27 @@ interface IAnswerButtonProps {
 };
 
 const AnswerButton: FC<IAnswerButtonProps> = ({onClick, task, answers}): ReactNode => {
-    const handleClick = () => {
-        if (task.type === "QUIZ") {
-            const values = answers.map((item: HTMLInputElement) => item.value);
 
-            sessionStorage.setItem(`task-${task.id}`, JSON.stringify({
-                task: { 
-                    type: task.type
-                },
-                answers: values
-            }))
+    const handleClick = () => {
+        let values;
+
+        if (task.type === "QUIZ") {
+            values = answers.map((item: HTMLInputElement) => item.value)
         }
+
+        if (task.type === "WORD") {
+            values = answers.map((item: HTMLInputElement) => item.value)
+        }
+
+        sessionStorage.setItem(`task-${task.id}`, JSON.stringify({
+            task: { 
+                id: task.id,
+                type: task.type
+            },
+            answers: values
+        }));
+
+        values = [];
         if (onClick) onClick()
     };
 
