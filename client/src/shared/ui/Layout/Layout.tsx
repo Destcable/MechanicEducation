@@ -1,7 +1,7 @@
 import { FC, ReactNode, Suspense } from "react";
 import { Link, Outlet } from "react-router-dom";
 import Loading from "../../../ui/Loading";
-import { CCloseButton, CSidebar, CSidebarBrand, CSidebarFooter, CSidebarHeader } from "@coreui/react";
+import { Sidebar as SidebarReact, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 // import Header from "../../../components/ui/Header/Header";
 // import Footer from "../../../ui/Elements/Footer/Footer";
 
@@ -46,45 +46,15 @@ const Content: FC<IContentProps> = ({ children }) => {
 
 
 const Sidebar = () => {
-    return (<CSidebar
-        className="border-end"
-        colorScheme="dark"
-        position="fixed"
-        // unfoldable={unfoldable}
-        visible={true}
-    // onVisibleChange={(visible) => {
-    //   dispatch({ type: 'set', sidebarShow: visible })
-    // }}
-    >
-        <CSidebarHeader className="border-bottom">
-            <CSidebarBrand to="/">
-            {/* <CIcon customClassName="sidebar-brand-full" icon={logo} height={32} />
-            <CIcon customClassName="sidebar-brand-narrow" icon={sygnet} height={32} /> */}
-          </CSidebarBrand>
-            <CCloseButton
-                className="d-lg-none"
-                dark
-            // onClick={() => dispatch({ type: 'set', sidebarShow: false })}
-            />
-        </CSidebarHeader>
-        {/* <AppSidebarNav items={navigation} /> */}
-        <CSidebarFooter className="border-top d-none d-lg-flex">
-            {/* <CSidebarToggler
-            onClick={() => dispatch({ type: 'set', sidebarUnfoldable: !unfoldable })}
-          /> */}
-        </CSidebarFooter>
-    </CSidebar>
-    )
-    // return (
-    //     <aside className="sidebar">
-    //         <nav>
-    //             <ul>
-    //                 <li><Link to="/dashboard">Dashboard</Link></li>
-    //                 <li><Link to="/projects">Projects</Link></li>
-    //                 <li><Link to="/tasks">Tasks</Link></li>
-    //                 {/* Add more links as needed */}
-    //             </ul>
-    //         </nav>
-    //     </aside>
-    // );
+    return <SidebarReact>
+        <Menu>
+            <MenuItem component={<Link to="/main" />}> Главная </MenuItem>
+            <MenuItem> Предметы </MenuItem>
+            <SubMenu label="Charts">
+                <MenuItem> Pie charts </MenuItem>
+                <MenuItem> Line charts </MenuItem>
+            </SubMenu>
+            <MenuItem> Сообщения </MenuItem>
+        </Menu>
+    </SidebarReact>;
 };

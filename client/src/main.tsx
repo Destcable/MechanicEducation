@@ -2,10 +2,9 @@ import ReactDOM from 'react-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import Router from './Routes';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/main.css';
-import { BrowserRouter, RouterProvider } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
 import { router } from './app/providers/router';
 
 export const dataProvider = new ApolloClient({
@@ -17,9 +16,6 @@ ReactDOM.render(
     <ApolloProvider client={dataProvider}>
         <DndProvider backend={HTML5Backend}>
             <RouterProvider router={router} />
-            {/* <BrowserRouter> */}
-            {/* <Router /> */}
-            {/* </BrowserRouter> */}
         </DndProvider>
     </ApolloProvider>,
     document.getElementById("root")
