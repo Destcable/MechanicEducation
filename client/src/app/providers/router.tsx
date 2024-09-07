@@ -9,6 +9,7 @@ const ProfileContainer = lazy(() => import("../../containers/ProfileContainer"))
 const SelectThemeContainer = lazy(() => import("../../containers/SelectThemeContainer"))
 const SelectTaskContainer = lazy(() => import("../../containers/SelectTaskContainer"))
 const TaskWrapper = lazy(() => import("../../shared/ui/TaskWrapper/TaskWrapper"))
+const DashboardPage = lazy(() => import("../../pages/Dashboard/DashboardPage"))
 
 export const router = createBrowserRouter([
     {
@@ -17,7 +18,11 @@ export const router = createBrowserRouter([
         children: [
             { 
                 index: true,
-                element: <Navigate to="/main" replace />
+                element: <Navigate to="/dashboard" replace />
+            },
+            { 
+                path: 'dashboard',
+                element: <DashboardPage />
             },
             {
                 path: 'main',

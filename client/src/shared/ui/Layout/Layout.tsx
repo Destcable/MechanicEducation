@@ -48,8 +48,8 @@ const Content: FC<IContentProps> = ({ children }) => {
 const Sidebar = () => {
     return <SidebarReact>
         <Menu>
-            <MenuItem component={<Link to="/main" />}> Главная </MenuItem>
-            <MenuItem> Предметы </MenuItem>
+            <MenuItem component={<Link to="/dashboard" />}> Главная </MenuItem>
+            <MenuItem component={<Link to="/main" />}> Предметы </MenuItem>
             <SubMenu label="Charts">
                 <MenuItem> Pie charts </MenuItem>
                 <MenuItem> Line charts </MenuItem>
