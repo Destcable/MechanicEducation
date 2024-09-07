@@ -2,9 +2,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 import FlexBetween from '../Semantic/FlexBetween';
 import HomeButton from '../HomeButton/HomeButton';
-import Header from '../../components/ui/Header/Header';
 import { FC } from 'react';
-import Footer from '../Elements/Footer/Footer';
 
 interface IResultWindowProps {
     isLecture: boolean
@@ -25,7 +23,6 @@ const ResultWindow: FC<IResultWindowProps> = ({ isLecture, correctAnswers, maxSc
     return (
         <div className="page-container">
             <div className="content-wrap bg_color_block">
-                <Header />
 
                 <div className="d-flex flex-column ">
                     <div className="d-flex justify-content-center align-center">
@@ -67,11 +64,6 @@ const ResultWindow: FC<IResultWindowProps> = ({ isLecture, correctAnswers, maxSc
                     </div>
                 </div>
             </div>
-            <Footer
-                isTringle={false}
-                isBottom={true}
-                backgroundColorTringle="rgba(160, 190, 221, 50%)"
-            />
         </div>
     )
 };

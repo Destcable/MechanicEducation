@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@apollo/client": "3.9.7",
+    "@coreui/react": "^5.3.0",
     "@emotion/react": "11.11.4",
     "@table-library/react-table-library": "4.1.7",
     "@types/jqueryui": "1.12.22",

@@ -1,6 +1,4 @@
 import { CSSProperties } from "react";
-import Header from "../../components/ui/Header/Header";
-import Footer from "../Elements/Footer/Footer";
 import Button from "../Elements/Button/Button";
 import { Task } from "../../interfaces/task";
 import FlexBetween from "../Semantic/FlexBetween";
@@ -20,12 +18,8 @@ const SelectTask = (props: ISelectTaskProps) => {
     }
 
     const storeReducer = store.getState();
-    console.log(storeReducer.tasks);
 
     return (
-        <div className="page-container">
-            <div className="content-wrap">
-                <Header />
                 <div className="d-flex justify-content-center flex-wrap" style={mainBlock}>
                     {props.tasks.map((item, idx) =>
                         <FlexBetween
@@ -46,12 +40,6 @@ const SelectTask = (props: ISelectTaskProps) => {
                         </FlexBetween>
                     )}
                 </div>
-            </div>
-            <Footer
-                isBottom={true}
-                backgroundColorTringle="#f8f9fa"
-            />
-        </div>
     );
 };
 

@@ -5,7 +5,8 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import Router from './Routes';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/main.css';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, RouterProvider } from 'react-router-dom';
+import { router } from './app/providers/router';
 
 export const dataProvider = new ApolloClient({
     uri: 'http://localhost:4000/graphql',
@@ -15,9 +16,10 @@ export const dataProvider = new ApolloClient({
 ReactDOM.render(
     <ApolloProvider client={dataProvider}>
         <DndProvider backend={HTML5Backend}>
-            <BrowserRouter>
-                <Router />
-            </BrowserRouter>
+            <RouterProvider router={router} />
+            {/* <BrowserRouter> */}
+            {/* <Router /> */}
+            {/* </BrowserRouter> */}
         </DndProvider>
     </ApolloProvider>,
     document.getElementById("root")

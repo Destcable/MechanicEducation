@@ -1,6 +1,4 @@
-import Footer from "../Elements/Footer/Footer";
 import { Topic } from "../../interfaces/topic";
-import Header from "../../components/ui/Header/Header";
 import { store } from "../../reducer";
 import testLogo from "./img/test.png";
 import { FaArrowRight } from "react-icons/fa6";
@@ -16,26 +14,17 @@ const SelectTopic = (props: ISelectThemeProps) => {
     store.dispatch({ type: 'headerTheme/change', payload: null });
 
     return (
-        <div className="page-container">
-            <div className="content-wrap">
-                <Header />
-                <div className="d-flex bg-light">
-                    <div className="w-100 m-5 gap-4 d-flex flex-wrap mb-5">
-                        {props.topics.map((item, key) =>
-                            <TemplateSelectTopic
-                                key={key}
-                                name={item.name}
-                                section={item.section}
-                                onClick={() => props.onClick(item)}
-                            />
-                        )}
-                    </div>
-                </div>
+        <div className="d-flex bg-light">
+            <div className="w-100 m-5 gap-4 d-flex flex-wrap mb-5">
+                {props.topics.map((item, key) =>
+                    <TemplateSelectTopic
+                        key={key}
+                        name={item.name}
+                        section={item.section}
+                        onClick={() => props.onClick(item)}
+                    />
+                )}
             </div>
-            <Footer
-                isBottom={true}
-                backgroundColorTringle="#f8f9fa"
-            />
         </div>
     )
 };

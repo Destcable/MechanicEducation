@@ -1,18 +1,20 @@
+import { useNavigate, useParams } from "react-router-dom";
 import { useQueryListThemeTasks } from "../hooks/useQueryThemeTasks";
 import Loading from "../ui/Loading";
 import SelectTask from "../ui/SelectTask/SelectTask";
 
-interface ISelectTaskContainerProps { 
-    dataTheme: any,
-    onTaskSelected: (data: any) => void
-};
+const SelectTaskContainer = () => {
+    const navigate = useNavigate();
+    const { themeId } = useParams();
+    if (!themeId) return null;
 
-const SelectTaskContainer = (props: ISelectTaskContainerProps) => { 
-    const { data, loading } = useQueryListThemeTasks(props.dataTheme?.id);
+    const { data, loading } = useQueryListThemeTasks(parseInt(themeId));
 
     if (loading) return <Loading />
 
-    if (data) return <SelectTask tasks={data} onClick={props.onTaskSelected}/>
+    if (data) return <SelectTask tasks={data}
+        onClick={(selectableTask) => navigate(`/theme/${themeId}/task/${selectableTask.id}`, { replace: true })}
+    />
 };
 
 export default SelectTaskContainer;

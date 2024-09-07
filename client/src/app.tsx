@@ -3,17 +3,16 @@ import getStorageAuth from "./services/getStorageAuth";
 import authService from "./services/authService";
 import AuthFormContainer from "./containers/AuthFormContainer";
 import SelectTopicContainer from "./containers/SelectTopicContainer";
-import SelectTaskContainer from "./containers/SelectTaskContainer";
-import SelectThemeContainer from "./containers/SelectThemeContainer";
 import LectureWindowContainer from "./containers/LectureWindowContainer";
 import QuizWindowContainer from "./containers/QuizWindowContainer";
 import MatchWindowContainer from "./containers/MatchWindowContainer";
 import WordWindowContainer from "./containers/WordWindowContainer";
+import { useNavigate } from "react-router-dom";
 
 const App = () => { 
+    const navigate = useNavigate();
+    
     const [isAuth, setAuth] = useState(false);
-    const [selectableTopic, setSelectableTopic] = useState(null);
-    const [selectableTheme, setSelectableTheme] = useState(null);
     const [selectableTask, setSelectableTask] = useState(null);
 
     // @ts-ignore
@@ -28,20 +27,8 @@ const App = () => {
     // @ts-ignore
     if (selectableTask?.type === "WORD" ) return <WordWindowContainer dataTask={selectableTask} />
 
-    if (selectableTheme) {
-        return <SelectTaskContainer 
-            dataTheme={selectableTheme}
-            onTaskSelected={(data: any) => setSelectableTask(data)}
-        />
-    }
-    
-    if (selectableTopic) return <SelectThemeContainer 
-        dataTopic={selectableTopic}
-        onThemeSelected={(data: any) => setSelectableTheme(data)}
-    />
-
     if (isAuth) return <SelectTopicContainer 
-        onTopicSelected={(data: any) => setSelectableTopic(data)}
+        onTopicSelected={(data: any) => navigate(`/topic/${data.id}/themes`, { replace: true })}
     />
     
     if (!isAuth) {

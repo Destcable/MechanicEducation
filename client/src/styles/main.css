@@ -328,3 +328,26 @@ button {
     border: none;
     background-color: rgba(255, 255, 255, 0);
 }
+
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    width: 250px; /* Adjust width as needed */
+    background-color: #f0f0f0; /* Example background color */
+    padding: 1rem;
+}
+
+.content-wrap {
+    flex: 1;
+    padding: 1rem;
+}

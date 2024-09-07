@@ -2,7 +2,7 @@ import { useQuery } from "@apollo/client";
 import { GET_TOPIC_THEMES } from "./gql/queryTopicThemes";
 import { useMemo } from "react";
 
-const useQueryTopicThemes = (topicId: string) => { 
+const useQueryTopicThemes = (topicId: number) => { 
     const {data, loading} = useQuery(GET_TOPIC_THEMES, { 
         variables: { topicId }
     });

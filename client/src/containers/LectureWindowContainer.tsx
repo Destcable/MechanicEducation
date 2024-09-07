@@ -6,14 +6,18 @@ import { useState } from 'react';
 import FinishButton from '../ui/FinishButton/FinishButton';
 import QuizWindowContainer from './QuizWindowContainer';
 import WordWindowContainer from './WordWindowContainer';
+import { useParams } from 'react-router-dom';
 
 interface ILectureWindowContainerProps {
     dataTask: any,
 };
 
 const LectureWindowContainer = ({ dataTask }: ILectureWindowContainerProps) => {
-    const themeId = get(dataTask, 'themeId');
-
+    const { themeId: themeIdString, taskId: taskIdString } = useParams<{ themeId: string, taskId: string }>();
+    if ( !themeIdString || !taskIdString ) return null
+    
+    const themeId = parseInt(themeIdString, 10);
+    
     const { data } = useQueryListThemeTasks(themeId);
 
     const [getDataTask, setDataTask] = useState(dataTask);
