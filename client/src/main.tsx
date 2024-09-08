@@ -5,7 +5,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/main.css';
 import { RouterProvider } from 'react-router-dom';
-import { router } from './app/providers/router';
+import { router } from './core/config/router.config';
 
 export const dataProvider = new ApolloClient({
     uri: 'http://localhost:4000/graphql',
