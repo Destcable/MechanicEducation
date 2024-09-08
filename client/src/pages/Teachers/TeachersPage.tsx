@@ -29,11 +29,9 @@ const TeachersPage = () => {
         fetchTeachers();
     }, []);
 
-    if (loading) {
-        return <Loading />
-    }
+    if (loading) return <Loading />
 
-    return <div className="d-flex gap-3">
+    return <div className="d-flex gap-3 flex-wrap">
         {teachers && teachers.map(teacher => (
             <TeacherCard
                 key={teacher.id}

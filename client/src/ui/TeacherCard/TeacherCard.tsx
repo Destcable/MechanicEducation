@@ -15,7 +15,7 @@ export const TeacherCard: FC<ITeacherCardProps> = ({name, jobTitle}) => {
                 <PiDotsThreeOutlineVerticalLight size='25px' />
             </div>
             <div>
-                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" className="rounded-circle" style={{ width: '150px' }}
+                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" className="rounded-circle" style={{ width: '120px' }}
                     alt="Avatar" />
             </div>
             <div>
