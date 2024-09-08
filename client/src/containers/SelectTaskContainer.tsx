@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useQueryListThemeTasks } from "../hooks/useQueryThemeTasks";
-import Loading from "../ui/Loading";
 import SelectTask from "../ui/SelectTask/SelectTask";
+import { Loading } from "../ui/Loading";
 
 const SelectTaskContainer = () => {
     const navigate = useNavigate();

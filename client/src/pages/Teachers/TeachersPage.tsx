@@ -1,8 +1,8 @@
 import axios from "axios";
 import { TeacherCard } from "../../ui/TeacherCard/TeacherCard";
 import { useEffect, useState } from "react";
-import Loading from "../../ui/Loading";
 import { routesConfig } from "../../core/config/routes.config";
+import { Loading } from "../../ui/Loading";
 
 interface Teacher { 
     id: number;

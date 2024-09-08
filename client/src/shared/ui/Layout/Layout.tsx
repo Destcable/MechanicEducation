@@ -1,10 +1,10 @@
 import { FC, ReactNode, Suspense, useState } from "react";
 import { Outlet } from "react-router-dom";
-import Loading from "../../../ui/Loading";
 import getStorageAuth from "../../../services/getStorageAuth";
 import AuthFormContainer from "../../../containers/AuthFormContainer";
 import { login } from "../../../core/services/auth.service";
 import { Sidebar } from "./Sidebar";
+import { Loading } from "../../../ui/Loading";
 // import Header from "../../../components/ui/Header/Header";
 // import Footer from "../../../ui/Elements/Footer/Footer";
 

@@ -1,6 +1,5 @@
 import { CSSProperties, useState } from 'react';
 import Logo from '../logo/logo';
-import 'react-loading-skeleton/dist/skeleton.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ModalGetFromContent, ModalGetKeyWords } from '../../../content/modals/ModalsData';
 import { Title } from '../../../config';

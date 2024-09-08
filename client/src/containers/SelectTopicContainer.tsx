@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Loading from "../ui/Loading";
 import SelectTopic from "../ui/SelectTopic/SelectTopic";
 import axios from "axios";
 import { routesConfig } from "../core/config/routes.config";
+import { Loading } from "../ui/Loading";
 
 interface ISelectThemeContainerProps { 
     onTopicSelected: (data: any) => void

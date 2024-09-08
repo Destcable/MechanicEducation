@@ -1,34 +1,22 @@
-import { FC } from 'react';
-import ReactLoading, { LoadingType } from 'react-loading';
+import { motion } from "framer-motion";
+import LogotypeLoading from "../AuthForm/img/prof_dark.png";
 
-interface ILoading { 
-    type?: LoadingType;
-    color?: string;
-    title?: string;
-    height?: string;
-    width?: string;
-}
-
-const Loading: FC<ILoading> = ({ 
-    type = 'spin', 
-    color = '#2E97C3', 
-    title = 'Загрузка...', 
-    height = '90%', 
-    width = '90%' 
+export const Loading = ({
+    duration = 2,
 }) => {
-    return (
-        <div className='d-flex h-100 align-items-center justify-content-center'>
-            <div>
-                <ReactLoading
-                    type={type}
-                    color={color}
-                    height={height}
-                    width={width}
-                />
-                <h6>{title}</h6>
-            </div>
+    return <div className='d-flex h-100 align-items-center justify-content-center'>
+        <div>
+            <motion.img
+                src={LogotypeLoading}
+                width='200px'
+                initial={{ scale: 1 }}
+                animate={{ scale: 1.5 }}
+                transition={{
+                    duration: duration,
+                    repeat: Infinity,
+                    repeatType: 'reverse'
+                }}
+            />
         </div>
-    )
-};
-
-export default Loading;
+    </div>
+}
