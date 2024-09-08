@@ -1,11 +1,28 @@
-import { FC, ReactNode, Suspense } from "react";
+import { FC, ReactNode, Suspense, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import Loading from "../../../ui/Loading";
 import { Sidebar as SidebarReact, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+import getStorageAuth from "../../../services/getStorageAuth";
+import authService from "../../../services/authService";
+import AuthFormContainer from "../../../containers/AuthFormContainer";
 // import Header from "../../../components/ui/Header/Header";
 // import Footer from "../../../ui/Elements/Footer/Footer";
 
 export const Layout = () => {
+    const [isAuth, setAuth] = useState(false);
+
+    if (!isAuth) {
+        const { login, password } = getStorageAuth();
+
+        if (login && password) {
+            const dataLogin = authService.login(login, password);
+            console.log(dataLogin);
+            dataLogin.then(data => setAuth(data));
+        }
+
+        return <AuthFormContainer onSuccess={() => setAuth(true)} />
+    }
+
     return (
         <div style={{ display: 'flex', height: '100vh' }}>
             <Sidebar />

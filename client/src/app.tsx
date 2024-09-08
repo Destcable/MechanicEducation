@@ -27,20 +27,20 @@ const App = () => {
     // @ts-ignore
     if (selectableTask?.type === "WORD" ) return <WordWindowContainer dataTask={selectableTask} />
 
-    if (isAuth) return <SelectTopicContainer 
-        onTopicSelected={(data: any) => navigate(`/topic/${data.id}/themes`, { replace: true })}
-    />
+    // if (isAuth) return <SelectTopicContainer 
+    //     onTopicSelected={(data: any) => navigate(`/topic/${data.id}/themes`, { replace: true })}
+    // />
     
-    if (!isAuth) {
-        const { login, password } = getStorageAuth();
+    // if (!isAuth) {
+    //     const { login, password } = getStorageAuth();
         
-        if (login && password) {
-            const dataLogin = authService.login(login, password);
-            dataLogin.then(data => setAuth(data));
-        }
+    //     if (login && password) {
+    //         const dataLogin = authService.login(login, password);
+    //         dataLogin.then(data => setAuth(data));
+    //     }
 
-        return <AuthFormContainer onSuccess={() => setAuth(true)}/>
-    } 
+    //     return <AuthFormContainer onSuccess={() => setAuth(true)}/>
+    // } 
 };
 
 export default App;

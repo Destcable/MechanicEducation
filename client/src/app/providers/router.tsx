@@ -45,10 +45,6 @@ export const router = createBrowserRouter([
                 path: 'theme/:themeId/task/:taskId',
                 element: <TaskWrapper />
             },
-            {
-                path: 'login',
-                element: <AuthFormContainer />,
-            },
             { 
                 path: '/result/theme/:themeId',
                 element: <ResultWindowContainer />
@@ -56,7 +52,11 @@ export const router = createBrowserRouter([
             { 
                 path: '/profile',
                 element: <ProfileContainer />
-            }
+            },
         ],
+    },
+    {
+        path: 'login',
+        element: <AuthFormContainer />,
     },
 ]);

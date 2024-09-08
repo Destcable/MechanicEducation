@@ -15,8 +15,8 @@ enum TypeTask {
 }
 
 enum RoleUser { 
-    Student
-    Teacher
+    STUDENT
+    TEACHER
 }
 
 model User {
@@ -26,8 +26,8 @@ model User {
     password    String
     role        RoleUser
     tasks       Int[]
-    group       Group @relation(fields: [groupId], references: [id])
-    groupId     Int
+    group       Group? @relation(fields: [groupId], references: [id])
+    groupId     Int?
 }
 
 model Topic {
