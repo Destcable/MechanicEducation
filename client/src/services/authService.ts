@@ -1,25 +1,23 @@
-import { dataProvider } from "../main";
+import axios from "axios";
 import { store } from "../reducer";
-import { AUTH_USER } from "./authUser/gql/query";
+import { authAPIRoutes } from "../core/config/routes.config";
 
 const authService = { 
     login: async (login: string, password: string) => {
 
-        return dataProvider.query({ 
-            query: AUTH_USER,
-            variables: { login, password}
-        }).then(({data}) => { 
+        return await axios.post(authAPIRoutes.login(), { login, password })
+            .then(({data}) => { 
+                if (data?.tasks) {
+                    store.dispatch({ type: 'tasks/change', payload: data.tasks })
+                }
             
-            if (data.data?.tasks) {
-                store.dispatch({ type: 'tasks/change', payload: data.data.tasks })
-            }
+                if (data?.name) { 
+                    store.dispatch({ type: 'username/change', payload: data.name}) 
+                }
 
-            if (data.data?.name) { 
-                store.dispatch({ type: 'username/change', payload: data.data.name}) 
-            }
+                return data?.id ? true : false
+            });
 
-            return data.data?.id ? true : false
-        });
     }
 };
 

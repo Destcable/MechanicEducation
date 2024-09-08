@@ -18,7 +18,7 @@ export const authController = {
             where: { login, password }     
         })
 
-        return res.send( user ? {status: true} : {status: false} )
+        return res.send( user ? user : {status: false} )
     },
 
     logout: () => {

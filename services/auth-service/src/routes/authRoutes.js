@@ -3,5 +3,5 @@ import { authController } from '../controllers/authController.js';
 
 export const authRouter = express.Router();
 
-authRouter.get('/login', authController.login)
+authRouter.post('/login', authController.login)
 authRouter.get('/logout', authController.logout)

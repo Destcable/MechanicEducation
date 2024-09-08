@@ -16,10 +16,8 @@ export const Layout = () => {
 
         if (login && password) {
             const dataLogin = authService.login(login, password);
-            console.log(dataLogin);
             dataLogin.then(data => setAuth(data));
         }
-
         return <AuthFormContainer onSuccess={() => setAuth(true)} />
     }
 
