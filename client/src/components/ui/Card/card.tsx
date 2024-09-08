@@ -39,7 +39,7 @@ const Card = (props: CardProps) => {
                     <p className="text-center">{props.description}</p>
                     <div className="d-flex w-100 justify-content-center button_train ">
                         <a href="#" className="text-decoration-none" onClick={props.onClick}>
-                            <div className="d-flex btn btn_exe align-center">
+                            <div className="d-flex btn_big btn_exe align-center">
                                 Задание
                             </div>
                         </a>

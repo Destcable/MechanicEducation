@@ -16,7 +16,7 @@ const FinishButton: FC<IFinishButtonProps> = ({ themeId }): ReactNode => {
     return <div className="d-flex w-100 justify-content-center">
         <button 
             id="send-answers__button" 
-            className="btn btn_exe" 
+            className="btn_big btn_exe" 
             onClick={() => handleClickGoPage()}
             >Завершить</button>
     </div>

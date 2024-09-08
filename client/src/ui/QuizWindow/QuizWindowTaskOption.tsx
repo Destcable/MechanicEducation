@@ -10,7 +10,7 @@ interface TaskOptionProps {
 const QuizWindowTaskOption: React.FC<TaskOptionProps> = ({ idInput, task, handleOptionChange }) => {
     return (
         <label
-            className="btn colorButton d-block mb-2 w-100"
+            className="btn colorButton d-block mb-2 w-100" // TODO решить btn_big or btn
             style={{ backgroundColor: ANSWER_BUTTON_COLOR.default }}
         >
             <input

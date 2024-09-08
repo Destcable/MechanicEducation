@@ -10,6 +10,7 @@ const SelectThemeContainer = lazy(() => import("../../containers/SelectThemeCont
 const SelectTaskContainer = lazy(() => import("../../containers/SelectTaskContainer"))
 const TaskWrapper = lazy(() => import("../../shared/ui/TaskWrapper/TaskWrapper"))
 const DashboardPage = lazy(() => import("../../pages/Dashboard/DashboardPage"))
+const TeachersPage = lazy(() => import("../../pages/Teachers/TeachersPage"))
 
 export const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
             { 
                 path: 'dashboard',
                 element: <DashboardPage />
+            },
+            { 
+                path: 'teachers',
+                element: <TeachersPage />
             },
             {
                 path: 'main',

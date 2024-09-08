@@ -50,6 +50,7 @@ const Sidebar = () => {
         <Menu>
             <MenuItem component={<Link to="/dashboard" />}> Главная </MenuItem>
             <MenuItem component={<Link to="/main" />}> Предметы </MenuItem>
+            <MenuItem component={<Link to="/teachers" />}> Преподаватели </MenuItem>
             <SubMenu label="Charts">
                 <MenuItem> Pie charts </MenuItem>
                 <MenuItem> Line charts </MenuItem>
