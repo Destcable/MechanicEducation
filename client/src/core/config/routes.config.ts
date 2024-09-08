@@ -9,5 +9,5 @@ export const userAPIRoutes = {
 }
 
 export const courseAPIRoutes = {
-    getAll: () => `${SERVER_URI}/courses`
+    getAll: () => `${SERVER_URI}/course/all`
 }
