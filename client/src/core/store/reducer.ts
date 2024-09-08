@@ -20,5 +20,4 @@ function storeReducer(state = {
     }
 };
 
-// @ts-ignore
 export let store = createStore(storeReducer)

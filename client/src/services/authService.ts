@@ -1,6 +1,6 @@
 import axios from "axios";
-import { store } from "../reducer";
 import { authAPIRoutes } from "../core/config/routes.config";
+import { store } from "../core/store/reducer";
 
 const authService = { 
     login: async (login: string, password: string) => {
