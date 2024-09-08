@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Loading from "../ui/Loading";
 import SelectTopic from "../ui/SelectTopic/SelectTopic";
 import axios from "axios";
-import { courseAPIRoutes } from "../core/config/routes.config";
+import { routesConfig } from "../core/config/routes.config";
 
 interface ISelectThemeContainerProps { 
     onTopicSelected: (data: any) => void
@@ -15,7 +15,7 @@ const SelectTopicContainer = (props: ISelectThemeContainerProps) => {
         const fetchCourses = async () => {
             setLoading(true);
             try {
-                const { data } = await axios.get(courseAPIRoutes.getAll());
+                const { data } = await axios.get(routesConfig.courseAPIRoutes.getAll());
                 setCourses(data)    
             } finally {
                 setLoading(false);

@@ -1,9 +1,9 @@
 import { Topic } from "../../interfaces/topic";
-import { store } from "../../reducer";
 import testLogo from "./img/test.png";
 import { FaArrowRight } from "react-icons/fa6";
 import { FC } from "react";
 import { Button } from "react-bootstrap";
+import { store } from "../../core/store/reducer";
 
 interface ISelectThemeProps {
     topics: Topic[],

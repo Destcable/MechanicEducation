@@ -1,8 +1,8 @@
 import axios from "axios";
 import { TeacherCard } from "../../ui/TeacherCard/TeacherCard";
-import { userAPIRoutes } from "../../core/config/routes.config";
 import { useEffect, useState } from "react";
 import Loading from "../../ui/Loading";
+import { routesConfig } from "../../core/config/routes.config";
 
 interface Teacher { 
     id: number;
@@ -19,7 +19,7 @@ const TeachersPage = () => {
             setLoading(true);
 
             try {
-                const { data } = await axios.get(userAPIRoutes.getAllTeachers());
+                const { data } = await axios.get(routesConfig.userAPIRoutes.getAllTeachers());
                 setTeachers(data);
             } finally {
                 setLoading(false)

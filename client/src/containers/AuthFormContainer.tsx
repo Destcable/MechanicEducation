@@ -1,8 +1,8 @@
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import AuthForm from "../ui/AuthForm/AuthForm";
-import authService from '../services/authService';
 import { AuthFormData } from '../interfaces/auth';
 import { useNavigate } from 'react-router-dom';
+import { login } from '../core/services/auth.service';
 
 interface IAuthFormContainerProps { 
     onSuccess?: () => void
@@ -18,7 +18,7 @@ const AuthFormContainer = (props: IAuthFormContainerProps) => {
             password: data.password
         };
 
-        const dataLogin = await authService.login(authData.login, authData.password);
+        const dataLogin = await login(authData.login, authData.password);
     
         if (dataLogin) {
             localStorage.setItem('auth-login', authData.login);

@@ -5,9 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { ModalGetFromContent, ModalGetKeyWords } from '../../../content/modals/ModalsData';
 import { Title } from '../../../config';
 import FlexBetween from '../../../ui/Semantic/FlexBetween';
-import { store } from '../../../reducer';
 import { useNavigate } from 'react-router-dom';
 import { FaUserLarge } from "react-icons/fa6";
+import { store } from '../../../core/store/reducer';
 
 const Header = () => {
     const navigate = useNavigate();
