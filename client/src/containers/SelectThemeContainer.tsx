@@ -3,8 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { CSSProperties } from 'react';
 import { Theme } from '../interfaces/theme';
 import useQueryTopicThemes from '../hooks/useQueryTopicThemes';
-import { store } from '../reducer';
 import { useNavigate, useParams } from 'react-router-dom';
+import { store } from '../core/store/reducer';
 
 const mainBlock: CSSProperties = {
     marginTop: "150px",
