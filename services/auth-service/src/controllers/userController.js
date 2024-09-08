@@ -7,7 +7,7 @@ export const userController = {
             name: 'required',
             login: 'required',
             password: 'required',
-            role: 'required'
+            role: 'required',
         });
 
         if (validateData.errors) {
@@ -20,7 +20,8 @@ export const userController = {
             const data = await prisma.user.create({
                 data: {
                     name, login,
-                    password, role
+                    password, role,
+                    title: req.body.title
                 }
             })
     

@@ -26,5 +26,6 @@ model User {
     name        String
     login       String        @unique
     password    String
+    title       String?
     role        RoleUser
 }
