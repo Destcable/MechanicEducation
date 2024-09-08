@@ -7,6 +7,7 @@ import Loading from "../../ui/Loading";
 interface Teacher { 
     id: number;
     name: string;
+    title: string | null;
 }
 
 const TeachersPage = () => {
@@ -37,7 +38,7 @@ const TeachersPage = () => {
             <TeacherCard
                 key={teacher.id}
                 name={teacher.name}
-                jobTitle="Учитель математики"
+                jobTitle={teacher.title ?? 'Администратор'}
             />
         ))}
     </div>
