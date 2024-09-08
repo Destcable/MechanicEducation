@@ -24,4 +24,10 @@ export const courseController = {
             return res.status(400).send(error)
         }
     },
+
+    getAll: async (req, res) => {
+        const data = await prisma.course.findMany();
+        
+        return res.send(data);
+    },
 }

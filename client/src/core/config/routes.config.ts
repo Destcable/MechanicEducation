@@ -7,3 +7,7 @@ export const authAPIRoutes = {
 export const userAPIRoutes = { 
     getAllTeachers: () => `${SERVER_URI}/users/teachers`
 }
+
+export const courseAPIRoutes = {
+    getAll: () => `${SERVER_URI}/courses`
+}

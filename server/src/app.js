@@ -19,6 +19,7 @@ app.post('/user/create', proxy(`${AUTH_SERVICE}/user/create`))
 
 
 app.post('/course/create', proxy(`${COURSE_SERVICE}/course/create`))
+app.get('/course/all', proxy(`${COURSE_SERVICE}/course/all`))
 
 
 app.listen(port, () => { 

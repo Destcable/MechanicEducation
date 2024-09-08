@@ -5,3 +5,4 @@ export const courseRoutes = express.Router();
 
 
 courseRoutes.post('/create', courseController.create)
+courseRoutes.get('/all', courseController.getAll)
