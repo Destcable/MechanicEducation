@@ -15,7 +15,7 @@ export const courseController = {
         const { name, section } = validateData;
         
         try {
-            const data = await prisma.user.create({
+            const data = await prisma.course.create({
                 data: { name, section }
             })
     
