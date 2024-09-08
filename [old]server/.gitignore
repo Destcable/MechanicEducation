@@ -5,6 +5,7 @@
 server/node_modules
 [old]server/node_modules
 admin/node_modules
+node_modules
 /.pnp
 .pnp.js
 
