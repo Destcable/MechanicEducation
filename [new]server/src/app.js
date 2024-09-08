@@ -1,17 +1,17 @@
-import express from 'express'
+import express from 'express';
 import dotenv from 'dotenv';
-
-import { authRouter } from './routes/authRoutes.js';
-import { userRoutes } from './routes/userRoutes.js';
+import proxy from 'express-http-proxy';
 
 dotenv.config();
+
 const port = process.env.PORT;
+const AUTH_SERVICE = process.env.URL_AUTH_SERVICE;
 
 const app = express();
 app.use(express.json());
 
-app.use('/auth', authRouter)
-app.use('/user', userRoutes)
+app.get('/auth/login', proxy(`${AUTH_SERVICE}/auth/login`))
+app.post('/user/create', proxy(`${AUTH_SERVICE}/user/create`))
 
 app.listen(port, () => { 
     console.log(`☁️  LMS: Server | service start (port: ${port})`)
