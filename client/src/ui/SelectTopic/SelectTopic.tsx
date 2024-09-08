@@ -2,7 +2,6 @@ import { Topic } from "../../interfaces/topic";
 import testLogo from "./img/test.png";
 import { FaArrowRight } from "react-icons/fa6";
 import { FC } from "react";
-import { Button } from "react-bootstrap";
 import { store } from "../../core/store/reducer";
 
 interface ISelectThemeProps {
@@ -49,14 +48,14 @@ const TemplateSelectTopic: FC<ITemplateSelectTopic> = ({ name, section, onClick 
             </span>
         </div>
         <p className="fs-5 fw-bold mt-3 mb-4">{name}</p>
-        <Button
-            className='font-monospace bg-white border-0 p-0'
+        <button
+            className='btn font-monospace bg-white border-0 p-0'
             style={{ color: '#0250ce' }}
             // @ts-ignore
             onClick={onClick}
         >
             Перейти <FaArrowRight />
-        </Button>
+        </button>
     </div>
 );
 
