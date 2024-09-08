@@ -14,6 +14,22 @@ enum TypeTask {
     WORD
 }
 
+enum RoleUser { 
+    Student
+    Teacher
+}
+
+model User {
+    id          Int           @id @default(autoincrement())
+    name        String
+    login       String        @unique
+    password    String
+    role        RoleUser
+    tasks       Int[]
+    group       Group @relation(fields: [groupId], references: [id])
+    groupId     Int
+}
+
 model Topic {
     id      Int           @id @default(autoincrement())
     name    String
@@ -56,14 +72,4 @@ model Group {
     id          Int           @id @default(autoincrement())
     title       String
     users       User[]
-}
-
-model User {
-    id          Int           @id @default(autoincrement())
-    name        String
-    login       String        @unique
-    password    String
-    tasks       Int[]
-    group       Group @relation(fields: [groupId], references: [id])
-    groupId     Int
 }
