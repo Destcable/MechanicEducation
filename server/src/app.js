@@ -12,6 +12,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get('/users/teachers', proxy(`${AUTH_SERVICE}/users/teachers`))
 app.post('/auth/login', proxy(`${AUTH_SERVICE}/auth/login`))
 app.post('/user/create', proxy(`${AUTH_SERVICE}/user/create`))
 
