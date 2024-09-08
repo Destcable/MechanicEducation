@@ -9,8 +9,8 @@ export const Loading = ({
             <motion.img
                 src={LogotypeLoading}
                 width='200px'
-                initial={{ scale: 1 }}
-                animate={{ scale: 1.5 }}
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1.2 }}
                 transition={{
                     duration: duration,
                     repeat: Infinity,
