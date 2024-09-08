@@ -1,10 +1,10 @@
 import { FC, ReactNode, Suspense, useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Loading from "../../../ui/Loading";
-import { Sidebar as SidebarReact, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import getStorageAuth from "../../../services/getStorageAuth";
 import AuthFormContainer from "../../../containers/AuthFormContainer";
 import { login } from "../../../core/services/auth.service";
+import { Sidebar } from "./Sidebar";
 // import Header from "../../../components/ui/Header/Header";
 // import Footer from "../../../ui/Elements/Footer/Footer";
 
@@ -57,20 +57,3 @@ const Content: FC<IContentProps> = ({ children }) => {
         </div>
     )
 }
-
-
-
-const Sidebar = () => {
-    return <SidebarReact>
-        <Menu>
-            <MenuItem component={<Link to="/dashboard" />}> Главная </MenuItem>
-            <MenuItem component={<Link to="/main" />}> Предметы </MenuItem>
-            <MenuItem component={<Link to="/teachers" />}> Преподаватели </MenuItem>
-            <SubMenu label="Charts">
-                <MenuItem> Pie charts </MenuItem>
-                <MenuItem> Line charts </MenuItem>
-            </SubMenu>
-            <MenuItem> Сообщения </MenuItem>
-        </Menu>
-    </SidebarReact>;
-};
